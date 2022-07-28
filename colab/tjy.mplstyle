@@ -1,5 +1,5 @@
 figure.figsize : 9.333, 7
-font.family : "DejaVu Sans"
+font.family : DejaVu Sans
 font.weight : bold
 
 axes.titlesize : 24
