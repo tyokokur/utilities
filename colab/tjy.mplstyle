@@ -1,11 +1,11 @@
 figure.figsize : 9.333, 7
 font.family : "DejaVu Sans"
-font.weight : "bold"
+font.weight : bold
 
 axes.titlesize : 24
-axes.titleweight : "bold"
+axes.titleweight : bold
 axes.titlepad : 10.0
-axes.labelweight : "bold"
+axes.labelweight : bold
 
 axes.linewidth : 3
 axes.labelsize : 20
@@ -27,5 +27,5 @@ ytick.labelsize :16
 
 legend.fancybox : False
 legend.fontsize : 14
-legend.edgecolor : '0.0'
+legend.edgecolor : 0.0
 legend.borderaxespad :1.0
