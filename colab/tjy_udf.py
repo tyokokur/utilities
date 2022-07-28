@@ -1,33 +1,18 @@
-def Git_init(folder_name):
+def lighten_color(color, amount=0.5):
+    """
+    Lightens the given color by multiplying (1-luminosity) by the given amount.
+    Input can be matplotlib color string, hex string, or RGB tuple.
 
-"""Drive Mount (Colab Notebooks/NLH) and Git Pull
-        Git/tyokokur/utilities into Colab Notebooks/{folder_name}""""
-
-#### Mount Google Drive
-from google.colab import drive # import drive from google colab
-
-ROOT = "/content/drive"     # default location for the drive
-drive.mount(ROOT)           # we mount the google drive at /content/drive
-
-#### Clone github repository setup
-from os.path import join 
-# Note: if there are spaces in the path, you need to preceed them with a backslash '\'
-MY_GOOGLE_DRIVE_PATH = 'My Drive/Colab Notebooks/'+folder_name
-GIT_USERNAME = 'tyokokur'
-GIT_TOKEN = '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'
-GIT_REPOSITORY = 'utilities'
-
-PROJECT_PATH = join(ROOT, MY_GOOGLE_DRIVE_PATH)
-# It's good to print out the value if you are not sure 
-print("PROJECT_PATH: ", PROJECT_PATH)   
-# In case we haven't created the folder already; we will create a folder in the project path 
-!mkdir "{PROJECT_PATH}"    
-
-GIT_PATH = "https://" + GIT_TOKEN + "@github.com/" + GIT_USERNAME + "/" + GIT_REPOSITORY + ".git"
-print("GIT_PATH: ", GIT_PATH)
-!git clone "{GIT_PATH}" ./temp      # clone github repository to temp folder
-!mv ./temp/colab/* "{PROJECT_PATH}" # move colab files in temp folder to folder defined in project path
-!rm -rf ./temp                      # remove all the files/folders in temp folder
-#!rsync -aP --exclude=data/ "{PROJECT_PATH}"/*  ./   # use remote sync to copy from google drive to local runtime google colab
-                                                    # but exclude data folder
-                                                    # https://www.computerhope.com/unix/rsync.htm
+    Examples:
+    >> lighten_color('g', 0.3)
+    >> lighten_color('#F034A3', 0.6)
+    >> lighten_color((.3,.55,.1), 0.5)
+    """
+    import matplotlib.colors as mc
+    import colorsys
+    try:
+        c = mc.cnames[color]
+    except:
+        c = color
+    c = colorsys.rgb_to_hls(*mc.to_rgb(c))
+    return colorsys.hls_to_rgb(c[0], 1 - amount * (1 - c[1]), c[2])
