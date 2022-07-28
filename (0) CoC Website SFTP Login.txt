@@ -1,9 +1,0 @@
-Dreamweaver settings:
-
-Connection type: SFTP
-SFTP Address: stage.cchem.berkeley.edu
-username: rwgrp
-password: wangWEB2021
-
-Root Directory: public_html/
-Web URL: http://stage.cchem.berkeley.edu/~rwgrp/
