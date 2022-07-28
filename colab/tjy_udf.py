@@ -1,7 +1,7 @@
 def Git_init(folder_name):
 
-"""Drive Mount (Colab Notebooks/NLH) and Git Celon
-        Git/tyokokur/utilities into Colab/(0)_GitUtils""""
+"""Drive Mount (Colab Notebooks/NLH) and Git Pull
+        Git/tyokokur/utilities into Colab Notebooks/{folder_name}""""
 
 #### Mount Google Drive
 from google.colab import drive # import drive from google colab
@@ -12,7 +12,7 @@ drive.mount(ROOT)           # we mount the google drive at /content/drive
 #### Clone github repository setup
 from os.path import join 
 # Note: if there are spaces in the path, you need to preceed them with a backslash '\'
-MY_GOOGLE_DRIVE_PATH = 'My Drive/Colab Notebooks/(0)_GitUtils'
+MY_GOOGLE_DRIVE_PATH = 'My Drive/Colab Notebooks/'+folder_name
 GIT_USERNAME = 'tyokokur'
 GIT_TOKEN = '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'
 GIT_REPOSITORY = 'utilities'
@@ -31,4 +31,3 @@ print("GIT_PATH: ", GIT_PATH)
 #!rsync -aP --exclude=data/ "{PROJECT_PATH}"/*  ./   # use remote sync to copy from google drive to local runtime google colab
                                                     # but exclude data folder
                                                     # https://www.computerhope.com/unix/rsync.htm
-%cd /content/drive/My\ Drive/Colab\ Notebooks/"{folder_name}"
