@@ -29,7 +29,7 @@ INCOMMAND="\"$INW\" -qr -e \"$EVENTS\" --exclude \"\.git\" \"$TARGETDIR\"";
 echo "$INCOMMAND"
 
 while true; do
-    NOW=$(date)
+    SECONDS=0
     eval "timeout 600 $INCOMMAND" || true
     for i in $(ls -d */); do
         cd "$TARGETDIR/$i"
@@ -49,5 +49,5 @@ while true; do
     echo ""
     echo "/********** Loop end **********/"
     echo "-----Waiting for 10 minutes-----"
-    echo "--Next auto-run: $($NOW -d "+10 minutes")--"
+    echo "--Next auto-run: $(date -d "+10 minutes-$SECONDS seconds")--"
 done
