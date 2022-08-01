@@ -38,10 +38,12 @@ while true; do
     echo ""
     echo "/********** Loop start **********/"
     echo "$INCOMMAND"
-    echo "Run at $(date)"
+    echo "$(date)"
     eval "timeout 600 $INCOMMAND" || true
+
     SECONDS=0
     ## Loop through all folders in parent
+    cd "$TARGETDIR"
     for i in $(ls -d */); do
         cd "$TARGETDIR/$i"
         echo $i
@@ -60,6 +62,5 @@ while true; do
     echo ""
     echo "/********** Loop end **********/"
     echo "/** Duration: $SECONDS seconds **/"
-    echo "-----Waiting for 10 minutes-----"
     echo "--Next auto-run: $(date -d "+10 minutes-$SECONDS seconds")--"
 done
