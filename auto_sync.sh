@@ -48,6 +48,7 @@ while true; do
     ## Print when done looping
     echo ""
     echo "/********** Loop end **********/"
+    echo "/** Duration: $SECONDS seconds **/"
     echo "-----Waiting for 10 minutes-----"
     echo "--Next auto-run: $(date -d "+10 minutes-$SECONDS seconds")--"
 done
