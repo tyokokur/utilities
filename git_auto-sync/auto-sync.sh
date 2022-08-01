@@ -33,11 +33,14 @@ for cmd in "git" "$INW" "timeout"; do
 done
 
 INCOMMAND="\"$INW\" -qr -e \"$EVENTS\" --exclude \"\.git\" \"$TARGETDIR\"";
-echo "$INCOMMAND"
 
 while true; do
-    SECONDS=0
+    echo ""
+    echo "/********** Loop start **********/"
+    echo "$INCOMMAND"
+    echo "Run at $(date)"
     eval "timeout 600 $INCOMMAND" || true
+    SECONDS=0
     ## Loop through all folders in parent
     for i in $(ls -d */); do
         cd "$TARGETDIR/$i"
