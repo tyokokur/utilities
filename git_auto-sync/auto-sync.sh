@@ -62,5 +62,5 @@ while true; do
     echo ""
     echo "/********** Loop end **********/"
     echo "/** Duration: $SECONDS seconds **/"
-    echo "--Next auto-run: $(date -d "+10 minutes-$SECONDS seconds")--"
+    echo "--Next auto-run: $(date -d "+10 minutes")--"
 done
