@@ -18,35 +18,36 @@ def lighten_color(color, amount=0.5):
     return colorsys.hls_to_rgb(c[0], 1 - amount * (1 - c[1]), c[2])
 
 def H_find(filename, b0, thresh):
+    import pandas as pd, numpy as np
 
-  df = pd.read_csv(filename, sep="\s+", skiprows=0)
-  Nx = len(df.index)
-  rows = range(0, Nx)
+    df = pd.read_csv(filename, sep="\s+", skiprows=0)
+    Nx = len(df.index)
+    rows = range(0, Nx)
 
-  phA = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
-  phA = phA.fillna(0) # with 0s rather than NaNs
+    phA = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
+    phA = phA.fillna(0) # with 0s rather than NaNs
 
-  for i in range(Nx):
-    phA.iloc[i, 0] = df.iloc[i,0] * b0
-    phA.iloc[i, 1] = df.iloc[i,1] 
+    for i in range(Nx):
+        phA.iloc[i, 0] = df.iloc[i,0] * b0
+        phA.iloc[i, 1] = df.iloc[i,1] 
 
-  diff = 100
-  for i in range(Nx):
-    new_diff = np.abs(phA.iloc[i, 1] - thresh)
-    if new_diff < diff: 
-      diff = new_diff
-      x1 = phA.iloc[i, 0]
-      y1 = phA.iloc[i, 1]
-      if y1 > thresh :
-        x2 = phA.iloc[i+1, 0]
-        y2 = phA.iloc[i+1, 1]
-      else: 
-        x2 = phA.iloc[i-1, 0]
-        y2 = phA.iloc[i-1, 1]
+    diff = 100
+    for i in range(Nx):
+        new_diff = np.abs(phA.iloc[i, 1] - thresh)
+        if new_diff < diff: 
+            diff = new_diff
+            x1 = phA.iloc[i, 0]
+            y1 = phA.iloc[i, 1]
+            if y1 > thresh :
+                x2 = phA.iloc[i+1, 0]
+                y2 = phA.iloc[i+1, 1]
+            else: 
+                x2 = phA.iloc[i-1, 0]
+                y2 = phA.iloc[i-1, 1]
 
-  m = (y2-y1)/(x2-x1)
-  b = y2 - m * x2
-  x = (thresh - b) / m
-  y = m*x + b
+    m = (y2-y1)/(x2-x1)
+    b = y2 - m * x2
+    x = (thresh - b) / m
+    y = m*x + b
   
   return x
