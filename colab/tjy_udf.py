@@ -50,4 +50,4 @@ def H_find(filename, b0, thresh):
     x = (thresh - b) / m
     y = m*x + b
   
-  return x
+    return x
