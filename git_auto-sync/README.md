@@ -15,5 +15,5 @@ Locate bash.exe and use it to run .bat executable
 
 ## Run on startup
 Location: Task Scheduler/MyTasks/  
-Trigger: Run on startup  
+Trigger: Run on login  
 Action: "D:\(000) Git\RunAutoSync.bat"  
