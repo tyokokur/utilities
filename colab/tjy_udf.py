@@ -61,7 +61,7 @@ def git_sync(GIT_REPO, REPO_SUB):
 
   #### Github clone data into Gdrive_folder
   GIT_PATH = "https://" + config.GIT_TOKEN + "@github.com/" + config.GIT_USERNAME + "/" + GIT_REPO + ".git"
-  print("GIT_PATH: ", "https://" + "github.com/" + GIT_USERNAME + "/" + GIT_REPO + ".git")
+  print("GIT_PATH: ", "https://" + "github.com/" + config.GIT_USERNAME + "/" + GIT_REPO + ".git")
   exec(ipython.transform_cell('!git clone --quiet "{GIT_PATH}" ./temp'))      # clone github repository to temp folder
   exec(ipython.transform_cell('!mv ./temp/"{REPO_SUB}"/*  ./'))
   exec(ipython.transform_cell('!rm -rf ./temp'))                      # remove all the files/folders in temp folder
