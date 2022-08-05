@@ -61,7 +61,7 @@ def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
   GIT_PATH = "https://" + GIT_CREDS['GIT_TOKEN'] + "@github.com/" + GIT_CREDS['GIT_USERNAME'] + "/" + GIT_REPO + ".git"
   print("GIT_PATH: ", "https://" + "github.com/" + GIT_CREDS['GIT_USERNAME'] + "/" + GIT_REPO + ".git")
 
-  exec(ipython.system('!ls'))
+  print(ipython.system('!ls'))
 #   !git clone --quiet "{GIT_PATH}" ./temp
 #   exec(ipython.transform_cell('!git clone --quiet "{GIT_PATH}" ./temp'))      # clone github repository to temp folder
 #   exec(ipython.transform_cell('!mv ./temp/"{REPO_SUB}"/*  ./'))
