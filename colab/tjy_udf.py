@@ -54,9 +54,8 @@ def H_find(filename, b0, thresh):
 
 def git_sync(GIT_REPO, REPO_SUB):
   ## Paste GIT_REPO/REPO_sub (e.g. tmpdat/sysg) into Google Colab cwd
-  GIT_USERNAME = 'tyokokur'
-  GIT_TOKEN = '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'
-
+  # Requires GIT_TOKEN and GIT_USERNAME globals
+  
   #### Github clone data into Gdrive_folder
   GIT_PATH = "https://" + GIT_TOKEN + "@github.com/" + GIT_USERNAME + "/" + GIT_REPO + ".git"
   print("GIT_PATH: ", "https://" + "github.com/" + GIT_USERNAME + "/" + GIT_REPO + ".git")
