@@ -52,17 +52,13 @@ def H_find(filename, b0, thresh):
   
     return x
 
-def git_sync(GIT_REPO, REPO_SUB):
+def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
   ## Paste GIT_REPO/REPO_sub (e.g. tmpdat/sysg) into Google Colab pwd
-  import config ## Find other solution
-  print(config.GIT_TOKEN)
-  print(config.GIT_USERNAME)
-
   from IPython import get_ipython
   ipython = get_ipython()
 
   #### Github clone data into Gdrive_folder
-  GIT_PATH = "https://" + config.GIT_TOKEN + "@github.com/" + config.GIT_USERNAME + "/" + GIT_REPO + ".git"
+  GIT_PATH = "https://" + GIT_CREDS['GIT_TOKEN'] + "@github.com/" + GIT_CREDS['GIT_USERNAME'] + "/" + GIT_REPO + ".git"
   print("GIT_PATH: ", "https://" + "github.com/" + config.GIT_USERNAME + "/" + GIT_REPO + ".git")
   exec(ipython.transform_cell('!git clone --quiet "{GIT_PATH}" ./temp'))      # clone github repository to temp folder
   exec(ipython.transform_cell('!mv ./temp/"{REPO_SUB}"/*  ./'))
