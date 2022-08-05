@@ -51,3 +51,16 @@ def H_find(filename, b0, thresh):
     y = m*x + b
   
     return x
+
+def git_sync(GIT_REPO, REPO_SUB):
+  ## Paste GIT_REPO/REPO_sub (e.g. tmpdat/sysg) into Google Colab cwd
+  GIT_USERNAME = 'tyokokur'
+  GIT_TOKEN = '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'
+
+  #### Github clone data into Gdrive_folder
+  GIT_PATH = "https://" + GIT_TOKEN + "@github.com/" + GIT_USERNAME + "/" + GIT_REPO + ".git"
+  print("GIT_PATH: ", "https://" + "github.com/" + GIT_USERNAME + "/" + GIT_REPO + ".git")
+  !git clone --quiet "{GIT_PATH}" ./temp      # clone github repository to temp folder
+  !mv ./temp/"{REPO_SUB}"/*  ./
+  !rm -rf ./temp                      # remove all the files/folders in temp folder
+  return
