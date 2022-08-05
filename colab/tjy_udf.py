@@ -54,7 +54,8 @@ def H_find(filename, b0, thresh):
 
 def git_sync(GIT_REPO, REPO_SUB):
   ## Paste GIT_REPO/REPO_sub (e.g. tmpdat/sysg) into Google Colab cwd
-  # Requires GIT_TOKEN and GIT_USERNAME globals
+  global GIT_TOKEN, GIT_USERNAME
+
   from IPython import get_ipython
   ipython = get_ipython()
 
