@@ -64,4 +64,5 @@ def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
   ipython.system('git clone --quiet "{GIT_PATH}" ./temp')  # clone github repository to temp folder
   ipython.system('mv ./temp/"{REPO_SUB}"/*  ./')           # copy only subdirectory files to Colab pwd
   ipython.system('rm -rf ./temp')                          # remove all the files/folders in temp folder
+  ipython.system('date')
   return
