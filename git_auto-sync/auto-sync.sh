@@ -32,8 +32,16 @@ for cmd in "git" "$INW" "timeout"; do
     is_command "$cmd" || { stderr "Error: Required command '$cmd' not found"; exit 1; }
 done
 
-INCOMMAND="\"$INW\" -qr -e \"$EVENTS\" --exclude \"\.git\" \"$TARGETDIR\"";
+## Initial sync
+echo "Initial sync"
+git pull
+sleep 5
+git add .
+git commit -m "autocommit"
+git push origin
 
+
+INCOMMAND="\"$INW\" -qr -e \"$EVENTS\" --exclude \"\.git\" \"$TARGETDIR\"";
 while true; do
     echo ""
     echo "/********** Loop start **********/"
