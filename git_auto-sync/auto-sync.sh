@@ -14,7 +14,7 @@
 set -e
 
 ## Parent directory to check through -- all folders must be git clones
-TARGETDIR=("D:\(000) Git")
+TARGETDIR=("E:\(000) Git")
 
 stderr () {
     echo "$1" >&2
@@ -32,28 +32,11 @@ for cmd in "git" "$INW" "timeout"; do
     is_command "$cmd" || { stderr "Error: Required command '$cmd' not found"; exit 1; }
 done
 
-## Initial sync
-echo "Initial sync"
-git pull
-sleep 5
-git add .
-git commit -m "autocommit"
-git push origin
-
-
-INCOMMAND="\"$INW\" -qr -e \"$EVENTS\" --exclude \"\.git\" \"$TARGETDIR\"";
-while true; do
-    echo ""
-    echo "/********** Loop start **********/"
-    echo "$INCOMMAND"
-    echo "$(date)"
-    eval "timeout 600 $INCOMMAND" || true
-
-    SECONDS=0
-    ## Loop through all folders in parent
-    cd "$TARGETDIR"
+## Loop through all folders in parent
+sync_children(){
+    cd "$1"
     for i in $(ls -d */); do
-        cd "$TARGETDIR/$i"
+        cd "$1/$i"
         echo $i
         git pull
         sleep 5
@@ -66,6 +49,23 @@ while true; do
             git push origin
         fi
     done
+}
+
+## Initial sync
+sync_children "$TARGETDIR"
+
+## Sync on change
+INCOMMAND="\"$INW\" -qr -e \"$EVENTS\" --exclude \"\.git\" \"$TARGETDIR\"";
+while true; do
+    echo ""
+    echo "/********** Loop start **********/"
+    echo "$INCOMMAND"
+    echo "$(date)"
+    eval "timeout 600 $INCOMMAND" || true
+
+    SECONDS=0
+    sync_children "$TARGETDIR"
+
     ## Print when done looping
     echo ""
     echo "/********** Loop end **********/"
