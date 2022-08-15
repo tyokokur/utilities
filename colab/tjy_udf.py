@@ -69,6 +69,7 @@ def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
 
 def Kap_D(Cs):
   ## mM (1e-03 * Molar) to nm (1e-09 * Meter)
+  from numpy import sqrt
   Cs *=  6.022e23*1e3
   pi = 3.1415926535
   e = 1.6e-19
@@ -78,5 +79,5 @@ def Kap_D(Cs):
   beta = 1/(kb*293)
 
   lb = e**2 * beta / (4*pi * ep0 * epr)
-  kappa = np.sqrt(4*pi * lb * (1*Cs + 1*Cs))
+  kappa = sqrt(4*pi * lb * (1*Cs + 1*Cs))
   return kappa
