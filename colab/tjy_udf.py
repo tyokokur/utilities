@@ -68,6 +68,7 @@ def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
   return
 
 def Kap_D(Cs):
+  ## mM (1e-03 * Molar) to nm (1e-09 * Meter)
   Cs *=  6.022e23*1e3
   pi = 3.1415926535
   e = 1.6e-19
