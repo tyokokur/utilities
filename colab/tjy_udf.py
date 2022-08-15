@@ -66,3 +66,16 @@ def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
   ipython.system('rm -rf ./temp')                          # remove all the files/folders in temp folder
   ipython.system('date')
   return
+
+def Kap_D(Cs):
+  Cs *=  6.022e23*1e3
+  pi = 3.1415926535
+  e = 1.6e-19
+  ep0 = 8.8541878128e-12 # x length scale
+  epr = 80
+  kb = 1.38064852e-23
+  beta = 1/(kb*293)
+
+  lb = e**2 * beta / (4*pi * ep0 * epr)
+  kappa = np.sqrt(4*pi * lb * (1*Cs + 1*Cs))
+  return kappa
