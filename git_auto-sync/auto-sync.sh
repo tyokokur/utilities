@@ -14,7 +14,7 @@
 set -e
 
 ## Parent directory to check through -- all folders must be git clones
-TARGETDIR=("E:\(000) Git")
+TARGETDIR=("D:\(000) Git")
 
 stderr () {
     echo "$1" >&2
