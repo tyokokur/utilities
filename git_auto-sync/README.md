@@ -17,3 +17,6 @@ Locate bash.exe and use it to run .bat executable
 Location: Task Scheduler/MyTasks/  
 Trigger: Run on login  
 Action: "D:\(000) Git\RunAutoSync.bat"  
+
+## TODOS
+Error catching for files > 100mB (LFS) -- ```git reset --hard HEAD~1``` to remove most recent commit from working directory
