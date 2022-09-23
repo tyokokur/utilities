@@ -84,7 +84,7 @@ def Kap_D(Cs):
 
 def plot_anim(fname, simname='SIM.dat', lx=100, dx=17/150, b0=1.0, html_render='jshtml'):
     from matplotlib import animation, rc
-    import numpy as np, pandas as pd
+    import numpy as np, pandas as pd, matplotlib.pyplot as plt
 
     if lx == 100 or lx == 300 or lx == 275 or lx == 350: nx = int(np.floor(lx / dx))
     else: nx = int(np.ceil(lx/dx))
