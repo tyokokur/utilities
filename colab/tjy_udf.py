@@ -103,8 +103,6 @@ def plot_anim(fname, simname='SIM.dat', lx=100, dx=17/150, b0=1.0, html_render='
     phn = np.reshape(ph, (int(len(ph)/nx), nx))
     print("phn len ", np.size(phn, 0))
 
-    %matplotlib inline
-
     # create a figure and axes
     fig = plt.figure(figsize=(15, 9))
     ax1 = plt.subplot(1,2,1)
