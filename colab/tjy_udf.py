@@ -82,7 +82,7 @@ def Kap_D(Cs):
   kappa = sqrt(4*pi * lb * (1*Cs + 1*Cs))
   return kappa
 
-def plot_anim(fname, lx=100, dx=17/150, b0=1.0, html_render='jshtml'):
+def plot_anim(fname, simname='SIM.dat', lx=100, dx=17/150, b0=1.0, html_render='jshtml'):
     from matplotlib import animation, rc
     import numpy as np, pandas as pd
 
@@ -94,12 +94,10 @@ def plot_anim(fname, lx=100, dx=17/150, b0=1.0, html_render='jshtml'):
     # for lx = 125, 150, nx = np.ceil,  z = np.arange(...(lx)/b0)
 
     ## Iteration sim:
-    itname = fname
-    df = pd.read_csv(itname, sep="\s+", skiprows=0, header=None)
+    df = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
     print("it len ", np.size(df,0))
 
-    phname = 'SIM.dat' 
-    ph = pd.read_csv(phname, sep="\s+", skiprows=0, header=None).to_numpy()
+    ph = pd.read_csv(simname, sep="\s+", skiprows=0, header=None).to_numpy()
     nframes = np.min([int(len(df)), int(len(ph)/nx)])
     print("nframes calc ", nframes)
     phn = np.reshape(ph, (int(len(ph)/nx), nx))
