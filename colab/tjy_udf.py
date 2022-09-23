@@ -82,15 +82,17 @@ def Kap_D(Cs):
   kappa = sqrt(4*pi * lb * (1*Cs + 1*Cs))
   return kappa
 
-def plot_anim(fname, simname='SIM.dat', lx=100, dx=17/150, b0=1.0, html_render='jshtml'):
+def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=1.0, html_render='jshtml'):
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
     from IPython.display import HTML, display
 
     if lx == 100 or lx == 300 or lx == 275 or lx == 350: nx = int(np.floor(lx / dx))
     else: nx = int(np.ceil(lx/dx))
+    if xend == 0: xend = lx # Default behavior
 
     ## Unknown bug: 
+    # Maybe caused by (lx-dx)/b0; only works when b0 = 1.0
     # for lx = 100, nx = np.floor, z = np.arange(...(lx-dx)/b0)
     # for lx = 125, 150, nx = np.ceil,  z = np.arange(...(lx)/b0)
 
