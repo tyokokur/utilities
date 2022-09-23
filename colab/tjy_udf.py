@@ -86,8 +86,6 @@ def plot_anim(fname, lx=100, dx=17/150, b0=1.0, html_render='jshtml'):
     from matplotlib import animation, rc
     import numpy as np, pandas as pd
 
-    lx = 350
-    dx = 17/150
     if lx == 100 or lx == 300 or lx == 275 or lx == 350: nx = int(np.floor(lx / dx))
     else: nx = int(np.ceil(lx/dx))
 
@@ -97,9 +95,7 @@ def plot_anim(fname, lx=100, dx=17/150, b0=1.0, html_render='jshtml'):
 
     ## Iteration sim:
     itname = fname
-    # itname = 'it_a030c010_x115s002.dat'
     df = pd.read_csv(itname, sep="\s+", skiprows=0, header=None)
-    ## len it does not match len SIM.dat
     print("it len ", np.size(df,0))
 
     phname = 'SIM.dat' 
