@@ -116,7 +116,7 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
     plt.subplots_adjust(wspace=0.35)
 
     # set up the subplots as needed
-    ax1.set_xlim(( 0, lx))            
+    ax1.set_xlim(( xstart, xend))            
     ax1.set_ylim((0, 1.0))
     ax1.set_xlabel('z/b')
     ax1.set_ylabel(r'$\langle\phi_p(z)\rangle_{xy}$')
