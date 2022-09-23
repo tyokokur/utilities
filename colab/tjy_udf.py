@@ -183,7 +183,9 @@ def plot_anim(fname, simname='SIM.dat', lx=100, dx=17/150, b0=1.0, html_render='
 
     if np.abs(nframes-np.size(phn, 0))<=2:
         anim = animation.FuncAnimation(fig, drawframe, frames=100, interval=100, blit=True)
+        print(anim)
         rc('animation', html=html_render)
+        print(anim)
         plt.show()
     else: 
         print("nframes, phn mismatch > 2")    
