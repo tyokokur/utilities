@@ -2,6 +2,9 @@ figure.figsize : 9.333, 7
 font.family : Sans Serif
 font.weight : normal
 
+text.usetex' = True
+text.latex.preamble' : r'\usepackage{bm} \usepackage{mathtools,amsmath}'
+
 axes.titlesize : 24
 axes.titleweight : normal
 axes.titlepad : 10.0
@@ -10,15 +13,17 @@ axes.labelweight : normal
 axes.linewidth : 2.5
 axes.labelsize : 20
 
-lines.linewidth : 3
+lines.linewidth : 2.5
 lines.markersize : 10
 
+xtick.direction: in
 xtick.major.size : 6
 xtick.major.width : 3
 xtick.minor.size : 4
 xtick.minor.width : 3
 xtick.labelsize : 16
 
+ytick.direction: in
 ytick.major.size : 6
 ytick.major.width :3
 ytick.minor.size : 4
