@@ -1,9 +1,9 @@
 figure.figsize : 9.333, 7
 font.family : Serif
-font.weight : bold
+font.weight : normal
 
 axes.titlesize : 24
-axes.titleweight : bold
+axes.titleweight : normal
 axes.titlepad : 10.0
 axes.labelweight : normal
 
