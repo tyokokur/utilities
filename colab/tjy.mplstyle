@@ -5,7 +5,7 @@ font.weight : bold
 axes.titlesize : 24
 axes.titleweight : bold
 axes.titlepad : 10.0
-axes.labelweight : bold
+axes.labelweight : normal
 
 axes.linewidth : 3
 axes.labelsize : 20
