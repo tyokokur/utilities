@@ -7,7 +7,7 @@ axes.titleweight : normal
 axes.titlepad : 10.0
 axes.labelweight : normal
 
-axes.linewidth : 2
+axes.linewidth : 2.5
 axes.labelsize : 20
 
 lines.linewidth : 3
