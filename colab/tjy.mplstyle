@@ -1,5 +1,5 @@
 figure.figsize : 9.333, 7
-font.family : Serif
+font.family : Calibri
 font.weight : normal
 
 axes.titlesize : 24
