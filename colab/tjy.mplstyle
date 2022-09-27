@@ -2,8 +2,8 @@ figure.figsize : 9.333, 7
 font.family : Sans Serif
 font.weight : normal
 
-text.usetex' = True
-text.latex.preamble' : r'\usepackage{bm} \usepackage{mathtools,amsmath}'
+text.usetex = True
+text.latex.preamble : r'\usepackage{bm} \usepackage{mathtools,amsmath}'
 
 axes.titlesize : 24
 axes.titleweight : normal
