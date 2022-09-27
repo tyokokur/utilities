@@ -7,7 +7,7 @@ axes.titleweight : normal
 axes.titlepad : 10.0
 axes.labelweight : normal
 
-axes.linewidth : 3
+axes.linewidth : 2
 axes.labelsize : 20
 
 lines.linewidth : 3
@@ -26,6 +26,7 @@ ytick.minor.width : 3
 ytick.labelsize :16
 
 legend.fancybox : False
+legend.frameon : False
 legend.fontsize : 14
 legend.edgecolor : 0.0
 legend.borderaxespad :1.0
