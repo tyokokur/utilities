@@ -3,7 +3,7 @@ font.family : Sans Serif
 font.weight : normal
 
 text.usetex : True
-text.latex.preamble : \usepackage{bm} \usepackage{mathtools,amsmath}
+text.latex.preamble : \usepackage{bm,mathtools,amsmath}
 
 axes.titlesize : 24
 axes.titleweight : normal
