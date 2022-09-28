@@ -10,7 +10,7 @@ text.latex.preamble: \usepackage{bm,mathtools,amsmath}
 axes.titlesize:    28
 axes.titlepad:     10
 
-axes.linewidth:    2.5
+axes.linewidth:    2.0
 axes.labelsize:    24
 axes.labelpad:     10
 
