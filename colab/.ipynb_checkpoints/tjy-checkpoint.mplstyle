@@ -1,4 +1,4 @@
-figure.figsize:    9.333, 7
+figure.figsize:    5,5
 font.family:       sans-serif
 font.sans-serif:   helvetica
 font.serif:        cm
