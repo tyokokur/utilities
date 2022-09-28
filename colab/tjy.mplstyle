@@ -7,15 +7,14 @@ font.weight:       normal
 text.usetex:       True
 text.latex.preamble: \usepackage{bm,mathtools,amsmath}
 
-axes.titlesize:    24
-axes.titleweight:  normal
-axes.titlepad:     10.0
-axes.labelweight:  normal
+axes.titlesize:    28
+axes.titlepad:     10
 
 axes.linewidth:    2.5
-axes.labelsize:    20
+axes.labelsize:    24
+axes.labelpad:     10
 
-lines.linewidth:   2.5
+lines.linewidth:   2
 lines.markersize:  10
 
 xtick.direction:   in
