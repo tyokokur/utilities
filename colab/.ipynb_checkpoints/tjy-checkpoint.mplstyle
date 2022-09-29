@@ -14,7 +14,7 @@ axes.labelsize:    20
 axes.labelpad:     10
 
 lines.linewidth:   2.0
-lines.markersize:  10
+lines.markersize:  8
 
 xtick.direction:   in
 xtick.major.size:  6
