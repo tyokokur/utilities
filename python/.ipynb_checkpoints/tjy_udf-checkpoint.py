@@ -151,6 +151,7 @@ def H_find(filename, b0, thresh):
                 x2 = phA.iloc[i-1, 0]
                 y2 = phA.iloc[i-1, 1]
 
+    if np.isnan(y2): x = 0
     m = (y2-y1)/(x2-x1)
     b = y2 - m * x2
     x = (thresh - b) / m
