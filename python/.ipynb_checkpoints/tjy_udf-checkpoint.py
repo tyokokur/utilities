@@ -1,11 +1,16 @@
-def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, y2_start=0, y2_end=1.00, x1_start=0, x1_end=100, x2_start=0, x2_end=100): 
+def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1_end=100, y2_start=None, y2_end=None,  x2_start=None, x2_end=None): 
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
     from matplotlib.patches import Patch
     from matplotlib import ticker
    
-    if not labs: labs = read_list #If labs is empty, default is read_list
+    # Defaults
+    if not labs:     labs     = read_list
+    if not x2_start: x2_start = x1_start
+    if not x2_end:   x2_end   = x1_end
+    if not y2_start: y2_start = y1_start
+    if not y2_end:   y2_end   = y1_end
     
     div = [b0]*len(read_list) #b0
     block_Num = len(read_list)
