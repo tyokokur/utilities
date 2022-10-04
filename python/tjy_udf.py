@@ -1,6 +1,9 @@
-def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
+def plot_pha(read_list, labs=[], b0=1.0, 
+             double=True,
+             y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
              y2_start=None, y2_end=None, x2_start=None, x2_end=None,
              block1 = None, block2 = None): 
+    
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
@@ -20,7 +23,8 @@ def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1
     colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
     colors_i = [colors[i] for i in range(len(read_list))]
 
-    fig, axs = plt.subplots(1,2, figsize=(10,5)) 
+    if double: fig, axs = plt.subplots(1,2, figsize=(10,5)) 
+    else: fig, ax = plt.subplots(1,1, figsize=(7,5)) 
 
     for k in range(len(read_list)):
       block_Nik = block_Ni[k]
