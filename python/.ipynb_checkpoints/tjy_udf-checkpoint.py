@@ -1,4 +1,6 @@
-def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
+def plot_pha(read_list, labs=[], b0=1.0, 
+             double=True,
+             y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
              y2_start=None, y2_end=None, x2_start=None, x2_end=None,
              block1 = None, block2 = None): 
     
@@ -21,7 +23,8 @@ def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1
     colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
     colors_i = [colors[i] for i in range(len(read_list))]
 
-    fig, axs = plt.subplots(1,2, figsize=(10,5)) 
+    if double: fig, axs = plt.subplots(1,2, figsize=(10,5)) 
+    else: fig, ax = plt.subplots(1,1, figsize=(7,5)) 
 
     for k in range(len(read_list)):
       block_Nik = block_Ni[k]
@@ -76,38 +79,59 @@ def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1
       # Plot total density (zorder 3)
       rshi.iloc[1:,0] = phAr.iloc[1:,0] # Change here if shift wanted; can change udf inputs if needed
       lshi.iloc[1:,0] = phAr.iloc[1:,0]
-      axs[0].plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
-      axs[1].plot(np.multiply(lshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
+      if double: 
+          axs[0].plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
+          axs[1].plot(np.multiply(lshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
+      else: 
+          ax.plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
 
       # Plot chain types (zorder 2)
       step = 1
-      for j in range(len(block_Nik)):
-        axs[0].plot(np.multiply(phAT.iloc[1:,0], div[k]), phAT.iloc[1:,j+1], '-',  zorder=2, color=lighten_color(colors_i[k], amount=0.50),label='_Total')
+      if double:
+          for j in range(len(block_Nik)):
+            axs[0].plot(np.multiply(phAT.iloc[1:,0], div[k]), phAT.iloc[1:,j+1], '-',  zorder=2, color=lighten_color(colors_i[k], amount=0.50),label='_Total')
 
-        #Plot block densities (zorder 3)
-        for i in range(block_Nik[j]):
-          if (i == block1): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
-          if (i == block2): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+            #Plot block densities (zorder 3)
+            for i in range(block_Nik[j]):
+              if (i == block1): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+              if (i == block2): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+                
+            step += block_Nik[j]
+      else: 
+          for j in range(len(block_Nik)):
+            ax.plot(np.multiply(phAT.iloc[1:,0], div[k]), phAT.iloc[1:,j+1], '-',  zorder=2, color=lighten_color(colors_i[k], amount=0.50),label='_Total')
 
-        step += block_Nik[j]
+            #Plot block densities (zorder 3)
+            for i in range(block_Nik[j]):
+              if (i == block1): ax.plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+
+            step += block_Nik[j]
 
     conf = [Patch(facecolor=i, edgecolor='k', lw=1.5) for i in colors_i]
     conf += [
               Line2D([0], [0], color='k', ls='-'),
               Line2D([0], [0], color='k', ls='--'),
             ]
-    for i in range(2):
-      axs[0].set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
-      axs[i].set_xlabel("Length (z, nm)")
-      axs[i].set_yscale('linear')
+    if double: 
+        for i in range(2):
+          axs[0].set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
+          axs[i].set_xlabel("Length (z, nm)")
+          axs[i].set_yscale('linear')
 
-    axs[0].set_ylim(y1_start, y1_end)
-    axs[1].set_ylim(y2_start, y2_end)
-    axs[0].set_xlim(x1_start, x1_end)
-    axs[1].set_xlim(x2_start, x2_end)
+        axs[0].set_ylim(y1_start, y1_end)
+        axs[1].set_ylim(y2_start, y2_end)
+        axs[0].set_xlim(x1_start, x1_end)
+        axs[1].set_xlim(x2_start, x2_end)
 
-    leg = axs[1].legend(loc=1)
+        leg = axs[1].legend(loc=1)
 
+    else: 
+        ax.set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
+        ax.set_xlabel("Length (z, nm)")
+        ax.set_ylim(y1_start, y1_end)
+        ax.set_xlim(x1_start, x1_end)
+        leg = ax.legend(loc=1)
+        
     #plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=2.0)
     plt.show()
     return

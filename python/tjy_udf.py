@@ -95,6 +95,7 @@ def plot_pha(read_list, labs=[], b0=1.0,
             for i in range(block_Nik[j]):
               if (i == block1): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
               if (i == block2): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+                
             step += block_Nik[j]
       else: 
           for j in range(len(block_Nik)):
@@ -111,18 +112,26 @@ def plot_pha(read_list, labs=[], b0=1.0,
               Line2D([0], [0], color='k', ls='-'),
               Line2D([0], [0], color='k', ls='--'),
             ]
-    for i in range(2):
-      axs[0].set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
-      axs[i].set_xlabel("Length (z, nm)")
-      axs[i].set_yscale('linear')
+    if double: 
+        for i in range(2):
+          axs[0].set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
+          axs[i].set_xlabel("Length (z, nm)")
+          axs[i].set_yscale('linear')
 
-    axs[0].set_ylim(y1_start, y1_end)
-    axs[1].set_ylim(y2_start, y2_end)
-    axs[0].set_xlim(x1_start, x1_end)
-    axs[1].set_xlim(x2_start, x2_end)
+        axs[0].set_ylim(y1_start, y1_end)
+        axs[1].set_ylim(y2_start, y2_end)
+        axs[0].set_xlim(x1_start, x1_end)
+        axs[1].set_xlim(x2_start, x2_end)
 
-    leg = axs[1].legend(loc=1)
+        leg = axs[1].legend(loc=1)
 
+    else: 
+        ax.set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
+        ax.set_xlabel("Length (z, nm)")
+        ax.set_ylim(y1_start, y1_end)
+        ax.set_xlim(x1_start, x1_end)
+        leg = ax.legend(loc=1)
+        
     #plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=2.0)
     plt.show()
     return
