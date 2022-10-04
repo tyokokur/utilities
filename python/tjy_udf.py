@@ -1,4 +1,4 @@
-def plot_pha(read_list, b0=1.0, y1_start=0, y1_end=1.00, y2_start=0, y2_end=1.00, x1_start=0, x1_end=100, x2_start=0, x2_end=100): 
+def plot_pha(read_list, labs=read_list, b0=1.0, y1_start=0, y1_end=1.00, y2_start=0, y2_end=1.00, x1_start=0, x1_end=100, x2_start=0, x2_end=100): 
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
@@ -67,7 +67,7 @@ def plot_pha(read_list, b0=1.0, y1_start=0, y1_end=1.00, y2_start=0, y2_end=1.00
       rshi.iloc[1:,0] = phAr.iloc[1:,0] # Change here if shift wanted; can change udf inputs if needed
       lshi.iloc[1:,0] = phAr.iloc[1:,0]
       axs[0].plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
-      axs[1].plot(np.multiply(lshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=read_list[k])
+      axs[1].plot(np.multiply(lshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
 
       # Plot chain types (zorder 2)
       step = 1
