@@ -5,7 +5,7 @@ def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, y2_start=0, y2
     from matplotlib.patches import Patch
     from matplotlib import ticker
    
-    if 
+    if not labs: labs = read_list #If labs is empty, default is read_list
     
     div = [b0]*len(read_list) #b0
     block_Num = len(read_list)
