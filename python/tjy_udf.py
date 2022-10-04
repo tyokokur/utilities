@@ -1,4 +1,6 @@
 def plot_pha(read_list, b0=1.0): 
+    from matplotlib import animation, rc
+    import numpy as np, pandas as pd, matplotlib.pyplot as plt
     
     div = [b0]*len(read_list) #b0
     block_Num = len(read_list)
