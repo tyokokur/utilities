@@ -1,4 +1,4 @@
-def plot_pha(read_list, b0=1.0, 
+def plot_pha(read_list, b0=1.0): 
     
     div = [b0]*len(read_list) #b0
     block_Num = len(read_list)
