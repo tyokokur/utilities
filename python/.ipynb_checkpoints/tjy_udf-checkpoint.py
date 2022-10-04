@@ -73,8 +73,8 @@ def plot_pha(read_list, b0=1.0):
 
         #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
-          if (i == 3): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=tjy.lighten_color(colors_i[k], amount=0.60),label='_Block')
-          if (i == 3): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=tjy.lighten_color(colors_i[k], amount=0.60),label='_Block')
+          if (i == 3): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+          if (i == 3): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
 
         step += block_Nik[j]
 
