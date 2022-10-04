@@ -1,4 +1,4 @@
-def plot_pha(filename, b0=1.0, 
+def plot_pha(read_list, b0=1.0, 
     
     div = [b0]*len(read_list) #b0
     block_Num = len(read_list)
@@ -6,7 +6,7 @@ def plot_pha(filename, b0=1.0,
     colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
     colors_i = [colors[i] for i in range(len(read_list))]
 
-    fig, axs = plt.subplots(1,2, figsize=(18,7)) 
+    fig, axs = plt.subplots(1,2, figsize=(10,5)) 
 
     for k in range(len(read_list)):
       block_Nik = block_Ni[k]
