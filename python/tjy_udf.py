@@ -1,6 +1,6 @@
-def plot_pha(
-
-    div = [1.4]*len(read_list) #b0
+def plot_pha(filename, b0=1.0, 
+    
+    div = [b0]*len(read_list) #b0
     block_Num = len(read_list)
     block_Ni = [[4,7]]*len(read_list) 
     colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
@@ -21,9 +21,7 @@ def plot_pha(
         c += block_Nik[j]
 
       names += ['phB']
-
-      df = pd.read_csv(start+read_list[k]+end+".dat", sep="\s+", skiprows=0, names=names)
-
+      df = pd.read_csv(filename, sep="\s+", skiprows=0, names=names)
       Nx = len(df.index)
 
       for i in range(len(block_Nik)*2):
@@ -61,7 +59,7 @@ def plot_pha(
       lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
       # Plot total density (zorder 3)
-      rshi.iloc[1:,0] = phAr.iloc[1:,0] # Change here if shift
+      rshi.iloc[1:,0] = phAr.iloc[1:,0] # Change here if shift wanted; can change udf inputs if needed
       lshi.iloc[1:,0] = phAr.iloc[1:,0]
       axs[0].plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
       axs[1].plot(np.multiply(lshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=read_list[k])
