@@ -23,7 +23,7 @@ def plot_pha(read_list, b0=1.0):
         c += block_Nik[j]
 
       names += ['phB']
-      df = pd.read_csv(filename, sep="\s+", skiprows=0, names=names)
+      df = pd.read_csv(read_list[k], sep="\s+", skiprows=0, names=names)
       Nx = len(df.index)
 
       for i in range(len(block_Nik)*2):
