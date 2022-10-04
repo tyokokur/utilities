@@ -7,7 +7,6 @@ def plot_pha(read_list, b0=1.0):
     block_Ni = [[4,7]]*len(read_list) 
     colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
     colors_i = [colors[i] for i in range(len(read_list))]
-    print('new')
 
     fig, axs = plt.subplots(1,2, figsize=(10,5)) 
 
