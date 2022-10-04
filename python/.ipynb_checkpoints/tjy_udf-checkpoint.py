@@ -1,6 +1,9 @@
 def plot_pha(read_list, b0=1.0): 
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
+    from matplotlib.patches import Patch
+    from matplotlib import ticker
     
     div = [b0]*len(read_list) #b0
     block_Num = len(read_list)
