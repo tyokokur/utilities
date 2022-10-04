@@ -1,4 +1,6 @@
-def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, y2_start=None, y2_end=None,  x2_start=None, x2_end=None): 
+def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
+             y2_start=None, y2_end=None, x2_start=None, x2_end=None,
+             block1 = None, block2 = None): 
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
@@ -83,8 +85,8 @@ def plot_pha(read_list, labs=[], b0=1.0, y1_start=0, y1_end=1.00, x1_start=0, x1
 
         #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
-          if (i == 3): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
-          if (i == 3): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+          if (i == block1): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+          if (i == block2): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
 
         step += block_Nik[j]
 
