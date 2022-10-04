@@ -139,7 +139,7 @@ def H_find(filename, b0, thresh):
 
     diff = 100
     for i in range(Nx):
-        if np.isnan(phA.iloc[i, 1]) return 0
+        if np.isnan(phA.iloc[i, 1]): return 0
         new_diff = np.abs(phA.iloc[i, 1] - thresh)
         if new_diff < diff: 
             diff = new_diff
