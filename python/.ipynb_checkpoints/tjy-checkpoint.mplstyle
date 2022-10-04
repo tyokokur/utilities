@@ -15,7 +15,7 @@ axes.labelpad:     10
 
 lines.linewidth:   2.0
 lines.markersize:  6
-lines.markeredgeweight: 1.5
+lines.markeredgewidth: 1.5
 
 xtick.direction:   in
 xtick.major.size:  6
