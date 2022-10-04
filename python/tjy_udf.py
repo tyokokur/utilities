@@ -86,13 +86,12 @@ def plot_pha(read_list, b0=1.0,
       axs[i].set_xlabel("Length (z, nm)")
       axs[i].set_yscale('linear')
 
-    axs[0].set_ylim(0, 1.00)
-    axs[1].set_ylim(0, 0.020)
-    axs[0].set_xlim(0, 20)
-    axs[1].set_xlim(0, 30)
+    axs[0].set_ylim(y1_start, y1_end)
+    axs[1].set_ylim(y2_start, y2_end)
+    axs[0].set_xlim(x1_start, x1_end)
+    axs[1].set_xlim(x2_start, x2_end)
 
     leg = axs[1].legend(loc=1)
-    leg.get_frame().set_linewidth(3.0)
 
     #plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=2.0)
     plt.show()
