@@ -129,6 +129,7 @@ def plot_pha(read_list, labs=[], b0=1.0,
     else: 
         ax.set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
         ax.set_xlabel("Length (z, nm)")
+        ax.set_yscale('linear')
         ax.set_ylim(y1_start, y1_end)
         ax.set_xlim(x1_start, x1_end)
         leg = ax.legend(loc=1)
