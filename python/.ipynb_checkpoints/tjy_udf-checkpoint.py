@@ -1,4 +1,4 @@
-def plot_pha(read_list, b0=1.0): 
+def plot_pha(read_list, b0=1.0, y1_start=0, y1_end=1.00, y2_start=0, y2_end=1.00, x1_start=0, x1_end=100, x2_start=0, x2_end=100): 
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
