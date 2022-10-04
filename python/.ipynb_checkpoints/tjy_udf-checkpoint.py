@@ -69,7 +69,7 @@ def plot_pha(read_list, b0=1.0):
       # Plot chain types (zorder 2)
       step = 1
       for j in range(len(block_Nik)):
-        axs[0].plot(np.multiply(phAT.iloc[1:,0], div[k]), phAT.iloc[1:,j+1], '-',  zorder=2, color=tjy.lighten_color(colors_i[k], amount=0.50),label='_Total')
+        axs[0].plot(np.multiply(phAT.iloc[1:,0], div[k]), phAT.iloc[1:,j+1], '-',  zorder=2, color=lighten_color(colors_i[k], amount=0.50),label='_Total')
 
         #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
