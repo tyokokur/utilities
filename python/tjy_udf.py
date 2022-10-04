@@ -1,3 +1,105 @@
+def plot_pha(
+
+    div = [1.4]*len(read_list) #b0
+    block_Num = len(read_list)
+    block_Ni = [[4,7]]*len(read_list) 
+    colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
+    colors_i = [colors[i] for i in range(len(read_list))]
+
+    fig, axs = plt.subplots(1,2, figsize=(18,7)) 
+
+    for k in range(len(read_list)):
+      block_Nik = block_Ni[k]
+      a = 1
+      b = 1
+      c = 1
+      names = ['rx', 'phA']
+      for j in range(len(block_Nik)):
+        names += ['phA_T{:d}'.format(a)] +  ['*'*b]+ ['ph{:d}'.format(c+i) for i in range(block_Nik[j])] + ['*'*(b+1)]
+        a += 1
+        b += 2
+        c += block_Nik[j]
+
+      names += ['phB']
+
+      df = pd.read_csv(start+read_list[k]+end+".dat", sep="\s+", skiprows=0, names=names)
+
+      Nx = len(df.index)
+
+      for i in range(len(block_Nik)*2):
+        names.remove('*'*(i+1))
+        df = df.drop('*'*(i+1),axis=1)
+
+      Nx = len(df.index)
+      rows = range(0, Nx)
+
+      rows = range(0, Nx)
+
+      phAr = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
+      phAr = phAr.fillna(0) # with 0s rather than NaNs
+      phAT = pd.DataFrame(data=None, index=rows, columns=range(1+len(block_Nik)), dtype=None, copy=False)
+      phAT = phAT.fillna(0) # with 0s rather than NaNs
+      ph1r = pd.DataFrame(data=None, index=rows, columns=range(1+sum(block_Nik)), dtype=None, copy=False)
+      ph1r = ph1r.fillna(0) # with 0s rather than NaNs
+
+      phB = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
+      phB = phB.fillna(0) # with 0s rather than NaNs
+
+      ph1r = df.loc[:, ['ph{:d}'.format(i+1) for i in range(sum(block_Nik))]]
+      ph1r.insert(0, 'rx', df.iloc[:,0])
+
+      phAT = df.loc[:, ['phA_T{:d}'.format(i+1) for i in range(len(block_Nik))]]
+      phAT.insert(0, 'rx', df.iloc[:,0])
+
+      for i in range(Nx):
+        phAr.iloc[i, 0] = df.iloc[i,0]
+        phAr.iloc[i, 1] = df.iloc[i,1] 
+        phB.iloc[i, 0] = df.iloc[i, 0]
+        phB.iloc[i, 1] = df.iloc[i, 2 + sum(block_Nik) + len(block_Nik)] 
+
+      rshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
+      lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
+
+      # Plot total density (zorder 3)
+      rshi.iloc[1:,0] = phAr.iloc[1:,0] # Change here if shift
+      lshi.iloc[1:,0] = phAr.iloc[1:,0]
+      axs[0].plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
+      axs[1].plot(np.multiply(lshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=read_list[k])
+
+      # Plot chain types (zorder 2)
+      step = 1
+      for j in range(len(block_Nik)):
+        axs[0].plot(np.multiply(phAT.iloc[1:,0], div[k]), phAT.iloc[1:,j+1], '-',  zorder=2, color=tjy.lighten_color(colors_i[k], amount=0.50),label='_Total')
+
+        #Plot block densities (zorder 3)
+        for i in range(block_Nik[j]):
+          if (i == 3): axs[0].plot(np.multiply(ph1r.iloc[1:,0], div[k]), ph1r.iloc[1:,i+step], '--',  zorder=3, color=tjy.lighten_color(colors_i[k], amount=0.60),label='_Block')
+          if (i == 3): axs[1].plot(np.multiply(ph1r.iloc[1:,0], div[k]), np.multiply(ph1r.iloc[1:,i+step],1), '--',  zorder=3, color=tjy.lighten_color(colors_i[k], amount=0.60),label='_Block')
+
+        step += block_Nik[j]
+
+    conf = [Patch(facecolor=i, edgecolor='k', lw=1.5) for i in colors_i]
+    conf += [
+              Line2D([0], [0], color='k', ls='-'),
+              Line2D([0], [0], color='k', ls='--'),
+            ]
+    for i in range(2):
+      axs[0].set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
+      axs[i].set_xlabel("Length (z, nm)")
+      axs[i].set_yscale('linear')
+
+    axs[0].set_ylim(0, 1.00)
+    axs[1].set_ylim(0, 0.020)
+    axs[0].set_xlim(0, 20)
+    axs[1].set_xlim(0, 30)
+
+    leg = axs[1].legend(loc=1)
+    leg.get_frame().set_linewidth(3.0)
+
+    #plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=2.0)
+    plt.show()
+    return
+    
 def lighten_color(color, amount=0.5):
     """
     Lightens the given color by multiplying (1-luminosity) by the given amount.
