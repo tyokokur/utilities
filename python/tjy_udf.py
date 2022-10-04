@@ -84,7 +84,7 @@ def plot_pha(read_list, labs=[], b0=1.0,
           axs[0].plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
           axs[1].plot(np.multiply(lshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
       else: 
-          ax.plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0)
+          ax.plot(np.multiply(rshi.iloc[1:,0], div[k]), phAr.iloc[1:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
 
       # Plot chain types (zorder 2)
       step = 1
