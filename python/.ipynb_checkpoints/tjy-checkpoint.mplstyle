@@ -1,8 +1,8 @@
 figure.figsize:    6.4, 4.8
 
 font.family:       serif
-font.sans-serif:   helvetica
-font.serif:        cm
+font.sans-serif:   Helvetica
+font.serif:        Computer Modern 
 font.weight:       normal
 
 text.usetex:       False
