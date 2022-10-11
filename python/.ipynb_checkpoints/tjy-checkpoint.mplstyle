@@ -41,4 +41,3 @@ legend.edgecolor:  0.0
 legend.borderaxespad: 1.0
 
 savefig.dpi:       900
-savefig.bbox:      tight
