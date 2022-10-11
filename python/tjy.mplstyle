@@ -1,6 +1,5 @@
 figure.figsize:    6.4, 4.8
 
-ps.useafm:         True
 font.family:       serif
 font.sans-serif:   Helvetica
 font.serif:        Computer Modern 
