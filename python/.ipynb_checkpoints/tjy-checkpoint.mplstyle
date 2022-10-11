@@ -1,11 +1,11 @@
 figure.figsize:    6.4, 4.8
 
-font.family:       sans-serif
+font.family:       serif
 font.sans-serif:   helvetica
 font.serif:        cm
 font.weight:       normal
 
-text.usetex:       True 
+text.usetex:       False
 text.latex.preamble: \usepackage{bm,mathtools,amsmath}
 
 axes.titlesize:    24
