@@ -1,5 +1,4 @@
 figure.figsize:    6.4, 4.8
-figure.constrained_layout.use: True
 
 font.family:       sans-serif
 font.sans-serif:   helvetica
