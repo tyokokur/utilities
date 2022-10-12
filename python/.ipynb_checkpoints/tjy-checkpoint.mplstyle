@@ -1,13 +1,13 @@
 figure.figsize:    6.4, 4.8
 
-ps.useafm:         True
-font.family:       serif
-font.sans-serif:   Helvetica
-font.serif:        Computer Modern 
+font.family:       sans-serif
+font.sans-serif:   TeX Gyre Heros 
+font.serif:        CMU Serif 
 font.weight:       normal
 
 text.usetex:       False
 text.latex.preamble: \usepackage{bm,mathtools,amsmath}
+mathtext.fontset:  cm 
 
 axes.titlesize:    24
 axes.titlepad:     10

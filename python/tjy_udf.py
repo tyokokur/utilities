@@ -1,3 +1,25 @@
+def ticks(axs = None, dim = 1):
+    import matplotlib.pyplot as plt, numpy as np
+    
+    kw = {'fontname': 'serif'}
+    if not np.any(axs): 
+        plt.yticks(**kw) 
+        plt.xticks(**kw)
+    
+    if dim != 1:  # Coded for dim = 2, generalize later if needed 
+        for i in axs:
+            for j in i: 
+                plt.sca(j)
+                plt.yticks(**kw)
+                plt.xticks(**kw)
+        return
+                
+    for i in axs: 
+        plt.sca(i)
+        plt.yticks(**kw)
+        plt.xticks(**kw)
+    return
+        
 def plot_pha(read_list, labs=[], b0=1.0, 
              double=True,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
