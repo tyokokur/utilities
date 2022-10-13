@@ -179,7 +179,8 @@ def lighten_color(color, amount=0.5):
     c = colorsys.rgb_to_hls(*mc.to_rgb(c))
     return colorsys.hls_to_rgb(c[0], 1 - amount * (1 - c[1]), c[2])
 
-def H_find(filename, b0=1.0, thresh=1e-04):
+def H_find(filename, alg, b0=1.0, thresh=1e-04):
+    ## Alg options: thresh, m
     import pandas as pd, numpy as np
 
     df = pd.read_csv(filename, sep="\s+", skiprows=0)
