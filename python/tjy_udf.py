@@ -180,7 +180,7 @@ def lighten_color(color, amount=0.5):
     return colorsys.hls_to_rgb(c[0], 1 - amount * (1 - c[1]), c[2])
 
 def H_find(filename, alg, b0=1.0, thresh=1e-04):
-    ## Alg options: thresh, m
+    ## Alg options: thresh, maxpt, norm
     import pandas as pd, numpy as np
 
     df = pd.read_csv(filename, sep="\s+", skiprows=0)
@@ -194,27 +194,41 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
         phA.iloc[i, 0] = df.iloc[i,0] * b0
         phA.iloc[i, 1] = df.iloc[i,1] 
 
-    diff = 100
-    for i in range(Nx):
-        if np.isnan(phA.iloc[i, 1]): return 0
-        new_diff = np.abs(phA.iloc[i, 1] - thresh)
-        if new_diff < diff: 
-            diff = new_diff
-            x1 = phA.iloc[i, 0]
-            y1 = phA.iloc[i, 1]
-            if y1 > thresh :
-                x2 = phA.iloc[i+1, 0]
-                y2 = phA.iloc[i+1, 1]
-            else: 
-                x2 = phA.iloc[i-1, 0]
-                y2 = phA.iloc[i-1, 1]
+    if alg == 'thresh': 
+        diff = 100
+        for i in range(Nx):
+            if np.isnan(phA.iloc[i, 1]): return 0
+            new_diff = np.abs(phA.iloc[i, 1] - thresh)
+            if new_diff < diff: 
+                diff = new_diff
+                x1 = phA.iloc[i, 0]
+                y1 = phA.iloc[i, 1]
+                if y1 > thresh :
+                    x2 = phA.iloc[i+1, 0]
+                    y2 = phA.iloc[i+1, 1]
+                else: 
+                    x2 = phA.iloc[i-1, 0]
+                    y2 = phA.iloc[i-1, 1]
 
-    m = (y2-y1)/(x2-x1)
-    b = y2 - m * x2
-    x = (thresh - b) / m
-    y = m*x + b
-  
-    return x
+        m = (y2-y1)/(x2-x1)
+        b = y2 - m * x2
+        x = (thresh - b) / m
+        y = m*x + b
+
+        return x
+    
+    if alg == 'maxpt': 
+        dx = (phA.iloc[1,0] - phA.iloc[0, 0]) #Assuming equally spaced
+        maxpt = np.argmax(phA.iloc[:,1])
+
+        sum = 0
+        for i in range(maxpt, np.max(phA.index)):
+        sum += phA.iloc[i, 1]
+        sum *= dx 
+
+        rGibbs =  sum / phA.iloc[maxpt, 1] + phA.iloc[maxpt, 0]
+        
+        return 
 
 def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
   ## Paste GIT_REPO/REPO_sub (e.g. tmpdat/sysg) into Google Colab pwd
