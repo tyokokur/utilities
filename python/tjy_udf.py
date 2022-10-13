@@ -230,7 +230,7 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
         
         return rGibbs
     
-    if alg == 'norm:
+    if alg == 'norm':
         dx = (phA.iloc[1,0] - phA.iloc[0, 0]) #Assuming equally spaced
 
         sum = 0
