@@ -228,7 +228,25 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
 
         rGibbs =  sum / phA.iloc[maxpt, 1] + phA.iloc[maxpt, 0]
         
-        return 
+        return rGibbs
+    
+    if alg == 'norm:
+        dx = (phA.iloc[1,0] - phA.iloc[0, 0]) #Assuming equally spaced
+
+        sum = 0
+        sum2 = 0
+        for i in range(0, np.max(phA.index)):
+        sum += phA.iloc[i, 1]
+        sum2 += phA.iloc[i, 1] * phA.iloc[i, 0]
+        sum *= dx 
+        sum2 *= dx
+
+        rGibbs =  2 * sum2 / sum 
+        
+        return rGibbs
+
+    print('Alg not recognized')
+    return
 
 def git_sync(GIT_REPO, REPO_SUB, GIT_CREDS):
   ## Paste GIT_REPO/REPO_sub (e.g. tmpdat/sysg) into Google Colab pwd
