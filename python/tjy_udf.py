@@ -223,9 +223,8 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
 
         sum = 0
         for i in range(maxpt, np.max(phA.index)):
-        sum += phA.iloc[i, 1]
+            sum += phA.iloc[i, 1]
         sum *= dx 
-
         rGibbs =  sum / phA.iloc[maxpt, 1] + phA.iloc[maxpt, 0]
         
         return rGibbs
@@ -236,11 +235,10 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
         sum = 0
         sum2 = 0
         for i in range(0, np.max(phA.index)):
-        sum += phA.iloc[i, 1]
-        sum2 += phA.iloc[i, 1] * phA.iloc[i, 0]
+            sum += phA.iloc[i, 1]
+            sum2 += phA.iloc[i, 1] * phA.iloc[i, 0]
         sum *= dx 
         sum2 *= dx
-
         rGibbs =  2 * sum2 / sum 
         
         return rGibbs
