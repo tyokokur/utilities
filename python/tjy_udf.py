@@ -1,4 +1,4 @@
-def ticks(axs = None, dim = 1):
+def ticks(axs = [], dim = 1):
     import matplotlib.pyplot as plt, numpy as np
     
     kw = {'fontname': 'serif'}
