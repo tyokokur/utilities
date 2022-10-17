@@ -7,20 +7,21 @@ def ticks(axs = []):
         plt.xticks(**kw)
     
     dims = np.shape(axs)
-    if dims[1] != None: 
-        for i in range(dims[0]): 
-            for j in range(dims[1]):
-                for k in axs[i,j]: 
-                    plt.sca(k)
-                    plt.yticks(**kw)
-                    plt.xticks(**kw)
+    try:
+        if dims[1] != None: 
+            for i in range(dims[0]): 
+                for j in range(dims[1]):
+                    for k in axs[i,j]: 
+                        plt.sca(k)
+                        plt.yticks(**kw)
+                        plt.xticks(**kw)
+            return
+    except:            
+        for i in axs: 
+            plt.sca(i)
+            plt.yticks(**kw)
+            plt.xticks(**kw)
         return
-                
-    for i in axs: 
-        plt.sca(i)
-        plt.yticks(**kw)
-        plt.xticks(**kw)
-    return
         
 def plot_pha(read_list, labs=[], b0=1.0, 
              double=True,
