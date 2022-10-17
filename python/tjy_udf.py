@@ -8,14 +8,13 @@ def ticks(axs = []):
     
     dims = np.shape(axs)
     try:
-        if dims[1] != None: 
-            for i in range(dims[0]): 
-                for j in range(dims[1]):
-                    for k in axs[i,j]: 
-                        plt.sca(k)
-                        plt.yticks(**kw)
-                        plt.xticks(**kw)
-            return
+        for i in range(dims[0]): 
+            for j in range(dims[1]):
+                for k in axs[i,j]: 
+                    plt.sca(k)
+                    plt.yticks(**kw)
+                    plt.xticks(**kw)
+        return
     except IndexError:            
         for i in axs: 
             plt.sca(i)
