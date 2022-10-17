@@ -7,11 +7,12 @@ def ticks(axs = [], dims = (1, None)):
         plt.xticks(**kw)
     
     if dims[1] != None: 
-        for i in range(dims[1]): 
-            for j in axs[i]:
-                plt.sca(j)
-                plt.yticks(**kw)
-                plt.xticks(**kw)
+        for i in range(dims[0]): 
+            for j in range(dims[1]):
+                for k in axs[i,j]: 
+                    plt.sca(k)
+                    plt.yticks(**kw)
+                    plt.xticks(**kw)
         return
                 
     for i in axs: 
@@ -386,4 +387,4 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
     else: 
         print("nframes, phn mismatch > 2")    
     
-    return 
+    return
