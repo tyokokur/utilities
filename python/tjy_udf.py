@@ -158,7 +158,7 @@ def plot_pha(read_list, labs=[], b0=1.0,
         leg = plt.legend(loc=1)
         
     #plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=2.0)
-    if double: ticks(axs, 2)
+    if double: ticks(axs, (1,2))
     else: ticks()
     plt.show()
     return
