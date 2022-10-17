@@ -8,7 +8,7 @@ def ticks(axs = [], dims = (1, None)):
     
     if dims[1] != None: 
         for i in range(dims[1]): 
-            for j in dims[i,:]:
+            for j in axs[i,:]:
                 for k in i: 
                     plt.sca(j)
                     plt.yticks(**kw)
