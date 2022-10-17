@@ -1,6 +1,6 @@
 def ticks(axs = [], dims = (1, None)):
     import matplotlib.pyplot as plt, numpy as np
-    
+    print(np.size(axs))    
     kw = {'fontname': 'serif'}
     if not np.any(axs): 
         plt.yticks(**kw) 
@@ -387,4 +387,4 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
     else: 
         print("nframes, phn mismatch > 2")    
     
-    return
+    return 

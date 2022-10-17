@@ -1,6 +1,6 @@
 def ticks(axs = [], dims = (1, None)):
     import matplotlib.pyplot as plt, numpy as np
-    
+    print(np.size(axs))    
     kw = {'fontname': 'serif'}
     if not np.any(axs): 
         plt.yticks(**kw) 
@@ -8,7 +8,7 @@ def ticks(axs = [], dims = (1, None)):
     
     if dims[1] != None: 
         for i in range(dims[0]): 
-            for j in range(dims[1]:
+            for j in range(dims[1]):
                 for k in axs[i,j]: 
                     plt.sca(k)
                     plt.yticks(**kw)
