@@ -1,6 +1,6 @@
 def ticks(axs = [], dims = (1, None)):
     import matplotlib.pyplot as plt, numpy as np
-    print(np.size(axs))    
+    print(np.shape(axs))    
     kw = {'fontname': 'serif'}
     if not np.any(axs): 
         plt.yticks(**kw) 
