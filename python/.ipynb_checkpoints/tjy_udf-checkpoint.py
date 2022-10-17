@@ -16,7 +16,7 @@ def ticks(axs = []):
                         plt.yticks(**kw)
                         plt.xticks(**kw)
             return
-    except:            
+    except IndexError:            
         for i in axs: 
             plt.sca(i)
             plt.yticks(**kw)
