@@ -7,11 +7,12 @@ def ticks(axs = [], dims = (1, None)):
         plt.xticks(**kw)
     
     if dims[1] != None: 
-        for i in axs:
-            for j in i: 
-                plt.sca(j)
-                plt.yticks(**kw)
-                plt.xticks(**kw)
+        for i in range(dims[1]): 
+            for j in dims[i,:]:
+                for k in i: 
+                    plt.sca(j)
+                    plt.yticks(**kw)
+                    plt.xticks(**kw)
         return
                 
     for i in axs: 
