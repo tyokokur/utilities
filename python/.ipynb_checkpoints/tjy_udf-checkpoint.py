@@ -1,11 +1,12 @@
-def ticks(axs = [], dims = (1, None)):
+def ticks(axs = []):
     import matplotlib.pyplot as plt, numpy as np
-    print(np.shape(axs))    
+    
     kw = {'fontname': 'serif'}
     if not np.any(axs): 
         plt.yticks(**kw) 
         plt.xticks(**kw)
     
+    dims = np.shape(axs)
     if dims[1] != None: 
         for i in range(dims[0]): 
             for j in range(dims[1]):
@@ -158,7 +159,7 @@ def plot_pha(read_list, labs=[], b0=1.0,
         leg = plt.legend(loc=1)
         
     #plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=2.0)
-    if double: ticks(axs, (1,2))
+    if double: ticks(axs)
     else: ticks()
     plt.show()
     return
