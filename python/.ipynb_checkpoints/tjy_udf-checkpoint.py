@@ -305,7 +305,7 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
     print("phn len ", np.size(phn, 0))
 
     # create a figure and axes
-    fig = plt.figure()
+    fig = plt.figure(figsize=(10, 7))
     ax1 = plt.subplot(1,2,1)
     ax2 = plt.subplot(2,4,3)
     ax3 = plt.subplot(2,4,4)
@@ -384,7 +384,7 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
 
     if np.abs(nframes-np.size(phn, 0))<=2:
         anim = animation.FuncAnimation(fig, drawframe, frames=100, interval=100, blit=True)
-        display(HTML(anim.to_jshtml()))
+        display(HTML(anim.to_HTML5_video()))
     else: 
         print("nframes, phn mismatch > 2")    
     
