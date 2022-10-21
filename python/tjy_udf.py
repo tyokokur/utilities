@@ -384,7 +384,7 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
 
     if np.abs(nframes-np.size(phn, 0))<=2:
         anim = animation.FuncAnimation(fig, drawframe, frames=100, interval=100, blit=True)
-        display(HTML(anim.to_HTML5_video()))
+        display(HTML(anim.to_html5_video()))
     else: 
         print("nframes, phn mismatch > 2")    
     
