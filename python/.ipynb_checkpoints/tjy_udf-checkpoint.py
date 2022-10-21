@@ -280,7 +280,7 @@ def Kap_D(Cs):
   kappa = sqrt(4*pi * lb * (1*Cs + 1*Cs))
   return kappa
 
-def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=1.0, html_render='jshtml'):
+def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=1.0):
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
     from IPython.display import HTML, display
@@ -384,7 +384,6 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
 
     if np.abs(nframes-np.size(phn, 0))<=2:
         anim = animation.FuncAnimation(fig, drawframe, frames=100, interval=100, blit=True)
-        display(HTML(anim.to_html5_video()))
     else: 
         print("nframes, phn mismatch > 2")    
     
