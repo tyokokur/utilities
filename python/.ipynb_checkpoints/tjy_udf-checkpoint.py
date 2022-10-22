@@ -305,7 +305,7 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
     print("phn len ", np.size(phn, 0))
 
     # create a figure and axes
-    fig = plt.figure(figsize=(10, 7))
+    fig = plt.figure(figsize=(12, 7))
     ax1 = plt.subplot(1,2,1)
     ax2 = plt.subplot(2,4,3)
     ax3 = plt.subplot(2,4,4)
@@ -348,9 +348,6 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
     line2, = ax2.plot([], [], 'r')
     line3, = ax3.plot([], [], 'b')
     line4, = ax4.plot([], [], 'g')
-
-    ## Comment to preview subplots
-    plt.close()
 
     # animation function. This is called sequentially
     def drawframe(n):
