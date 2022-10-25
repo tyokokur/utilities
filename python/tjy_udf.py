@@ -186,8 +186,11 @@ def lighten_color(color, amount=0.5):
 def H_find(filename, alg, b0=1.0, thresh=1e-04):
     ## Alg options: thresh, maxpt, norm
     import pandas as pd, numpy as np
+    from urllib.error import HTTPError
 
-    df = pd.read_csv(filename, sep="\s+", skiprows=0)
+    try: df = pd.read_csv(filename, sep="\s+", skiprows=0)
+    except HTTPError: print('{} not found'.format(filename))
+    
     Nx = len(df.index)
     rows = range(0, Nx)
 
