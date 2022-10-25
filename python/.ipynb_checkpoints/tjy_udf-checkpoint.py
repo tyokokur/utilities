@@ -191,9 +191,9 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
 
     try: df = pd.read_csv(filename, sep="\s+", skiprows=0)
     except HTTPError: 
-        print('{} not found'.format(filename));
-        sys.tracebacklimit = 0
-        sys.exit(1)
+        # sys.tracebacklimit = 0
+        try: sys.exit('{} not found'.format(filename))
+        except SystemExit as message: print(message)
     
     Nx = len(df.index)
     rows = range(0, Nx)
