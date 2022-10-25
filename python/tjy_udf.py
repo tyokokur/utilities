@@ -193,7 +193,8 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
     except HTTPError: 
         print('{} not found'.format(filename))
         sys.tracebacklimit = 0
-        sys.exit(1)
+        try: sys.exit(1)
+        except: 
     
     Nx = len(df.index)
     rows = range(0, Nx)
