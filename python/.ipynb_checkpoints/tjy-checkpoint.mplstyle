@@ -7,11 +7,7 @@ font.weight:       normal
 
 text.usetex:       False
 text.latex.preamble: \usepackage{bm,mathtools,amsmath}
-mathtext.fontset:  custom
-mathtext.it:       cm 
-mathtext.rm:       CMU Serif
-mathtext.bf:       cm
-mathtext.fallback: cm
+mathtext.fontset:  cm
 
 axes.titlesize:    24
 axes.titlepad:     10
