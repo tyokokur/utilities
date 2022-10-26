@@ -162,7 +162,8 @@ def plot_pha(read_list, labs=[], b0=1.0,
     if double: ticks(axs)
     else: ticks()
     plt.show()
-    return
+    if double: return fig, axs
+    else: return fig, ax
     
 def lighten_color(color, amount=0.5):
     """
