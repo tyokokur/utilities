@@ -22,7 +22,7 @@ def ticks(axs = []):
             plt.xticks(**kw)
         return
         
-def plot_pha(read_list, labs=[], b0=1.0, 
+def plot_pha(read_list, labs=[], b0=1.0, show=True,
              double=True,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
              y2_start=None, y2_end=None, x2_start=None, x2_end=None,
@@ -161,7 +161,8 @@ def plot_pha(read_list, labs=[], b0=1.0,
     #plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=2.0)
     if double: ticks(axs)
     else: ticks()
-    plt.show()
+    if show: plt.show()
+    
     if double: return fig, axs
     else: return fig, ax
     
