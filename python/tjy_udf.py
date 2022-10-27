@@ -101,7 +101,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
 
       # Plot total density (zorder 3)
       rshi[0] = phAr[0] # Change here if shift wanted; can change udf inputs if needed
-      lshi.iloc[:,0] = phAr.iloc[:,0]
+      lshi[0] = phAr[0]
     
       if double: 
           axs[0].plot(np.multiply(rshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0)
