@@ -24,8 +24,8 @@ def ticks(axs = []):
         
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block2 = None, 
-             x1_shift=0, x2_shift=0,
-             double=True,
+             x1_shift = None, x2_shift = None,
+             double = True,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
              y2_start=None, y2_end=None, x2_start=None, x2_end=None):
     
@@ -101,8 +101,8 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
       rshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
       # Plot total density (zorder 3)
-      lshi[0] = phAr[0] + x1_shift # Shifted phA for axs[0]
-      rshi[0] = phAr[0] + x2_shift # Shifted phA for axs[1]
+      lshi[0] = phAr[0] + x1_shift[k] # Shifted phA for axs[0]
+      rshi[0] = phAr[0] + x2_shift[k] # Shifted phA for axs[1]
     
       if double: 
           axs[0].plot(np.multiply(lshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0)
