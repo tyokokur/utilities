@@ -100,7 +100,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
       lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
       # Plot total density (zorder 3)
-      rshi[0] = phAr[0] # Change here if shift wanted; can change udf inputs if needed
+      rshi[0] = phAr[0] 
       lshi[0] = phAr[0]
     
       if double: 
