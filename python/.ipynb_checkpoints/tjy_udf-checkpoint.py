@@ -107,10 +107,10 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
       rshi[0] = phAr[0] + x2_shift[k] # Shifted phA for axs[1]
     
       if double: 
-          axs[0].plot(np.multiply(lshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0)
-          axs[1].plot(np.multiply(rshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
+          axs[0].plot(np.multiply(lshi[0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0)
+          axs[1].plot(np.multiply(rshi[0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
       else: 
-          ax.plot(np.multiply(rshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
+          ax.plot(np.multiply(lshi[0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
 
       # Plot chain types (zorder 2)
       step = 1
