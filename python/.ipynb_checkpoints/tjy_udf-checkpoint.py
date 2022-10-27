@@ -34,6 +34,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
     from matplotlib.lines import Line2D
     from matplotlib.patches import Patch
     from matplotlib import ticker
+    from urllib.error import HTTPError
    
     # Defaults
     if not labs:     labs     = read_list
@@ -65,7 +66,9 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
         c += block_Nik[j]
 
       names += ['phB']
-      df = pd.read_csv(read_list[k], sep="\s+", skiprows=0, names=names)
+      try: df = pd.read_csv(read_list[k], sep="\s+", skiprows=0, names=names)
+      except HTTPError: 
+          print('{} not found'.format(read_list[k]))
       Nx = len(df.index)
 
       for i in range(len(block_Nik)*2):
