@@ -26,7 +26,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
              double=True,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
              y2_start=None, y2_end=None, x2_start=None, x2_end=None,
-             block1 = None, block2 = None): 
+             block_Ni = None, block1 = None, block2 = None): 
     
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
@@ -40,10 +40,9 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
     if not x2_end:   x2_end   = x1_end
     if not y2_start: y2_start = y1_start
     if not y2_end:   y2_end   = y1_end
+    if not block_Ni: block_Ni = [[5]]*len(read_list)
     
     div = [b0]*len(read_list) #b0
-    block_Num = len(read_list)
-    block_Ni = [[4,7]]*len(read_list) 
     colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
     colors_i = [colors[i] for i in range(len(read_list))]
 
