@@ -116,12 +116,12 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
       step = 1
       if double:
           for j in range(len(block_Nik)):
-            axs[0].plot(np.multiply(phAT.iloc[:,0], div[k]), phAT.iloc[:,j+1], '-',  zorder=2, color=lighten_color(colors_i[k], amount=0.50),label='_Total')
+            axs[0].plot(np.multiply(lshi[0], div[k]), phAT.iloc[:,j+1], '-',  zorder=2, color=lighten_color(colors_i[k], amount=0.50),label='_Total')
 
             #Plot block densities (zorder 3)
             for i in range(block_Nik[j]):
-              if (i == block1): axs[0].plot(np.multiply(ph1r.iloc[:,0], div[k]), ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
-              if (i == block2): axs[1].plot(np.multiply(ph1r.iloc[:,0], div[k]), np.multiply(ph1r.iloc[:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+              if (i == block1): axs[0].plot(np.multiply(lshi[0], div[k]), ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+              if (i == block2): axs[1].plot(np.multiply(rshi[0], div[k]), np.multiply(ph1r.iloc[:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
                 
             step += block_Nik[j]
       else: 
