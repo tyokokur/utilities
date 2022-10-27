@@ -100,12 +100,12 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
       lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
       # Plot total density (zorder 3)
-      rshi[0] = phAr[0] 
-      lshi[0] = phAr[0]
+      rshi[0] = phAr[0] # Shifted phA for axs[0]
+      lshi[0] = phAr[0] # Shifted phA for axs[1]
     
       if double: 
-          axs[0].plot(np.multiply(rshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0)
-          axs[1].plot(np.multiply(lshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
+          axs[0].plot(np.multiply(lshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0)
+          axs[1].plot(np.multiply(rshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
       else: 
           ax.plot(np.multiply(rshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0, label=labs[k])
 
