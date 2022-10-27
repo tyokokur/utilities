@@ -96,12 +96,12 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
         phB.iloc[i, 0] = df.iloc[i, 0]
         phB.iloc[i, 1] = df.iloc[i, 2 + sum(block_Nik) + len(block_Nik)] 
 
-      rshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
       lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
+      rshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
       # Plot total density (zorder 3)
-      rshi[0] = phAr[0] # Shifted phA for axs[0]
-      lshi[0] = phAr[0] # Shifted phA for axs[1]
+      lshi[0] = phAr[0] # Shifted phA for axs[0]
+      rshi[0] = phAr[0] # Shifted phA for axs[1]
     
       if double: 
           axs[0].plot(np.multiply(lshi.iloc[:,0], div[k]), phAr.iloc[:,1], color = colors[k], zorder = 3, alpha=1.0)
