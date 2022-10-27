@@ -37,6 +37,8 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
    
     # Defaults
     if not labs:     labs     = read_list
+    if not x1_shift: x1_shift = [0]*len(read_list)
+    if not x2_shift: x2_shift = [0]*len(read_list)
     if not x2_start: x2_start = x1_start
     if not x2_end:   x2_end   = x1_end
     if not y2_start: y2_start = y1_start
