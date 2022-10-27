@@ -23,10 +23,10 @@ def ticks(axs = []):
         return
         
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
+             block_Ni = None, block1 = None, block2 = None, 
              double=True,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
-             y2_start=None, y2_end=None, x2_start=None, x2_end=None,
-             block_Ni = None, block1 = None, block2 = None): 
+             y2_start=None, y2_end=None, x2_start=None, x2_end=None):
     
     from matplotlib import animation, rc
     import numpy as np, pandas as pd, matplotlib.pyplot as plt
@@ -100,7 +100,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
       rshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
       # Plot total density (zorder 3)
-      lshi[0] = phAr[0] # Shifted phA for axs[0]
+      lshi[0] = phAr[0] +  # Shifted phA for axs[0]
       rshi[0] = phAr[0] # Shifted phA for axs[1]
     
       if double: 
