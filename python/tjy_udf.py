@@ -47,7 +47,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
     if not block_Ni: block_Ni = [[5]]*len(read_list)
     
     div = [b0]*len(read_list) #b0
-    colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
+    colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']*5
     colors_i = [colors[i] for i in range(len(read_list))]
 
     if double: fig, axs = plt.subplots(1,2, figsize=(10,5)) 
