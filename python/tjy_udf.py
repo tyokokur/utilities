@@ -50,7 +50,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
     colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']*5
     colors_i = [colors[i] for i in range(len(read_list))]
 
-    if double: fig, axs = plt.subplots(1,2, figsize=(10,5)) 
+    if double: fig, axs = plt.subplots(1,2, figsize=[plt.rcParams['figure.figsize'][0]*2, plt.rcParams['figure.figsize'][1]]) 
     else: fig, ax = plt.subplots(1,1, figsize=(7,5)) 
 
     for k in range(len(read_list)):
