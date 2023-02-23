@@ -245,7 +245,10 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
 
     # Plot total density (zorder 3)
     lshi[0] = phAr[0] + x1_shift # Shifted phA for axs[0]
-    ushi[0] = phAr.iloc[:,1] + y1_shift # Shifted phA for axs[0]
+    if not y1_shift: 
+        ushi[0] = phAr.iloc[:,1] # Shifted phA for axs[0]
+    else: 
+        ushi[0] = phAr.iloc[:,1] + y1_shift
 
     ax.plot(lshi[0], ushi[0], color = color, zorder = 3, alpha=1.0, label=labs[k])
 
