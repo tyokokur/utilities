@@ -174,7 +174,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
 
 def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None,
-             x1_shift = None, x2_shift = None,
+             x1_shift = None, y1_shift = None,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
              color='C0'):
     ## VERSION for single file onto input ax
