@@ -192,8 +192,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     if not block_Ni: block_Ni = [[5]]
 
 
-    for k in range(1):
-      block_Nik = block_Ni[k]
+      block_Nik = block_Ni
       a = 1
       b = 1
       c = 1
@@ -242,17 +241,17 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
         phB.iloc[i, 1] = df.iloc[i, 2 + sum(block_Nik) + len(block_Nik)] 
 
     lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
+    ushi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
     # Plot total density (zorder 3)
     lshi[0] = phAr[0] + x1_shift[k] # Shifted phA for axs[0]
+    lshi[0] = phAr.iloc[:,1] + y1_shift[k] # Shifted phA for axs[0]
     
     ax.plot(lshi[0], phAr.iloc[:,1], color = color, zorder = 3, alpha=1.0, label=labs[k])
 
       # Plot chain types (zorder 2)
     step = 1
     for j in range(len(block_Nik)):
-        # ax.plot(lshi[0], phAT.iloc[:,j+1], '-',  zorder=2, color=lighten_color(color, amount=0.50),label='_Total')
-
         #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
             if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=0.60),label='_Block')
