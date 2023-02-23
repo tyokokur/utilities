@@ -250,7 +250,8 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     else: 
         ushi[0] = phAr.iloc[:,1] + y1_shift
 
-    ax.plot(lshi[0], ushi[0], color = color, zorder = 2, alpha=1.0, label=labs[0])
+    if not lightf: ax.plot(lshi[0], ushi[0], color = color, zorder = 2, alpha=1.0, label=labs[0])
+    else:          ax.plot(lshi[0], ushi[0], color = lighten_color(color, amount=lightf), zorder = 2, alpha=1.0, label=labs[0])
 
     # Plot chain types (zorder 2)
     step = 1
