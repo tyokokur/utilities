@@ -185,56 +185,56 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     from matplotlib.patches import Patch
     from matplotlib import ticker
     from urllib.error import HTTPError
-   
+
     # Defaults
     if not labs:     labs     = read_file
     if not x1_shift: x1_shift = 0
     if not block_Ni: block_Ni = [5]
 
 
-      block_Nik = block_Ni
-      a = 1
-      b = 1
-      c = 1
-      names = ['rx', 'phA']
-      for j in range(len(block_Nik)):
+    block_Nik = block_Ni
+    a = 1
+    b = 1
+    c = 1
+    names = ['rx', 'phA']
+    for j in range(len(block_Nik)):
         names += ['phA_T{:d}'.format(a)] +  ['*'*b]+ ['ph{:d}'.format(c+i) for i in range(block_Nik[j])] + ['*'*(b+1)]
         a += 1
         b += 2
         c += block_Nik[j]
 
-      names += ['phB']
-      try: df = pd.read_csv(read_file, sep="\s+", skiprows=0, names=names)
-      except HTTPError: 
-          print('{} not found'.format(read_file))
-      Nx = len(df.index)
+    names += ['phB']
+    try: df = pd.read_csv(read_file, sep="\s+", skiprows=0, names=names)
+    except HTTPError: 
+        print('{} not found'.format(read_file))
+    Nx = len(df.index)
 
-      for i in range(len(block_Nik)*2):
+    for i in range(len(block_Nik)*2):
         names.remove('*'*(i+1))
         df = df.drop('*'*(i+1),axis=1)
 
-      Nx = len(df.index)
-      rows = range(0, Nx)
+    Nx = len(df.index)
+    rows = range(0, Nx)
 
-      rows = range(0, Nx)
+    rows = range(0, Nx)
 
-      phAr = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
-      phAr = phAr.fillna(0) # with 0s rather than NaNs
-      phAT = pd.DataFrame(data=None, index=rows, columns=range(1+len(block_Nik)), dtype=None, copy=False)
-      phAT = phAT.fillna(0) # with 0s rather than NaNs
-      ph1r = pd.DataFrame(data=None, index=rows, columns=range(1+sum(block_Nik)), dtype=None, copy=False)
-      ph1r = ph1r.fillna(0) # with 0s rather than NaNs
+    phAr = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
+    phAr = phAr.fillna(0) # with 0s rather than NaNs
+    phAT = pd.DataFrame(data=None, index=rows, columns=range(1+len(block_Nik)), dtype=None, copy=False)
+    phAT = phAT.fillna(0) # with 0s rather than NaNs
+    ph1r = pd.DataFrame(data=None, index=rows, columns=range(1+sum(block_Nik)), dtype=None, copy=False)
+    ph1r = ph1r.fillna(0) # with 0s rather than NaNs
 
-      phB = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
-      phB = phB.fillna(0) # with 0s rather than NaNs
+    phB = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
+    phB = phB.fillna(0) # with 0s rather than NaNs
 
-      ph1r = df.loc[:, ['ph{:d}'.format(i+1) for i in range(sum(block_Nik))]]
-      ph1r.insert(0, 'rx', df.iloc[:,0])
+    ph1r = df.loc[:, ['ph{:d}'.format(i+1) for i in range(sum(block_Nik))]]
+    ph1r.insert(0, 'rx', df.iloc[:,0])
 
-      phAT = df.loc[:, ['phA_T{:d}'.format(i+1) for i in range(len(block_Nik))]]
-      phAT.insert(0, 'rx', df.iloc[:,0])
+    phAT = df.loc[:, ['phA_T{:d}'.format(i+1) for i in range(len(block_Nik))]]
+    phAT.insert(0, 'rx', df.iloc[:,0])
 
-      for i in range(Nx):
+    for i in range(Nx):
         phAr.iloc[i, 0] = df.iloc[i,0]
         phAr.iloc[i, 1] = df.iloc[i,1] 
         phB.iloc[i, 0] = df.iloc[i, 0]
@@ -252,10 +252,10 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
 
     ax.plot(lshi[0], ushi[0], color = color, zorder = 3, alpha=1.0, label=labs[k])
 
-      # Plot chain types (zorder 2)
+    # Plot chain types (zorder 2)
     step = 1
     for j in range(len(block_Nik)):
-        #Plot block densities (zorder 3)
+    #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
             if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=0.60),label='_Block')
 
