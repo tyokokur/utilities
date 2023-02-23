@@ -1,7 +1,7 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: fphas.eps
 %%Creator: Matplotlib v3.6.0, https://matplotlib.org/
-%%CreationDate: Thu Feb 23 00:46:10 2023
+%%CreationDate: Thu Feb 23 11:26:52 2023
 %%Orientation: portrait
 %%BoundingBox: 89 227 523 565
 %%HiResBoundingBox: 89.440000 227.634625 522.560000 564.365375
@@ -838,10 +838,49 @@ FontName currentdict end definefont pop
 /FontMatrix [0.001 0 0 0.001 0 0] def
 /FontBBox [-529 -284 1353 1148] def
 /FontType 3 def
-/Encoding [/space /m /M /zero /one /four /six] def
-/CharStrings 8 dict dup begin
+/Encoding [/space /b /parenleft /parenright /m /M /zero /one /four /six] def
+/CharStrings 11 dict dup begin
 /.notdef 0 def
 /space{278 0 0 0 0 0 sc
+ce} _d
+/b{556 0 54 -15 523 729 sc
+523 268 m
+523 438 437 539 299 539 c
+227 539 176 512 137 453 c
+137 729 l
+54 729 l
+54 0 l
+129 0 l
+129 75 l
+169 14 222 -15 295 -15 c
+433 -15 523 98 523 268 c
+
+436 263 m
+436 144 374 63 283 63 c
+195 63 137 143 137 262 c
+137 385 195 465 283 461 c
+376 461 436 380 436 263 c
+
+ce} _d
+/parenleft{333 0 73 -212 291 729 sc
+291 -212 m
+203 -69 154 99 154 259 c
+154 418 203 587 291 729 c
+236 729 l
+136 598 73 416 73 259 c
+73 101 136 -81 236 -212 c
+291 -212 l
+
+ce} _d
+/parenright{333 0 38 -212 256 729 sc
+256 258 m
+256 416 193 598 93 729 c
+38 729 l
+126 586 175 418 175 258 c
+175 99 126 -70 38 -212 c
+93 -212 l
+193 -81 256 101 256 258 c
+
 ce} _d
 /m{833 0 71 0 760 539 sc
 760 0 m
@@ -2285,6 +2324,15 @@ gsave
 /x glyphshow
 72.3958 -2.86479 moveto
 /y glyphshow
+grestore
+/TeXGyreHeros-Regular 24.000 selectfont
+gsave
+
+7.2 308.795 translate
+0 rotate
+0 0 m /parenleft glyphshow
+7.99199 0 m /b glyphshow
+21.336 0 m /parenright glyphshow
 grestore
 
 end
