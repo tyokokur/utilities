@@ -176,7 +176,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None,
              x1_shift = None, y1_shift = None,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
-             color='C0'):
+             color='C0', lightf=None):
     ## VERSION for single file onto input ax
     
     from matplotlib import animation, rc
@@ -257,7 +257,8 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     for j in range(len(block_Nik)):
     #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
-            if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=0.60),label='_Block')
+            if not lightf: if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=0.60),label='_Block')
+            else: if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
 
         step += block_Nik[j]
 
