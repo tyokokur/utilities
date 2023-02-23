@@ -189,7 +189,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     # Defaults
     if not labs:     labs     = read_file
     if not x1_shift: x1_shift = 0
-    if not block_Ni: block_Ni = [[5]]
+    if not block_Ni: block_Ni = [5]
 
 
       block_Nik = block_Ni
@@ -244,10 +244,10 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     ushi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
     # Plot total density (zorder 3)
-    lshi[0] = phAr[0] + x1_shift[k] # Shifted phA for axs[0]
-    lshi[0] = phAr.iloc[:,1] + y1_shift[k] # Shifted phA for axs[0]
-    
-    ax.plot(lshi[0], phAr.iloc[:,1], color = color, zorder = 3, alpha=1.0, label=labs[k])
+    lshi[0] = phAr[0] + x1_shift # Shifted phA for axs[0]
+    ushi[0] = phAr.iloc[:,1] + y1_shift # Shifted phA for axs[0]
+
+    ax.plot(lshi[0], ushi[0], color = color, zorder = 3, alpha=1.0, label=labs[k])
 
       # Plot chain types (zorder 2)
     step = 1
