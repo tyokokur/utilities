@@ -190,7 +190,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     if not labs:     labs     = read_file
     if not x1_shift: x1_shift = 0
     if not block_Ni: block_Ni = [5]
-
+    if not lightf:   lightf = 0.60
 
     block_Nik = block_Ni
     a = 1
@@ -261,9 +261,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     for j in range(len(block_Nik)):
     #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
-            if not lightf: 
-                if (i == block1): ax.plot(lshi[0], ushi_i.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=0.60),label='_Block')
-            else: 
+            if u: 
                 if (i == block1): ax.plot(lshi[0], ushi_i.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
 
         step += block_Nik[j]
