@@ -261,9 +261,11 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
             if not y1_shift: 
                 if (i == block1): 
                     if not block1_scale: ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
-                    else: ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
+                    else: ax.plot(lshi[0], block1_scale*ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
             else: 
-                if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step]+y1_shift, '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
+                if (i == block1): 
+                    if not block1_scale: ax.plot(lshi[0], ph1r.iloc[:,i+step]+y1_shift, '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
+                    else: ax.plot(lshi[0], block1_scale*(ph1r.iloc[:,i+step]+y1_shift), '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
 
         step += block_Nik[j]
 
