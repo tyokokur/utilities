@@ -208,6 +208,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     except HTTPError: 
         print('{} not found'.format(read_file))
     Nx = len(df.index)
+    print(df.head())
 
     for i in range(len(block_Nik)*2):
         names.remove('*'*(i+1))
