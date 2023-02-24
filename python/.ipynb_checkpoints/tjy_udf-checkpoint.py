@@ -208,7 +208,6 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     except HTTPError: 
         print('{} not found'.format(read_file))
     Nx = len(df.index)
-    print(df.head())
 
     for i in range(len(block_Nik)*2):
         names.remove('*'*(i+1))
@@ -262,7 +261,6 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
             if not y1_shift: 
                 if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
             else: 
-                # if (i==block1): print(ph1r.iloc[:,i+step].head())
                 if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
 
         step += block_Nik[j]
