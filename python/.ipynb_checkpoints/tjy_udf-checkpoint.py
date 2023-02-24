@@ -190,7 +190,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     if not labs:     labs     = read_file
     if not x1_shift: x1_shift = 0
     if not block_Ni: block_Ni = [5]
-
+    if not lightf:   lightf = 0.60
 
     block_Nik = block_Ni
     a = 1
@@ -242,16 +242,13 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
 
     lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
     ushi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
-    ushi_i = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
     # Plot total density (zorder 3)
     lshi[0] = phAr[0] + x1_shift # Shifted phA for axs[0]
     if not y1_shift: 
         ushi[0] = phAr.iloc[:,1] # Shifted phA for axs[0]
-        ushi_i[0] = ph1r.iloc[:,1:] + y1_shift
     else: 
         ushi[0] = phAr.iloc[:,1] + y1_shift
-        ushi_i[0] = phAr.iloc[:,1]
 
     if not lightf: ax.plot(lshi[0], ushi[0], color = color, zorder = 2, alpha=1.0, label=labs[0])
     else:          ax.plot(lshi[0], ushi[0], color = lighten_color(color, amount=lightf), zorder = 2, alpha=1.0, label=labs[0])
@@ -261,10 +258,10 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     for j in range(len(block_Nik)):
     #Plot block densities (zorder 3)
         for i in range(block_Nik[j]):
-            if not lightf: 
-                if (i == block1): ax.plot(lshi[0], ushi_i.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=0.60),label='_Block')
+            if not y1_shift: 
+                if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step] + y1_shift, '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
             else: 
-                if (i == block1): ax.plot(lshi[0], ushi_i.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
+                if (i == block1): ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
 
         step += block_Nik[j]
 
