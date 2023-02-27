@@ -273,9 +273,6 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
               Line2D([0], [0], color='k', ls='-'),
               Line2D([0], [0], color='k', ls='--'),
             ]
-
-    ax.set_ylim(y1_start, y1_end)
-    ax.set_xlim(x1_start, x1_end)
     if show: plt.show()
     
     return 
