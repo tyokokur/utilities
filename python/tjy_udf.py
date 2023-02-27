@@ -175,7 +175,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
 def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block1_scale = None,
              x1_shift = None, y1_shift = None,
-             y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
+             y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, xi_end=None, 
              color='C0', lightf=1.00):
     ## VERSION for single file onto input ax
     
@@ -244,8 +244,8 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     ushi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
     # Plot total density (zorder 3)
-    lshi[0] = phAr[0] + x1_shift # Shifted phA for axs[0]
-    ushi[0] = phAr.iloc[:,1] + y1_shift
+    lshi[0] = phAr.iloc[:xi_end,0] + x1_shift 
+    ushi[0] = phAr.iloc[:xi_end,1] + y1_shift
 
     if not lightf: ax.plot(lshi[0], ushi[0], color = color, zorder = 2, alpha=1.0, label=labs[0])
     else:          ax.plot(lshi[0], ushi[0], color = lighten_color(color, amount=lightf), zorder = 2, alpha=1.0, label=labs[0])
