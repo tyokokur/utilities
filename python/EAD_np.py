@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas as pd, numpy as np
 def conv_dat(AA): return pd.DataFrame(np.array(AA).reshape(4,4), columns=['cs', 'h1', 'h2', 'h3'])
 
 # File: 20221008 Data for Takashi
