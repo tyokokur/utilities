@@ -334,7 +334,8 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
         b = y2 - m * x2
         x = (thresh - b) / m
         y = m*x + b
-
+        
+        print(y)
         return x
     
     if alg == 'maxpt': 
