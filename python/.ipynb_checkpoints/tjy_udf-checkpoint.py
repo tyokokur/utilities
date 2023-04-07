@@ -330,7 +330,7 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
                 if y1 < thresh: 
                     x2 = phA.iloc[i-1, 0]
                     y2 = phA.iloc[i-1, 1]
-        print(x2, y2)
+        print(y2)
         
         if y2 != np.nan: 
             m = (y2-y1)/(x2-x1)
