@@ -316,6 +316,7 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
 
     if alg == 'thresh': 
         diff = 100
+        y2 = np.nan
         for i in range(Nx):
             if np.isnan(phA.iloc[i, 1]): return 0
             new_diff = np.abs(phA.iloc[i, 1] - thresh)
@@ -323,17 +324,18 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
                 diff = new_diff
                 x1 = phA.iloc[i, 0]
                 y1 = phA.iloc[i, 1]
-                if y1 > thresh :
-                    x2 = phA.iloc[i+1, 0]
-                    y2 = phA.iloc[i+1, 1]
-                else: 
+                # if y1 > thresh :
+                #     x2 = phA.iloc[i+1, 0]
+                #     y2 = phA.iloc[i+1, 1]
+                if y1 < thresh: 
                     x2 = phA.iloc[i-1, 0]
                     y2 = phA.iloc[i-1, 1]
 
-        m = (y2-y1)/(x2-x1)
-        b = y2 - m * x2
-        x = (thresh - b) / m
-        y = m*x + b
+        if y2 != np.nan: 
+            m = (y2-y1)/(x2-x1)
+            b = y2 - m * x2
+            x = (thresh - b) / m
+            y = m*x + b
         
         print(y)
         return x
