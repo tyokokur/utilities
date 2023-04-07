@@ -320,7 +320,7 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
         for i in range(Nx):
             if np.isnan(phA.iloc[i, 1]): return 0
             new_diff = thresh - phA.iloc[i, 1]
-            if new_diff < diff and new_diff >= 0: 
+            if new_diff < diff: 
                 diff = new_diff
                 x1 = phA.iloc[i, 0]
                 y1 = phA.iloc[i, 1]
@@ -330,7 +330,9 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
                 else: 
                     x2 = phA.iloc[i-1, 0]
                     y2 = phA.iloc[i-1, 1]
-                
+                    
+                if new_diff < 0: continue 
+            
         if not np.isnan(y2): 
             m = (y2-y1)/(x2-x1)
             b = y2 - m * x2
