@@ -58,7 +58,8 @@ pLSA100_2 = [1.6,	38.0399171,	    40.18784172,	38.69724189,
             51.6,	9.165873754,	12.81823678,	13.30004581]
 pLSA100_1 = conv_dat(pLSA100_1)
 pLSA100_2 = conv_dat(pLSA100_2)
-# 
+
+# Fiel: Compiled Mixed Brush Data for Takashi
 # Note: Actually 3 experiments with 2 samples each, but changed to fit data struct in conv_dat()
 pMSA100_1 = [1.6,	105.9324, 	89.37183,	69.62774, 
             4.6,	90.04687,	65.52958,	55.32703,
