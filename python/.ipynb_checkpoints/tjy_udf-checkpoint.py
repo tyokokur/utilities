@@ -270,7 +270,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
               Line2D([0], [0], color='k', ls='--'),
             ]
     if show: plt.show()
-    tjy.ticks()
+    ticks()
     
     return 
     
