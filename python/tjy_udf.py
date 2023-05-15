@@ -238,7 +238,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
         phAr.iloc[i, 0] = df.iloc[i,0]
         phAr.iloc[i, 1] = df.iloc[i,1] 
         phB.iloc[i, 0] = df.iloc[i, 0]
-        phB.iloc[i, 1] = df.iloc[i, 2 + sum(block_Nik)] 
+        phB.iloc[i, 1] = df.iloc[i, 2 + sum(block_Nik) + len(block_Nik)] 
 
     lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
     ushi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
