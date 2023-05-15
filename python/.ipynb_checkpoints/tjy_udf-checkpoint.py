@@ -209,7 +209,6 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
         print('{} not found'.format(read_file))
     Nx = len(df.index)
 
-    print(df.head())
     for i in range(len(block_Nik)*2):
         names.remove('*'*(i+1))
         df = df.drop('*'*(i+1),axis=1)
@@ -239,8 +238,6 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
         phB.iloc[i, 0] = df.iloc[i, 0]
         phB.iloc[i, 1] = df.iloc[i, 2 + sum(block_Nik) + len(block_Nik)] 
         
-    print(phB.iloc[0,1])
-
     lshi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
     ushi = pd.DataFrame(data=None,  index=rows, columns=range(1), dtype=None, copy=False)
 
