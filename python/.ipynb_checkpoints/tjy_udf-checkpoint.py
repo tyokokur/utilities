@@ -270,11 +270,11 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
               Line2D([0], [0], color='k', ls='--'),
             ]
     ticks()        
-    ax.ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
-    ax.xlabel("Length (z, nm)")
-    ax.yscale('linear')
-    ax.ylim(y1_start, y1_end)
-    ax.xlim(x1_start, x1_end)
+    ax.set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
+    ax.set_xlabel("Length (z, nm)")
+    ax.set_yscale('linear')
+    ax.set_ylim(y1_start, y1_end)
+    ax.set_xlim(x1_start, x1_end)
     leg = plt.legend(loc=1)
     if show: plt.show()
     
