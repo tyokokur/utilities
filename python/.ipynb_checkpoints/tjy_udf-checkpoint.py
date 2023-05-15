@@ -209,13 +209,12 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
         print('{} not found'.format(read_file))
     Nx = len(df.index)
 
+    print(df.head())
     for i in range(len(block_Nik)*2):
         names.remove('*'*(i+1))
         df = df.drop('*'*(i+1),axis=1)
 
     Nx = len(df.index)
-    rows = range(0, Nx)
-
     rows = range(0, Nx)
 
     phAr = pd.DataFrame(data=None, index=rows, columns=range(2), dtype=None, copy=False)
