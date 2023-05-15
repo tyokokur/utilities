@@ -271,7 +271,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
             ]
     if show: plt.show()
     
-    return 
+    return ax
     
 def lighten_color(color, amount=0.5):
     """
