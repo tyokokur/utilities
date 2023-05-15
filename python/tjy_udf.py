@@ -198,7 +198,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     c = 1
     names = ['rx', 'phA']
     for j in range(len(block_Nik)):
-        names += ['*'*b]+ ['ph{:d}'.format(c+i) for i in range(block_Nik[j])] + ['*'*(b+1)]
+        names += ['phA_T{:d}'.format(a)] + ['*'*b]+ ['ph{:d}'.format(c+i) for i in range(block_Nik[j])] + ['*'*(b+1)]
         a += 1
         b += 2
         c += block_Nik[j]
