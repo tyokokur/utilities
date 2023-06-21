@@ -145,7 +145,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
             ]
     if double: 
         for i in range(2):
-          axs[0].set_ylabel(r'$\bf{\langle\phi(}z\mathbf{)\rangle}_{xy}$')
+          axs[0].set_ylabel(r'$\bf{\phi(}z\mathbf{)}$')
           axs[i].set_xlabel("Length (nm)")
           axs[i].set_yscale('linear')
 
