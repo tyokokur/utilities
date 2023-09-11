@@ -1,5 +1,6 @@
 import pandas as pd, numpy as np
 def conv_dat(AA): return pd.DataFrame(np.array(AA).reshape(5,4), columns=['cs', 'h1', 'h2', 'h3'])
+def conv_dat2(AA): return pd.DataFrame(np.array(AA).reshape(7,4), columns=['cs', 'h1', 'h2', 'h3'])
 
 ## FILE: purebrushdata.xlxs (Erika sent 7/12/23)
 LSA1 = [ 1.6,     43.27421,	49.69911,	33.97335,	
@@ -136,8 +137,8 @@ HSAD2_2 = [ 1.6, 39.74569,	21.64137,	35.04943,
             51.6,11.78979,	10.27194,	14.15013,
             162, 15.086, 	11.63897,	13.33979,
             501.6,13.09058,	16.7768,	13.42374 ]
-HSAD2_1 = conv_dat(HSAD2_1)
-HSAD2_2 = conv_dat(HSAD2_2)
+HSAD2_1 = conv_dat2(HSAD2_1)
+HSAD2_2 = conv_dat2(HSAD2_2)
 
 pHSAD2_1= [ 1.6, 45.13345333, 47.14123,	66.97401, # First val avg of 3
             4.6, 29.7611,	28.77657,	34.40299,
@@ -154,8 +155,8 @@ pHSAD2_2= [ 1.6, 51.00456,	51.13264,	51.79461,
             51.6,17.97912,	16.37389,	21.31264,
             162, 11.81612,	13.74093,	19.12955,
             501.6,20.04531,	17.38968,	17.81208 ] 
-pHSAD2_1 = conv_dat(pHSAD2_1)
-pHSAD2_2 = conv_dat(pHSAD2_2)
+pHSAD2_1 = conv_dat2(pHSAD2_1)
+pHSAD2_2 = conv_dat2(pHSAD2_2)
 
 
  
