@@ -121,7 +121,8 @@ pHSA2 = conv_dat(pHSA2)
  
     
 # FILE: 20230826 for Takashi.xlsx    
-HSAD2
+HSAD2_1 = [ 1.6, 21.96951333, 13.91287,	30.58668
+
     
         
 
