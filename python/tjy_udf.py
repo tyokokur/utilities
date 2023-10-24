@@ -275,7 +275,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     ax.set_yscale('linear')
     ax.set_ylim(y1_start, y1_end)
     ax.set_xlim(x1_start, x1_end)
-    leg = plt.legend(loc=1)
+    # leg = plt.legend(loc=1)
     if show: plt.show()
     
     return ax
