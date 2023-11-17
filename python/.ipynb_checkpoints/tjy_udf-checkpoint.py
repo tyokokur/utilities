@@ -146,7 +146,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
     if double: 
         for i in range(2):
           axs[0].set_ylabel(r'$\phi_p$')
-          axs[i].set_xlabel("Length~" r"$\mathrm{[z, nm]}$")
+          axs[i].set_xlabel("Length " r"$\mathrm{[z, nm]}$")
           axs[i].set_yscale('linear')
 
         axs[0].set_ylim(y1_start, y1_end)
@@ -270,8 +270,8 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
               Line2D([0], [0], color='k', ls='--'),
             ]
     ticks()        
-    ax.set_ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
-    ax.set_xlabel("Length (z, nm)")
+    ax.set_ylabel(r'$\phi_p$')
+    ax.set_xlabel("Length " r"$\mathrm{[z, nm]}$")
     ax.set_yscale('linear')
     ax.set_ylim(y1_start, y1_end)
     ax.set_xlim(x1_start, x1_end)
