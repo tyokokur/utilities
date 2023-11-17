@@ -158,7 +158,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
 
     else: 
         plt.ylabel(r'$\phi_p$')
-        plt.xlabel("Length~" r"\$mathrm{[z, nm]}$")
+        plt.xlabel("Length " r"$\mathrm{[z, nm]}$")
         plt.yscale('linear')
         plt.ylim(y1_start, y1_end)
         plt.xlim(x1_start, x1_end)
