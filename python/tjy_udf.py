@@ -176,7 +176,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block1_scale = None,
              x1_shift = None, y1_shift = None,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, xi_end=None, 
-             color='C0', lightf=1.00):
+             color='C0', lightf=1.00, ls=None):
     ## VERSION for single file onto input ax
     
     from matplotlib import animation, rc
@@ -187,6 +187,7 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     from urllib.error import HTTPError
 
     # Defaults
+    if not ls:       ls = '-'
     if not labs:     labs     = read_file
     if not x1_shift: x1_shift = 0
     if not y1_shift: y1_shift = 0
@@ -245,8 +246,8 @@ def plot_pha_feed(read_file, ax, labs=[], b0=1.0, show=True,
     lshi[0] = phAr.iloc[:xi_end,0] + x1_shift 
     ushi[0] = phAr.iloc[:xi_end,1] + y1_shift
 
-    if not lightf: ax.plot(lshi[0], ushi[0], color = color, zorder = 2, alpha=1.0, label=labs[0])
-    else:          ax.plot(lshi[0], ushi[0], color = lighten_color(color, amount=lightf), zorder = 2, alpha=1.0, label=labs[0])
+    if not lightf: ax.plot(lshi[0], ushi[0], color = color, zorder = 2, alpha=1.0, label=labs[0], ls=ls)
+    else:          ax.plot(lshi[0], ushi[0], color = lighten_color(color, amount=lightf), zorder = 2, alpha=1.0, label=labs[0], ls=ls)
 
     # Plot chain types (zorder 2)
     step = 1
