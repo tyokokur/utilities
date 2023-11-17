@@ -145,7 +145,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
             ]
     if double: 
         for i in range(2):
-          axs[0].set_ylabel(r'$\bf{\phi(}z\mathbf{)}$')
+          axs[0].set_ylabel(r'$\phi_p$')
           axs[i].set_xlabel("Length (nm)")
           axs[i].set_yscale('linear')
 
@@ -157,7 +157,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
         leg = axs[1].legend(loc=1)
 
     else: 
-        plt.ylabel(r'$\bf{\langle\phi(z)\rangle}_{xy}$')
+        plt.ylabel(r'$\phi_p$')
         plt.xlabel("Length (z, nm)")
         plt.yscale('linear')
         plt.ylim(y1_start, y1_end)
