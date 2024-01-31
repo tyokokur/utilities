@@ -24,6 +24,7 @@ def ticks(axs = []):
         
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block2 = None, 
+             block1_scale=None,
              x1_shift = None, x2_shift = None,
              double = True,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
@@ -134,7 +135,9 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
 
             #Plot block densities (zorder 3)
             for i in range(block_Nik[j]):
-              if (i == block1): ax.plot(np.multiply(lshi[0], div[k]), ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+              if (i == block1): 
+                if not block1_scale: ax.plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
+                else: ax.plot(lshi[0], block1_scale*ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(color, amount=lightf),label='_Block')
 
             step += block_Nik[j]
 
