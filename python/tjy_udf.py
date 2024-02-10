@@ -517,3 +517,11 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
         print("nframes, phn mismatch > 2")    
     
     return 
+
+def CalcF(nx, y, dx=17/150):
+    d = [(i*dx) for i in nx] # Distance from plate to plate
+    d1, y1 = [i for ind, i in enumerate(d) if not ind % 2], [i for ind, i in enumerate(y) if not ind % 2]
+    d2, y2 = [i for ind, i in enumerate(d) if ind % 2]    , [i for ind, i in enumerate(y) if ind % 2]
+    [print(d1[i], d2[i]) for i in range(round(len(d)/2)) if d1[i] == d2[i] ]
+    xf, yf = np.average([d1, d2], axis=0), [(y2[i]-y1[i])/(d1[i]-d2[i]) for i in range(round(len(d)/2))] # Force from squeezing (-dx)
+    return d, xf, yf
