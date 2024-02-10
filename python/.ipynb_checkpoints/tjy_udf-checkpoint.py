@@ -519,6 +519,7 @@ def plot_anim(fname, simname='SIM.dat', lx=100, xstart=0, xend=0, dx=17/150, b0=
     return 
 
 def CalcF(nx, y, dx=17/150):
+    import numpy as np
     d = [(i*dx) for i in nx] # Distance from plate to plate
     d1, y1 = [i for ind, i in enumerate(d) if not ind % 2], [i for ind, i in enumerate(y) if not ind % 2]
     d2, y2 = [i for ind, i in enumerate(d) if ind % 2]    , [i for ind, i in enumerate(y) if ind % 2]
