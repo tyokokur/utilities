@@ -27,7 +27,8 @@ def phread(fname, block=7, norm=False):
     data = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
     ph = pd.DataFrame([data[0], data[1], data[block]], columns=['z', 'overall', 'block{}'.format(block)])
     if norm:
-        ph[1] = ph[1]/np.man
+        ph.overall = ph.overall/np.max(ph.overall)
+        ph[2] = ph[2]/np.max(ph[2])
     else:   return ph
         
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
