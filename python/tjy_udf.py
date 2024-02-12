@@ -23,6 +23,7 @@ def ticks(axs = []):
         return
     
 def phread(fname, block=7, norm=True): 
+    import pandas as pd
     ph = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
     if norm:  return (ph[0], ph[1]/np.max(ph[1]), ph[block]/np.max(ph[block]))
     else:   return (ph[0], ph[1]), ph[block]
