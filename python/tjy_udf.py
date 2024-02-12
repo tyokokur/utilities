@@ -22,9 +22,10 @@ def ticks(axs = []):
             plt.xticks(**kw)
         return
     
-def phread(fname, block=7, norm=True): 
+def phread(fname, block=7, norm=False): 
     import pandas as pd, numpy as np
-    ph = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
+    data = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
+    ph = pd.Data
     if norm:  return (ph[0], ph[1]/np.max(ph[1]), ph[block]/np.max(ph[block]))
     else:   return (ph[0], ph[1]), ph[block]
         
