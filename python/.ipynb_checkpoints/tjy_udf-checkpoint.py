@@ -21,6 +21,11 @@ def ticks(axs = []):
             plt.yticks(**kw)
             plt.xticks(**kw)
         return
+    
+def phread(fname, block=7, norm=True): 
+    ph = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
+    if norm:  return (ph[0], ph[1]/np.max(ph[1]), ph[block]/np.max(ph[block]))
+    else:   return (ph[0], ph[1]), ph[block]
         
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block2 = None, 
