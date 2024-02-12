@@ -25,7 +25,7 @@ def ticks(axs = []):
 def phread(fname, block=7, norm=False): 
     import pandas as pd, numpy as np
     data = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
-    ph = pd.DataFrame([data[0], data[1], data[block]], columns=['z', 'overall', 'block{}'.format(block)])
+    ph = pd.DataFrame({'z': data[0], 'overall': data[1], 'block{}'.format(block): data[block]})
     if norm:
         ph.overall = ph.overall/np.max(ph.overall)
         ph[2] = ph[2]/np.max(ph[2])
