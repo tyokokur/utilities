@@ -25,9 +25,10 @@ def ticks(axs = []):
 def phread(fname, block=7, norm=False): 
     import pandas as pd, numpy as np
     data = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
-    ph = pd.Data
-    if norm:  return (ph[0], ph[1]/np.max(ph[1]), ph[block]/np.max(ph[block]))
-    else:   return (ph[0], ph[1]), ph[block]
+    ph = pd.DataFrame([data[0], data[1], data[block]], columns=['z', 'overall', 'block{}'.format(block)])
+    if norm:
+        ph[1] = ph[1]/np.man
+    else:   return ph
         
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block2 = None, 
