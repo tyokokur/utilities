@@ -33,7 +33,7 @@ def phread(fname, block=7, norm=False):
         
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block2 = None, 
-             block1_scale=None,
+             block1_scale=None, block2_scale=None,
              x1_shift = None, x2_shift = None,
              double = True,
              y1_start=0, y1_end=1.00, x1_start=0, x1_end=None, 
@@ -134,8 +134,10 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
 
             #Plot block densities (zorder 3)
             for i in range(block_Nik[j]):
-              if (i == block1): axs[0].plot(np.multiply(lshi[0], div[k]), ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
-              if (i == block2): axs[1].plot(np.multiply(rshi[0], div[k]), np.multiply(ph1r.iloc[:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+              if (i == block1): 
+                if not block1_scale: axs[0].plot(np.multiply(lshi[0], div[k]), ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+                else: axs[0].plot(lshi[0], block1_scale*ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+              if (i == block2): axs[1].plot(rshi[0], np.multiply(ph1r.iloc[:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
                 
             step += block_Nik[j]
       else: 
