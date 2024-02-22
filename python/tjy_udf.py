@@ -135,9 +135,11 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
             #Plot block densities (zorder 3)
             for i in range(block_Nik[j]):
               if (i == block1): 
-                if not block1_scale: axs[0].plot(np.multiply(lshi[0], div[k]), ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+                if not block1_scale: axs[0].plot(lshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
                 else: axs[0].plot(lshi[0], block1_scale*ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
-              if (i == block2): axs[1].plot(rshi[0], np.multiply(ph1r.iloc[:,i+step],1), '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+              if (i == block2): 
+                if not block2_scale: axs[1].plot(rshi[0], ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
+                else: axs[1].plot(rshi[0], block2_scale*ph1r.iloc[:,i+step], '--',  zorder=3, color=lighten_color(colors_i[k], amount=0.60),label='_Block')
                 
             step += block_Nik[j]
       else: 
