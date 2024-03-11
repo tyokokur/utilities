@@ -31,6 +31,15 @@ def phread(fname, block=7, norm=False):
         ph[2] = ph[2]/np.max(ph[2])
     else:   return ph
         
+def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False): 
+    import pandas as pd, numpy as np
+    data = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
+    ph = pd.DataFrame({'x': data[xind], 'y': data[yind], 'z': data[zind], 'overall': data[oind], 'block{}'.format(block): data[block]})
+    if norm:
+        ph.overall = ph.overall/np.max(ph.overall)
+        ph[2] = ph[2]/np.max(ph[2])
+    else:   return ph
+
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block2 = None, 
              block1_scale=None, block2_scale=None,
