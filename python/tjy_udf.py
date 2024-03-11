@@ -37,7 +37,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     ph = pd.DataFrame({'x': data[xind], 'y': data[yind], 'z': data[zind], 'overall': data[oind], 'block{}'.format(block): data[block]})
     if norm:
         ph.overall = ph.overall/np.max(ph.overall)
-        ph[2] = ph[2]/np.max(ph[2])
+        ph[4] = ph[4]/np.max(ph[4])
     else:   return ph
 
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
