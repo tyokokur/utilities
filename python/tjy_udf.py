@@ -41,15 +41,16 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     else:   return ph
 
 class Heights:
-    def __init__(self, GIT, name='', bv=(1.0,4.19), name2='',alpha='',dim='1'):
+    def __init__(self, GIT, name='', bv=(1.0,4.19), name2='',alpha='',dim='1', alg='thresh', thresh=1e-05,
+                 labs=['0015', '003', '005', '007', '010', '020', '050', '150'], labs_mod=['002', '003', '005', '007', '010', '020', '050', '150']):
         self.name = name
         self.alpha= alpha
         self.bv   = bv
         self.name2= name2
-        self.labs     = ['0015', '003', '005', '007', '010', '020', '050', '150']#, '600']
-        self.labs_mod = ['002'] + self.labs[1:]
-        self.alg      = 'thresh'
-        self.thresh   = 1e-05
+        self.labs     = labs
+        self.labs_mod = labs_mod
+        self.alg      = alg
+        self.thresh   = thresh
         self.GIT = GIT
         
     def Calc_H(self, silent=True):
