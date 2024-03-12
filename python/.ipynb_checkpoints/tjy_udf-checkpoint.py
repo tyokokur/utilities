@@ -41,7 +41,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     else:   return ph
 
 class Heights:
-    def __init__(self, GIT, name='', bv=(1.0,4.19), name2='',alpha='',dim='1', alg='thresh', thresh=1e-05,
+    def __init__(self, GIT, name='', bv=(1.0,4.19), name2='',alpha='',dim=1, alg='thresh', thresh=1e-05,
                  labs=['002', '003', '005', '007', '010', '020', '050', '150'], labs_mod=['002', '003', '005', '007', '010', '020', '050', '150']):
         self.name = name
         self.alpha= alpha
@@ -62,11 +62,7 @@ class Heights:
         self.hs = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd'] + algs).transpose()
         self.hs.iloc.cs   = [float(i) for i in self.labs]
         self.hs.iloc.kapd = [1/Kap_D(i*1e-3)*1e9 for i in self.hs.cs]
-        if dim=='1': 
-            for i in range(len(flist)): self.df.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh)
-        if dim=='3':
-            self.hs.iloc[:,0] = [float(i) for i in self.labs]
-            self.hs.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.hs.cs]
+        for i in range(len(flist)): self.hs.[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh,dim=dim)
         
         
         if not silent: print('{} Calc_H done.'.format(self.name+self.name2), end=" ")
@@ -360,7 +356,7 @@ def lighten_color(color, amount=0.5):
     c = colorsys.rgb_to_hls(*mc.to_rgb(c))
     return colorsys.hls_to_rgb(c[0], 1 - amount * (1 - c[1]), c[2])
 
-def H_find(filename, alg, b0=1.0, thresh=1e-04):
+def H_find(filename, alg, b0=1.0, thresh=1e-04, dim=1):
     ## Alg options: thresh, maxpt, norm
     import pandas as pd, numpy as np
     from urllib.error import HTTPError
@@ -377,8 +373,12 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04):
     phA = phA.fillna(0) # with 0s rather than NaNs
 
     for i in range(Nx):
-        phA.iloc[i, 0] = df.iloc[i,0] * b0
-        phA.iloc[i, 1] = df.iloc[i,1] 
+        if dim ==1:   
+            phA.iloc[i, 0] = df.iloc[i,0] 
+            phA.iloc[i, 1] = df.iloc[i,1] 
+        elif dim ==3: phA.iloc[i, 1] = df.iloc[i,4] 
+            phA.iloc[i, 0] = df.iloc[i,3] 
+            phA.iloc[i, 1] = df.iloc[i,4] 
 
     if alg == 'thresh': 
         diff = 100
