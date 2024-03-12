@@ -41,7 +41,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     else:   return ph
 
 class Heights:
-    def __init__(self, name, bv, name2=''):
+    def __init__(self, GIT, name, bv=(1.0,4.19), name2=''):
         self.name = name
         self.bv   = bv
         self.name2= name2
@@ -51,7 +51,6 @@ class Heights:
         self.thresh   = 1e-05
         
     def Calc_H(self, silent=True):
-        GIT = globals()['GIT']
         algs = ['thresh', 'maxpt', 'norm']
         flist = ['ph{}_c'.format(self.name)+i+self.name2+'.dat' for i in self.labs_mod]
         flist = [GIT+i for i in flist] 
