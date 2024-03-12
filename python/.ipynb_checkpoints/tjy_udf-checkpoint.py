@@ -41,7 +41,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     else:   return ph
 
 class Heights:
-    def __init__(self, GIT, name, bv=(1.0,4.19), name2='',alpha=''):
+    def __init__(self, GIT, name='', bv=(1.0,4.19), name2='',alpha=''):
         self.name = name
         self.alpha= alpha
         self.bv   = bv
