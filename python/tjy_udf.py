@@ -40,6 +40,34 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
         ph[4] = ph[4]/np.max(ph[4])
     else:   return ph
 
+class Heights:
+    def __init__(self, name, bv, name2=''):
+        self.name = name
+        self.bv   = bv
+        self.name2= name2
+        self.labs     = ['0015', '003', '005', '007', '010', '020', '050', '150']#, '600']
+        self.labs_mod = ['002'] + self.labs[1:]
+        self.alg      = 'thresh'
+        self.thresh   = 1e-05
+        
+    def Calc_H(self, silent=True):
+        algs = ['thresh', 'maxpt', 'norm']
+        flist = ['ph{}_c'.format(self.name)+i+self.name2+'.dat' for i in self.labs_mod]
+        flist = [GIT+i for i in flist] 
+        self.df = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd']+algs).transpose()
+        self.df.iloc[:,0] = [1.5]+[float(i) for i in self.labs[1:]]
+        self.df.iloc[:,1] = [1/tjy.Kap_D(i*1e-3)*1e9 for i in self.df.cs]
+        for i in range(len(flist)): self.df.iloc[i, 2] = tjy.H_find(flist[i], alg=self.alg, thresh=self.thresh)
+        
+        self.cs = self.df.cs
+        self.thresh = self.df.thresh
+        
+        if not silent: print('{} Calc_H done.'.format(self.name+self.name2), end=" ")
+    
+    def Get_Flist(self):
+        flist = ['ph{}_c'.format(self.name)+i+self.name2+'.dat' for i in self.labs_mod]
+        return [GIT+i for i in flist] 
+    
 def plot_pha(read_list, labs=[], b0=1.0, show=True,
              block_Ni = None, block1 = None, block2 = None, 
              block1_scale=None, block2_scale=None,
