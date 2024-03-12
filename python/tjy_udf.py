@@ -51,7 +51,7 @@ class Heights:
         self.thresh   = 1e-05
         
     def Calc_H(self, silent=True):
-        global GIT
+        GIT = globals()['GIT']
         algs = ['thresh', 'maxpt', 'norm']
         flist = ['ph{}_c'.format(self.name)+i+self.name2+'.dat' for i in self.labs_mod]
         flist = [GIT+i for i in flist] 
