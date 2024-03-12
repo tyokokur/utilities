@@ -377,8 +377,8 @@ def H_find(filename, alg, b0=1.0, thresh=1e-04, dim=1):
             phA.iloc[i, 0] = df.iloc[i,0] 
             phA.iloc[i, 1] = df.iloc[i,1] 
         elif dim ==3: 
-            phA.iloc[i, 0] = df.iloc[i,3] 
-            phA.iloc[i, 1] = df.iloc[i,4] 
+            phA.iloc[i, 0] = df.iloc[i,2] 
+            phA.iloc[i, 1] = df.iloc[i,3] 
 
     if alg == 'thresh': 
         diff = 100
