@@ -41,8 +41,9 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     else:   return ph
 
 class Heights:
-    def __init__(self, GIT, name, bv=(1.0,4.19), name2=''):
+    def __init__(self, GIT, name, bv=(1.0,4.19), name2='',alpha=''):
         self.name = name
+        self.alpha= alpha
         self.bv   = bv
         self.name2= name2
         self.labs     = ['0015', '003', '005', '007', '010', '020', '050', '150']#, '600']
@@ -54,7 +55,7 @@ class Heights:
     def Calc_H(self, silent=True):
         import pandas as pd, numpy as np
         algs = ['thresh', 'maxpt', 'norm']
-        flist = ['ph{}_c'.format(self.name)+i+self.name2+'.dat' for i in self.labs_mod]
+        flist = ['ph{}_{}c'.format(self.name,self.alpha)+i+self.name2+'.dat' for i in self.labs_mod]
         flist = [self.GIT+i for i in flist] 
         self.df = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd']+algs).transpose()
         self.df.iloc[:,0] = [1.5]+[float(i) for i in self.labs[1:]]
