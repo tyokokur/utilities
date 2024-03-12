@@ -65,8 +65,7 @@ class Heights:
         self.heights.kapd = [1/Kap_D(i*1e-3)*1e9 for i in self.heights.cs]
         for i in range(len(flist)): self.heights.hs[i] = H_find(flist[i], alg=self.alg, thresh=self.thresh,dim=self.dim)
         
-        
-        if not silent: print('{} Calc_H done.'.format(self.name+self.name2), end=" ")
+        if not silent: print('{} Calc_H done.'.format(self.name+self.alpha+self.name2), end=" ")
     
     def Get_Flist(self):
         flist = ['ph{}_c'.format(self.name)+i+self.name2+'.dat' for i in self.labs_mod]
