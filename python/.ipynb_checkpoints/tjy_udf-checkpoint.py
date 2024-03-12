@@ -52,6 +52,7 @@ class Heights:
         self.alg      = alg
         self.thresh   = thresh
         self.GIT = GIT
+        self.dim = dim
         
     def Calc_H(self, silent=True):
         import pandas as pd, numpy as np
@@ -62,7 +63,7 @@ class Heights:
         self.hs = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd'] + algs).transpose()
         self.hs.cs   = [float(i) for i in self.labs]
         self.hs.kapd = [1/Kap_D(i*1e-3)*1e9 for i in self.hs.cs]
-        for i in range(len(flist)): self.hs.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh,dim=dim)
+        for i in range(len(flist)): self.hs.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh,dim=self.dim)
         
         
         if not silent: print('{} Calc_H done.'.format(self.name+self.name2), end=" ")
