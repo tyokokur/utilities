@@ -41,6 +41,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     else:   return ph
 
 class Heights:
+    import pandas as pd, numpy as np
     def __init__(self, GIT, name, bv=(1.0,4.19), name2=''):
         self.name = name
         self.bv   = bv
