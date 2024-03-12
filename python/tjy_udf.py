@@ -42,7 +42,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
 
 class Heights:
     def __init__(self, GIT, name='', bv=(1.0,4.19), name2='',alpha='',dim='1', alg='thresh', thresh=1e-05,
-                 labs=['0015', '003', '005', '007', '010', '020', '050', '150'], labs_mod=['002', '003', '005', '007', '010', '020', '050', '150']):
+                 labs=['002', '003', '005', '007', '010', '020', '050', '150'], labs_mod=['002', '003', '005', '007', '010', '020', '050', '150']):
         self.name = name
         self.alpha= alpha
         self.bv   = bv
@@ -59,16 +59,15 @@ class Heights:
         flist = ['ph{}_{}c'.format(self.name,self.alpha)+i+self.name2+'.dat' for i in self.labs_mod]
         flist = [self.GIT+i for i in flist] 
         
-        self.df = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd'] + algs).transpose()
+        self.hs = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd'] + algs).transpose()
         if dim=='1': 
-            self.df.iloc[:,0] = [1.5]+[float(i) for i in self.labs[1:]]
-            self.df.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
+            self.hs.iloc[:,0] = [float(i) for i in self.labs]
+            self.hs.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
             for i in range(len(flist)): self.df.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh)
         if dim=='3':
-            
+            self.hs.iloc[:,0] = [float(i) for i in self.labs]
+            self.hs.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
         
-        self.cs = self.df.cs
-        self.thresh = self.df.thresh
         
         if not silent: print('{} Calc_H done.'.format(self.name+self.name2), end=" ")
     
