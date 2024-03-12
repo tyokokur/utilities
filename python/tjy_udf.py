@@ -58,12 +58,13 @@ class Heights:
         flist = ['ph{}_{}c'.format(self.name,self.alpha)+i+self.name2+'.dat' for i in self.labs_mod]
         flist = [self.GIT+i for i in flist] 
         
+        self.df = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd'] + algs).transpose()
         if dim=='1': 
-            self.df = pd.DataFrame([np.zeros(len(
-        self.df = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd']+algs).transpose()
-        self.df.iloc[:,0] = [1.5]+[float(i) for i in self.labs[1:]]
-        self.df.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
-        for i in range(len(flist)): self.df.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh)
+            self.df.iloc[:,0] = [1.5]+[float(i) for i in self.labs[1:]]
+            self.df.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
+            for i in range(len(flist)): self.df.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh)
+        if dim=='3':
+            
         
         self.cs = self.df.cs
         self.thresh = self.df.thresh
