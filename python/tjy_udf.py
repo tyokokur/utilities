@@ -63,7 +63,7 @@ class Heights:
         self.heights = pd.DataFrame([np.zeros(len(flist))]*3, index=['cs', 'kapd', 'hs']).transpose()
         self.heights.cs   = [float(i) for i in self.labs]
         self.heights.kapd = [1/Kap_D(i*1e-3)*1e9 for i in self.heights.cs]
-        for i in range(len(flist)): self.heights.hs = H_find(flist[i], alg=self.alg, thresh=self.thresh,dim=self.dim)
+        for i in range(len(flist)): self.heights.hs[i] = H_find(flist[i], alg=self.alg, thresh=self.thresh,dim=self.dim)
         
         
         if not silent: print('{} Calc_H done.'.format(self.name+self.name2), end=" ")
