@@ -41,7 +41,6 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     else:   return ph
 
 class Heights:
-    import pandas as pd, numpy as np
     def __init__(self, GIT, name, bv=(1.0,4.19), name2=''):
         self.name = name
         self.bv   = bv
@@ -53,13 +52,14 @@ class Heights:
         self.GIT = GIT
         
     def Calc_H(self, silent=True):
+        import pandas as pd, numpy as np
         algs = ['thresh', 'maxpt', 'norm']
         flist = ['ph{}_c'.format(self.name)+i+self.name2+'.dat' for i in self.labs_mod]
         flist = [self.GIT+i for i in flist] 
         self.df = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd']+algs).transpose()
         self.df.iloc[:,0] = [1.5]+[float(i) for i in self.labs[1:]]
-        self.df.iloc[:,1] = [1/tjy.Kap_D(i*1e-3)*1e9 for i in self.df.cs]
-        for i in range(len(flist)): self.df.iloc[i, 2] = tjy.H_find(flist[i], alg=self.alg, thresh=self.thresh)
+        self.df.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
+        for i in range(len(flist)): self.df.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh)
         
         self.cs = self.df.cs
         self.thresh = self.df.thresh
