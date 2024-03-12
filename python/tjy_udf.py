@@ -60,13 +60,13 @@ class Heights:
         flist = [self.GIT+i for i in flist] 
         
         self.hs = pd.DataFrame([np.zeros(len(flist))]*5, index=['cs', 'kapd'] + algs).transpose()
+        self.hs.iloc.cs   = [float(i) for i in self.labs]
+        self.hs.iloc.kapd = [1/Kap_D(i*1e-3)*1e9 for i in self.hs.cs]
         if dim=='1': 
-            self.hs.iloc[:,0] = [float(i) for i in self.labs]
-            self.hs.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
             for i in range(len(flist)): self.df.iloc[i, 2] = H_find(flist[i], alg=self.alg, thresh=self.thresh)
         if dim=='3':
             self.hs.iloc[:,0] = [float(i) for i in self.labs]
-            self.hs.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.df.cs]
+            self.hs.iloc[:,1] = [1/Kap_D(i*1e-3)*1e9 for i in self.hs.cs]
         
         
         if not silent: print('{} Calc_H done.'.format(self.name+self.name2), end=" ")
