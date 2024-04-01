@@ -158,6 +158,7 @@ pHSAD2_2= [ 1.6, 51.00456,	51.13264,	51.79461,
 pHSAD2_1 = conv_dat2(pHSAD2_1)
 pHSAD2_2 = conv_dat2(pHSAD2_2)
 
+## FILE: Mshufs and Hdel6 for Takashi.xlxs (Erika sent 4/1/24)
 HSAD6 = pd.DataFrame(np.array(
           [ 1.6, 28.05250443,
             4.6, 23.10642300,
