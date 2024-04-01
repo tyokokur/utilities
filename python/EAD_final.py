@@ -159,8 +159,12 @@ pHSAD2_1 = conv_dat2(pHSAD2_1)
 pHSAD2_2 = conv_dat2(pHSAD2_2)
 
 HSAD6 = pd.DataFrame(np.array(
-
-            ).reshape( NXX ,2), columns=['cs', 'h']) 
+          [ 1.6, 28.05250443,
+            4.6, 23.10642300,
+            11.6,19.94281900,
+            51.6,12.53678420,
+            162, 10.20554430, ],
+        ).reshape(5,2), columns=['cs', 'h']) 
  
         
 
