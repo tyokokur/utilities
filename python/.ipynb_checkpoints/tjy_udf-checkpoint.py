@@ -42,7 +42,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
 
 class Heights:
     def __init__(self, GIT, name='', bv=(1.0,4.19), name2='',alpha='',dim=1, alg='thresh', thresh=1e-05,
-                 labs=['002', '003', '005', '007', '010', '020', '050', '150'], labs_mod=['002', '003', '005', '007', '010', '020', '050', '150']):
+                 labs=[1.5, 3, 5, 7, 10, 20, 50, 150], labs_mod=['002', '003', '005', '007', '010', '020', '050', '150']):
         self.name = name
         self.alpha= alpha
         self.bv   = bv
