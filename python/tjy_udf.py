@@ -29,6 +29,7 @@ def phread(fname, block=7, norm=False):
     if norm:
         ph.overall = ph.overall/np.max(ph.overall)
         ph.iloc[:,2] = ph.iloc[:,2]/np.max(ph.iloc[:,2])
+        return ph
     else:   return ph
         
 def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False): 
@@ -38,6 +39,7 @@ def phreadxyz(fname, xind=0, yind=1, zind=2, oind=3, block=7, norm=False):
     if norm:
         ph.overall = ph.overall/np.max(ph.overall)
         ph[4] = ph[4]/np.max(ph[4])
+        return ph
     else:   return ph
 
 class Heights:
