@@ -585,7 +585,8 @@ def CalcF(nx, y, dx=17/150):
     return d, xf, yf
 
 def get_fp(GIT, fname, fit=True):
-    import pandas as pd
+    import pandas as pd, numpy as np
+    from scipy.interpolate import UnivariateSpline
     freeE = pd.read_csv(GIT+fname, sep="\s+", skiprows=0, names = ['it', 'nx', 'freeE', 'freeDiff', 'inCompMax', 'andErr']).sort_values(by='nx', ignore_index=True)
     nx, yp = freeE.nx, freeE.freeE
     dp, xp, fp = CalcF(nx, yp)
