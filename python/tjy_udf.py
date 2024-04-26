@@ -583,3 +583,35 @@ def CalcF(nx, y, dx=17/150):
     [print(d1[i], d2[i]) for i in range(round(len(d)/2)) if d1[i] == d2[i] ]
     xf, yf = np.average([d1, d2], axis=0), [(y2[i]-y1[i])/(d1[i]-d2[i]) for i in range(round(len(d)/2))] # Force from squeezing (-dx)
     return d, xf, yf
+
+def get_fp(GIT, fname, fit=True):
+    import pandas as pd
+    freeE = pd.read_csv(GIT+fname, sep="\s+", skiprows=0, names = ['it', 'nx', 'freeE', 'freeDiff', 'inCompMax', 'andErr']).sort_values(by='nx', ignore_index=True)
+    nx, yp = freeE.nx, freeE.freeE
+    dp, xp, fp = CalcF(nx, yp)
+    pas = 4.04e-03 # Scaling to get from kBT/nm^3 to Pascals 
+    scaling = 5 # For order unity y-axis
+    pas *= 10**scaling
+    fp = [i*pas for i in fp]
+    
+    if fit: 
+        XX, YY = np.sort(xp), np.take_along_axis(np.array(fp), np.argsort(xp), 0)
+        fits = UnivariateSpline(XX, YY, s=1e-5)
+        return dp, yp, xp, fp, fits
+    else: 
+        return dp, yp, xp, fp
+
+def get_fs(spline, start, trans1, trans2, end):
+    import numpy as np
+    def get_meta(spline, trans, start=0, direc='left'):
+        ## direc: 'left' or 'right' or 'real'
+        if direc=='left':
+            xs = np.arange(start, trans, 0.1)
+        if direc=='right':
+            xs = np.arange(trans, start, 0.1)
+        return xs, spline(xs)
+
+    xleft, yleft = get_meta(spline, trans1, start, 'left')
+    xreal, yreal = np.arange(trans1, trans2, 0.1), spline(np.arange(trans1, trans2, 0.1))
+    xright, yright = get_meta(spline, trans1, end, 'right')
+    return (xleft, yleft), (xreal, yreal), (xright, yright)
