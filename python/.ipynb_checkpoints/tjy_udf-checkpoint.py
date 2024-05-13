@@ -25,7 +25,7 @@ def ticks(axs = []):
 def elread(fname):
     import pandas as pd, numpy as np
     data = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
-    el = pd.DataFrame({'z': data[0], 'psi': -1*data[1], 'neg_psi': data[1], 'cat': data[2], 'an':data[3], 'polym':data[4]})
+    el = pd.DataFrame({'z': data[0], 'psi': -1*data[1], 'neg_psi': data[1], 'ca': data[2], 'an':data[3], 'polym':data[4]})
     return el
     
 def phread(fname, block=7, norm=False): 
