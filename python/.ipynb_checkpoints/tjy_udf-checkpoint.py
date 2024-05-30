@@ -615,9 +615,9 @@ def get_fs(spline, start, trans1, trans2, end):
     def get_meta(spline, trans, start=0, direc='left'):
         ## direc: 'left' or 'right' or 'real'
         if direc=='left':
-            xs = np.arange(start, trans, 0.1)
+            xs = np.arange(start, trans, 0.05)
         if direc=='right':
-            xs = np.arange(trans, start, 0.1)
+            xs = np.arange(trans, start, 0.05)
         return xs, spline(xs)
 
     xleft, yleft = get_meta(spline, trans1, start, 'left')
