@@ -592,7 +592,7 @@ def CalcF(nx, y, dx=17/150):
     xf, yf = np.average([d1, d2], axis=0), [(y2[i]-y1[i])/(d1[i]-d2[i]) for i in range(round(len(d)/2))] # Force from squeezing (-dx)
     return d, xf, yf
 
-def get_fp(GIT, fname, fit=True):
+def get_fp(GIT, fname, fit=True,s=1e-05):
     import pandas as pd, numpy as np
     from scipy.interpolate import UnivariateSpline
     freeE = pd.read_csv(GIT+fname, sep="\s+", skiprows=0, names = ['it', 'nx', 'freeE', 'freeDiff', 'inCompMax', 'andErr']).sort_values(by='nx', ignore_index=True)
