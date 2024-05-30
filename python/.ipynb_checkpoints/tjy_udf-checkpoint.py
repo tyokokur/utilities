@@ -605,7 +605,7 @@ def get_fp(GIT, fname, fit=True,s=1e-05):
     
     if fit: 
         XX, YY = np.sort(xp), np.take_along_axis(np.array(fp), np.argsort(xp), 0)
-        fits = UnivariateSpline(XX, YY, s=1e-5)
+        fits = UnivariateSpline(XX, YY, s=s)
         return dp, yp, xp, fp, fits
     else: 
         return dp, yp, xp, fp
@@ -621,6 +621,6 @@ def get_fs(spline, start, trans1, trans2, end):
         return xs, spline(xs)
 
     xleft, yleft = get_meta(spline, trans1, start, 'left')
-    xreal, yreal = np.arange(trans1, trans2, 0.1), spline(np.arange(trans1, trans2, 0.1))
+    xreal, yreal = np.arange(trans1, trans2, 0.05), spline(np.arange(trans1, trans2, 0.05))
     xright, yright = get_meta(spline, trans1, end, 'right')
     return (xleft, yleft), (xreal, yreal), (xright, yright)
