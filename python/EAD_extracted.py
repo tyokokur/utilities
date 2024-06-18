@@ -1,3 +1,5 @@
+import pandas as pd
+conv = lambda x: pd.DataFrame(x, columns=['cs', 'h'])
 LH_516=[
     [-0.085, 14.883720930232558],
     [0.185, 12.093023255813954],
