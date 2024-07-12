@@ -104,7 +104,7 @@ def plot_pha(read_list, labs=[], b0=1.0, show=True,
     if not y2_start: y2_start = y1_start
     if not y2_end:   y2_end   = y1_end
     if not block_Ni: block_Ni = [[5]]*len(read_list)
-    if not colors:   colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']*5
+    #if not colors:   colors = ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']*5
     
     div = [b0]*len(read_list) #b0
     colors_i = [colors[i] for i in range(len(read_list))]
