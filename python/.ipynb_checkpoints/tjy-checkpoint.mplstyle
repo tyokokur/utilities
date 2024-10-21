@@ -1,8 +1,35 @@
+## IMPORT WITH: mpl.rc_file('tjy.mplstyle')
+
+## Function to print ticklabels in mathmode. (Use by pasting function into code and calling with ticks() for single axes or ticks(axs) for subplots)
+# def ticks(axs = []):
+#    import matplotlib.pyplot as plt, numpy as np
+#    
+#    kw = {'fontname': 'serif'}
+#    if not np.any(axs): 
+#        plt.yticks(**kw) 
+#        plt.xticks(**kw)
+#    
+#    dims = np.shape(axs)
+#    try:
+#        for i in range(dims[0]): 
+#            for j in range(dims[1]):
+#                for k in axs[i,j]: 
+#                    plt.sca(k)
+#                    plt.yticks(**kw)
+#                    plt.xticks(**kw)
+#        return
+#    except IndexError:            
+#        for i in axs: 
+#            plt.sca(i)
+#            plt.yticks(**kw)
+#            plt.xticks(**kw)
+#        return
+
 figure.figsize:    6.4, 4.8
 
 font.family:       sans-serif
-font.sans-serif:   TeX Gyre Heros 
-font.serif:        CMU Serif 
+font.sans-serif:   TeX Gyre Heros  ## If you want to use this, you will need to download the font files
+font.serif:        CMU Serif       ## If you want to use this, you will need to download the font files
 font.weight:       normal
 
 text.usetex:       False
@@ -27,7 +54,7 @@ xtick.minor.size : 4
 xtick.minor.width: 1
 xtick.labelsize:   16
 
-ytick.direction:   out
+ytick.direction:   in
 ytick.major.size:  6
 ytick.major.width: 2.0
 ytick.major.pad:   6
