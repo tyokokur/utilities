@@ -22,10 +22,11 @@ def ticks(axs = []):
             plt.xticks(**kw)
         return
 
-def elread(fname):
+def elread(fname, an=True):
     import pandas as pd, numpy as np
     data = pd.read_csv(fname, sep="\s+", skiprows=0, header=None)
-    el = pd.DataFrame({'z': data[0], 'psi': -1*data[1], 'ca': data[2], 'an':data[3], 'polym':data[4]})
+    if an: el = pd.DataFrame({'z': data[0], 'psi': -1*data[1], 'ca': data[2], 'an':data[3], 'polym':data[4]})
+    else : el = pd.DataFrame({'z': data[0], 'psi': -1*data[1], 'ca': data[2], 'polym':data[4]})
     return el
     
 def phread(fname, block=7, norm=False): 
