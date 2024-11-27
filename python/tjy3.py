@@ -1,4 +1,5 @@
-import pandas as pd, numpy as np
+import pandas as pd, numpy as np, matplotlib.pyplot as plt
+import tjy_udf as tjy
 class Pha3D:
     """
         Class for reading and plotting 3D (xyz) density distributions 
