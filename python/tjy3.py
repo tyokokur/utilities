@@ -9,7 +9,7 @@ class Pha3D:
         fname: filename containing density distribution; dims: (Lx, Ly, Lz) in nm units; discs: (dx, dy, dz) in nm units;
         blocks: [# of blocks in polymer]; silent: bool, for printing end of init (after _readPha)
         """
-        import math
+        import math, numpy as np
         (self.lx, self.ly, self.lz), (self.dx, self.dy, self.dz) = dims, discs
         self.nxnynz = (self.nx, self.ny, self.nz) = (round(self.lx / self.dx), round(self.ly /self.dy), round(self.lz / self.dz))
         
