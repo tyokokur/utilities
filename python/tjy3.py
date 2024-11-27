@@ -1,4 +1,5 @@
 class Pha3D:
+    import pandas as pd, numpy as np
     """
         Class for reading and plotting 3D (xyz) density distributions 
         self.PHAXYZ[PHA, X, Y, Z] contains all information in 3D arrays with shape (self.nx, self.ny, self.nz)
@@ -9,7 +10,7 @@ class Pha3D:
         fname: filename containing density distribution; dims: (Lx, Ly, Lz) in nm units; discs: (dx, dy, dz) in nm units;
         blocks: [# of blocks in polymer]; silent: bool, for printing end of init (after _readPha)
         """
-        import math, numpy as np
+        import math
         (self.lx, self.ly, self.lz), (self.dx, self.dy, self.dz) = dims, discs
         self.nxnynz = (self.nx, self.ny, self.nz) = (round(self.lx / self.dx), round(self.ly /self.dy), round(self.lz / self.dz))
         
@@ -19,7 +20,6 @@ class Pha3D:
         self._readPha(fname, silent=silent)
         
     def _readPha(self, fname, silent=True):
-        import pandas as pd, numpy as np
         from urllib.error import HTTPError
         
         a=b=c = 1
