@@ -1,5 +1,5 @@
+import pandas as pd, numpy as np
 class Pha3D:
-    import pandas as pd, numpy as np
     """
         Class for reading and plotting 3D (xyz) density distributions 
         self.PHAXYZ[PHA, X, Y, Z] contains all information in 3D arrays with shape (self.nx, self.ny, self.nz)
