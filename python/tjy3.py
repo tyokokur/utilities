@@ -58,7 +58,7 @@ class Pha3D:
         from mpl_toolkits import axes_grid1
         if not zmax  : zmax = self.lz-self.dz
         if not levels.any(): levels = np.arange(0, 1.01, 0.01)
-        if not cmap  : cmap = plt.cm.coolwarm
+        if not cmap  : cmap = plt.cm.jet
         if not fig   : fig  = plt.figure(figsize=(plt.rcParams['figure.figsize'][0]*wspace, plt.rcParams['figure.figsize'][1]))
         bools = {'reflect_box':reflect_box, 'show_box':show_box, 'ins_frame':ins_frame}
         kws   = {'levels':levels, 'cmap':cmap} 
