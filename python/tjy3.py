@@ -42,7 +42,7 @@ class Pha3D:
         if (self.size != len(PHA)): print('\nERROR: NxNyNz ({:d}) != PHA ({:d})\n'.format(self.size, len(PHA)))
         self.PHAXYZ = np.array(PHA).reshape(*self.nxnynz), np.array(X).reshape(*self.nxnynz), np.array(Y).reshape(*self.nxnynz), np.array(Z).reshape(*self.nxnynz)
 
-        if not silent: print('_readPha done, max = {}'.format(PHA.max())
+        if not silent: print('_readPha done, max = {}'.format(PHA.max()))
         return 
         
     def plot_proj(self, which='both', yslice=0, zslice=0, zmax=None, show_slice='both', levels=np.array([]), 
