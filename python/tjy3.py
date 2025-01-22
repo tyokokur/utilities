@@ -9,7 +9,7 @@ class Pha3D:
         self.plot_3d() for plotting 3D isosurface density distributions
         self.mask_wa() for artificially adding oscillations to fields for seeding lateral inhomogeneities
     """
-    def __init__(self, fname, dims, discs=(0.25,0.25,0.10), blocks=[1], silent=True):
+    def __init__(self, fname, dims, discs=(0.25,0.25,0.10), fprefix=None, blocks=[1], silent=True):
         """
         fname: filename containing density distribution; dims: (Lx, Ly, Lz) in nm units; discs: (dx, dy, dz) in nm units;
         blocks: [# of blocks in polymer]; silent: bool, for printing end of init (after _readPha)
@@ -21,7 +21,7 @@ class Pha3D:
         self.lx, self.ly, self.lz = self.nx*self.dx, self.ny*self.dy, self.nz*self.dz # update
         self.size   = np.prod(self.nxnynz)
         self.blocks = blocks
-        self._readPha(fname, silent=silent)
+        self._readPha(fname, fprefix=fprefix, silent=silent)
         
     def plot_proj(self, which='both', yslice=0, zslice=0, zmax=None, show_slice='both', levels=np.array([]), 
                   reflect_box=True, show_box=True, ins_frame=True, cmap=None, fig=None, wspace=1.75,
@@ -98,8 +98,8 @@ class Pha3D:
         if not zmax  : zmax  = self.lz-self.dz
         if not isomin: isomin= 1e-02
         if not cmap  : cmap  = plt.cm.jet
-        if not fprefix: fprefix='E:/Downloads/'
-        if not fname : fname = fprefix+'pha_vol.html'
+        if not fprefix: fprefix='E:/'
+        if not fname : fname = fprefix+'Downloads/pha_vol.html'
         vol = self.PHAXYZ[0].flatten()
         X   = self.PHAXYZ[1].flatten()
         Y   = self.PHAXYZ[2].flatten()
@@ -219,8 +219,9 @@ class Pha3D:
         df.to_csv(fname_out,header=False,index=False,sep=" ",float_format="%10.5e")
         return
             
-    def _readPha(self, fname, silent=True):
+    def _readPha(self, fname, fprefix=None, silent=True):
         from urllib.error import HTTPError
+        if not fprefix: fprefix = 'E:/'
         
         a=b=c = 1
         names = ['rx', 'ry', 'rz', 'phA']
@@ -230,9 +231,9 @@ class Pha3D:
             b += 2
             c += self.blocks[j]
         names += ['phB']
-        try: df = pd.read_csv(fname, sep="\s+", skiprows=0, names=names)
+        try: df = pd.read_csv(fprefix+fname, sep="\s+", skiprows=0, names=names)
         except HTTPError: 
-            print('{} not found'.format(fname))
+            print('{} not found'.format(fprefix+fname))
             return
     
         X, Y, Z, PHA, PHB = df.rx, df.ry, df.rz, df.phA, df.phB
