@@ -90,7 +90,7 @@ class Pha3D:
         
         return fig
     
-    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, cmap=None, write_html=True, fname=None,
+    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, cmap=None, write_html=True, fname=None, fprefix=None,
                   show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
         '''
         test
@@ -98,7 +98,8 @@ class Pha3D:
         if not zmax  : zmax  = self.lz-self.dz
         if not isomin: isomin= 1e-02
         if not cmap  : cmap  = plt.cm.jet
-        if not fname : fname = 'E:/Downloads/pha_vol.html'
+        if not fprefix: fprefix='E:/Downloads/'
+        if not fname : fname = fprefix+'pha_vol.html'
         vol = self.PHAXYZ[0].flatten()
         X   = self.PHAXYZ[1].flatten()
         Y   = self.PHAXYZ[2].flatten()
