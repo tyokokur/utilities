@@ -1,10 +1,13 @@
-import pandas as pd, numpy as np, matplotlib.pyplot as plt
+import pandas as pd, numpy as np, matplotlib.pyplot as plt, plotly.graph_objects as go
 import tjy_udf as tjy
-class Pha3D:
+
+class Pha3D: 
     """
         Class for reading and plotting 3D (xyz) density distributions 
         self.PHAXYZ[PHA, X, Y, Z] contains all information in 3D arrays with shape (self.nx, self.ny, self.nz)
         self.plot_proj() for plotting 2D projection of density distributions (e.g., x-y projection at specified z)
+        self.plot_3d() for plotting 3D isosurface density distributions
+        self.mask_wa() for artificially adding oscillations to fields for seeding lateral inhomogeneities
     """
     def __init__(self, fname, dims, discs=(0.25,0.25,0.10), blocks=[1], silent=True):
         """
@@ -20,31 +23,6 @@ class Pha3D:
         self.blocks = blocks
         self._readPha(fname, silent=silent)
         
-    def _readPha(self, fname, silent=True):
-        from urllib.error import HTTPError
-        
-        a=b=c = 1
-        names = ['rx', 'ry', 'rz', 'phA']
-        for j in range(len(self.blocks)):
-            names += ['phA_T{:d}'.format(a)] +  ['*'*b]+ ['ph{:d}'.format(c+i) for i in range(self.blocks[j])] + ['*'*(b+1)]
-            a += 1
-            b += 2
-            c += self.blocks[j]
-        names += ['phB']
-        try: df = pd.read_csv(fname, sep="\s+", skiprows=0, names=names)
-        except HTTPError: 
-            print('{} not found'.format(fname))
-            return
-    
-        X, Y, Z, PHA, PHB = df.rx, df.ry, df.rz, df.phA, df.phB
-        # TODO: Insert code for ph_i here
-
-        if (self.size != len(PHA)): print('\nERROR: NxNyNz ({:d}) != PHA ({:d})\n'.format(self.size, len(PHA)))
-        self.PHAXYZ = np.array(PHA).reshape(*self.nxnynz), np.array(X).reshape(*self.nxnynz), np.array(Y).reshape(*self.nxnynz), np.array(Z).reshape(*self.nxnynz)
-
-        if not silent: print('_readPha done, max = {}'.format(PHA.max()))
-        return 
-        
     def plot_proj(self, which='both', yslice=0, zslice=0, zmax=None, show_slice='both', levels=np.array([]), 
                   reflect_box=True, show_box=True, ins_frame=True, cmap=None, fig=None, wspace=1.75,
                   show_cbar=True,cbar_ticks=[], xy_xticks=[], xy_yticks=[]):
@@ -54,7 +32,6 @@ class Pha3D:
         cmap: plt.cm.{}; fig: feed some other figure in
         '''
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
-        import numpy as np, matplotlib.pyplot as plt
         from mpl_toolkits import axes_grid1
         if not zmax  : zmax = self.lz-self.dz
         if not levels.any(): levels = np.arange(0, 1.01, 0.01)
@@ -112,6 +89,160 @@ class Pha3D:
             tjy.ticks([cbar.ax])
         
         return fig
+    
+    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, cmap=None, write_html=True, fname=None,
+                  show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
+        '''
+        test
+        '''
+        if not zmax  : zmax  = self.lz-self.dz
+        if not isomin: isomin= 1e-02
+        if not cmap  : cmap  = plt.cm.jet
+        if not fname : fname = 'E:/Downloads/pha_vol.html'
+        vol = self.PHAXYZ[0].flatten()
+        X   = self.PHAXYZ[1].flatten()
+        Y   = self.PHAXYZ[2].flatten()
+        Z   = self.PHAXYZ[3].flatten()
+        nx, ny, nz = self.nx, self.ny, self.nz
+        
+        if zmax > self.lz-self.dz: 
+            print('\n\nERROR: zmax TOO LARGE: {:.2f} > {:.2f}\n\n'.format(zmax, self.lz-self.dz))
+            return
+        if type(nz_coarse) is not int: 
+            print('\n\nERROR: nz_coarse must be of int type')
+            return
+        
+        if reflect_box: # Overwrite with full PHA
+            def _conv1(i1,j1,k1): return int((i1 * ny  +j1)*nz + k1)
+            def _conv2(i2,j2,k2): return int((i2* 2*ny +j2)*nz + k2)
+            PH2 = np.zeros(4*nx*ny*nz)
+            X2 = np.zeros(4*nx*ny*nz)
+            Y2 = np.zeros(4*nx*ny*nz)
+            Z2 = np.zeros(4*nx*ny*nz)
+            for i in range(nx): 
+                for j in range(ny):
+                    for k in range(nz):
+                        I = 2*nx-1 - i
+                        J = 2*ny-1 - j
+                        PH2[_conv2(i,j,k)] = vol[_conv1(i,j,k)]
+                        PH2[_conv2(I,j,k)] = vol[_conv1(i,j,k)]
+                        PH2[_conv2(i,J,k)] = vol[_conv1(i,j,k)]
+                        PH2[_conv2(I,J,k)] = vol[_conv1(i,j,k)]
+            for i in range(2*nx):
+                for j in range(2*ny):
+                    for k in range(nz):
+                        X2[_conv2(i,j,k)] = i*self.dx
+                        Y2[_conv2(i,j,k)] = j*self.dy
+                        Z2[_conv2(i,j,k)] = k*self.dz
+            vol = PH2
+            X = X2
+            Y = Y2 
+            Z = Z2
+            
+        if zmax < self.lz-self.dz:
+            z_filter = Z <= zmax
+            vol = vol[z_filter]
+            X = X[z_filter]
+            Y = Y[z_filter]
+            Z = Z[z_filter]
+        if nz_coarse > 1:
+            dz_new = self.dz*nz_coarse
+            z_filter = np.isin(Z, np.arange(0,zmax+dz_new, dz_new))
+            vol = vol[z_filter]
+            X = X[z_filter]
+            Y = Y[z_filter]
+            Z = Z[z_filter]
+        
+        lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
+        polymer = go.Isosurface(
+            x=X.flatten(),
+            y=Y.flatten(),
+            z=Z.flatten(),
+            value=vol.flatten(),
+            isomin=isomin,
+            isomax=self.PHA_max+0.001,
+            colorscale=lin_cscale('rgba{}'.format(plt.cm.jet(0.95,bytes=True))),
+            lighting=dict(ambient=0.75,specular=2.0),
+            # lighting=dict(ambient=0.60, diffuse=0.4, specular=1.5, roughness=0.7, fresnel=0.8),
+            # lightposition=dict(x=40, y=10, z=20),
+            surface_count=2, # number of isosurfaces, 2 by default: only min and max
+            # colorbar_nticks=2, # colorbar ticks correspond to isosurface values
+            caps=dict(x_show=True, y_show=True)
+        )
+
+        fig = go.Figure(data=[polymer, *self._ins_walls(zmax)])
+
+        fig.update_layout(scene_xaxis_showticklabels=True, scene_yaxis_showticklabels=True, scene_zaxis_showticklabels=True,
+                          scene_aspectmode='data',
+                          template='simple_white', width=600, height=600)
+        fig.update_traces(showscale=False)
+        
+        if write_html: 
+            fig.write_html(fname) 
+            print('Wrote to {}'.format(fname))
+            
+        return fig
+    
+    def mask_wa(self, fname_in, fname_out, amps=(0.5,0.5,0.7), pers=(2*np.pi/1, 2*np.pi/1, 2*np.pi/1), shifts=(0,0,0), ph_inplace=True):
+        '''
+        '''
+        a=b=c = 1
+        names = []
+        for j in range(len(self.blocks)):
+            names += ['*'*b]+ ['w{:d}'.format(c+i) for i in range(self.blocks[j])] + ['*'*(b+1)]
+            b += 2
+            c += self.blocks[j]
+        names += ['wB', 'eta', 'pot']
+        try: df = pd.read_csv(fname_in, sep="\s+", skiprows=0, names=names)
+        except HTTPError: 
+            print('{} not found'.format(fname_in))
+            return
+        
+        wa = np.array(df.w1).reshape(np.shape(self.PHAXYZ[0]))
+        mask = np.ones(np.size(self.PHAXYZ[0])).reshape(np.shape(self.PHAXYZ[0]))
+        
+        xamp,yamp,zamp = amps
+        xper,yper,zper = pers
+        xshift,yshift,zshift = shifts
+        
+        tX, tY, tZ = self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
+        for zind in range(len(tZ[0,0,:])):
+            for xind in range(len(tX[:,0,0])): 
+                for yind in range(len(tY[0,:,0])):
+                    xyzi = xind, yind, zind
+                    x, y, z = tX[xyzi], tY[xyzi], tZ[xyzi]
+                    mask[xyzi] = (xamp*np.cos([x*xper+xshift]) + yamp*np.cos([y*yper+yshift]) + zamp*np.cos([z*zper+zshift])+(xamp+yamp+zamp))/2/(xamp+yamp+zamp)
+                    if ph_inplace: npha3d.PHAXYZ[0][xyzi] *= mask[xyzi]
+                    wa[xyzi] *= mask[xyzi]
+        df.w1 = wa.flatten()
+        df.to_csv(fname_out,header=False,index=False,sep=" ",float_format="%10.5e")
+        return
+            
+    def _readPha(self, fname, silent=True):
+        from urllib.error import HTTPError
+        
+        a=b=c = 1
+        names = ['rx', 'ry', 'rz', 'phA']
+        for j in range(len(self.blocks)):
+            names += ['phA_T{:d}'.format(a)] +  ['*'*b]+ ['ph{:d}'.format(c+i) for i in range(self.blocks[j])] + ['*'*(b+1)]
+            a += 1
+            b += 2
+            c += self.blocks[j]
+        names += ['phB']
+        try: df = pd.read_csv(fname, sep="\s+", skiprows=0, names=names)
+        except HTTPError: 
+            print('{} not found'.format(fname))
+            return
+    
+        X, Y, Z, PHA, PHB = df.rx, df.ry, df.rz, df.phA, df.phB
+        # TODO: Insert code for ph_i here
+
+        if (self.size != len(PHA)): print('\nERROR: NxNyNz ({:d}) != PHA ({:d})\n'.format(self.size, len(PHA)))
+        self.PHAXYZ = np.array(PHA).reshape(*self.nxnynz), np.array(X).reshape(*self.nxnynz), np.array(Y).reshape(*self.nxnynz), np.array(Z).reshape(*self.nxnynz)
+        self.PHA_max = PHA.max()
+
+        if not silent: print('_readPha done, max = {}'.format(self.PHA_max))
+        return 
     
     def _plotxz(self, ax, jSLICE, zmax, kws, reflect_box=True, show_box=True, ins_frame=True):
         plt.sca(ax)
@@ -200,35 +331,22 @@ class Pha3D:
             
         return FRAX, FRAY, FRAP
     
-    def mask_wa(self, fname_in, fname_out, amps=(0.5,0.5,0.7), pers=(2*np.pi/1, 2*np.pi/1, 2*np.pi/1), shifts=(0,0,0), ph_inplace=True):
-        a=b=c = 1
-        names = []
-        for j in range(len(self.blocks)):
-            names += ['*'*b]+ ['w{:d}'.format(c+i) for i in range(self.blocks[j])] + ['*'*(b+1)]
-            b += 2
-            c += self.blocks[j]
-        names += ['wB', 'eta', 'pot']
-        try: df = pd.read_csv(fname_in, sep="\s+", skiprows=0, names=names)
-        except HTTPError: 
-            print('{} not found'.format(fname_in))
-            return
-        
-        wa = np.array(df.w1).reshape(np.shape(self.PHAXYZ[0]))
-        mask = np.ones(np.size(self.PHAXYZ[0])).reshape(np.shape(self.PHAXYZ[0]))
-        
-        xamp,yamp,zamp = amps
-        xper,yper,zper = pers
-        xshift,yshift,zshift = shifts
-        
-        tX, tY, tZ = self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
-        for zind in range(len(tZ[0,0,:])):
-            for xind in range(len(tX[:,0,0])): 
-                for yind in range(len(tY[0,:,0])):
-                    xyzi = xind, yind, zind
-                    x, y, z = tX[xyzi], tY[xyzi], tZ[xyzi]
-                    mask[xyzi] = (xamp*np.cos([x*xper+xshift]) + yamp*np.cos([y*yper+yshift]) + zamp*np.cos([z*zper+zshift])+(xamp+yamp+zamp))/2/(xamp+yamp+zamp)
-                    if ph_inplace: npha3d.PHAXYZ[0][xyzi] *= mask[xyzi]
-                    wa[xyzi] *= mask[xyzi]
-        df.w1 = wa.flatten()
-        df.to_csv(fname_out,header=False,index=False,sep=" ",float_format="%10.5e")
-        return
+    def _ins_walls(self, z_max):
+            wall_col = 'rgba(51, 153, 255, 0.2)'
+            floor_col= 'rgba(20, 20, 20, 0.8)'
+            
+            lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
+            walls = []
+            s, t = np.meshgrid(np.linspace(0, 2*self.lx, 100), np.linspace(0, 2*self.ly, 100))
+            walls.append(go.Surface(x=s,y=t,z=z_max*np.ones(s.shape), colorscale=lin_cscale(wall_col), showscale=False))
+            walls.append(go.Surface(x=s,y=t,z=np.zeros(s.shape), colorscale=lin_cscale(floor_col), showscale=False))
+            u, v = np.meshgrid(np.linspace(0, 2*self.lx, 100), np.linspace(0, z_max, 100))
+            walls.append(go.Surface(x=u,y=2*self.ly*np.ones(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            walls.append(go.Surface(x=u,y=np.zeros(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            u, v = np.meshgrid(np.linspace(0, 2*self.ly, 100), np.linspace(0, z_max, 100))
+            walls.append(go.Surface(x=2*self.lx*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            walls.append(go.Surface(x=np.zeros(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            return walls
+    
+    
+   
