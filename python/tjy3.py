@@ -34,7 +34,7 @@ class Pha3D:
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
         from mpl_toolkits import axes_grid1
         if not zmax  : zmax = self.lz-self.dz
-        if not levels.any(): levels = np.arange(0, 1.01, 0.01)
+        if not levels.any(): levels = np.arange(0,self.PHA_max+0.001,0.001)
         if not cmap  : cmap = plt.cm.jet
         if not fig   : fig  = plt.figure(figsize=(plt.rcParams['figure.figsize'][0]*wspace, plt.rcParams['figure.figsize'][1]))
         bools = {'reflect_box':reflect_box, 'show_box':show_box, 'ins_frame':ins_frame}
@@ -90,7 +90,7 @@ class Pha3D:
         
         return fig
     
-    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, cmap=None, write_html=True, fname=None, fprefix=None,
+    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
                   show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
         '''
         test
@@ -98,8 +98,8 @@ class Pha3D:
         if not zmax  : zmax  = self.lz-self.dz
         if not isomin: isomin= 1e-02
         if not cmap  : cmap  = plt.cm.jet
-        if not fprefix: fprefix='E:/'
-        if not fname : fname = fprefix+'Downloads/pha_vol.html'
+        if not fprefix: fprefix='E:/Downloads'
+        if not fname : fname = fprefix+'pha_vol.html'
         vol = self.PHAXYZ[0].flatten()
         X   = self.PHAXYZ[1].flatten()
         Y   = self.PHAXYZ[2].flatten()
@@ -179,8 +179,26 @@ class Pha3D:
         fig.update_traces(showscale=False)
         
         if write_html: 
-            fig.write_html(fname) 
+            #fig.write_html(fname) 
+            '''
+            f = open(fname, "w")
+            f.close()
+            with open(fname, 'a') as f:
+                f.write(fig.to_html(full_html=False, include_plotlyjs=True))
+            f.close()
+            '''
+            f = open(fname, "w")
+            f.close()
+            with open(fname, 'a') as f:
+                f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
+            f.close()
+            
             print('Wrote to {}'.format(fname))
+            
+            if open_html: 
+                import webbrowser
+                webbrowser.open(fname)
+                print('Opening...')
             
         return fig
     
@@ -221,7 +239,7 @@ class Pha3D:
             
     def _readPha(self, fname, fprefix=None, silent=True):
         from urllib.error import HTTPError
-        if not fprefix: fprefix = 'E:/'
+        if not fprefix: fprefix = 'E:/Downloads'
         
         a=b=c = 1
         names = ['rx', 'ry', 'rz', 'phA']
@@ -233,6 +251,9 @@ class Pha3D:
         names += ['phB']
         try: df = pd.read_csv(fprefix+fname, sep="\s+", skiprows=0, names=names)
         except HTTPError: 
+            print('{} not found'.format(fprefix+fname))
+            return
+        except FileNotFoundError: 
             print('{} not found'.format(fprefix+fname))
             return
     
