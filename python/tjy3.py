@@ -183,7 +183,7 @@ class Pha3D:
             caps=dict(x_show=True, y_show=True)
         )
 
-        fig = go.Figure(data=[polymer, *self._ins_walls(zmax)])
+        fig = go.Figure(data=[polymer, *self._ins_walls((min(X), max(X)), (min(Y), max(Y)), zmax)])
 
         fig.update_layout(scene_xaxis_showticklabels=True, scene_yaxis_showticklabels=True, scene_zaxis_showticklabels=True,
                           scene_aspectmode='data',
@@ -366,12 +366,13 @@ class Pha3D:
             
         return FRAX, FRAY, FRAP
     
-    def _ins_walls(self, z_max):
+    def _ins_walls(self, (xmin, xmax), (), z_max):
             wall_col = 'rgba(51, 153, 255, 0.2)'
             floor_col= 'rgba(20, 20, 20, 0.8)'
             
             lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
             walls = []
+            xmin = 
             s, t = np.meshgrid(np.linspace(0, 2*self.lx, 100), np.linspace(0, 2*self.ly, 100))
             walls.append(go.Surface(x=s,y=t,z=z_max*np.ones(s.shape), colorscale=lin_cscale(wall_col), showscale=False))
             walls.append(go.Surface(x=s,y=t,z=np.zeros(s.shape), colorscale=lin_cscale(floor_col), showscale=False))
