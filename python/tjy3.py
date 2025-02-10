@@ -143,17 +143,17 @@ class Pha3D:
                             if i < nx:
                                 X2[_conv2(i,j,k)] = i*self.dx
                             else: 
-                                X2[_conv2(i,j,k)] = i*self.dx - self.lx
+                                X2[_conv2(i,j,k)] = i*self.dx - 2*self.lx
                             if j < ny: 
                                 Y2[_conv2(i,j,k)] = j*self.dy
                             else: 
-                                Y2[_conv2(i,j,k)] = j*self.dy - self.ly
+                                Y2[_conv2(i,j,k)] = j*self.dy - 2*self.ly
                             Z2[_conv2(i,j,k)] = k*self.dz
             vol = PH2
             X = X2
             Y = Y2 
             Z = Z2
-            return X2
+            # return X2
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
