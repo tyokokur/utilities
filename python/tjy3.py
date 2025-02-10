@@ -90,7 +90,7 @@ class Pha3D:
         
         return fig
     
-    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, reflect_over='ne', cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
+    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, reflect_over="ne", cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
                   show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
         '''
         test
