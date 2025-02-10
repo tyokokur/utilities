@@ -142,8 +142,10 @@ class Pha3D:
             for i in range(2*nx):
                 for j in range(2*ny):
                     for k in range(nz):
-                        X2[_conv2(i,j,k)] = i*self.dx
-                        Y2[_conv2(i,j,k)] = j*self.dy
+                        if 'e' in reflect_over: X2[_conv2(i,j,k)] = i*self.dx
+                        else:                   X2[_conv2(i,j,k)] = i*self.dx - self.lx
+                        if 'n' in reflect_over: Y2[_conv2(i,j,k)] = j*self.dy
+                        else:                   Y2[_conv2(i,j,k)] = j*self.dy - self.ly
                         Z2[_conv2(i,j,k)] = k*self.dz
             vol = PH2
             X = X2
