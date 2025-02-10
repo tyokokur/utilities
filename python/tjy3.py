@@ -90,7 +90,7 @@ class Pha3D:
         
         return fig
     
-    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
+    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, reflect_over='ne', cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
                   show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
         '''
         test
@@ -137,7 +137,18 @@ class Pha3D:
                             Y2[_conv2(i,j,k)] = j*self.dy
                             Z2[_conv2(i,j,k)] = k*self.dz
             elif (reflect_over=='sw'):
-                
+                for i in range(2*nx):
+                    for j in range(2*ny):
+                        for k in range(nz):
+                            if i < nx:
+                                X2[_conv2(i,j,k)] = i*self.dx
+                            else: 
+                                X2[_conv2(i,j,k)] = i*self.dx - self.lx
+                            if j < ny: 
+                                Y2[_conv2(i,j,k)] = j*self.dy
+                            else: 
+                                Y2[_conv2(i,j,k)] = j*self.dy - self.ly
+                            Z2[_conv2(i,j,k)] = k*self.dz
             vol = PH2
             X = X2
             Y = Y2 
