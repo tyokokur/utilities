@@ -379,10 +379,10 @@ class Pha3D:
             walls.append(go.Surface(x=s,y=t,z=np.zeros(s.shape), colorscale=lin_cscale(floor_col), showscale=False))
             u, v = np.meshgrid(np.linspace(xmin, xmax, 100), np.linspace(0, z_max, 100))
             walls.append(go.Surface(x=u,y=ymax*np.ones(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
-            walls.append(go.Surface(x=u,y=np.zeros(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            walls.append(go.Surface(x=u,y=ymin*np.ones(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
             u, v = np.meshgrid(np.linspace(ymin, ymax, 100), np.linspace(0, z_max, 100))
             walls.append(go.Surface(x=xmax*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
-            walls.append(go.Surface(x=np.zeros(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            walls.append(go.Surface(x=xmin*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
             return walls
     
     
