@@ -123,11 +123,11 @@ class Pha3D:
             for i in range(nx): 
                 for j in range(ny):
                     for k in range(nz):
-                        if 'e' is in reflect_over: I = 2*nx-1 - i
+                        if 'e' in reflect_over: I = 2*nx-1 - i
                         else: 
                             I = nx-1 - i
                             i = i + nx
-                        if 'n' is in refelct_over: J = 2*ny-1 - j
+                        if 'n' in reflect_over: J = 2*ny-1 - j
                         PH2[_conv2(i,j,k)] = vol[_conv1(i,j,k)]
                         PH2[_conv2(I,j,k)] = vol[_conv1(i,j,k)]
                         PH2[_conv2(i,J,k)] = vol[_conv1(i,j,k)]
