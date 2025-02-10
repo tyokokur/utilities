@@ -137,8 +137,8 @@ class Pha3D:
                             J2 = j + ny-1
                         PH2[_conv2(I1,J1,k)] = vol[_conv1(i,j,k)]
                         PH2[_conv2(I2,J2,k)] = vol[_conv1(i,j,k)]
-                        PH2[_conv2(I1,J1,k)] = vol[_conv1(i,j,k)]
-                        PH2[_conv2(I2,J2,k)] = vol[_conv1(i,j,k)]
+                        PH2[_conv2(I1,J2,k)] = vol[_conv1(i,j,k)]
+                        PH2[_conv2(I2,J1,k)] = vol[_conv1(i,j,k)]
             for i in range(2*nx):
                 for j in range(2*ny):
                     for k in range(nz):
