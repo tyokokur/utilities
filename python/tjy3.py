@@ -366,21 +366,21 @@ class Pha3D:
             
         return FRAX, FRAY, FRAP
     
-    def _ins_walls(self, (xmin, xmax), (), z_max):
+    def _ins_walls(self, (xmin, xmax), (ymin, ymax), z_max):
             wall_col = 'rgba(51, 153, 255, 0.2)'
             floor_col= 'rgba(20, 20, 20, 0.8)'
             
             lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
             walls = []
             xmin = 
-            s, t = np.meshgrid(np.linspace(0, 2*self.lx, 100), np.linspace(0, 2*self.ly, 100))
+            s, t = np.meshgrid(np.linspace(xmin, xmax, 100), np.linspace(ymin, ymax, 100))
             walls.append(go.Surface(x=s,y=t,z=z_max*np.ones(s.shape), colorscale=lin_cscale(wall_col), showscale=False))
             walls.append(go.Surface(x=s,y=t,z=np.zeros(s.shape), colorscale=lin_cscale(floor_col), showscale=False))
-            u, v = np.meshgrid(np.linspace(0, 2*self.lx, 100), np.linspace(0, z_max, 100))
-            walls.append(go.Surface(x=u,y=2*self.ly*np.ones(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            u, v = np.meshgrid(np.linspace(xmin, xmax, 100), np.linspace(0, z_max, 100))
+            walls.append(go.Surface(x=u,y=ymax*np.ones(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
             walls.append(go.Surface(x=u,y=np.zeros(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
-            u, v = np.meshgrid(np.linspace(0, 2*self.ly, 100), np.linspace(0, z_max, 100))
-            walls.append(go.Surface(x=2*self.lx*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
+            u, v = np.meshgrid(np.linspace(ymin, ymax, 100), np.linspace(0, z_max, 100))
+            walls.append(go.Surface(x=xmax*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
             walls.append(go.Surface(x=np.zeros(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
             return walls
     
