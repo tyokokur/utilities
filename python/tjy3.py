@@ -129,26 +129,12 @@ class Pha3D:
                         PH2[_conv2(I,j,k)] = vol[_conv1(i,j,k)]
                         PH2[_conv2(i,J,k)] = vol[_conv1(i,j,k)]
                         PH2[_conv2(I,J,k)] = vol[_conv1(i,j,k)]
-            if (reflect_over=='ne'):
-                for i in range(2*nx):
-                    for j in range(2*ny):
-                        for k in range(nz):
-                            X2[_conv2(i,j,k)] = i*self.dx
-                            Y2[_conv2(i,j,k)] = j*self.dy
-                            Z2[_conv2(i,j,k)] = k*self.dz
-            elif (reflect_over=='sw'):
-                for i in range(2*nx):
-                    for j in range(2*ny):
-                        for k in range(nz):
-                            if i < nx:
-                                X2[_conv2(i,j,k)] = i*self.dx
-                            else: 
-                                X2[_conv2(i,j,k)] = i*self.dx - 2*self.lx
-                            if j < ny: 
-                                Y2[_conv2(i,j,k)] = j*self.dy
-                            else: 
-                                Y2[_conv2(i,j,k)] = j*self.dy - 2*self.ly
-                            Z2[_conv2(i,j,k)] = k*self.dz
+            for i in range(2*nx):
+                for j in range(2*ny):
+                    for k in range(nz):
+                        X2[_conv2(i,j,k)] = i*self.dx
+                        Y2[_conv2(i,j,k)] = j*self.dy
+                        Z2[_conv2(i,j,k)] = k*self.dz
             vol = PH2
             X = X2
             Y = Y2 
