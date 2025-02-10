@@ -154,6 +154,7 @@ class Pha3D:
             X = X2
             Y = Y2 
             Z = Z2
+            display(X2)
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
