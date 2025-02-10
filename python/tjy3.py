@@ -137,6 +137,7 @@ class Pha3D:
                             Y2[_conv2(i,j,k)] = j*self.dy
                             Z2[_conv2(i,j,k)] = k*self.dz
             elif (reflect_over=='sw'):
+                print("ENTER")
                 for i in range(2*nx):
                     for j in range(2*ny):
                         for k in range(nz):
