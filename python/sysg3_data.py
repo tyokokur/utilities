@@ -1,12 +1,10 @@
 from Data import Data
 ''' chi = 1.25, N = 200, b = 1.0, v = 4.19, T = 293 '''
 
-class all:
+class All:
     def __init__(self):
         sdlfkj
         
-    def display(self):
-        print(self)
         
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
