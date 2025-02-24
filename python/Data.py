@@ -88,5 +88,6 @@ class Data:
 
         else: print('\n\nINVALID OPTION\n\n')
                 
+        plt.text(0.5, 0.9, r'$F = {:.5E}$'.format(self.minF(), transform=ax.transAxes, fontsize=18, horizontalalignment='center'))
         tjy.ticks()
         return fig, ax
