@@ -36,6 +36,12 @@ a0s5_hol.new((16, 16,15)     , -2.98602, icm=5.5e-05, err=1.8e-04)
 a0s5_hol.new((17, 17,15)     , -2.98620, icm=6.8e-05, err=2.0e-04)
 datasets += pack_data('a0s5_hol', a0s5_hol)
 
+a0s5_mic = Data(0.00, 5e-03, 'mic')
+datasets += pack_data('a0s5_mic', a0s5_mic)
+
+a0s5_str = Data(0.00, 5e-03, 'str')
+datasets += pack_data('a0s5_str', a0s5_str)
+
 ''' alpha = 0.10, sigma = 5e-03 '''
 a1s5_hol = Data(0.10, 5e-03, 'hol')
 a1s5_hol.new((8, 13.8, 35)   , -2.93661, icm=9.7e-05, err=3.3e-04)
