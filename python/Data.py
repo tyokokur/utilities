@@ -89,5 +89,6 @@ class Data:
         else: print('\n\nINVALID OPTION\n\n')
                 
         plt.text(0.5, 0.9, r'$F = {:.5E}$'.format(self.minF()), transform=plt.gca().transAxes, fontsize=18, horizontalalignment='center')
+        plt.title(r'$\alpha = {:.2f}, \sigma = {:.3f}$'.format(self.alpha, self.sigma))
         tjy.ticks()
         return
