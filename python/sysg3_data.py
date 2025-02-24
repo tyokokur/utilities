@@ -10,7 +10,7 @@ class All:
     def show(self): 
         styler = self.all.iloc[:,:4] \
             .style.hide(axis='index') \
-            .format(precision=3, formatter='{:E}')
+            .format('{:.3fE}')
         display(styler)
         
     def find(self, condition, n_cond=1):
