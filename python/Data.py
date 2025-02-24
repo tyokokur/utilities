@@ -18,7 +18,10 @@ class Data:
             if np.size(dims) == 3: self.lx, self.ly, self.lz = dims[0], dims[1], dims[2] 
             else: print('\n\nDIMS NOT SIZE 3: (lx, ly, lz)\n\n')
             
-    def list(
+    def show(self):
+        ''' Print summary of contained runs '''
+        for i in self.data: print('({}): {:.5f}\n'.format(i.dims, i.F))
+        
     def new(self, dims, F, icm=None, err=None): 
         ''' Add new converged run '''
         self.data.append(self.freeE(dims, F, icm=icm, err=err))
