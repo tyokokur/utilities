@@ -9,9 +9,10 @@ class All:
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
-        print()
+        return
         
 datasets = []
+
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
 a0s5_hom.new((8, 13.8, 15) , -2.98579, icm=5.5e-06, err=4.0e-04)
