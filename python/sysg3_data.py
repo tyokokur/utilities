@@ -9,7 +9,7 @@ class All:
         
     def show(self): 
         styler = self.all.iloc[:,:4].style \
-            .format({0: '{:.2f}', 1: '{:.3E}'}) \
+            .format('{:.3f}') \
             .hide(axis='index')
         display(styler)
         
