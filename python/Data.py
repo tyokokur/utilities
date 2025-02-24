@@ -50,8 +50,11 @@ class Data:
             plt.ylabel(r'$\langle F \rangle$')
             
         elif opt == '2d' or '2D': 
+            import warnings
             import scipy.optimize as optimize
             from scipy.optimize import OptimizeWarning
+            warnings.simplefilter("error", OptimizeWarning)
+            
             lxs = np.array([i.lx for i in self.data])
             lys = np.array([i.ly for i in self.data])
             fs  = np.array([i.F  for i in self.data])
@@ -66,8 +69,7 @@ class Data:
                 print('\n\n NEED 3 OR MORE POINTS TO FIT 2D FUNCTION \n\n')
                 return
             else:            func = func3
-            try: params, pcov = optimize.curve_fit(func, [lxs,lys], fs)
-            except OptimizeWarning: pass
+            params, pcov = optimize.curve_fit(func, [lxs,lys], fs)
             
             step = 0.01
             xrange = max(lxs) - min(lxs)
