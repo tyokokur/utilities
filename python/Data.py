@@ -28,7 +28,7 @@ class Data:
         if dims: return (min(fs), self.data[np.argmin(fs)].dims)
         else: return min(fs)
     
-    def plot(self, opt, guess=None, fig=None):
+    def plotF(self, opt, guess=None, fig=None):
         if not fig: fig,ax = plt.subplots() # Make new figure if one is not passed
         
         if opt == 'A' or opt == 'LxLy' or opt == 'lxly':
