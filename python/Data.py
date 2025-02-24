@@ -24,7 +24,10 @@ class Data:
         
     def new(self, dims, F, icm=None, err=None): 
         ''' Add new converged run '''
-        self.data.append(self.freeE(dims, F, icm=icm, err=err))
+        if dims not in self.data:
+            self.data.append(self.freeE(dims, F, icm=icm, err=err))
+        else:
+            
     
     def minF(self, dims=False):
         ''' Get minimum F of all converged runs '''
