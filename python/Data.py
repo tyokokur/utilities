@@ -3,8 +3,8 @@ import tjy_udf as tjy
 
 class Data: 
     def __init__(self, alp, sig, morph):
-        self.alp = alp
-        self.sig = sig
+        self.alpha = alp
+        self.sigma = sig
         self.morph=morph
         self.data = []
         
