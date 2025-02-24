@@ -7,7 +7,9 @@ class All:
     def __init__(self, datasets):
         self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'name', 'data'])
         
-    def show(self): print(self.all.iloc[:,:4].style.hide())
+    def show(self): 
+        styler = self.all.iloc[:,:4].style.hide(axis='index')
+        styler
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
