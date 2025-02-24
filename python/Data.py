@@ -30,6 +30,9 @@ class Data:
             self.data.pop([i.dims for i in self.data].index(dims))
             self.data.append(self.freeE(dims, F, icm=icm, err=err))
     
+    def pop(self, dims):
+        self.data.pop([i.dims for i in self.data].index(dims))
+    
     def minF(self, dims=False):
         ''' Get minimum F of all converged runs '''
         fs = [i.F for i in self.data]
