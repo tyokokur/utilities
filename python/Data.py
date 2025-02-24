@@ -65,7 +65,8 @@ class Data:
                 print('\n\n NEED 3 OR MORE POINTS TO FIT 2D FUNCTION \n\n')
                 return
             else:            func = func3
-            params, pcov = optimize.curve_fit(func, [lxs,lys], fs)
+            try: params, pcov = optimize.curve_fit(func, [lxs,lys], fs)
+            except OptimizeWarning: pass
             
             step = 0.01
             xrange = max(lxs) - min(lxs)
