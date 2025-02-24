@@ -4,16 +4,13 @@ from Data import Data
 ''' chi = 1.25, N = 200, b = 1.0, v = 4.19, T = 293 '''
 
 class All:
-    def __init__(self):
-        self.all = pd.DataFrame()
+    def __init__(self, datasets):
+        self.all = pd.DataFrame(datasets, columns=['data', 'alpha', 'sigma', 'morph'])
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
         print()
         
-    def new(self, data):
-        dataset = pd.DataFrame([[data, data.alpha, data.sigma, data.morph]], columns=['data', 'alpha', 'sigma', 'morph'])
-        pd.concat([self.all, dataset])
         
 All = All()
 
