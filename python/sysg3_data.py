@@ -34,13 +34,13 @@ a0s5_hol.new((13.8, 13.8, 15), -2.98544, icm=1.1e-05, err=4.5e-04)
 a0s5_hol.new((15, 15,15)     , -2.98573, icm=2.1e-04, err=6.7e-04)
 a0s5_hol.new((16, 16,15)     , -2.98602, icm=5.5e-05, err=1.8e-04)
 a0s5_hol.new((17, 17,15)     , -2.98620, icm=6.8e-05, err=2.0e-04)
-datasets += [(a0s5_hol.alpha, a0s5_hol.sigma, a0s5_hol.morph, 'a0s5_hol', a0s5_hol)]
+datasets += pack_data('a0s5_hol', a0s5_hol)
 
 ''' alpha = 0.10, sigma = 5e-03 '''
 a1s5_hol = Data(0.10, 5e-03, 'hol')
 a1s5_hol.new((8, 13.8, 35)   , -2.93661, icm=9.7e-05, err=3.3e-04)
 a1s5_hol.new((13.8, 13.8, 35), -2.93731, icm=1.8e-05, err=4.4e-04) 
 a1s5_hol.new((15, 15, 35)    , -2.93757, icm=1.6e-04, err=4.0e-04) 
-datasets += [(a0s5_hol.alpha, a0s5_hol.sigma, a0s5_hol.morph, 'a0s5_hol', a0s5_hol)]
+datasets += pack_data('a1s5_hol', a1s5_hol)
 
 All = All(datasets)
