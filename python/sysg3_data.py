@@ -19,14 +19,15 @@ class All:
         return subset
         
 datasets = []
-add_dataset = lambda data: datasets += [(i.alpha, i.sigma, i.morph, str(data), data)]
+add_dataset = lambda name, data: datasets += [(i.alpha, i.sigma, i.morph, name, data)]
 
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
 a0s5_hom.new((8, 13.8, 15) , -2.98579, icm=5.5e-06, err=4.0e-04)
 a0s5_hom.new((13.8,13.8,15), -2.98578, icm=2.2e-06, err=1.3e-04)
 a0s5_hom.new((10.6,10.6,15), -2.98580, icm=1.0e-05, err=3.7e-05)
-datasets += [(a0s5_hom.alpha, a0s5_hom.sigma, a0s5_hom.morph, 'a0s5_hom', a0s5_hom)]
+# datasets += [(a0s5_hom.alpha, a0s5_hom.sigma, a0s5_hom.morph, 'a0s5_hom', a0s5_hom)]
+add_dataset('a0s5_hom', a0s5_hom)
 
 a0s5_hol = Data(0.00, 5e-03, 'hol')
 a0s5_hol.new((8, 13.8, 15)   , -2.98419, icm=3.2e-06, err=4.0e-04)
