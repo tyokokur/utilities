@@ -9,7 +9,7 @@ class All:
         
     def show(self): 
         styler = self.all.iloc[:,:4].style.hide(axis='index')
-        styler
+        display(styler)
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
