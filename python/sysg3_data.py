@@ -8,9 +8,9 @@ class All:
         self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'name', 'data'])
         
     def show(self): 
-        styler = self.all.iloc[:,:4] \
-            .style.hide(axis='index') \
-            .style.format({0:'{:.2f}', 1:'{:.3E}'})
+        styler = self.all.iloc[:,:4].style \
+            .format({0:'{:.2f}', 1:'{:.3E}'}) \
+            .hide(axis='index')
         display(styler)
         
     def find(self, condition, n_cond=1):
