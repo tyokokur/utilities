@@ -20,7 +20,7 @@ class Data:
             
     def show(self):
         ''' Print summary of contained runs '''
-        for i in self.data: print('{}: {:.5f}'.format(i.dims, i.F))
+        for i in self.data: print('({0:5f}, {0:5f}, {0:5f}): {:.5f}'.format(*i.dims, i.F))
         
     def new(self, dims, F, icm=None, err=None): 
         ''' Add new converged run '''
