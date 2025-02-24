@@ -53,7 +53,7 @@ class Data:
             import warnings
             import scipy.optimize as optimize
             from scipy.optimize import OptimizeWarning
-            warnings.simplefilter("error", OptimizeWarning)
+            warnings.simplefilter("ignore", OptimizeWarning)
             
             lxs = np.array([i.lx for i in self.data])
             lys = np.array([i.ly for i in self.data])
