@@ -5,7 +5,7 @@ from Data import Data
 
 class All:
     def __init__(self, datasets):
-        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'name', 'N', 'data'])
+        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'name', 'n', 'data'])
         
     def show(self): 
         styler = self.all.iloc[:,:5].style \
