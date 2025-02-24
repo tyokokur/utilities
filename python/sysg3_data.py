@@ -6,7 +6,7 @@ from Data import Data
 class All:
     def __init__(self, datasets, quiet=False):
         self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'data'])
-        if not quiet: print(
+        if not quiet: print(self.all)
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
