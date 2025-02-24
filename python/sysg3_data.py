@@ -5,6 +5,9 @@ class All:
     def __init__(self):
         self.all = []
         
+    def find(self, condition, n_cond=1):
+        # all Datas that meet condition (e.g., alpha = 0)
+        
     def new(self, dataset, name):
         self.all += [dataset]
         
