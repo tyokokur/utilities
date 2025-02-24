@@ -4,8 +4,9 @@ from Data import Data
 ''' chi = 1.25, N = 200, b = 1.0, v = 4.19, T = 293 '''
 
 class All:
-    def __init__(self, datasets):
+    def __init__(self, datasets, quiet=False):
         self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'data'])
+        if not quiet: print(
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
