@@ -5,7 +5,7 @@ class All:
     def __init__(self):
         self.all = []
         
-    def new(self, dataset):
+    def new(self, dataset, name):
         self.all += [dataset]
         
 All = All()
