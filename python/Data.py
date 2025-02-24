@@ -89,4 +89,4 @@ class Data:
         else: print('\n\nINVALID OPTION\n\n')
                 
         tjy.ticks()
-        return
+        return fig, ax
