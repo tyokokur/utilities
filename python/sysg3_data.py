@@ -12,8 +12,8 @@ class All:
         print()
         
     def new(self, data):
-        dataset = pd.DataFrame([data, data.alpha, data.sigma, data.morph], columns=['data', 'alpha', 'sigma', 'morph'])
-        self.all.concat([self.all, dataset])
+        dataset = pd.DataFrame([[data, data.alpha, data.sigma, data.morph]], columns=['data', 'alpha', 'sigma', 'morph'])
+        pd.concat([self.all, dataset])
         
 All = All()
 
