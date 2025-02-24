@@ -5,10 +5,10 @@ from Data import Data
 
 class All:
     def __init__(self, datasets):
-        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'name', 'data'])
+        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'name', 'N', 'data'])
         
     def show(self): 
-        styler = self.all.iloc[:,:4].style \
+        styler = self.all.iloc[:,:5].style \
             .format(precision=3) \
             .hide(axis='index')
         display(styler)
@@ -19,7 +19,7 @@ class All:
         return subset
         
 datasets = []
-pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, name, data)]
+pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, name, len(data.data), data)]
 
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
