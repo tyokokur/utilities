@@ -1,15 +1,19 @@
+import pandas as pd, numpy as np
 from Data import Data
+
 ''' chi = 1.25, N = 200, b = 1.0, v = 4.19, T = 293 '''
 
 class All:
     def __init__(self):
-        self.all = []
+        self.all = pd.DataFrame()
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
+        print()
         
-    def new(self, dataset, name):
-        self.all += [dataset]
+    def new(self, data):
+        dataset = pd.DataFrame([data, data.alpha, data.sigma, data.morph], columns=['data', 'alpha', 'sigma', 'morph'])
+        self.all.concat([self.all, dataset])
         
 All = All()
 
