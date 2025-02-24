@@ -5,7 +5,7 @@ from Data import Data
 
 class All:
     def __init__(self, datasets):
-        self.all = pd.DataFrame(datasets, columns=['data', 'alpha', 'sigma', 'morph'])
+        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'data'])
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
@@ -17,7 +17,7 @@ a0s5_hom = Data(0.00, 5e-03, 'hom')
 a0s5_hom.new((8, 13.8, 15) , -2.98579, icm=5.5e-06, err=4.0e-04)
 a0s5_hom.new((13.8,13.8,15), -2.98578, icm=2.2e-06, err=1.3e-04)
 a0s5_hom.new((10.6,10.6,15), -2.98580, icm=1.0e-05, err=3.7e-05)
-datasets += [(a0s5_hom, a0s5_hom.alpha, a0s5_hom.sigma, a0s5_hom.morph)]
+datasets += [(a0s5_hom.alpha, a0s5_hom.sigma, a0s5_hom.morph, a0s5_hom)]
 
 a0s5_hol = Data(0.00, 5e-03, 'hol')
 a0s5_hol.new((8, 13.8, 15)   , -2.98419, icm=3.2e-06, err=4.0e-04)
@@ -25,6 +25,6 @@ a0s5_hol.new((13.8, 13.8, 15), -2.98544, icm=1.1e-05, err=4.5e-04)
 a0s5_hol.new((15, 15,15)     , -2.98573, icm=2.1e-04, err=6.7e-04)
 a0s5_hol.new((16, 16,15)     , -2.98602, icm=5.5e-05, err=1.8e-04)
 a0s5_hol.new((17, 17,15)     , -2.98620, icm=6.8e-05, err=2.0e-04)
-datasets += [(a0s5_hol, a0s5_hol.alpha, a0s5_hol.sigma, a0s5_hol.morph)]
+datasets += [(a0s5_hol.alpha, a0s5_hol.sigma, a0s5_hol.morph, a0s5_hol)]
 
 All = All(datasets)
