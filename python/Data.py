@@ -51,6 +51,7 @@ class Data:
             
         elif opt == '2d' or '2D': 
             import scipy.optimize as optimize
+            from scipy.optimize import OptimizeWarning
             lxs = np.array([i.lx for i in self.data])
             lys = np.array([i.ly for i in self.data])
             fs  = np.array([i.F  for i in self.data])
