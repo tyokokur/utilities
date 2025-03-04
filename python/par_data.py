@@ -55,3 +55,18 @@ single101= [t1,t2,t4,t6,t8,t12]
 for i in single101: i.Process()
 #
 ''' Full run (it = 172), N=50, a = 0, x = 1.25, s = 0.02 '''
+#
+a1 = Dat((1,1,10))
+a1.tot = []
+b1 = Dat((2.6,2.6,10))
+b1.tot = []
+c1 = Dat((2.6,2.6,10))
+b1 = Dat((2.6,2.6,10))
+d1 = Dat((2.6,2.6,10))
+b1 = Dat((2.6,2.6,10))
+e1 = Dat((2.6,2.6,10))
+b1.tot = []
+b1.tot = []
+b1.tot = []
+b1.tot = []
+b1.tot = []
