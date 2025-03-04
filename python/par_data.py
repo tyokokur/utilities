@@ -3,6 +3,7 @@ import numpy as np
 class Dat:
     def __init__(self, size):
         self.size= size
+        self.tot = []
         self.kps = []
         self.fts = []
     def Process(self):
@@ -53,3 +54,4 @@ t12.fts= ((1.28E-01, 1.94E-01), (1.38E-01, 2.28E-01), (1.04E-01, 3.10E-01))
 single101= [t1,t2,t4,t6,t8,t12]
 for i in single101: i.Process()
 #
+''' F
