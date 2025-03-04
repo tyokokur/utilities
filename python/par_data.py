@@ -9,7 +9,7 @@ class Dat:
         self.kp = [np.average(i) for i in self.kps]
         self.ft = [np.average(i) for i in self.fts]
         
-''' Single iteration, N = 10, a = 0, x = 1.25, s = 0.02 '''
+''' Single DGC run, N = 10, a = 0, x = 1.25, s = 0.02 '''
 # 
 n1 = Dat((126,126,126))
 n1.kps = ((8.57E+00, 8.63E+00), (8.57E+00, 8.60E+00), (8.58E+00, 8.58E+00))
