@@ -53,6 +53,7 @@ a1s5_str = Data(0.10, 5e-03, 'str')
 a1s5_str.new((15, 13.8, 35), -2.93758, icm=9.4e-05, err=3.6e-04)
 a1s5_str.new((17, 13.8, 35), -2.93775, icm=1.8e-05, err=5.4e-04)
 a1s5_str.new((15, 16, 35)  , -2.93762, icm=7.5e-05, err=2.6e-04)
+a1s5_str.new((17, 16, 35)  , -2.93788, icm=1.5e-04, err=3.0e-04)
 datasets += pack_data('a1s5_str', a1s5_str)
 
 a1s5_hom = Data(0.10, 5e-03, 'hom')
