@@ -21,6 +21,9 @@ class All:
 datasets = []
 pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, name, len(data.data), data)]
 
+''' alpha = 0.00, sigma = 3e-03 '''
+a0s3_mic = Data(0.00, 3e-03, 'mic')
+
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
 a0s5_hom.new((8, 13.8, 15) , -2.98579, icm=5.5e-06, err=4.0e-04)
@@ -44,6 +47,11 @@ datasets += pack_data('a0s5_mic', a0s5_mic)
 
 a0s5_str = Data(0.00, 5e-03, 'str')
 datasets += pack_data('a0s5_str', a0s5_str)
+
+''' alpha = 0.00, sigma = 7e-03 '''
+a0s7_hom = Data(0.00, 7e-03, 'hom')
+a0s7_mic = Data(0.00, 7e-03, 'mic')
+a0s7_hol = Data(0.00, 7e-03, 'hol')
 
 ''' alpha = 0.10, sigma = 5e-03 '''
 a1s5_hol = Data(0.10, 5e-03, 'hol')
