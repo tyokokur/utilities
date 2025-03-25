@@ -13,11 +13,6 @@ class All:
             .hide(axis='index')
         display(styler)
         
-    def find(self, condition, n_cond=1):
-        # all Datas that meet condition (e.g., alpha = 0)
-        subset = self.all[self.all]
-        return subset
-        
 datasets = []
 pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, name, len(data.data), data)]
 
