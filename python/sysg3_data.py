@@ -36,6 +36,8 @@ a0s3_str.new((18.2, 18.2, 15.2), -1.77893, icm=7.0e-04, err=1.5e-04)
 a0s3_str.new((22.2, 22.2, 15.2), -1.77817, icm=2.5e-03, err=3.1e-04)
 datasets += pack_data('a0s3_str', a0s3_str)
 
+#a0s3_hol: unstable
+
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
 a0s5_hom.new((8, 13.8, 15) , -2.98579, icm=5.5e-06, err=4.0e-04)
