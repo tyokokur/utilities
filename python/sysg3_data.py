@@ -23,6 +23,11 @@ pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, name, len(d
 
 ''' alpha = 0.00, sigma = 3e-03 '''
 a0s3_mic = Data(0.00, 3e-03, 'mic')
+datasets += pack_data('a0s5_hom', a0s5_hom)
+
+a0s3_str = Data(0.00, 3e-03, 'str')
+a0s3_str.new((20.2, 20.2, 15.2), -1.77861, icm=5.9e-04, 
+datasets += pack_data('a0s3_str', a0s3_str)
 
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
