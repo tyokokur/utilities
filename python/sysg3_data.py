@@ -15,7 +15,7 @@ class All:
         
     def find(self, condition, n_cond=1):
         # all Datas that meet condition (e.g., alpha = 0)
-        subset = []
+        subset = self.all[self.all]
         return subset
         
 datasets = []
