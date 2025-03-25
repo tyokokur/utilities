@@ -91,6 +91,7 @@ a1s5_hom.new((12, 12, 35), -2.93788, icm=9.4e-05, err=2.3e-05)
 datasets += pack_data('a1s5_hom', a1s5_hom)
 
 ''' alpha = 0.20, sigma = 0.025 '''
-a2s25_mul = Data(0.20, 0.025, 'mul'
+a2s25_mul = Data(0.20, 0.025, 'mul')
+a2s25_mul.new((5.2, 5.2, 70.2), -1.39730, icm=8.4e-03, err=2.4e-03)
 
 All = All(datasets)
