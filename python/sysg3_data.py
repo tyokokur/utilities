@@ -51,7 +51,7 @@ datasets += pack_data('a0s5_str', a0s5_str)
 ''' alpha = 0.00, sigma = 7e-03 '''
 a0s7_hom = Data(0.00, 7e-03, 'hom')
 a0s7_hom.new((15.2, 15.2, 15.2), -4.20224, icm=7e-06, err=4e-05)
-datasets += pack_data('a0s7_hol', a0s7_hol)
+datasets += pack_data('a0s7_hom', a0s7_hom)
 
 a0s7_mic = Data(0.00, 7e-03, 'mic')
 a0s7_hol = Data(0.00, 7e-03, 'hol')
