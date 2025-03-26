@@ -55,6 +55,8 @@ a0s5_mic = Data(0.00, 5e-03, 'mic')
 datasets += pack_data('a0s5_mic', a0s5_mic)
 
 a0s5_str = Data(0.00, 5e-03, 'str')
+a0s5_str.new((15, 13.8, 15), -2.98601, icm=7.4e-06, err=1.4e-03) 
+a0s5_str.new((15, 15, 15)  , -2.98610, icm=7.0e-03, err=3.0e-03) 
 datasets += pack_data('a0s5_str', a0s5_str)
 
 ''' alpha = 0.00, sigma = 7e-03 '''
