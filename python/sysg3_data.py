@@ -102,6 +102,11 @@ datasets += pack_data('a1s5_hom', a1s5_hom)
 ''' alpha = 0.20, sigma = 0.025 '''
 a2s25_mul = Data(0.20, 0.025, 'mul')
 a2s25_mul.new((5.2, 5.2, 70.2)  , -13.9730, icm=8.4e-03, err=2.4e-03)
-a2s25_mul.new((10.2, 10.2, 70.2), -13.9744, icm=1.7e-04, err=2.4e-03)
+a2s25_mul.new((10.2, 10.2, 70.2), -13.9744, icm=1.7e-04, err=1.7e-03)
+datasets += pack_data('a2s25_mul', a2s25_mul)
+
+a2s25_cyl = Data(0.20, 0.025, 'cyl')
+a2s25_cyl.new((10.2, 10.2, 70.2), -14.0011, icm=1.7e-02, err=2.9e-03)
+datasets += pack_data('a2s25_cyl', a2s25_cyl)
 
 All = All(datasets)
