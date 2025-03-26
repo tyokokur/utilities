@@ -36,8 +36,11 @@ class Data:
     def minF(self, dims=False):
         ''' Get minimum F of all converged runs '''
         fs = [i.F for i in self.data]
+        if len(fs) == 0: 
+            return np.NaN
         if dims: return (min(fs), self.data[np.argmin(fs)].dims)
-        else: return min(fs)
+        else: 
+            return min(fs)
     
     def plotF(self, opt, guess=None, fig=None):
         if not fig: fig,ax = plt.subplots() # Make new figure if one is not passed
