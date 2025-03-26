@@ -93,6 +93,7 @@ class Data:
             XX, YY = np.meshgrid(X, Y)
             cs = plt.contourf(XX, YY, func([XX, YY], *params))
             plt.plot(lxs, lys, 'ko', markerfacecolor='w', markersize=8)
+            plt.plot(lxs[np.argmin(fs)], lys[np.argmin(fs)], 'ko', markerfacecolor='r', markersize=8)
             cbar = fig.colorbar(cs)
             cbar.ax.set_ylabel(r'$\langle F \rangle$')
             tjy.ticks([cbar.ax])
