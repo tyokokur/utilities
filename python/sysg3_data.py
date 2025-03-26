@@ -111,7 +111,8 @@ datasets += pack_data('a2s25_cyl', a2s25_cyl)
 
 ''' alpha = 0.20, sigma = 0.027 '''
 a2s27_hom = Data(0.20, 0.027, 'hom')
-a2s27_hom.new((5.2, 5.2, 70.2), -15.1030, icm=
+a2s27_hom.new((5.2, 5.2, 70.2)  , -15.1030, icm=2.0e-06, err=2.1e-06)
+a2s27_hom.new((15.2, 15.2, 70.2), -15.1048, icm=-3.5e-06, err=2.2e-06)
 datasets += pack_data('a2s27_hom', a2s27_hom)
 
 All = All(datasets)
