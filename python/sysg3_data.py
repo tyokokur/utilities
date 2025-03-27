@@ -32,8 +32,6 @@ a0s3_str.new((18.2, 18.2, 15.2), -1.77893, icm=7.0e-04, err=1.5e-04)
 a0s3_str.new((22.2, 22.2, 15.2), -1.77817, icm=2.5e-03, err=3.1e-04)
 datasets += pack_data('a0s3_str', a0s3_str)
 
-#a0s3_hol: unstable
-
 ''' alpha = 0.00, sigma = 5e-03 '''
 a0s5_hom = Data(0.00, 5e-03, 'hom')
 a0s5_hom.new((8, 13.8, 15) , -2.98579, icm=5.5e-06, err=4.0e-04)
@@ -72,6 +70,15 @@ datasets += pack_data('a0s7_hom', a0s7_hom)
 a0s7_mic = Data(0.00, 7e-03, 'mic')
 a0s7_hol = Data(0.00, 7e-03, 'hol')
 
+''' alpha = 0.05, sigma = 5e-03 '''
+a05s5_str = Data(0.05, 5e-03, 'str')
+a05s5_str.new((18.2, 18.2, 36.2), -2.97413, icm=2.7e-03, err=3.9e-04)
+datasets += pack_data('a05s5_str', a05s5_str)
+
+a05s5_hol = Data(0.05, 5e-03, 'hol')
+a05s5_hol.new((20.2, 20.2, 36.2), -2.97364, icm=1.9e-03, err=2.5e-04)
+datasets += pack_data('a05s5_hol', a05s5_hol)
+
 ''' alpha = 0.10, sigma = 5e-03 '''
 a1s5_hol = Data(0.10, 5e-03, 'hol')
 a1s5_hol.new((8, 13.8, 35)   , -2.93661, icm=9.7e-05, err=3.3e-04)
@@ -108,19 +115,24 @@ datasets += pack_data('a1s5_hom', a1s5_hom)
 a2s25_mul = Data(0.20, 0.025, 'mul')
 a2s25_mul.new((5.2, 5.2, 70.2)  , -13.9730, icm=8.4e-03, err=2.4e-03)
 a2s25_mul.new((10.2, 10.2, 70.2), -13.9744, icm=1.7e-04, err=1.7e-03)
+a2s25_mul.new((15.2, 15.2, 70.2), -13.9755, icm=1.5e-04, err=1.5e-03)
 datasets += pack_data('a2s25_mul', a2s25_mul)
 
 a2s25_cyl = Data(0.20, 0.025, 'cyl')
 a2s25_cyl.new((10.2, 10.2, 70.2), -14.0011, icm=1.7e-02, err=2.9e-03)
+a2s25_cyl.new((13.0, 13.0, 70.2), -14.0022, icm=1.1e-02, err=1.4e-03)
 a2s25_cyl.new((15.2, 15.2, 70.2), -13.9979, icm=2.7e-02, err=5.2e-03)
 datasets += pack_data('a2s25_cyl', a2s25_cyl)
 
 ''' alpha = 0.20, sigma = 0.027 '''
 a2s27_hom = Data(0.20, 0.027, 'hom')
 a2s27_hom.new((5.2, 5.2, 70.2)  , -15.1030, icm=2.0e-06, err=2.1e-06)
-a2s27_hom.new((15.2, 15.2, 70.2), -15.1048, icm=-3.5e-06, err=2.2e-06)
-a2s27_hom.new((20.2, 20.2, 70.2), -15.1050, icm=-5.7e-07, err=2.4e-07)
+a2s27_hom.new((15.2, 15.2, 70.2), -15.1048, icm=3.5e-06, err=2.2e-06)
+a2s27_hom.new((20.2, 20.2, 70.2), -15.1050, icm=5.7e-07, err=2.4e-07)
 datasets += pack_data('a2s27_hom', a2s27_hom)
+
+a2s27_cyl = Data(0.20, 0.027, 'cyl')
+datasets += pack_data('a2s27_cyl', a2s27_cyl)
 
 a2s27_mul = Data(0.20, 0.027, 'mul')
 datasets += pack_data('a2s27_mul', a2s27_mul)
