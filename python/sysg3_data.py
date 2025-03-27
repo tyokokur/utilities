@@ -73,6 +73,7 @@ a0s7_hol = Data(0.00, 7e-03, 'hol')
 ''' alpha = 0.05, sigma = 5e-03 '''
 a05s5_str = Data(0.05, 5e-03, 'str')
 a05s5_str.new((18.2, 18.2, 36.2), -2.97413, icm=2.7e-03, err=3.9e-04)
+a05s5_str.new((18.2, 24.2, 36.2), -2.97415, icm=2.8e-03, err=4.0e-04)
 datasets += pack_data('a05s5_str', a05s5_str)
 
 a05s5_hol = Data(0.05, 5e-03, 'hol')
