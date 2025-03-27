@@ -119,6 +119,7 @@ datasets += pack_data('a2s25_cyl', a2s25_cyl)
 a2s27_hom = Data(0.20, 0.027, 'hom')
 a2s27_hom.new((5.2, 5.2, 70.2)  , -15.1030, icm=2.0e-06, err=2.1e-06)
 a2s27_hom.new((15.2, 15.2, 70.2), -15.1048, icm=-3.5e-06, err=2.2e-06)
+a2s27_hom.new((20.2, 20.2, 70.2), -15.1050, icm=-5.7e-07, err=2.4e-07)
 datasets += pack_data('a2s27_hom', a2s27_hom)
 
 a2s27_mul = Data(0.20, 0.027, 'mul')
