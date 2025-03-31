@@ -2,11 +2,12 @@ import numpy as np, matplotlib.pyplot as plt
 import tjy_udf as tjy
 
 class Data: 
-    def __init__(self, alp, sig, morph):
+    def __init__(self, alp, sig, morph, done=False):
         self.alpha = alp
         self.sigma = sig
-        self.morph=morph
-        self.data = []
+        self.morph = morph
+        self.done  = done
+        self.data  = []
         
     class freeE:
         ''' Class of data associated with a converged run '''
