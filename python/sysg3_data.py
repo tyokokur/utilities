@@ -240,7 +240,19 @@ datasets += pack_data('a2s27_mul', a2s27_mul)
 
 ''' alpha = 0.25, sigma = 0.027 '''
 a25s27_cyl = Data(0.20, 0.027, 'cyl')
-a25s27_cyl.new((15.2, 21.2, 81.2), -2.81520, icm=6.1e-02, err=7.0e-03)
+a25s27_cyl.new((15.2, 21.2, 81.2), -14.6053, icm=1.6e-02, err=3.6e-03)
+datasets += pack_data('a25s27_cyl', a25s27_cyl)
+
+a25s27_str = Data(0.20, 0.027, 'str')
+a25s27_str.new((15.2, 21.2, 81.2), -14.6053, icm=1.6e-02, err=3.6e-03)
+datasets += pack_data('a25s27_cyl', a25s27_cyl)
+
+a25s27_cyl = Data(0.20, 0.027, 'cyl')
+a25s27_cyl.new((15.2, 21.2, 81.2), -14.6053, icm=1.6e-02, err=3.6e-03)
+datasets += pack_data('a25s27_cyl', a25s27_cyl)
+
+a25s27_cyl = Data(0.20, 0.027, 'cyl')
+a25s27_cyl.new((15.2, 21.2, 81.2), -14.6053, icm=1.6e-02, err=3.6e-03)
 datasets += pack_data('a25s27_cyl', a25s27_cyl)
 
 All = All(datasets)
