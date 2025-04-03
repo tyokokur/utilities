@@ -79,14 +79,18 @@ a0s6_str = Data(0.00, 6e-03, 'str')
 a0s6_str.new((12.2, 20.2, 15.2), -3.58677, icm=6.1e-05, err=4.2e-03)
 a0s6_str.new((15.2, 20.2, 15.2), -3.59025, icm=3.4e-04, err=2.8e-03)
 a0s6_str.new((18.2, 20.2, 15.2), -3.58290, icm=3.6e-04, err=2.9e-03)
-a0s6_
+a0s6_str.done = True
 datasets += pack_data('a0s6_str', a0s6_str)
 
 a0s6_hol = Data(0.00, 6e-03, 'hol')
 a0s6_hol.new((12.2, 12.2, 15.2), -3.59170, icm=4.9e-04, err=1.8e-03)
 a0s6_hol.new((15.2, 15.2, 15.2), -3.59099, icm=5.4e-04, err=3.5e-03)
 a0s6_hol.new((20.2, 20.2, 15.2), -3.58496, icm=2.8e-04, err=2.6e-03)
+# a0s6_hol.new(( 9.2,  9.2, 15.2), ) # TODO, Josh
 datasets += pack_data('a0s6_hol', a0s6_hol)
+
+a0s6_hom = Data(0.00, 6e-03, 'hom')
+datasets += pack_data('a0s6_hol', a0s6_hom)
 
 ''' alpha = 0.00, sigma = 7e-03 '''
 a0s7_hom = Data(0.00, 7e-03, 'hom')
