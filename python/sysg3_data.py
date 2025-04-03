@@ -90,7 +90,8 @@ a0s6_hol.new((20.2, 20.2, 15.2), -3.58496, icm=2.8e-04, err=2.6e-03)
 datasets += pack_data('a0s6_hol', a0s6_hol)
 
 a0s6_hom = Data(0.00, 6e-03, 'hom')
-datasets += pack_data('a0s6_hol', a0s6_hom)
+# TODO, TJY start from 1D
+datasets += pack_data('a0s6_hom', a0s6_hom)
 
 ''' alpha = 0.00, sigma = 7e-03 '''
 a0s7_hom = Data(0.00, 7e-03, 'hom')
@@ -101,6 +102,7 @@ datasets += pack_data('a0s7_hom', a0s7_hom)
 
 a0s7_hol = Data(0.00, 7e-03, 'hol')
 a0s7_hol.new((20.2, 20.2, 15.2), -4.20077, icm=1.0e-02, err=2.7e-03)
+a0s7_hol.new((21.2, 21.2, 15.2), -4.20075, icm=1.1e-03, err=1.9e-03)
 a0s7_hol.new((24.2, 24.2, 15.2), -4.20090, icm=1.9e-02, err=3.2e-03)
 a0s7_hol.done = True
 datasets += pack_data('a0s7_hol', a0s7_hol)
