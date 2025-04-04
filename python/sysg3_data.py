@@ -146,6 +146,10 @@ a05s5_hol.new((24.2, 24.2, 36.2), -2.97360, icm=5.5e-03, err=5.6e-04)
 a05s5_hol.done = True
 datasets += pack_data('a05s5_hol', a05s5_hol)
 
+a05s5_mic = Data(0.05, 5e-03, 'mic')
+a05s5_mic.new((16.2, 27.2, 36.2), -2.97229, icm=8.2e-03, err=8.9e-04)
+datasets += pack_data('a05s5_mic', a05s5_mic)
+
 ########################################################################
 
 ''' alpha = 0.10, sigma = 5e-03 '''
