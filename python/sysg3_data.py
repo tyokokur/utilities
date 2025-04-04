@@ -270,6 +270,7 @@ datasets += pack_data('a2s27_cyl', a2s27_cyl)
 a2s27_mul = Data(0.20, 0.027, 'mul')
 a2s27_mul.new((10.2, 10.2, 70.2), -15.0886, icm=2.0e-02, err=9.8e-03)
 a2s27_mul.new((15.2, 15.2, 70.2), -15.0898, icm=1.8e-03, err=8.8e-03)
+a2s27_mul.done = True
 datasets += pack_data('a2s27_mul', a2s27_mul)
 
 ########################################################################
