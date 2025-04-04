@@ -282,7 +282,7 @@ datasets += pack_data('a25s27_hom', a25s27_hom)
 
 ''' alpha = 0.25, sigma = 0.030 '''
 a25s3_hom = Data(0.25, 0.030, 'hom')
-a25s3_hom.new((15.2, 15.2, 64.2), -14.6053, icm=1.6e-02, err=3.6e-03)
+a25s3_hom.new((15.2, 15.2, 64.2), -16.1894, icm=1.9e-02, err=6.6e-03)
 datasets += pack_data('a25s3_hom', a25s3_hom)
 
 
