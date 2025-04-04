@@ -295,6 +295,6 @@ datasets += pack_data('a3s2_mul', a3s2_mul)
 ''' alpha = 0.30, sigma = 0.025 '''
 a3s2_hom = Data(0.30, 0.025, 'hom')
 a3s2_hom.new((13.0, 15.2, 64.2), -13.0394, icm=4.0e-04, err=1.4e-04)
-datasets += pack_data('a3s2_str', a3s2_str)
+datasets += pack_data('a3s2_hom', a3s2_hom)
 
 All = All(datasets)
