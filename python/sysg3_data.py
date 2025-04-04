@@ -288,8 +288,8 @@ a3s2_str = Data(0.20, 0.020, 'str')
 a3s2_str.new((13.0, 15.2, 64.2), -10.4828, icm=3.1e-02, err=7.1e-03)
 datasets += pack_data('a3s2_str', a3s2_str)
 
-a3s2_str = Data(0.20, 0.020, 'str')
-a3s2_str.new((13.0, 15.2, 64.2), -10.4828, icm=3.1e-02, err=7.1e-03)
-datasets += pack_data('a25s27_hom', a25s27_hom)
+a3s2_mul = Data(0.20, 0.020, 'mul')
+a3s2_mul.new((15.2, 15.2, 64.2), -10.4794, icm=1.2e-03, err=5.3e-04)
+datasets += pack_data('a3s2_mul', a3s2_mul)
 
 All = All(datasets)
