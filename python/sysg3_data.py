@@ -281,4 +281,15 @@ a25s27_hom.new((15.2, 15.2, 81.2), -14.6015, icm=1.4e-04, err=4.0e-05)
 datasets += pack_data('a25s27_hom', a25s27_hom)
 
 
+########################################################################
+
+''' alpha = 0.30, sigma = 0.020 '''
+a3s2_str = Data(0.20, 0.020, 'str')
+a3s2_str.new((13.0, 15.2, 64.2), -10.4828, icm=3.1e-02, err=7.1e-03)
+datasets += pack_data('a3s2_str', a3s2_str)
+
+a3s2_str = Data(0.20, 0.020, 'str')
+a3s2_str.new((13.0, 15.2, 64.2), -10.4828, icm=3.1e-02, err=7.1e-03)
+datasets += pack_data('a25s27_hom', a25s27_hom)
+
 All = All(datasets)
