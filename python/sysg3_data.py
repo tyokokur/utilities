@@ -286,6 +286,7 @@ datasets += pack_data('a25s27_str', a25s27_str)
 
 a25s27_hom = Data(0.25, 0.027, 'hom')
 a25s27_hom.new((15.2, 15.2, 81.2), -14.6015, icm=1.4e-04, err=4.0e-05)
+a25s27_hom.done = True
 datasets += pack_data('a25s27_hom', a25s27_hom)
 
 a25s27_mul = Data(0.25, 0.027, 'mul')
