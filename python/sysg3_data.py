@@ -288,6 +288,11 @@ a25s27_hom = Data(0.25, 0.027, 'hom')
 a25s27_hom.new((15.2, 15.2, 81.2), -14.6015, icm=1.4e-04, err=4.0e-05)
 datasets += pack_data('a25s27_hom', a25s27_hom)
 
+a25s27_mul = Data(0.25, 0.027, 'mul')
+# Unstable
+a25s27_mul.done = True
+datasets += pack_data('a25s27_mul', a25s27_mul)
+
 ''' alpha = 0.25, sigma = 0.030 '''
 a25s3_hom = Data(0.25, 0.030, 'hom')
 a25s3_hom.new((15.2, 15.2, 64.2), -16.1894, icm=1.9e-02, err=6.6e-03)
