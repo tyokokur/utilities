@@ -214,6 +214,10 @@ a2s22_cyl.new((10.2, 10.2, 64.2), -12.3420, icm=1.5e-02, err=1.1e-03)
 a2s22_cyl.new((12.2, 12.2, 64.2), -12.3311, icm=7.6e-02, err=1.1e-02)
 datasets += pack_data('a2s22_cyl', a2s22_cyl)
 
+a2s22_str = Data(0.20, 0.022, 'str')
+a2s22_str.new((13.0, 15.2, 64.2), -12.3424, icm=9.7e-03, err=1.5e-03)
+datasets += pack_data('a2s22_str', a2s22_str)
+
 ''' alpha = 0.20, sigma = 0.025 '''
 a2s25_mul = Data(0.20, 0.025, 'mul')
 a2s25_mul.new((5.2, 5.2, 70.2)  , -13.9730, icm=8.4e-03, err=2.4e-03)
