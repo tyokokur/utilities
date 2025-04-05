@@ -300,6 +300,11 @@ a25s3_hom.new((15.2, 15.2, 64.2), -16.1894, icm=1.9e-02, err=6.6e-03)
 a25s3_hom.done=True
 datasets += pack_data('a25s3_hom', a25s3_hom)
 
+a25s3_mul = Data(0.25, 0.030, 'mul')
+# Unstable
+a25s3_mul.done=True
+datasets += pack_data('a25s3_mul', a25s3_mul)
+
 ########################################################################
 
 ''' alpha = 0.30, sigma = 0.020 '''
