@@ -120,6 +120,7 @@ a05s3_hol = Data(0.05, 3e-03, 'hol')
 a05s3_hol.new((21.8, 21.8, 36.2), -1.76958, icm=2.9e-02, err=3.0e-03)
 a05s3_hol.new((18.2, 18.2, 36.2), -1.77005, icm=1.1e-02, err=1.5e-03)
 a05s3_hol.new((15.2, 15.2, 36.2), -1.76994, icm=1.5e-02, err=3.0e-03)
+a05s3_hol.done = True
 datasets += pack_data('a05s3_hol', a05s3_hol)
 
 a05s3_str = Data(0.05, 3e-03, 'str')
