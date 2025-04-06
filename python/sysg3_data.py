@@ -333,6 +333,7 @@ datasets += pack_data('a3s2_mul', a3s2_mul)
 ''' alpha = 0.30, sigma = 0.025 '''
 a3s25_hom = Data(0.30, 0.025, 'hom')
 a3s25_hom.new((15.2, 15.2, 64.2), -13.0394, icm=2.2e-06, err=8.1e-07)
+a3s25_hom.done = True
 datasets += pack_data('a3s25_hom', a3s25_hom)
 
 a3s25_str = Data(0.30, 0.025, 'str')
