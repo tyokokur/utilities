@@ -239,6 +239,7 @@ a2s25_cyl.new((17.2, 20.2, 60.2), -14.0023, icm=1.2e-02, err=1.7e-03)
 a2s25_cyl.new((15.2, 18.2, 60.2), -14.0024, icm=1.5e-02, err=2.1e-03)
 a2s25_cyl.new((17.2, 18.2, 60.2), -14.0026, icm=1.1e-02, err=1.4e-03)
 a2s25_cyl.new((15.2, 16.2, 60.2), -14.0028, icm=8.5e-03, err=1.2e-03)
+a2s25_cyl.done = True
 datasets += pack_data('a2s25_cyl', a2s25_cyl)
 
 a2s25_str = Data(0.20, 0.025, 'str')
