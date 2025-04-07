@@ -221,6 +221,7 @@ a2s15_str.new((10.2, 15.2, 64.2), -8.43398, icm=8.8e-03, err=1.7e-03)
 a2s15_str.new((12.2, 15.2, 64.2), -8.43538, icm=9.2e-03, err=1.7e-03)
 a2s15_str.new((13.0, 15.2, 64.2), -8.43620, icm=5.8e-03, err=1.2e-03)
 a2s15_str.new((15.2, 15.2, 64.2), -8.43689, icm=6.8e-03, err=1.2e-03)
+a2s15_str.hole = True
 datasets += pack_data('a2s15_str', a2s15_str)
 
 a2s15_cyl = Data(0.20, 0.015, 'cyl')
@@ -360,6 +361,7 @@ a3s2_str = Data(0.30, 0.020, 'str')
 a3s2_str.new((13.0, 15.2, 64.2), -10.4828, icm=3.1e-02, err=7.1e-03)
 a3s2_str.new((15.2, 15.2, 64.2), -10.4878, icm=2.1e-02, err=5.4e-03)
 a3s2_str.new((18.2, 15.2, 64.2), -10.4855, icm=2.0e-02, err=4.7e-03)
+a3s2_str.hole = True
 a3s2_str.done = True
 datasets += pack_data('a3s2_str', a3s2_str)
 
@@ -381,6 +383,4 @@ datasets += pack_data('a3s25_str', a3s25_str)
 
 a3s25_mul = Data(0.30, 0.025, 'mul')
 # Unstable
-datasets += pack_data('a3s25_mul', a3s25_mul)
-
-All = All(datasets)
+datasets += pack_data('a3s25_mul', a3s25_mul)
