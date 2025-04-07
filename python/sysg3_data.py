@@ -229,9 +229,9 @@ a2s22_cyl.new(( 8.2,  8.2, 64.2), -12.3420, icm=1.3e-02, err=1.4e-03)
 datasets += pack_data('a2s22_cyl', a2s22_cyl)
 
 a2s22_str = Data(0.20, 0.022, 'str')
-a2s22_str.new((13.0, 15.2, 64.2), -12.3424, icm=9.7e-03, err=1.5e-03)
+a2s22_str.new((13.0, 15.2, 64.2), -12.3427, icm=6.9e-03, err=1.1e-03)
 a2s22_str.new((12.2, 15.2, 64.2), -12.3426, icm=5.9e-03, err=8.3e-04)
-a2s22_str.new((13.0, 15.2, 64.2), -12.3427, icm=4.1e-03, err=1.5e-03)
+a2s22_str.new((14.6, 15.2, 64.2), -12.3427, icm=3.8e-03, err=8.7e-04)
 datasets += pack_data('a2s22_str', a2s22_str)
 
 ''' alpha = 0.20, sigma = 0.025 '''
