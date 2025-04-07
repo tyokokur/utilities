@@ -45,7 +45,7 @@ a0s5_hom.new((10.6,10.6,15), -2.98580, icm=1.0e-05, err=3.7e-05)
 a0s5_hom.done = True
 datasets += pack_data('a0s5_hom', a0s5_hom)
 
-a0s5_hol = Data(0.00, 5e-03, 'hol')
+a0s5_hol = Data(0.00, 5e-03, 'str')
 a0s5_hol.new((8, 13.8, 15)   , -2.98419, icm=3.2e-06, err=4.0e-04)
 a0s5_hol.new((13.8, 13.8, 15), -2.98544, icm=1.1e-05, err=4.5e-04)
 a0s5_hol.new((15, 15,15)     , -2.98573, icm=2.1e-04, err=6.7e-04)
@@ -55,6 +55,7 @@ a0s5_hol.new((19, 19,15)     , -2.98637, icm=1.2e-05, err=5.6e-04)
 a0s5_hol.new((21, 21,15)     , -2.98639, icm=2.4e-04, err=7.5e-04)
 a0s5_hol.new((23, 23,15)     , -2.98644, icm=7.1e-05, err=7.3e-04)
 a0s5_hol.done = True
+a0s5_hol.hole = True
 datasets += pack_data('a0s5_hol', a0s5_hol)
 
 a0s5_mic = Data(0.00, 5e-03, 'mic')
@@ -82,10 +83,12 @@ a0s6_str.new((18.2, 20.2, 15.2), -3.58290, icm=3.6e-04, err=2.9e-03)
 a0s6_str.done = True
 datasets += pack_data('a0s6_str', a0s6_str)
 
-a0s6_hol = Data(0.00, 6e-03, 'hol')
+a0s6_hol = Data(0.00, 6e-03, 'str')
 a0s6_hol.new((12.2, 12.2, 15.2), -3.59170, icm=4.9e-04, err=1.8e-03)
 a0s6_hol.new((15.2, 15.2, 15.2), -3.59099, icm=5.4e-04, err=3.5e-03)
 a0s6_hol.new((20.2, 20.2, 15.2), -3.58496, icm=2.8e-04, err=2.6e-03)
+
+a0s6_hol.hole = True
 datasets += pack_data('a0s6_hol', a0s6_hol)
 
 a0s6_hom = Data(0.00, 6e-03, 'hom')
@@ -100,10 +103,11 @@ a0s7_hom.new((18.2, 18.2, 15.2), -4.20218, icm=2e-04, err=8e-04)
 a0s7_hom.done = True
 datasets += pack_data('a0s7_hom', a0s7_hom)
 
-a0s7_hol = Data(0.00, 7e-03, 'hol')
+a0s7_hol = Data(0.00, 7e-03, 'str')
 a0s7_hol.new((20.2, 20.2, 15.2), -4.20077, icm=1.0e-02, err=2.7e-03)
 a0s7_hol.new((21.2, 21.2, 15.2), -4.20075, icm=1.1e-03, err=1.9e-03)
 a0s7_hol.new((24.2, 24.2, 15.2), -4.20090, icm=1.9e-02, err=3.2e-03)
+a0s7_hol.hole = True
 a0s7_hol.done = True
 datasets += pack_data('a0s7_hol', a0s7_hol)
 
