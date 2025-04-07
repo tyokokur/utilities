@@ -90,7 +90,8 @@ a0s6_hol.new(( 9.2,  9.2, 15.2), -3.59403, icm=2.8e-03, err=6.7e-04)
 datasets += pack_data('a0s6_hol', a0s6_hol)
 
 a0s6_hom = Data(0.00, 6e-03, 'hom')
-# TODO, TJY start from 1D
+a0s6_hom.new((20.2, 20.2, 15.2), -3.59404, icm=2.2e-07, err=1.2e-07)
+a0s6_hom.done = True
 datasets += pack_data('a0s6_hom', a0s6_hom)
 
 ''' alpha = 0.00, sigma = 7e-03 '''
