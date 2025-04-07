@@ -128,6 +128,8 @@ a05s3_str.new((20.2, 24.2, 36.2), -1.77178, icm=1.2e-03, err=2.4e-04)
 a05s3_str.new((18.2, 24.2, 36.2), -1.77213, icm=3.0e-03, err=5.6e-04)
 a05s3_str.new((21.8, 24.2, 36.2), -1.77142, icm=2.3e-03, err=4.3e-04)
 a05s3_str.new((16.2, 24.2, 36.2), -1.77232, icm=3.0e-03, err=5.2e-04)
+a05s3_str.new((13.0, 24.2, 36.2), -1.77202, icm=2.9e-03, err=4.4e-04)
+a05s3_str.done = True
 datasets += pack_data('a05s3_str', a05s3_str)
 
 ''' alpha = 0.05, sigma = 5e-03 '''
