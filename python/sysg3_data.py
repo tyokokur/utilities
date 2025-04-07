@@ -205,6 +205,7 @@ a2s05_mic.new((24.2, 24.2, 54.2), -2.81520, icm=6.1e-02, err=7.0e-03)
 a2s05_mic.new((12.2, 12.2, 48.2), -2.81948, icm=3.0e-02, err=4.3e-03)
 a2s05_mic.new((10.2, 10.2, 54.2), -2.82020, icm=2.0e-02, err=1.9e-03)
 a2s05_mic.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
+a2s05_mic.done = True
 datasets += pack_data('a2s05_mic', a2s05_mic)
 
 ''' alpha = 0.20, sigma = 0.015 '''
