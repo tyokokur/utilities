@@ -114,6 +114,7 @@ a05s3_mic = Data(0.05, 3e-03, 'mic')
 a05s3_mic.new((18.2, 25.2, 36.2), -1.77283, icm=6.1e-04, err=1.1e-04)
 a05s3_mic.new((16.2, 27.2, 36.2), -1.77262, icm=7.2e-03, err=1.0e-03)
 a05s3_mic.new((20.2, 36.2, 36.2), -1.77111, icm=4.6e-02, err=3.5e-03)
+a05s3_mic.done = True
 datasets += pack_data('a05s3_mic', a05s3_mic)
 
 a05s3_hol = Data(0.05, 3e-03, 'hol')
