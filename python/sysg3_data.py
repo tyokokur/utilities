@@ -86,7 +86,7 @@ a0s6_hol = Data(0.00, 6e-03, 'hol')
 a0s6_hol.new((12.2, 12.2, 15.2), -3.59170, icm=4.9e-04, err=1.8e-03)
 a0s6_hol.new((15.2, 15.2, 15.2), -3.59099, icm=5.4e-04, err=3.5e-03)
 a0s6_hol.new((20.2, 20.2, 15.2), -3.58496, icm=2.8e-04, err=2.6e-03)
-# a0s6_hol.new(( 9.2,  9.2, 15.2), ) # TODO, Josh
+a0s6_hol.new(( 9.2,  9.2, 15.2), -3.59403, icm=2.8e-03, err=6.7e-04)
 datasets += pack_data('a0s6_hol', a0s6_hol)
 
 a0s6_hom = Data(0.00, 6e-03, 'hom')
