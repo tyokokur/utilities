@@ -164,7 +164,7 @@ datasets += pack_data('a05s5_mic', a05s5_mic)
 ########################################################################
 
 ''' alpha = 0.10, sigma = 5e-03 '''
-a1s5_hol = Data(0.10, 5e-03, 'str')
+a1s5_hol = Data(0.10, 5e-03, 'hol')
 a1s5_hol.new((8, 13.8, 35)   , -2.93661, icm=9.7e-05, err=3.3e-04)
 a1s5_hol.new((13.8, 13.8, 35), -2.93731, icm=1.8e-05, err=4.4e-04) 
 a1s5_hol.new((15, 15, 35)    , -2.93757, icm=1.6e-04, err=4.0e-04) 
@@ -180,7 +180,6 @@ a1s5_hol.new((29.2, 27.2, 36.2), -2.93849)
 a1s5_hol.new((25.2, 27.2, 36.2), -2.93858)
 a1s5_hol.new((25.2, 30.2, 36.2), -2.93858, icm=2.9e-03, err=4.0e-04)
 a1s5_hol.new((27.2, 32.2, 36.2), -2.93859)
-a1s5_hol.hole = True
 a1s5_hol.done = True
 datasets += pack_data('a1s5_hol', a1s5_hol)
 
