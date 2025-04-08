@@ -206,7 +206,6 @@ a2s05_mic.new((24.2, 24.2, 54.2), -2.81520, icm=6.1e-02, err=7.0e-03)
 a2s05_mic.new((12.2, 12.2, 48.2), -2.81948, icm=3.0e-02, err=4.3e-03)
 a2s05_mic.new((10.2, 10.2, 54.2), -2.82020, icm=2.0e-02, err=1.9e-03)
 a2s05_mic.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
-a2s05_mic.hole = True
 a2s05_mic.done = True
 datasets += pack_data('a2s05_mic', a2s05_mic)
 
@@ -216,7 +215,8 @@ a2s15_str.new((10.2, 15.2, 64.2), -8.43398, icm=8.8e-03, err=1.7e-03)
 a2s15_str.new((12.2, 15.2, 64.2), -8.43538, icm=9.2e-03, err=1.7e-03)
 a2s15_str.new((13.0, 15.2, 64.2), -8.43620, icm=5.8e-03, err=1.2e-03)
 a2s15_str.new((15.2, 15.2, 64.2), -8.43689, icm=6.8e-03, err=1.2e-03)
-a2s15_str.hole = True
+a2s15_str.new((18.2, 15.2, 64.2), -8.43770, icm=4.4e-03, err=6.9e-04)
+a2s15_str.mul = True
 datasets += pack_data('a2s15_str', a2s15_str)
 
 a2s15_cyl = Data(0.20, 0.015, 'cyl')
