@@ -379,6 +379,7 @@ datasets += pack_data('a3s25_hom', a3s25_hom)
 a3s25_str = Data(0.30, 0.025, 'str')
 a3s25_str.new((13.0, 15.2, 64.2), -13.0500, icm=3.1e-02, err=5.4e-03)
 a3s25_str.new((15.2, 15.2, 64.2), -13.0538, icm=2.9e-02, err=4.7e-03)
+a3s25_str.new((18.2, 15.2, 64.2), -13.0529, icm=2.1e-02, err=4.2e-03)
 a3s25_str.hole = True
 datasets += pack_data('a3s25_str', a3s25_str)
 
