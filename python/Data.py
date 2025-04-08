@@ -2,11 +2,11 @@ import numpy as np, matplotlib.pyplot as plt
 import tjy_udf as tjy
 
 class Data: 
-    def __init__(self, alp, sig, morph, mul=False, done=False):
+    def __init__(self, alp, sig, morph, multi=False, done=False):
         self.alpha = alp
         self.sigma = sig
         self.morph = morph
-        self.mul   = mul
+        self.multi = multi
         self.done  = done
         self.data  = []
         
