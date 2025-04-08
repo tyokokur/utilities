@@ -5,7 +5,7 @@ from Data import Data
 
 class All:
     def __init__(self, datasets):
-        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'done', 'mul', 'name', 'n', 'data'])
+        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'done', 'multi', 'name', 'n', 'data'])
         
     def show(self): 
         styler = self.all.iloc[:,:6].style \
@@ -14,7 +14,7 @@ class All:
         display(styler)
         
 datasets = []
-pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, data.mul, name, len(data.data), data)]
+pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, data.multi, name, len(data.data), data)]
 
 ########################################################################
 
@@ -216,7 +216,7 @@ a2s15_str.new((12.2, 15.2, 64.2), -8.43538, icm=9.2e-03, err=1.7e-03)
 a2s15_str.new((13.0, 15.2, 64.2), -8.43620, icm=5.8e-03, err=1.2e-03)
 a2s15_str.new((15.2, 15.2, 64.2), -8.43689, icm=6.8e-03, err=1.2e-03)
 a2s15_str.new((18.2, 15.2, 64.2), -8.43770, icm=4.4e-03, err=6.9e-04)
-a2s15_str.mul = True
+a2s15_str.multi = True
 datasets += pack_data('a2s15_str', a2s15_str)
 
 a2s15_cyl = Data(0.20, 0.015, 'cyl')
@@ -360,7 +360,7 @@ a3s2_str = Data(0.30, 0.020, 'str')
 a3s2_str.new((13.0, 15.2, 64.2), -10.4828, icm=3.1e-02, err=7.1e-03)
 a3s2_str.new((15.2, 15.2, 64.2), -10.4878, icm=2.1e-02, err=5.4e-03)
 a3s2_str.new((18.2, 15.2, 64.2), -10.4855, icm=2.0e-02, err=4.7e-03)
-a3s2_str.hole = True
+a3s2_str.multi = True
 a3s2_str.done = True
 datasets += pack_data('a3s2_str', a3s2_str)
 
@@ -379,7 +379,7 @@ a3s25_str = Data(0.30, 0.025, 'str')
 a3s25_str.new((13.0, 15.2, 64.2), -13.0500, icm=3.1e-02, err=5.4e-03)
 a3s25_str.new((15.2, 15.2, 64.2), -13.0538, icm=2.9e-02, err=4.7e-03)
 a3s25_str.new((18.2, 15.2, 64.2), -13.0529, icm=2.1e-02, err=4.2e-03)
-a3s25_str.hole = True
+a3s25_str.multi = True
 datasets += pack_data('a3s25_str', a3s25_str)
 
 a3s25_mul = Data(0.30, 0.025, 'mul')
