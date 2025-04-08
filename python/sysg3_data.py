@@ -367,6 +367,7 @@ datasets += pack_data('a25s3_mul', a25s3_mul)
 ''' alpha = 0.30, sigma = 0.020 '''
 a3s2_cyl = Data(0.30, 0.020, 'cyl')
 a3s2_cyl.new((15.2, 17.6, 64.2), -10.4873, icm=3.6e-02, err=7.4e-03)
+a3s2_cyl.multi = True
 datasets += pack_data('a3s2_cyl', a3s2_cyl)
 
 a3s2_str = Data(0.30, 0.020, 'str')
