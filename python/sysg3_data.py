@@ -5,7 +5,7 @@ from Data import Data
 
 class All:
     def __init__(self, datasets):
-        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'done', 'hole', 'name', 'n', 'data'])
+        self.all = pd.DataFrame(datasets, columns=['alpha', 'sigma', 'morph', 'done', 'mul', 'name', 'n', 'data'])
         
     def show(self): 
         styler = self.all.iloc[:,:6].style \
@@ -14,7 +14,7 @@ class All:
         display(styler)
         
 datasets = []
-pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, data.hole, name, len(data.data), data)]
+pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, data.mul, name, len(data.data), data)]
 
 ########################################################################
 
@@ -199,15 +199,15 @@ datasets += pack_data('a1s5_hom', a1s5_hom)
 ########################################################################
 
 ''' alpha = 0.20, sigma = 0.005 '''
-a2s05_mic = Data(0.20, 0.005, 'mic')
-a2s05_mic.new((16.2, 16.2, 48.2), -2.81601, icm=6.1e-02, err=5.0e-03)
-a2s05_mic.new((20.2, 20.2, 54.2), -2.81578, icm=3.9e-02, err=5.4e-03)
-a2s05_mic.new((24.2, 24.2, 54.2), -2.81520, icm=6.1e-02, err=7.0e-03)
-a2s05_mic.new((12.2, 12.2, 48.2), -2.81948, icm=3.0e-02, err=4.3e-03)
-a2s05_mic.new((10.2, 10.2, 54.2), -2.82020, icm=2.0e-02, err=1.9e-03)
-a2s05_mic.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
-a2s05_mic.done = True
-datasets += pack_data('a2s05_mic', a2s05_mic)
+a2s05_hol = Data(0.20, 0.005, 'hol')
+a2s05_hol.new((16.2, 16.2, 48.2), -2.81601, icm=6.1e-02, err=5.0e-03)
+a2s05_hol.new((20.2, 20.2, 54.2), -2.81578, icm=3.9e-02, err=5.4e-03)
+a2s05_hol.new((24.2, 24.2, 54.2), -2.81520, icm=6.1e-02, err=7.0e-03)
+a2s05_hol.new((12.2, 12.2, 48.2), -2.81948, icm=3.0e-02, err=4.3e-03)
+a2s05_hol.new((10.2, 10.2, 54.2), -2.82020, icm=2.0e-02, err=1.9e-03)
+a2s05_hol.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
+a2s05_hol.done = True
+datasets += pack_data('a2s05_hol', a2s05_hol)
 
 ''' alpha = 0.20, sigma = 0.015 '''
 a2s15_str = Data(0.20, 0.015, 'str')
