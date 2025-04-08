@@ -238,6 +238,11 @@ a2s22_str.new((12.2, 15.2, 64.2), -12.3426, icm=5.9e-03, err=8.3e-04)
 a2s22_str.new((14.6, 15.2, 64.2), -12.3427, icm=3.8e-03, err=8.7e-04)
 datasets += pack_data('a2s22_str', a2s22_str)
 
+a2s22_hom = Data(0.20, 0.022, 'hom')
+a2s22_hom.new((20.2, 20.2, 64.2), -12.3433, icm=7.3e-06, err=2.7e-06)
+a2s22_hom.done = True
+datasets += pack_data('a2s22_hom', a2s22_hom)
+
 ''' alpha = 0.20, sigma = 0.025 '''
 a2s25_mul = Data(0.20, 0.025, 'mul')
 a2s25_mul.new((5.2, 5.2, 70.2)  , -13.9730, icm=8.4e-03, err=2.4e-03)
