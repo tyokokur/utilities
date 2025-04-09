@@ -414,10 +414,11 @@ a3s3_hom = Data(0.30, 0.030, 'hom')
 a3s3_hom.done = True
 datasets += pack_data('a3s3_hom', a3s3_hom)
 
-a3s3_str = Data(0.30, 0.030, 'stm')
-#Unstable
-a3s3_hom.done = True
-datasets += pack_data('a3s3_hom', a3s3_hom)
+a3s3_mul = Data(0.30, 0.030, 'mul')
+a3s3_mul.new((15.2, 15.2, 70.2), -15.5739, icm=1.3e-03, err=5.6e-04)
+a3s3_mul.multi = True
+a3s3_mul.done = True
+datasets += pack_data('a3s3_mul', a3s3_mul)
 
 All = All(datasets)
 
