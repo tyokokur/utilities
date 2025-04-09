@@ -436,8 +436,14 @@ datasets += pack_data('a325s2_mul', a325s2_mul)
 a325s2_str = Data(0.325, 0.020, 'str')
 a325s2_str.new((15.2, 15.2, 70.2), -10.2983, icm=7.8e-02, err=9.2e-03)
 a325s2_str.new((18.2, 15.2, 70.2), -10.2994, icm=2.9e-02, err=6.8e-03)
-
 datasets += pack_data('a325s2_str', a325s2_str)
+
+########################################################################
+
+''' alpha = 0.35, sigma = 0.020 '''
+a35s2_str
+
+
 
 All = All(datasets)
 
