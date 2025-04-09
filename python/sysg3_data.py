@@ -386,8 +386,9 @@ a3s2_str.multi = True
 a3s2_str.done = True
 datasets += pack_data('a3s2_str', a3s2_str)
 
-a3s2_mul = Data(0.30, 0.020, 'mul')
+a3s2_mul = Data(0.30, 0.020, 'hom')
 a3s2_mul.new((15.2, 15.2, 64.2), -10.4794, icm=1.2e-03, err=5.3e-04)
+a3s2_mul.multi = True
 a3s2_mul.done = True
 datasets += pack_data('a3s2_mul', a3s2_mul)
 
@@ -414,11 +415,17 @@ a3s3_hom = Data(0.30, 0.030, 'hom')
 a3s3_hom.done = True
 datasets += pack_data('a3s3_hom', a3s3_hom)
 
-a3s3_mul = Data(0.30, 0.030, 'mul')
+a3s3_mul = Data(0.30, 0.030, 'hom')
 a3s3_mul.new((15.2, 15.2, 70.2), -15.5739, icm=1.3e-03, err=5.6e-04)
 a3s3_mul.multi = True
 a3s3_mul.done = True
 datasets += pack_data('a3s3_mul', a3s3_mul)
+
+########################################################################
+
+''' alpha = 0.325, sigma = 0.020 '''
+a325s2_mul = Data(0.325, 0.020, 'hom')
+a325s2_mul.new((15.2, 15.2, 70.2), -10.2824, icm=3.2e-03, err
 
 All = All(datasets)
 
