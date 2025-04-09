@@ -421,6 +421,9 @@ a3s3_mul.multi = True
 a3s3_mul.done = True
 datasets += pack_data('a3s3_mul', a3s3_mul)
 
+a3s3_str = Data(0.30, 0.030, 'str')
+datasets += pack_data('a3s3_str', a3s3_str)
+
 ########################################################################
 
 ''' alpha = 0.325, sigma = 0.020 '''
@@ -428,10 +431,11 @@ a325s2_mul = Data(0.325, 0.020, 'hom')
 a325s2_mul.new((15.2, 15.2, 70.2), -10.2824, icm=3.2e-03, err=1.2e-03)
 a325s2_mul.multi = True
 a325s2_mul.done = True
-datasets += pack_data('a325s2_mul', a325s3_mul)
+datasets += pack_data('a325s2_mul', a325s2_mul)
 
-a325s2_cyl = Data(0.325, 0.020, 'cyl')
-datasets += pack_data('a325s2_cyl', a325s3_cyl)
+a325s2_str = Data(0.325, 0.020, 'str')
+
+datasets += pack_data('a325s2_str', a325s2_str)
 
 All = All(datasets)
 
