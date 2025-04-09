@@ -405,6 +405,20 @@ datasets += pack_data('a3s25_str', a3s25_str)
 
 a3s25_mul = Data(0.30, 0.025, 'mul')
 # Unstable
+a3s25_mul.done = True
 datasets += pack_data('a3s25_mul', a3s25_mul)
 
+''' alpha = 0.30, sigma = 0.030 '''
+a3s3_hom = Data(0.30, 0.030, 'hom')
+#Unstable
+a3s3_hom.done = True
+datasets += pack_data('a3s3_hom', a3s3_hom)
+
+a3s3_str = Data(0.30, 0.030, 'stm')
+#Unstable
+a3s3_hom.done = True
+datasets += pack_data('a3s3_hom', a3s3_hom)
+
 All = All(datasets)
+
+
