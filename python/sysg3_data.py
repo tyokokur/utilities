@@ -374,6 +374,7 @@ a3s2_cyl.new((16.2, 17.6, 64.2), -10.4922, icm=3.4e-02, err=6.8e-03)
 a3s2_cyl.new((15.2, 16.2, 64.2), -10.4931, icm=2.3e-03, err=4.7e-03)
 a3s2_cyl.new((14.0, 16.2, 64.2), -10.4922, icm=2.1e-02, err=4.6e-03)
 a3s2_cyl.new((16.2, 18.2, 64.2), -10.4923, icm=2.5e-02, err=5.0e-03)
+a3s2_cyl.done = True
 a3s2_cyl.multi = True
 datasets += pack_data('a3s2_cyl', a3s2_cyl)
 
