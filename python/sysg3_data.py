@@ -231,6 +231,7 @@ a2s22_cyl = Data(0.20, 0.022, 'cyl')
 a2s22_cyl.new((10.2, 10.2, 64.2), -12.3420, icm=1.5e-02, err=1.1e-03)
 a2s22_cyl.new((12.2, 12.2, 64.2), -12.3394, icm=3.2e-02, err=4.3e-03)
 a2s22_cyl.new(( 8.2,  8.2, 64.2), -12.3420, icm=1.3e-02, err=1.4e-03)
+a2s22_cyl.done = True
 datasets += pack_data('a2s22_cyl', a2s22_cyl)
 
 a2s22_str = Data(0.20, 0.022, 'str')
@@ -238,6 +239,7 @@ a2s22_str.new((13.0, 15.2, 64.2), -12.3427, icm=6.9e-03, err=1.1e-03)
 a2s22_str.new((12.2, 15.2, 64.2), -12.3426, icm=5.9e-03, err=8.3e-04)
 a2s22_str.new((14.6, 15.2, 64.2), -12.3427, icm=3.8e-03, err=8.7e-04)
 a2s22_str.new((13.8, 20.2, 64.2), -12.3429, icm=4.7e-03, err=8.4e-04)
+a2s22_str.done = True
 datasets += pack_data('a2s22_str', a2s22_str)
 
 a2s22_hom = Data(0.20, 0.022, 'hom')
