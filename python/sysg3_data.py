@@ -422,6 +422,7 @@ a3s3_mul.done = True
 datasets += pack_data('a3s3_mul', a3s3_mul)
 
 a3s3_str = Data(0.30, 0.030, 'str')
+a3s3_str.new((15.2, 15.2, 70.2), -15.5861, icm=3.3e-02, err=4.3e-03)
 datasets += pack_data('a3s3_str', a3s3_str)
 
 ########################################################################
