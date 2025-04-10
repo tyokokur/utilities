@@ -398,7 +398,11 @@ a3s25_hom.done = True
 datasets += pack_data('a3s25_hom', a3s25_hom)
 
 a3s25_cyl = Data(0.30, 0.025, 'cyl')
-a3s25_cyl.new((15.2, 17.6, 64.2), -13.0505, icm=5.7e-02, err=1.1e-02)
+a3s25_cyl.new((15.2, 17.6, 64.2), -13.0522, icm=4.6e-02, err=5.1e-03)
+a3s25_cyl.new((17.6, 17.6, 64.2), -13.0522, icm=4.6e-02, err=5.1e-03)
+a3s25_cyl.new((15.2, 17.6, 64.2), -13.0522, icm=4.6e-02, err=5.1e-03)
+a3s25_cyl.new((15.2, 17.6, 64.2), -13.0522, icm=4.6e-02, err=5.1e-03)
+a3s25_cyl.new((15.2, 17.6, 64.2), -13.0522, icm=4.6e-02, err=5.1e-03)
 datasets += pack_data('a3s25_cyl', a3s25_cyl)
 
 a3s25_str = Data(0.30, 0.025, 'str')
