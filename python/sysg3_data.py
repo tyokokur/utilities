@@ -371,9 +371,9 @@ datasets += pack_data('a25s3_mul', a25s3_mul)
 ########################################################################
 
 ''' alpha = 0.30, sigma = 0.005 '''
-a3s5_cyl = Data(0.30, 0.005, 'mic')
-a3s5_cyl.new((10.2, 10.2, 64.2), -2.68125, icm=4.7e-02, err=5.2e-03)
-datasets += pack_data('a3s5_cyl', a3s5_cyl)
+a3s5_hol = Data(0.30, 0.005, 'hol')
+a3s5_hol.new((10.2, 10.2, 64.2), -2.68125, icm=4.7e-02, err=5.2e-03)
+datasets += pack_data('a3s5_hol', a3s5_hol)
 
 ''' alpha = 0.30, sigma = 0.020 '''
 a3s2_cyl = Data(0.30, 0.020, 'mic')
