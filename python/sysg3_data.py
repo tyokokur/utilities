@@ -333,6 +333,7 @@ a25s27_str.new((13.0, 15.2, 64.2), -14.6018, icm=1.2e-03, err=2.3e-04)
 a25s27_str.new((15.2, 15.2, 64.2), -14.6018, icm=2.5e-03, err=5.2e-04)
 a25s27_str.new((18.2, 15.2, 64.2), -14.6017, icm=3.0e-03, err=7.0e-04)
 a25s27_str.new((11.0, 15.2, 64.2), -14.6017, icm=3.5e-03, err=5.5e-04)
+a25s27_str.done = True
 datasets += pack_data('a25s27_str', a25s27_str)
 
 a25s27_hom = Data(0.25, 0.027, 'hom')
