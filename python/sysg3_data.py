@@ -231,6 +231,8 @@ a2s22_cyl = Data(0.20, 0.022, 'cyl')
 a2s22_cyl.new((10.2, 10.2, 64.2), -12.3420, icm=1.5e-02, err=1.1e-03)
 a2s22_cyl.new((12.2, 12.2, 64.2), -12.3394, icm=3.2e-02, err=4.3e-03)
 a2s22_cyl.new(( 8.2,  8.2, 64.2), -12.3420, icm=1.3e-02, err=1.4e-03)
+a2s22_cyl.new((10.2, 12.2, 64.2), -12.3420, icm=1.3e-02, err=1.8e-03)
+a2s22_cyl.done = True
 datasets += pack_data('a2s22_cyl', a2s22_cyl)
 
 a2s22_str = Data(0.20, 0.022, 'str')
