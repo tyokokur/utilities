@@ -414,7 +414,7 @@ a3s25_hom.new((15.2, 15.2, 64.2), -13.0394, icm=2.2e-06, err=8.1e-07)
 a3s25_hom.done = True
 datasets += pack_data('a3s25_hom', a3s25_hom)
 
-a3s25_cyl = Data(0.30, 0.025, 'cyl')
+a3s25_cyl = Data(0.30, 0.025, 'mic')
 a3s25_cyl.new((15.2, 17.6, 72.2), -13.0522, icm=4.6e-02, err=5.1e-03)
 a3s25_cyl.new((17.6, 17.6, 70.2), -13.0516, icm=9.9e-02, err=9.3e-03)
 a3s25_cyl.new((15.2, 19.4, 70.2), -13.0539, icm=3.0e-02, err=3.9e-03)
