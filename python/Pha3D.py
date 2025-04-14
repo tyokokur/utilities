@@ -101,9 +101,9 @@ class Pha3D:
         if not fprefix: fprefix='E:/Downloads'
         if not fname : fname = fprefix+'pha_vol.html'
         vol = self.PHAXYZ[0].flatten()
-        X   = self.PHAXYZ[1].flatten().round(2)
-        Y   = self.PHAXYZ[2].flatten().round(2)
-        Z   = self.PHAXYZ[3].flatten().round(2)
+        X   = self.PHAXYZ[1].flatten()
+        Y   = self.PHAXYZ[2].flatten()
+        Z   = self.PHAXYZ[3].flatten()
         nx, ny, nz = self.nx, self.ny, self.nz
         
         if zmax > self.lz-self.dz: 
@@ -148,9 +148,9 @@ class Pha3D:
                         else:                   Y2[_conv2(i,j,k)] = j*self.dy - self.ly
                         Z2[_conv2(i,j,k)] = k*self.dz
             vol = PH2
-            X = X2.round(2)
-            Y = Y2.round(2) 
-            Z = Z2.round(2)
+            X = X2
+            Y = Y2
+            Z = Z2
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
@@ -158,15 +158,9 @@ class Pha3D:
             X = X[z_filter]
             Y = Y[z_filter]
             Z = Z[z_filter]
-        '''if nz_coarse > 1:
-            dz_new = self.dz*nz_coarse
-            z_filter = np.isin(Z, np.arange(0,zmax+dz_new, dz_new))
-            vol = vol[z_filter]
-            X = X[z_filter]
-            Y = Y[z_filter]
-            Z = Z[z_filter]
-        '''
+
         if n_coarse > 1:
+            X, Y, Z = X.round(2), Y.round(2), Z.round(2)
             xmin, xmax = min(X), max(X)
             ymin, ymax = min(X), max(X)
             print(xmin, xmax)
@@ -178,7 +172,6 @@ class Pha3D:
             display(fil)
             fil*= np.isin(Z, np.arange(0, zmax+dzn, dzn))
             display(fil)
-            
             
             vol = vol[fil]
             X   = X[fil]
