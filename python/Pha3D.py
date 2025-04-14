@@ -162,7 +162,7 @@ class Pha3D:
         if n_coarse >= 1:
             X, Y, Z = X.round(2), Y.round(2), Z.round(2)
             xmin, xmax = min(X), max(X)
-            ymin, ymax = min(X), max(X)
+            ymin, ymax = min(Y), max(Y)
             print(xmin, xmax)
                 
             dxn, dyn, dzn = round(self.dx*n_coarse,2), round(self.dy*n_coarse,2), round(self.dz*n_coarse,2)
