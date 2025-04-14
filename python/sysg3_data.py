@@ -210,7 +210,7 @@ a2s05_hol.done = True
 datasets += pack_data('a2s05_hol', a2s05_hol)
 
 ''' alpha = 0.20, sigma = 0.015 '''
-a2s15_cyl = Data(0.20, 0.015, 'cyl')
+a2s15_cyl = Data(0.20, 0.015, 'mic')
 a2s15_cyl.new((12.2, 12.2, 64.2), -8.43694, icm=3.0e-02, err=2.8e-03)
 a2s15_cyl.new((10.2, 10.2, 64.2), -8.43882, icm=3.3e-02, err=2.3e-03)
 a2s15_cyl.new(( 8.2,  8.2, 64.2), -8.43926, icm=7.5e-03, err=1.3e-03)
