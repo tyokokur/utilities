@@ -484,22 +484,23 @@ datasets += pack_data('a3s325_vor', a3s325_vor)
 
 ''' alpha = 0.30, sigma = 0.035'''
 a3s35_cyl = Data(0.30, 0.035, 'cyl')
-a3s35_cyl.new((10.2, 10.2, 70.2), -18.0928, icm=1.4e-02, err=2.7e-03)
+a3s35_cyl.new((10.2, 10.2, 75.2), -18.0928, icm=1.4e-02, err=2.7e-03)
 a3s35_cyl.multi = True
 datasets += pack_data('a3s35_cyl', a3s35_cyl)
 
 a3s35_str = Data(0.30, 0.035, 'str')
-a3s35_str.new((15.2, 15.2, 70.2), -18.0887, icm=2.3e-02, err=3.0e-03)
+a3s35_str.new((15.2, 15.2, 75.2), -18.0887, icm=2.3e-02, err=3.0e-03)
 datasets += pack_data('a3s35_str', a3s35_str)
 
 a3s35_vor = Data(0.30, 0.035, 'hom')
-a3s35_vor.new((15.2, 15.2, 70.2), -16.8268, icm=4.5e-03, err=1.6e-03)
+a3s35_vor.new((15.2, 15.2, 75.2), -18.0779, icm=4.0e-02, err=4.0e-03)
 a3s35_vor.multi = True
 datasets += pack_data('a3s35_vor', a3s35_vor)
 
 a3s35_hom = Data(0.30, 0.035, 'hom')
-a3s35_hom.new((10.2, 10.2, 70.2), -16.8312, icm=8e-03, err=1e-03)
-datasets += pack_data('a3s35_vor', a3s35_vor)
+a3s35_hom.new((10.2, 10.2, 75.2), -18.0782, icm=7.4e-02, err=2.1e-05)
+a3s35_hom.done = True
+datasets += pack_data('a3s35_hom', a3s35_hom)
 
 ########################################################################
 
