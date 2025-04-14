@@ -167,8 +167,8 @@ class Pha3D:
             Z = Z[z_filter]
         '''
         if n_coarse > 1:
-            xmin, xmax = np.min(X), np.max(X)
-            ymin, ymax = np.min(Y), np.max(Y)
+            xmin, xmax = round(np.min(X), 2), round(np.max(X), 2)
+            ymin, ymax = round(np.min(Y), 2), round(np.max(Y), 2)
             print(xmin, xmax)
                 
             dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
