@@ -101,14 +101,11 @@ class Pha3D:
         if not fprefix: fprefix='E:/Downloads'
         if not fname : fname = fprefix+'pha_vol.html'
         vol = self.PHAXYZ[0].flatten()
-        X   = self.PHAXYZ[1].flatten()
-        Y   = self.PHAXYZ[2].flatten()
-        Z   = self.PHAXYZ[3].flatten()
+        X   = self.PHAXYZ[1].flatten().round(2)
+        Y   = self.PHAXYZ[2].flatten().round(2)
+        Z   = self.PHAXYZ[3].flatten().round(2)
         nx, ny, nz = self.nx, self.ny, self.nz
         
-        for i in X: X[i] = round(X[i], 2)
-        for i in Y: Y[i] = round(Y[i], 2)
-        for i in Z: Z[i] = round(Z[i], 2)
         
         if zmax > self.lz-self.dz: 
             print('\n\nERROR: zmax TOO LARGE: {:.2f} > {:.2f}\n\n'.format(zmax, self.lz-self.dz))
