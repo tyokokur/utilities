@@ -167,9 +167,16 @@ class Pha3D:
             Z = Z[z_filter]
         '''
         if n_coarse > 1:
+            if reflect_box:
+                xmax = 2*(self.nx - self.dx)
+                ymax = 2*(self.ny - self.dy)
+            else:
+                xmax = self.nx - self.dx
+                ymax = self.ny - self.ny
+                
             dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
-            fil = np.isin(X, np.arange(0, self.lx-self.dx+dxn, dxn))
-            fil*= np.isin(Y, np.arange(0, self.ly-self.dy+dyn, dyn))
+            fil = np.isin(X, np.arange(0, xmax+dxn, dxn))
+            fil*= np.isin(Y, np.arange(0, ymax+dyn, dyn))
             fil*= np.isin(Z, np.arange(0, zmax+dzn           , dzn))
             
             vol = vol[fil]
