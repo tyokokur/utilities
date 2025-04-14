@@ -437,7 +437,7 @@ a3s25_mul.done = True
 datasets += pack_data('a3s25_mul', a3s25_mul)
 
 ''' alpha = 0.30, sigma = 0.030 '''
-a3s3_cyl = Data(0.30, 0.030, 'mic')
+a3s3_cyl = Data(0.30, 0.030, 'cyl')
 a3s3_cyl.new((10.2, 10.2, 70.2), -15.5935, icm=1.2e-02, err=3.1e-03)
 datasets += pack_data('a3s3_cyl', a3s3_cyl)
 
