@@ -106,6 +106,10 @@ class Pha3D:
         Z   = self.PHAXYZ[3].flatten()
         nx, ny, nz = self.nx, self.ny, self.nz
         
+        for i in X: X[i] = round(X[i], 2)
+        for i in Y: Y[i] = round(Y[i], 2)
+        for i in Z: Z[i] = round(Z[i], 2)
+        
         if zmax > self.lz-self.dz: 
             print('\n\nERROR: zmax TOO LARGE: {:.2f} > {:.2f}\n\n'.format(zmax, self.lz-self.dz))
             return
