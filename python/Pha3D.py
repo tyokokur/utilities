@@ -148,9 +148,9 @@ class Pha3D:
                         else:                   Y2[_conv2(i,j,k)] = j*self.dy - self.ly
                         Z2[_conv2(i,j,k)] = k*self.dz
             vol = PH2
-            X = X2
-            Y = Y2 
-            Z = Z2
+            X = X2.round(2)
+            Y = Y2.round(2) 
+            Z = Z2.round(2)
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
