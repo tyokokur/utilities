@@ -172,6 +172,8 @@ class Pha3D:
             fil*= np.isin(Z, np.arange(0.0, zmax+dzn, dzn))
             display(fil)
             
+            print(X)
+            
             vol = vol[fil]
             X   = X[fil]
             Y   = Y[fil]
