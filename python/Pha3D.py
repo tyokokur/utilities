@@ -166,19 +166,13 @@ class Pha3D:
                 
             dxn, dyn, dzn = round(self.dx*n_coarse,2), round(self.dy*n_coarse,2), round(self.dz*n_coarse,2)
             fil = np.isin(X, np.arange(xmin, xmax+dxn, dxn).round(2))
-            # fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn))
-            # fil*= np.isin(Z, np.arange(0.0, zmax+dzn, dzn))
-            print(np.arange(xmin,xmax+dxn,dxn))
-            display(fil)
-            
-            print(X)
+            fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn).round(2))
+            fil*= np.isin(Z, np.arange(0.0, zmax+dzn, dzn).round(2))
             
             vol = vol[fil]
             X   = X[fil]
             Y   = Y[fil]
             Z   = Z[fil]
-            
-            print(X)
             
         lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
         polymer = go.Isosurface(
