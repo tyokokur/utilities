@@ -168,6 +168,7 @@ class Pha3D:
             fil = np.isin(X, np.arange(xmin, xmax+dxn, dxn))
             # fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn))
             # fil*= np.isin(Z, np.arange(0.0, zmax+dzn, dzn))
+            print(xmin,xmax+dxn,dxn)
             display(fil)
             
             print(X)
