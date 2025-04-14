@@ -106,7 +106,6 @@ class Pha3D:
         Z   = self.PHAXYZ[3].flatten().round(2)
         nx, ny, nz = self.nx, self.ny, self.nz
         
-        
         if zmax > self.lz-self.dz: 
             print('\n\nERROR: zmax TOO LARGE: {:.2f} > {:.2f}\n\n'.format(zmax, self.lz-self.dz))
             return
@@ -168,8 +167,8 @@ class Pha3D:
             Z = Z[z_filter]
         '''
         if n_coarse > 1:
-            xmin, xmax = round(np.min(X), 2), round(np.max(X), 2)
-            ymin, ymax = round(np.min(Y), 2), round(np.max(Y), 2)
+            xmin, xmax = min(X), max(X)
+            ymin, ymax = min(X), max(X)
             print(xmin, xmax)
                 
             dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
