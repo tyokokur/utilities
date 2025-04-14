@@ -165,7 +165,7 @@ class Pha3D:
             ymin, ymax = min(X), max(X)
             print(xmin, xmax)
                 
-            dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
+            dxn, dyn, dzn = round(self.dx*n_coarse,2), round(self.dy*n_coarse,2), round(self.dz*n_coarse,2)
             fil = np.isin(X, np.arange(xmin, xmax+dxn, dxn))
             display(fil)
             fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn))
