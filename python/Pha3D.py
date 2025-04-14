@@ -184,7 +184,11 @@ class Pha3D:
             Y   = Y[fil]
             Z   = Z[fil]
             
-        fil = np.isin(vol, isomin*np.arange(
+        fil = np.isin(vol, isomin*np.arange(-1e-2, +1e-02, 1e-03))
+        vol = vol[fil]
+        X = X[fil]
+        Y = Y[fil]
+        Z = Z[fil]
         
         lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
         polymer = go.Isosurface(
