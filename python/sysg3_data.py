@@ -210,6 +210,12 @@ a2s05_hol.done = True
 datasets += pack_data('a2s05_hol', a2s05_hol)
 
 ''' alpha = 0.20, sigma = 0.015 '''
+a2s15_cyl = Data(0.20, 0.015, 'cyl')
+a2s15_cyl.new((12.2, 12.2, 64.2), -8.43694, icm=3.0e-02, err=2.8e-03)
+a2s15_cyl.new((10.2, 10.2, 64.2), -8.43882, icm=3.3e-02, err=2.3e-03)
+a2s15_cyl.new(( 8.2,  8.2, 64.2), -8.43926, icm=7.5e-03, err=1.3e-03)
+datasets += pack_data('a2s15_cyl', a2s15_cyl)
+
 a2s15_str = Data(0.20, 0.015, 'str')
 a2s15_str.new((10.2, 15.2, 64.2), -8.43398, icm=8.8e-03, err=1.7e-03)
 a2s15_str.new((12.2, 15.2, 64.2), -8.43538, icm=9.2e-03, err=1.7e-03)
@@ -221,11 +227,9 @@ a2s15_str.new((24.2, 20.2, 64.2), -8.43879, icm=4.7e-03, err=6.5e-04)
 a2s15_str.multi = True
 datasets += pack_data('a2s15_str', a2s15_str)
 
-a2s15_cyl = Data(0.20, 0.015, 'cyl')
-a2s15_cyl.new((12.2, 12.2, 64.2), -8.43694, icm=3.0e-02, err=2.8e-03)
-a2s15_cyl.new((10.2, 10.2, 64.2), -8.43882, icm=3.3e-02, err=2.3e-03)
-a2s15_cyl.new(( 8.2,  8.2, 64.2), -8.43926, icm=7.5e-03, err=1.3e-03)
-datasets += pack_data('a2s15_cyl', a2s15_cyl)
+a2s15_hol = Data(0.20, 0.015, 'hol')
+a2s15_hol.new((20.2, 20.2, 64.2), -8.43841, icm=3.5e-02, err=3.9e-03)
+datasets += pack_data('a2s15_hol', a2s15_hol)
 
 ''' alpha = 0.20, sigma = 0.022 '''
 a2s22_cyl = Data(0.20, 0.022, 'cyl')
