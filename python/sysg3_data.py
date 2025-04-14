@@ -437,10 +437,15 @@ a3s25_mul.done = True
 datasets += pack_data('a3s25_mul', a3s25_mul)
 
 ''' alpha = 0.30, sigma = 0.030 '''
-a3s3_hom = Data(0.30, 0.030, 'hom')
-#Unstable
-a3s3_hom.done = True
-datasets += pack_data('a3s3_hom', a3s3_hom)
+a3s3_cyl = Data(0.30, 0.030, 'mic')
+a3s3_cyl.new((10.2, 10.2, 70.2), -15.5935, icm=1.2e-02, err=3.1e-03)
+datasets += pack_data('a3s3_cyl', a3s3_cyl)
+
+a3s3_str = Data(0.30, 0.030, 'str')
+a3s3_str.new((15.2, 15.2, 70.2), -15.5861, icm=3.3e-02, err=4.3e-03)
+a3s3_str.new((18.2, 15.2, 70.2), -15.5840, icm=1.9e-02, err=3.5e-03)
+a3s3_str.new((12.2, 15.2, 70.2), -15.5884, icm=1.8e-02, err=3.2e-03)
+datasets += pack_data('a3s3_str', a3s3_str)
 
 a3s3_mul = Data(0.30, 0.030, 'hom')
 a3s3_mul.new((15.2, 15.2, 70.2), -15.5739, icm=1.3e-03, err=5.6e-04)
@@ -448,11 +453,10 @@ a3s3_mul.multi = True
 a3s3_mul.done = True
 datasets += pack_data('a3s3_mul', a3s3_mul)
 
-a3s3_str = Data(0.30, 0.030, 'str')
-a3s3_str.new((15.2, 15.2, 70.2), -15.5861, icm=3.3e-02, err=4.3e-03)
-a3s3_str.new((18.2, 15.2, 70.2), -15.5840, icm=1.9e-02, err=3.5e-03)
-a3s3_str.new((12.2, 15.2, 70.2), -15.5884, icm=1.8e-02, err=3.2e-03)
-datasets += pack_data('a3s3_str', a3s3_str)
+a3s3_hom = Data(0.30, 0.030, 'hom')
+#Unstable
+a3s3_hom.done = True
+datasets += pack_data('a3s3_hom', a3s3_hom)
 
 ''' alpha = 0.30, sigma = 0.0325'''
 a3s325_str = Data(0.30, 0.0325, 'str')
