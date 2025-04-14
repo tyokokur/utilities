@@ -173,11 +173,11 @@ class Pha3D:
                 
             dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
             fil = np.isin(X, np.arange(xmin, xmax+dxn, dxn))
-            display(fil.head)
+            display(fil)
             fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn))
-            display(fil.head)
+            display(fil)
             fil*= np.isin(Z, np.arange(0, zmax+dzn, dzn))
-            display(fil.head)
+            display(fil)
             
             
             vol = vol[fil]
