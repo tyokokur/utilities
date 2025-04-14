@@ -184,7 +184,7 @@ class Pha3D:
             Y   = Y[fil]
             Z   = Z[fil]
             
-        fil = np.isin(vol, isomin*np.arange(-1e-2, +1e-02, 1e-03))
+        fil = np.isin(vol, isomin*np.arange(1.0-1e-2, 1.0+1e-02, 1e-03))
         vol = vol[fil]
         X = X[fil]
         Y = Y[fil]
