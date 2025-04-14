@@ -159,7 +159,7 @@ class Pha3D:
             Y = Y[z_filter]
             Z = Z[z_filter]
 
-        if n_coarse > 1:
+        if n_coarse >= 1:
             X, Y, Z = X.round(2), Y.round(2), Z.round(2)
             xmin, xmax = min(X), max(X)
             ymin, ymax = min(X), max(X)
