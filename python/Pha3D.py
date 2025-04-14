@@ -170,7 +170,7 @@ class Pha3D:
             display(fil)
             fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn))
             display(fil)
-            fil*= np.isin(Z, np.arange(0, zmax+dzn, dzn))
+            fil*= np.isin(Z, np.arange(0.0, zmax+dzn, dzn))
             display(fil)
             
             vol = vol[fil]
