@@ -482,6 +482,26 @@ a3s325_vor.new((10.2, 10.2, 70.2), -16.8312, icm=8e-03, err=1e-03)
 a3s325_vor.multi = True
 datasets += pack_data('a3s325_vor', a3s325_vor)
 
+''' alpha = 0.30, sigma = 0.035'''
+a3s325_cyl = Data(0.30, 0.0325, 'cyl')
+a3s325_cyl.new((10.2, 10.2, 70.2), -16.8454, icm=2.9e-02, err=4.9e-03)
+a3s325_cyl.new((15.2, 15.2, 70.2), -16.8372, icm=3.0e-02, err=5.5e-03)
+a3s325_cyl.multi = True
+datasets += pack_data('a3s325_cyl', a3s325_cyl)
+
+a3s325_str = Data(0.30, 0.035, 'str')
+a3s325_str.new((15.2, 15.2, 70.2), -16.8432, icm=2.0e-02, err=3.0e-03)
+datasets += pack_data('a3s325_str', a3s325_str)
+
+a3s325_vor = Data(0.30, 0.035, 'hom')
+a3s325_vor.new((15.2, 15.2, 70.2), -16.8268, icm=4.5e-03, err=1.6e-03)
+a3s325_vor.multi = True
+datasets += pack_data('a3s325_mul', a3s325_mul)
+
+a3s325_hom = Data(0.30, 0.0325, 'hom')
+a3s325_hom.new((10.2, 10.2, 70.2), -16.8312, icm=8e-03, err=1e-03)
+datasets += pack_data('a3s325_vor', a3s325_vor)
+
 ########################################################################
 
 ''' alpha = 0.325, sigma = 0.020 '''
