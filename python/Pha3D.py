@@ -96,7 +96,7 @@ class Pha3D:
         test
         '''
         if not zmax  : zmax  = self.lz-self.dz
-        if not isomin: isomin= 1e-02
+        if not isomin: isomin= 1e-01
         if not cmap  : cmap  = plt.cm.jet
         if not fprefix: fprefix='E:/Downloads'
         if not fname : fname = fprefix+'pha_vol.html'
