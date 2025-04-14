@@ -184,7 +184,7 @@ class Pha3D:
             Y   = Y[fil]
             Z   = Z[fil]
             
-        fil = vol > isomin*0.9
+        fil = vol > 0 #isomin*0.9
         vol = vol[fil]
         X = X[fil]
         Y = Y[fil]
