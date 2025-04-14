@@ -362,6 +362,7 @@ datasets += pack_data('a25s3_hom', a25s3_hom)
 
 a25s3_cyl = Data(0.25, 0.030, 'mic')
 a25s3_cyl.new((15.2, 17.6, 72.2), -16.1887, icm=1.6e-02, err=2.8e-03)
+a25s3_cyl.new((15.2, 17.6, 72.2), -16.1887, icm=1.6e-02, err=2.8e-03)
 datasets += pack_data('a25s3_cyl', a25s3_cyl)
 
 a25s3_str = Data(0.25, 0.030, 'str')
