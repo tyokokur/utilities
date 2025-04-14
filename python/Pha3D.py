@@ -90,7 +90,7 @@ class Pha3D:
         
         return fig
     
-    def plot_vol(self, zmax=None, isomin=None, nz_coarse=1, reflect_box=True, reflect_over="ne", cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
+    def plot_vol(self, zmax=None, isomin=None, n_coarse=1, reflect_box=True, reflect_over="ne", cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
                   show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
         '''
         test
@@ -109,8 +109,8 @@ class Pha3D:
         if zmax > self.lz-self.dz: 
             print('\n\nERROR: zmax TOO LARGE: {:.2f} > {:.2f}\n\n'.format(zmax, self.lz-self.dz))
             return
-        if type(nz_coarse) is not int: 
-            print('\n\nERROR: nz_coarse must be of int type')
+        if type(n_coarse) is not int: 
+            print('\n\nERROR: n_coarse must be of int type')
             return
         
         if reflect_box: # Overwrite with full PHA
