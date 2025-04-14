@@ -195,7 +195,7 @@ class Pha3D:
 
         fig.update_layout(scene_xaxis_showticklabels=True, scene_yaxis_showticklabels=True, scene_zaxis_showticklabels=True,
                           scene_aspectmode='data',
-                          template='simple_white', width=600, height=600)
+                          template='simple_white')#, width=600, height=600)
         fig.update_traces(showscale=False)
         
         if write_html: 
