@@ -379,6 +379,8 @@ datasets += pack_data('a25s3_mul', a25s3_mul)
 a3s5_hol = Data(0.30, 0.005, 'hol')
 a3s5_hol.new((10.2, 10.2, 64.2), -2.68125, icm=4.7e-02, err=5.2e-03)
 a3s5_hol.new((16.2, 16.2, 64.2), -2.68749, icm=6.0e-02, err=7.5e-03)
+a3s5_hol.new((16.2, 18.2, 64.2), -2.68997, icm=4.3e-02, err=3.4e-03)
+a3s5_hol.new((16.2, 16.2, 64.2), -2.68968, icm=4.0e-02, err=3.3e-03)
 datasets += pack_data('a3s5_hol', a3s5_hol)
 
 ''' alpha = 0.30, sigma = 0.020 '''
