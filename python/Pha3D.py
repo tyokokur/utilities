@@ -169,6 +169,7 @@ class Pha3D:
         if n_coarse > 1:
             xmin, xmax = np.min(X), np.max(X)
             ymin, ymax = np.min(Y), np.max(Y)
+            print(xmin, xmax)
                 
             dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
             fil = np.isin(X, np.arange(xmin, xmax+dxn, dxn))
