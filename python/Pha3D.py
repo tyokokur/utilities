@@ -167,16 +167,12 @@ class Pha3D:
             Z = Z[z_filter]
         '''
         if n_coarse > 1:
-            if reflect_box:
-                xmax = 2*(self.lx - self.dx)
-                ymax = 2*(self.ly - self.dy)
-            else:
-                xmax = self.lx - self.dx
-                ymax = self.ly - self.ny
+            xmin, xmax = np.min(X), np.max(X)
+            ymin, ymax = np.min(Y), np.max(Y)
                 
             dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
-            fil = np.isin(X, np.arange(0, xmax+dxn, dxn))
-            fil*= np.isin(Y, np.arange(0, ymax+dyn, dyn))
+            fil = np.isin(X, np.arange(xmin, xmax+dxn, dxn))
+            fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn))
             fil*= np.isin(Z, np.arange(0, zmax+dzn, dzn))
             
             vol = vol[fil]
@@ -184,12 +180,6 @@ class Pha3D:
             Y   = Y[fil]
             Z   = Z[fil]
             
-        fil = vol > isomin*0.1
-        vol = vol[fil]
-        X = X[fil]
-        Y = Y[fil]
-        Z = Z[fil]
-        
         lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
         polymer = go.Isosurface(
             x=X.flatten(),
