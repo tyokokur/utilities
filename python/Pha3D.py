@@ -167,7 +167,9 @@ class Pha3D:
             Z = Z[z_filter]
         '''
         if n_coarse > 1:
-            dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coars
+            dxn, dyn, dzn = self.dx*n_coarse, self.dy*n_coarse, self.dz*n_coarse
+            fil = np.isin(X, np.arange(0, self.lx-self.dx+dxn, dxn))
+            fil 
         
         lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
         polymer = go.Isosurface(
