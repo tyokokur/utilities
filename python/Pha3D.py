@@ -91,7 +91,7 @@ class Pha3D:
         return fig
     
     def plot_vol(self, zmax=None, isomin=None, n_coarse=1, 
-                 reflect_box=True, reflect_over="ne", extend_box=True, extend_list=[],
+                 reflect_box=True, reflect_over="ne", extend_box=True, extend_dim="x",
                  cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
                  show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
         '''
@@ -153,6 +153,9 @@ class Pha3D:
             X = X2
             Y = Y2
             Z = Z2
+        
+        if extend_box: 
+            if extend_dim = 
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
