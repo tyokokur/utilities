@@ -164,7 +164,7 @@ class Pha3D:
                     copy1 = vol[:nx]
                     copy2 = vol[nx:]
                     PH3 = np.concat(copy2, vol, copy1)
-                    X3 = np.meshgrid(np.arange(X[0]-self.lx+self.dx, X[nxnynz]+self.lx-self.dy, self.dy),
+                    X3 = np.meshgrid(np.arange(X[0]-self.lx+self.dx, X[nx*ny*nz]+self.lx-self.dy, self.dy),
                                      np.arange(Y[0]
                                      
             
