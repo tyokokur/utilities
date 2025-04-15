@@ -204,7 +204,7 @@ class Pha3D:
             caps=dict(x_show=True, y_show=True)
         )
 
-        fig = go.Figure(data=[polymer, *self._ins_walls((min(X)-0.01, max(X)+0.01), (min(Y)-0.01, max(Y)+0.01), zmax+0.01)])
+        fig = go.Figure(data=[polymer, *self._ins_walls((min(X)-0.01, max(X)+0.01), (min(Y)-0.01, max(Y)+0.01), zmax+0.01)]) # padding added for weird lighting affects in kaleido
         # fig = go.Figure(data=[polymer])
 
         fig.update_layout(scene_xaxis_showticklabels=True, scene_yaxis_showticklabels=True, scene_zaxis_showticklabels=True,
