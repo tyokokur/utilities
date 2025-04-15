@@ -204,7 +204,7 @@ class Pha3D:
             caps=dict(x_show=True, y_show=True)
         )
 
-        fig = go.Figure(data=[polymer, *self._ins_walls((min(X), max(X)), (min(Y), max(Y)), zmax)])
+        fig = go.Figure(data=[polymer, *self._ins_walls((min(X)-1.0, max(X)+1.0), (min(Y)-1.0, max(Y)+1.0), zmax+1.0)])
         # fig = go.Figure(data=[polymer])
 
         fig.update_layout(scene_xaxis_showticklabels=True, scene_yaxis_showticklabels=True, scene_zaxis_showticklabels=True,
@@ -396,13 +396,13 @@ class Pha3D:
             walls = []
             xmin, xmax = xs[0], xs[1]
             ymin, ymax = ys[0], ys[1]
-            s, t = np.meshgrid(np.linspace(xmin, xmax, 1000), np.linspace(ymin, ymax, 1000))
+            s, t = np.meshgrid(np.linspace(xmin, xmax, 10), np.linspace(ymin, ymax, 10))
             walls.append(go.Surface(x=s,y=t,z=z_max*np.ones(s.shape), colorscale=lin_cscale(wall_col), showscale=False))
             walls.append(go.Surface(x=s,y=t,z=np.zeros(s.shape), colorscale=lin_cscale(floor_col), showscale=False))
-            u, v = np.meshgrid(np.linspace(xmin, xmax, 1000), np.linspace(0, z_max, 1000))
+            u, v = np.meshgrid(np.linspace(xmin, xmax, 10), np.linspace(0, z_max, 10))
             walls.append(go.Surface(x=u,y=ymax*np.ones(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
             walls.append(go.Surface(x=u,y=ymin*np.ones(u.shape),z=v, colorscale=lin_cscale(wall_col), showscale=False))
-            u, v = np.meshgrid(np.linspace(ymin, ymax, 1000), np.linspace(0, z_max, 1000))
+            u, v = np.meshgrid(np.linspace(ymin, ymax, 10), np.linspace(0, z_max, 10))
             walls.append(go.Surface(x=xmax*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
             walls.append(go.Surface(x=xmin*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
             return walls
