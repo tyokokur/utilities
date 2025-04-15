@@ -163,7 +163,8 @@ class Pha3D:
                 if extend_dim == "x" or extend_dim == "both" or extend_dim == "xy":
                     copy1 = vol[:nx]
                     copy2 = vol[nx:]
-                    PH3 = np.
+                    PH3 = np.concat(copy2, vol, copy1)
+                    X3 = np.concat(np.arange(X[0]-self.lx-s
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
