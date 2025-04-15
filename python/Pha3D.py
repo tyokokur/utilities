@@ -155,9 +155,8 @@ class Pha3D:
             Z = Z2
         
             if extend_box: 
-                nxn, nyn = nx, ny
                 if extend_dim == "x" or extend_dim == "both" or extend_dim == "xy":
-                    nxn *= 2
+                    
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
