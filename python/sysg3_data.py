@@ -370,14 +370,18 @@ a25s3_cyl.new((13.0, 15.2, 72.2), -16.1856, icm=1.4e-02, err=1.2e-03)
 datasets += pack_data('a25s3_cyl', a25s3_cyl)
 
 a25s3_str = Data(0.25, 0.030, 'str')
-a25s3_str.new((13.0, 15.2, 72.2), -16.1855, icm=1.6e-03, err=2.3e-04)
 a25s3_str.new((11.0, 15.2, 72.2), -16.1852, icm=3.0e-03, err=5.2e-04)
+a25s3_str.new((13.0, 15.2, 72.2), -16.1855, icm=1.6e-03, err=2.3e-04)
+a25s3_str.new((15.2, 15.2, 72.2), -16.1857, icm=3.7e-03, err=7.3e-04)
 datasets += pack_data('a25s3_str', a25s3_str)
 
-a25s3_mul = Data(0.25, 0.030, 'mul')
+a25s3_mul = Data(0.25, 0.030, 'str')
+a25s3_mul.new((15.2, 15.2, 72.2), -16.1852, icm=1.4e-02, err=2.4e-03)
+a25s3_mul.multi = True
+a25s3_hommul = Data(0.25, 0.030, 'hom')
 # Unstable
-a25s3_mul.done=True
-datasets += pack_data('a25s3_mul', a25s3_mul)
+a25s3_hommul.done=True
+datasets += pack_data('a25s3_hommul', a25s3_hommul)
 
 ########################################################################
 
