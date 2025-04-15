@@ -476,11 +476,11 @@ datasets += pack_data('a3s3_hom', a3s3_hom)
 
 ''' alpha = 0.30, sigma = 0.0325'''
 a3s325_cyl = Data(0.30, 0.0325, 'cyl')
-a3s325_cyl.new(( 8.2,  8.2, 70.2), -16.8433, icm=5.3e-03, err=4.9e-03)
+a3s325_cyl.new(( 8.2,  8.2, 70.2), -16.8433, icm=5.3e-03, err=6.7e-04)
 a3s325_cyl.new((10.2, 10.2, 70.2), -16.8454, icm=2.9e-02, err=4.9e-03)
-a3s325_cyl.new((12.2, 12.2, 70.2), -16.8454, icm=2.9e-02, err=4.9e-03)
+a3s325_cyl.new((12.2, 12.2, 70.2), -16.8486, icm=1.2e-02, err=1.4e-03)
 a3s325_cyl.new((15.2, 15.2, 70.2), -16.8372, icm=3.0e-02, err=5.5e-03)
-a3s325_cyl.multi = True
+a3s325_cyl.done = True
 datasets += pack_data('a3s325_cyl', a3s325_cyl)
 
 a3s325_str = Data(0.30, 0.0325, 'str')
