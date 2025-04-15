@@ -378,6 +378,8 @@ datasets += pack_data('a25s3_str', a25s3_str)
 a25s3_mul = Data(0.25, 0.030, 'str')
 a25s3_mul.new((15.2, 15.2, 72.2), -16.1852, icm=1.4e-02, err=2.4e-03)
 a25s3_mul.multi = True
+datasets += pack_data('a25s3_mul', a25s3_mul)
+
 a25s3_hommul = Data(0.25, 0.030, 'hom')
 # Unstable
 a25s3_hommul.done=True
