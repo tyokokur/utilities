@@ -460,6 +460,7 @@ a3s3_str.new(( 9.2, 15.2, 70.2), -15.5830, icm=1.3e-02, err=1.6e-03)
 a3s3_str.new((12.2, 15.2, 70.2), -15.5884, icm=1.8e-02, err=3.2e-03)
 a3s3_str.new((15.2, 15.2, 70.2), -15.5861, icm=3.3e-02, err=4.3e-03)
 a3s3_str.new((18.2, 15.2, 70.2), -15.5840, icm=1.9e-02, err=3.5e-03)
+a3s3_str.done = True
 datasets += pack_data('a3s3_str', a3s3_str)
 
 a3s3_mul = Data(0.30, 0.030, 'hom')
