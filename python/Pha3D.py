@@ -155,11 +155,6 @@ class Pha3D:
             Z = Z2
         
             if extend_box: 
-                if   extend_over == "ne": center = (self.lx-self.dx, self.ly-self.dy)
-                elif extend_over == "nw": center = (self.lx-self.dx, 0)
-                elif extend_over == "se": center = (0, self.ly-self.dy)
-                elif extend_over == "sw": center = (0, 0)
-                
                 if extend_dim == "x" or extend_dim == "both" or extend_dim == "xy":
                     copy1 = vol[:nx]
                     copy2 = vol[nx:]
