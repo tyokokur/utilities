@@ -161,7 +161,7 @@ class Pha3D:
                 elif extend_over == "sw": center = (0, 0)
                 
                 if extend_dim == "x" or extend_dim == "both" or extend_dim == "xy":
-                    
+                    copy1 = vol[:nx
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
