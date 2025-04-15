@@ -204,7 +204,7 @@ class Pha3D:
             caps=dict(x_show=True, y_show=True)
         )
 
-        fig = go.Figure(data=[polymer, *self._ins_walls((min(X)-1.0, max(X)+1.0), (min(Y)-1.0, max(Y)+1.0), zmax+1.0)])
+        fig = go.Figure(data=[polymer, *self._ins_walls((min(X)-0.1, max(X)+0.1), (min(Y)-0.1, max(Y)+0.1), zmax+0.1)])
         # fig = go.Figure(data=[polymer])
 
         fig.update_layout(scene_xaxis_showticklabels=True, scene_yaxis_showticklabels=True, scene_zaxis_showticklabels=True,
