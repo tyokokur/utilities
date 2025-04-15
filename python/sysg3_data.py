@@ -450,14 +450,16 @@ datasets += pack_data('a3s25_mul', a3s25_mul)
 
 ''' alpha = 0.30, sigma = 0.030 '''
 a3s3_cyl = Data(0.30, 0.030, 'cyl')
+a3s3_cyl.new(( 8.2,  8.2, 70.2), -15.5888, icm=5.8e-03, err=1.1e-03)
 a3s3_cyl.new((10.2, 10.2, 70.2), -15.5935, icm=1.2e-02, err=3.1e-03)
-a3s3_cyl.new((12.2, 12.2, 70.2), -15.5935, icm=1.2e-02, err=3.1e-03)
+a3s3_cyl.new((12.2, 12.2, 70.2), -15.5948, icm=8.8e-03, err=1.9e-03)
 datasets += pack_data('a3s3_cyl', a3s3_cyl)
 
 a3s3_str = Data(0.30, 0.030, 'str')
+a3s3_str.new(( 9.2, 15.2, 70.2), -15.5830, icm=1.3e-02, err=1.6e-03)
+a3s3_str.new((12.2, 15.2, 70.2), -15.5884, icm=1.8e-02, err=3.2e-03)
 a3s3_str.new((15.2, 15.2, 70.2), -15.5861, icm=3.3e-02, err=4.3e-03)
 a3s3_str.new((18.2, 15.2, 70.2), -15.5840, icm=1.9e-02, err=3.5e-03)
-a3s3_str.new((12.2, 15.2, 70.2), -15.5884, icm=1.8e-02, err=3.2e-03)
 datasets += pack_data('a3s3_str', a3s3_str)
 
 a3s3_mul = Data(0.30, 0.030, 'hom')
