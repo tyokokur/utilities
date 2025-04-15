@@ -164,7 +164,7 @@ class Pha3D:
                     copy1 = vol[:nx]
                     copy2 = vol[nx:]
                     PH3 = np.concat(copy2, vol, copy1)
-                    X3 = np.concat(np.arange(X[0]-self.lx-s
+                    X3 = np.meshgrid(X[0]-self.lx+self.dx
             
         if zmax < self.lz-self.dz:
             z_filter = Z <= zmax
