@@ -166,6 +166,8 @@ class Pha3D:
                     PH3 = np.concat(copy2, vol, copy1)
                     X3, Y3, Z3 = np.meshgrid(np.arange(X[0]-self.lx+self.dx, X[nx*ny*nz]+self.lx-self.dx, self.dx),
                                              np.arange(Y[0], Y[nx*ny*nz], self.dy), np.arange(Z[0], Z[nx*ny*nz], self.dz))
+                    X, Y, Z = X3.flatten(), Y3.flatten(), Z3.flatten()
+                    vol = PH3
                                      
             
         if zmax < self.lz-self.dz:
