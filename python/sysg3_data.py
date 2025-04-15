@@ -227,9 +227,12 @@ a2s15_str.new((24.2, 20.2, 64.2), -8.43879, icm=4.7e-03, err=6.5e-04)
 a2s15_str.multi = True
 datasets += pack_data('a2s15_str', a2s15_str)
 
-a2s15_hol = Data(0.20, 0.015, 'mic')
-a2s15_hol.new((20.2, 20.2, 64.2), -8.43841, icm=3.5e-02, err=3.9e-03)
-datasets += pack_data('a2s15_hol', a2s15_hol)
+a2s15_mic = Data(0.20, 0.015, 'mic')
+a2s15_mic.new((20.2, 20.2, 64.2), -8.43841, icm=3.5e-02, err=3.9e-03)
+a2s15_mic.new((18.2, 18.2, 64.2), -8.43899, icm=2.1e-02, err=3.1e-03)
+a2s15_mic.new((16.2, 16.2, 64.2), -8.43912, icm=1.8e-02, err=2.7e-03)
+a2s15_mic.new((24.2, 24.2, 64.2), -8.43855, icm=1.7e-02, err=3.1e-03)
+datasets += pack_data('a2s15_mic', a2s15_mic)
 
 ''' alpha = 0.20, sigma = 0.022 '''
 a2s22_cyl = Data(0.20, 0.022, 'cyl')
