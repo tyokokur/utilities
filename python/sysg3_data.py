@@ -600,7 +600,7 @@ datasets += pack_data('a3s35_cyl', a3s35_cyl)
 
 a3s35_str = Data(0.30, 0.035, 'str')
 a3s35_str.new(( 9.2, 15.2, 75.2), -18.0849, icm=1.0e-02, err=2.5e-03)
-a3s35_str.new((12.2, 15.2, 75.2), -18.0922, icm=2.0e-02, err=3.5e-03)
+a3s35_str.new((12.2, 15.2, 75.2), -18.0945, icm=9.2e-03, err=1.7e-03)
 a3s35_str.new((15.2, 15.2, 75.2), -18.0887, icm=2.3e-02, err=3.0e-03)
 a3s35_str.new((18.2, 15.2, 75.2), -18.0859, icm=1.7e-02, err=3.6e-03)
 a3s35_str.done = True
