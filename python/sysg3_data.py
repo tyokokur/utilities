@@ -674,7 +674,7 @@ a3s4_cyl.new((12.2, 12.2, 86.6), -20.5579, icm=7.7e-03, err=1.5e-03)
 datasets += pack_data('a3s4_cyl', a3s4_cyl)
 
 a3s4_str = Data(0.30, 0.040, 'str')
-a3s4_str.new(( 4.0, 15.2, 80.2), -20.5575, icm=1.6e-03, err=3.5e-04)
+a3s4_str.new(( 5.0, 15.2, 80.2), -20.5575, icm=1.6e-03, err=3.5e-04)
 a3s4_str.new(( 6.2, 15.2, 80.2), -20.5571, icm=4.8e-03, err=5.6e-04)
 a3s4_str.new(( 7.4, 15.2, 80.2), -20.5543, icm=1.3e-02, err=1.5e-03)
 a3s4_str.new(( 9.2, 15.2, 80.2), -20.5499, icm=1.2e-02, err=1.6e-03)
@@ -691,7 +691,9 @@ a3s4_hom = Data(0.30, 0.040, 'hom')
 a3s4_hom.new((10.2, 10.2, 80.2), -20.5368, icm=1e-02, err=2e-03)
 a3s4_hom.new((12.2, 12.2, 80.2), -20.5377, icm=2e-02, err=3e-03)
 a3s4_hom.new((15.2, 15.2, 80.2), -20.5390, icm=2e-02, err=3e-03)
+a3s4_hom.new((18.2, 18.2, 80.2), -20.5393, icm=4e-02, err=4e-03)
 a3s4_hom.multi = True
+a3s4_hom.done = True # Not worth continuing, F too far
 datasets += pack_data('a3s4_hom', a3s4_hom)
 
 ########################################################################
