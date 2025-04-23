@@ -681,6 +681,7 @@ a3s4_str.new(( 9.2, 15.2, 80.2), -20.5499, icm=1.2e-02, err=1.6e-03)
 datasets += pack_data('a3s4_str', a3s4_str)
 
 a3s4_mul = Data(0.30, 0.040, 'str')
+a3s4_mul.new((11.0, 15.2, 86.6), -20.5539, icm=7.0e-03, err=2.3e-03)
 a3s4_mul.new((12.2, 15.2, 80.2), -20.5522, icm=2.3e-02, err=5.1e-03)
 a3s4_mul.new((15.2, 15.2, 86.6), -20.5503, icm=7.0e-03, err=1.3e-03)
 a3s4_mul.multi = True
