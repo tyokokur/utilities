@@ -594,6 +594,7 @@ a3s3_mic = Data(0.30, 0.030, 'mic')
 a3s3_mic.new((11.0, 13.0, 70.2), -15.5867, icm=3.0e-02, err=3.9e-03)
 a3s3_mic.new((13.0, 15.2, 70.2), -15.5877, icm=4.0e-02, err=3.7e-03)
 a3s3_mic.new((15.2, 16.2, 70.2), -15.5897, icm=3.9e-02, err=3.8e-03)
+a3s3_mic.new((18.2, 16.2, 70.2), -15.5867, icm=6.7e-02, err=8.1e-03)
 a3s3_mic.multi=True
 datasets += pack_data('a3s3_mic', a3s3_mic)
 
