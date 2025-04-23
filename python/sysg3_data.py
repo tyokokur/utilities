@@ -506,8 +506,8 @@ datasets += pack_data('a3s5_hol', a3s5_hol)
 ''' alpha = 0.30, sigma = 0.020 '''
 a3s2_cyl = Data(0.30, 0.020, 'cyl')
 a3s2_cyl.new(( 9.2,  9.2, 64.2), -10.5044, icm=1.6e-02, err=2.4e-03)
-a3s2_cyl.new((12.2, 12.2, 64.2), -10.5057, icm=2.4e-02, err=4.1e-03)
-a3s2_cyl.new((15.2, 15.2, 64.2), -10.4995, icm=5.1e-02, err=5.1e-03)
+a3s2_cyl.new((12.2, 12.2, 64.2), -10.5084, icm=1.1e-02, err=1.8e-03)
+a3s2_cyl.new((15.2, 15.2, 64.2), -10.5025, icm=4.4e-02, err=2.4e-03)
 datasets += pack_data('a3s2_cyl', a3s2_cyl)
 
 a3s2_mic = Data(0.30, 0.020, 'mic')
@@ -517,7 +517,8 @@ a3s2_mic.new((15.2, 16.2, 64.2), -10.4936, icm=6.0e-04, err=3.0e-03)
 a3s2_mic.new((14.0, 16.2, 64.2), -10.4922, icm=2.1e-02, err=4.6e-03)
 a3s2_mic.new((16.2, 18.2, 64.2), -10.4923, icm=2.5e-02, err=5.0e-03)
 a3s2_mic.new((15.2, 15.2, 64.2), -10.4961, icm=1.6e-02, err=3.8e-03)
-a3s2_mic.new((14.6, 15.2, 64.2), -10.4971, icm=1.9e-02, err=3.6e-03)
+a3s2_mic.new((14.6, 15.2, 72.2), -10.4988, icm=1.3e-02, err=2.5e-03)
+a3s2_mic.new((14.6, 14.6, 72.2), -10.4992, icm=1.7e-02, err=2.4e-03)
 a3s2_mic.done = True
 a3s2_mic.multi = True
 a3s2_mic.new((15.2, 14.6, 64.2), -10.4971, icm=1.9e-02, err=3.6e-03)
