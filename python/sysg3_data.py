@@ -693,14 +693,17 @@ a3s4_mul.new((15.2, 15.2, 86.6), -20.5503, icm=7.0e-03, err=1.3e-03)
 a3s4_mul.multi = True
 datasets += pack_data('a3s4_mul', a3s4_mul)
 
+a3s4_hol = Data(0.30, 0.040, 'hol')
+a3s4_hol.new((10.2, 10.2, 80.2), -20.5368, icm=1e-02, err=2e-03)
+a3s4_hol.new((12.2, 12.2, 80.2), -20.5377, icm=2e-02, err=3e-03)
+a3s4_hol.new((15.2, 15.2, 80.2), -20.5390, icm=2e-02, err=3e-03)
+a3s4_hol.new((18.2, 18.2, 80.2), -20.5393, icm=4e-02, err=4e-03)
+a3s4_hol.multi = True
+a3s4_hol.done = True # Not worth continuing, F too far
+datasets += pack_data('a3s4_hol', a3s4_hol)
+
 a3s4_hom = Data(0.30, 0.040, 'hom')
-a3s4_hom.new((10.2, 10.2, 80.2), -20.5368, icm=1e-02, err=2e-03)
-a3s4_hom.new((12.2, 12.2, 80.2), -20.5377, icm=2e-02, err=3e-03)
-a3s4_hom.new((15.2, 15.2, 80.2), -20.5390, icm=2e-02, err=3e-03)
-a3s4_hom.new((18.2, 18.2, 80.2), -20.5393, icm=4e-02, err=4e-03)
-a3s4_hom.multi = True
-a3s4_hom.done = True # Not worth continuing, F too far
-datasets += pack_data('a3s4_hom', a3s4_hom)
+a3s4_hom.new((15.2, 15.2, 75.2), -20.5384, icm=1e-02, err=2e-03)
 
 ########################################################################
 
