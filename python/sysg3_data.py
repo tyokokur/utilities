@@ -703,7 +703,11 @@ a3s4_hol.done = True # Not worth continuing, F too far
 datasets += pack_data('a3s4_hol', a3s4_hol)
 
 a3s4_hom = Data(0.30, 0.040, 'hom')
-a3s4_hom.new((15.2, 15.2, 75.2), -20.5384, icm=1e-02, err=2e-03)
+a3s4_hom.new((15.2, 15.2, 75.2), -20.5384, icm=3.4e-03, err=1.3e-03)
+a3s4_hom.multi = True
+a3s4_hom.done = True
+datasets += pack_data('a3s4_hom', a3s4_hom)
+
 
 ########################################################################
 
