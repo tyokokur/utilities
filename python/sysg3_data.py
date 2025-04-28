@@ -553,14 +553,14 @@ a25s27_mul.done = True
 datasets += pack_data('a25s27_mul', a25s27_mul)
 
 ''' alpha = 0.25, sigma = 0.030 '''
-a25s3_cyl = Data(0.25, 0.030, 'mic')
-a25s3_cyl.new((15.2, 17.6, 72.2), -16.1858, icm=8.0e-03, err=5.2e-04)
-a25s3_cyl.new((15.2, 15.2, 72.2), -16.1858, icm=1.2e-02, err=8.1e-04)
-a25s3_cyl.new((13.0, 15.2, 72.2), -16.1856, icm=1.4e-02, err=1.2e-03)
-a25s3_cyl.new((17.6, 17.6, 72.2), -16.1857, icm=3.2e-03, err=3.4e-04)
-a25s3_cyl.new((20.2, 17.6, 72.2), -16.1856, icm=5.7e-03, err=7.1e-04)
-a25s3_cyl.done = True
-datasets += pack_data('a25s3_cyl', a25s3_cyl)
+a25s3_mic = Data(0.25, 0.030, 'mic')
+a25s3_mic.new((15.2, 17.6, 72.2), -16.1858, icm=8.0e-03, err=5.2e-04)
+a25s3_mic.new((15.2, 15.2, 72.2), -16.1858, icm=1.2e-02, err=8.1e-04)
+a25s3_mic.new((13.0, 15.2, 72.2), -16.1856, icm=1.4e-02, err=1.2e-03)
+a25s3_mic.new((17.6, 17.6, 72.2), -16.1857, icm=3.2e-03, err=3.4e-04)
+a25s3_mic.new((20.2, 17.6, 72.2), -16.1856, icm=5.7e-03, err=7.1e-04)
+a25s3_mic.done = True
+datasets += pack_data('a25s3_mic', a25s3_mic)
 
 a25s3_str = Data(0.25, 0.030, 'str')
 a25s3_str.new((11.0, 15.2, 72.2), -16.1852, icm=3.0e-03, err=5.2e-04)
