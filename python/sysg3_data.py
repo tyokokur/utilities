@@ -381,6 +381,18 @@ a2s15_mic.new((16.2, 14.6, 64.2), -8.43935, icm=1.5e-02, err=2.2e-03)
 a2s15_mic.done = True
 datasets += pack_data('a2s15_mic', a2s15_mic)
 
+''' alpha = 0.20, sigma = 0.0175 '''
+a2s175_mic = Data(0.20, 0.0175, 'mic')
+a2s175_mic.new((18.2, 20.2, 64.2), -9.83483, icm=2.2e-02, err=4.1e-03)
+datasets += pack_data('a2s175_mic', a2s175_mic)
+
+a2s175_str = Data(0.20, 0.0175, 'str')
+a2s175_str.new((24.2, 20.2, 64.2), -9.83766, icm=9.4e
+datasets += pack_data('a2s175_str', a2s175_str)
+
+a2s175_hom = Data(0.20, 0.0175, 'hom')
+datasets += pack_data('a2s175_hom', a2s175_hom)
+
 ''' alpha = 0.20, sigma = 0.020 '''
 a2s2_mic = Data(0.20, 0.020, 'mic')
 a2s2_mic.new((14.6, 16.2, 64.2), -11.2306, icm=1.1e-02, err=2.3e-03)
