@@ -412,9 +412,9 @@ a2s2_mic.new((18.2, 16.2, 64.2), -11.2299, icm=2.0e-02, err=3.8e-03)
 a2s2_mic.new((16.2, 14.6, 64.2), -11.2306, icm=1.1e-02, err=2.3e-03)
 datasets += pack_data('a2s2_mic', a2s2_mic)
 
-a2s2_cyl = Data(0.20, 0.020, 'cyl')
-a2s2_cyl.new(( 8.2,  7.4, 64.2), -11.2311, icm=1.6e-02, err=2.7e-03)
-datasets += pack_data('a2s2_cyl', a2s2_cyl)
+# a2s2_cyl = Data(0.20, 0.020, 'cyl')
+# a2s2_cyl.new(( 8.2,  7.4, 64.2), -11.2311, icm=1.6e-02, err=2.7e-03)
+# datasets += pack_data('a2s2_cyl', a2s2_cyl)
 
 a2s2_str = Data(0.20, 0.020, 'str')
 a2s2_str.new((18.2, 20.2, 64.2), -11.2313, icm=7.0e-03, err=1.6e-03)
