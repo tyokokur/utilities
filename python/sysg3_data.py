@@ -392,6 +392,7 @@ datasets += pack_data('a2s175_str', a2s175_str)
 
 a2s175_hom = Data(0.20, 0.0175, 'hom')
 a2s175_hom.new((20.2, 20.2, 64.2), -9.83859, icm=6.5e-06, err=2.0e-06)
+a2s175_hom.done=True
 datasets += pack_data('a2s175_hom', a2s175_hom)
 
 ''' alpha = 0.20, sigma = 0.020 '''
