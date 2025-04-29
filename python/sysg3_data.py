@@ -568,6 +568,10 @@ a25s3_mic.new((20.2, 17.6, 72.2), -16.1856, icm=5.7e-03, err=7.1e-04)
 a25s3_mic.done = True
 datasets += pack_data('a25s3_mic', a25s3_mic)
 
+a25s3_cyl = Data(0.25, 0.030, 'cyl')
+a25s3_cyl.new((11.0, 11.0, 72.2), -16.1854, icm=1.7e-02, err=2.1e-03)
+datasets += pack_data('a25s3_cyl', a25s3_cyl)
+
 a25s3_str = Data(0.25, 0.030, 'str')
 a25s3_str.new((11.0, 15.2, 72.2), -16.1852, icm=3.0e-03, err=5.2e-04)
 a25s3_str.new((13.0, 15.2, 72.2), -16.1855, icm=1.6e-03, err=2.3e-04)
