@@ -571,15 +571,15 @@ datasets += pack_data('a25s3_mic', a25s3_mic)
 a25s3_str = Data(0.25, 0.030, 'str')
 a25s3_str.new((11.0, 15.2, 72.2), -16.1852, icm=3.0e-03, err=5.2e-04)
 a25s3_str.new((13.0, 15.2, 72.2), -16.1855, icm=1.6e-03, err=2.3e-04)
-a25s3_str.new((15.2, 20.2, 72.2), -16.1857, icm=3.7e-03, err=7.3e-04)
+a25s3_str.new((15.2, 20.2, 72.2), -16.1857, icm=7.6e-05, err=4.4e-04)
 a25s3_str.new((17.6, 15.2, 72.2), -16.1855, icm=5.9e-03, err=9.1e-04)
 a25s3_str.new((20.2, 15.2, 72.2), -16.1855, icm=6.1e-03, err=1.3e-03)
 a25s3_str.done = True
 datasets += pack_data('a25s3_str', a25s3_str)
 
 a25s3_mul = Data(0.25, 0.030, 'str')
-a25s3_mul.new((15.2, 15.2, 72.2), -16.1853, icm=4.1e-03, err=7.1e-04)
 a25s3_mul.new((13.0, 15.2, 72.2), -16.1845, icm=7.4e-03, err=1.5e-03)
+a25s3_mul.new((15.2, 20.2, 72.2), -16.1854, icm=3.3e-03, err=6.0e-04)
 a25s3_mul.new((17.6, 15.2, 72.2), -16.1847, icm=1.1e-02, err=2.5e-03)
 a25s3_mul.multi = True
 a25s3_mul.done = True
