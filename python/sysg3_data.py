@@ -534,11 +534,11 @@ datasets += pack_data('a2s27_mul', a2s27_mul)
 ########################################################################
 
 ''' alpha = 0.25, sigma = 0.027 '''
-a25s27_cyl = Data(0.25, 0.027, 'mic')
-a25s27_cyl.new((15.2, 21.2, 64.2), -14.6021, icm=4.6e-03, err=6.7e-04)
-a25s27_cyl.new((15.2, 17.6, 64.2), -14.6022, icm=8.6e-03, err=7.6e-04)
-a25s27_cyl.done = True
-datasets += pack_data('a25s27_cyl', a25s27_cyl)
+a25s27_mic = Data(0.25, 0.027, 'mic')
+a25s27_mic.new((15.2, 21.2, 64.2), -14.6021, icm=4.6e-03, err=6.7e-04)
+a25s27_mic.new((15.2, 17.6, 64.2), -14.6022, icm=8.6e-03, err=7.6e-04)
+a25s27_mic.done = True
+datasets += pack_data('a25s27_mic', a25s27_mic)
 
 a25s27_str = Data(0.25, 0.027, 'str')
 a25s27_str.new((13.0, 15.2, 64.2), -14.6018, icm=1.2e-03, err=2.3e-04)
