@@ -390,9 +390,9 @@ a2s175_mic.new((20.2, 20.2, 64.2), -9.83741, icm=9.8e-03, err=1.6e-03)
 datasets += pack_data('a2s175_mic', a2s175_mic)
 
 a2s175_str = Data(0.20, 0.0175, 'str')
-a2s175_str.new((21.8, 20.2, 64.2), -9.83766, icm=9.4e-03, err=1.6e-03)
+a2s175_str.new((21.8, 20.2, 64.2), -9.83838, icm=4.5e-03, err=7.8e-04)
 a2s175_str.new((24.2, 20.2, 64.2), -9.83766, icm=9.4e-03, err=1.6e-03)
-a2s175_str.new((24.2, 20.2, 64.2), -9.83766, icm=9.4e-03, err=1.6e-03)
+a2s175_str.new((27.2, 20.2, 64.2), -9.83851, icm=4.9e-03, err=7.8e-04)
 datasets += pack_data('a2s175_str', a2s175_str)
 
 a2s175_hom = Data(0.20, 0.0175, 'hom')
