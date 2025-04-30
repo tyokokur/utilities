@@ -827,6 +827,8 @@ a3s4_str.new(( 5.6, 20.2, 80.2), -20.5584, icm=1.0e-03, err=1.0e-04) # Temp, get
 datasets += pack_data('a3s4_str', a3s4_str)
 
 a3s4_mul = Data(0.30, 0.040, 'str')
+a3s4_mul.new(( 8.6, 20.2, 86.6), -20.5543, icm=4.1e-03, err=1.1e-03)
+a3s4_mul.new(( 9.2, 20.2, 86.6), -20.5550, icm=4.2e-03, err=8.1e-04)
 a3s4_mul.new((10.2, 15.2, 86.6), -20.5549, icm=5.5e-03, err=1.2e-03)
 a3s4_mul.new((11.0, 15.2, 86.6), -20.5539, icm=7.0e-03, err=2.3e-03)
 a3s4_mul.new((12.2, 15.2, 80.2), -20.5522, icm=2.3e-02, err=5.1e-03)
@@ -859,6 +861,7 @@ a3s45_str.done = True
 datasets += pack_data('a3s45_str', a3s45_str)
 
 a3s45_mul = Data(0.30, 0.045, 'str')
+a3s45_mul.new(( 8.2, 20.2, 86.6), -22.9780, icm=2.0e-03, err=4.9e-04)
 a3s45_mul.new(( 9.2, 20.2, 86.6), -22.9788, icm=7.3e-03, err=1.1e-03)
 a3s45_mul.new((10.2, 20.2, 86.6), -22.9784, icm=2.2e-04, err=1.1e-03)
 a3s45_mul.new((11.0, 20.2, 86.6), -22.9780, icm=1.8e-04, err=1.3e-03)
