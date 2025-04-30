@@ -599,6 +599,13 @@ a25s3_hom.new((15.2, 15.2, 64.2), -16.1854, icm=5.3e-06, err=1.5e-06)
 a25s3_hom.done=True
 datasets += pack_data('a25s3_hom', a25s3_hom)
 
+''' alpha = 0.25, sigma = 0.0325 '''
+
+a25s325_hom = Data(0.25, 0.0325, 'hom')
+a25s325_hom.new((15.2, 15.2, 81.2), -17.4968, icm=2.0e-06, err=5.0e-07)
+a25s325_hom.done = True
+datasets += pack_data('a25s325_hom', a25s325_hom)
+
 ########################################################################
 
 ''' alpha = 0.30, sigma = 0.005 '''
