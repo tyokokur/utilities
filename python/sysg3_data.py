@@ -249,9 +249,9 @@ a1s5_str = Data(0.10, 5e-03, 'str')
 a1s5_str.new((15.2, 20.2, 40.2), -2.93819, icm=2.3e-03, err=3.1e-04)
 a1s5_str.new((17.6, 20.2, 40.2), -2.93844, icm=4.4e-03, err=5.6e-04)
 a1s5_str.new((18.2, 20.2, 40.2), -2.93850, icm=2.4e-03, err=3.1e-04)
-a1s5_str.new((19.0, 20.2, 40.2), -2.93852, icm=3.6e-03, err=6.4e-04)
-a1s5_str.new((20.2, 20.2, 40.2), -2.93850, icm=4.1e-03, err=7.6e-04)
-a1s5_str.done = False
+a1s5_str.new((19.0, 20.2, 40.2), -2.93851, icm=5.7e-05, err=2.7e-04)
+a1s5_str.new((20.2, 20.2, 40.2), -2.93849, icm=8.5e-05, err=4.1e-04)
+a1s5_str.done = True
 datasets += pack_data('a1s5_str', a1s5_str)
 
 a1s5_hom = Data(0.10, 5e-03, 'hom')
