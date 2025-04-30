@@ -600,9 +600,12 @@ a25s3_hom.done=True
 datasets += pack_data('a25s3_hom', a25s3_hom)
 
 ''' alpha = 0.25, sigma = 0.0325 '''
-
 a25s325_mic = Data(0.25, 0.0325, 'mic')
 a25s325_mic.new((13.0, 15.2, 81.2), -17.4973, icm=2.0e-02, err=1.1e-03)
+a25s325_mic.new((15.2, 15.2, 81.2), -17.4971, icm=1.1e-02, err=5.7e-04)
+a25s325_mic.new((17.0, 15.2, 81.2), -17.4970, icm=5.2e-03, err=4.7e-04)
+a25s325_mic.new((13.0, 13.0, 81.2), -17.4969, icm=1.7e-02, err=1.1e-03)
+a25s325_mic.done=T
 datasets += pack_data('a25s325_mic', a25s325_mic)
 
 a25s325_str = Data(0.25, 0.0325, 'str')
