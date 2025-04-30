@@ -606,8 +606,13 @@ a25s325_mic.new((13.0, 15.2, 81.2), -17.4973, icm=2.0e-02, err=1.1e-03)
 datasets += pack_data('a25s325_mic', a25s325_mic)
 
 a25s325_str = Data(0.25, 0.0325, 'str')
-a25s325_str.new((13.0, 20.2, 81.2), -17.4973, icm=2.0e-02, err=1.1e-03)
+a25s325_str.new((13.0, 20.2, 81.2), -17.4975, icm=2.5e-03, err=4.7e-04)
 datasets += pack_data('a25s325_str', a25s325_str)
+
+a25s325_mul = Data(0.25, 0.0325, 'str')
+a25s325_mul.new((13.0, 20.2, 81.2), -17.4971, icm=5.7e-03, err=1.1e-03)
+a25s325_mul.multi=True
+datasets += pack_data('a25s325_mul', a25s325_mul)
 
 a25s325_hom = Data(0.25, 0.0325, 'hom')
 a25s325_hom.new((15.2, 15.2, 81.2), -17.4968, icm=2.0e-06, err=5.0e-07)
