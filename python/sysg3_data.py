@@ -822,7 +822,7 @@ a3s4_str.new(( 5.6, 20.2, 80.2), -20.5582, icm=1.0e-03, err=1.0e-04)
 a3s4_str.new(( 6.2, 15.2, 80.2), -20.5571, icm=4.8e-03, err=5.6e-04)
 a3s4_str.new(( 7.4, 15.2, 80.2), -20.5543, icm=1.3e-02, err=1.5e-03)
 a3s4_str.new(( 9.2, 15.2, 80.2), -20.5499, icm=1.2e-02, err=1.6e-03)
-a3s4_str.done = False
+a3s4_str.done = True
 a3s4_str.new(( 5.6, 20.2, 80.2), -20.5584, icm=1.0e-03, err=1.0e-04) # Temp, get 2 str to get minF
 datasets += pack_data('a3s4_str', a3s4_str)
 
