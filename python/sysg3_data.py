@@ -601,6 +601,14 @@ datasets += pack_data('a25s3_hom', a25s3_hom)
 
 ''' alpha = 0.25, sigma = 0.0325 '''
 
+a25s325_mic = Data(0.25, 0.0325, 'mic')
+a25s325_mic.new((13.0, 15.2, 81.2), -17.4973, icm=2.0e-02, err=1.1e-03)
+datasets += pack_data('a25s325_mic', a25s325_mic)
+
+a25s325_str = Data(0.25, 0.0325, 'str')
+a25s325_str.new((13.0, 20.2, 81.2), -17.4973, icm=2.0e-02, err=1.1e-03)
+datasets += pack_data('a25s325_str', a25s325_str)
+
 a25s325_hom = Data(0.25, 0.0325, 'hom')
 a25s325_hom.new((15.2, 15.2, 81.2), -17.4968, icm=2.0e-06, err=5.0e-07)
 a25s325_hom.done = True
