@@ -874,6 +874,8 @@ a3s45_hol.new((15.2, 15.2, 86.6), -22.9649, icm=5.3e-02, err=4.3e-03)
 a3s45_hol.new((15.2, 18.2, 86.6), -22.9668, icm=4.5e-02, err=3.8e-03)
 a3s45_hol.new((18.2, 18.2, 90.2), -22.9692, icm=2.4e-02, err=2.7e-03)
 a3s45_hol.new((18.2, 20.2, 90.2), -22.9684, icm=2.1e-02, err=2.8e-03)
+a3s45_hol.multi=True
+a3s45_hol.done=True
 datasets += pack_data('a3s45_hol', a3s45_hol)
 
 a3s45_hom = Data(0.30, 0.045, 'hom')
