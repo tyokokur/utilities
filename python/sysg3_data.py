@@ -323,9 +323,9 @@ datasets += pack_data('a15s1_mic', a15s1_mic)
 
 a15s1_str= Data(0.15, 0.010, 'str') #melted
 a15s1_str.new((17.2, 16.2, 54.2), -5.78283, icm=8.8e-02, err=5.0e-03) # single
-a15s1_str.new((20.2, 15.2, 54.2), -5.78487, icm=2.0e-02, err=2.6e-03) # double 
+# a15s1_str.new((20.2, 15.2, 54.2), -5.78487, icm=2.0e-02, err=2.6e-03) # double 
 a15s1_str.new((20.2, 16.2, 54.2), -5.78568, icm=7.7e-03, err=1.0e-03) # single
-a15s1_str.new((22.2, 15.2, 54.2), -5.78551, icm=1.4e-02, err=1.3e-03) # double
+# a15s1_str.new((22.2, 15.2, 54.2), -5.78551, icm=1.4e-02, err=1.3e-03) # double
 datasets += pack_data('a15s1_str', a15s1_str)
 
 a15s1_hom = Data(0.15, 0.010, 'hom')
