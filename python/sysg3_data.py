@@ -611,18 +611,19 @@ datasets += pack_data('a25s325_mic', a25s325_mic)
 a25s325_cyl = Data(0.25, 0.0325, 'cyl')
 datasets += pack_data('a25s325_cyl', a25s325_cyl)
 
-a25s325_str = Data(0.25, 0.0325, 'str') # Two stripes
-a25s325_str.new((11.0, 20.2, 81.2), -17.4967, icm=3.0e-03, err=4.7e-04)
-a25s325_str.new((13.0, 20.2, 81.2), -17.4975, icm=2.5e-03, err=4.7e-04)
-a25s325_str.new((15.2, 20.2, 81.2), -17.4972, icm=4.0e-03, err=8.0e-04)
-a25s325_str.done=True
-datasets += pack_data('a25s325_str', a25s325_str)
+a25s325_strT = Data(0.25, 0.0325, 'str') # Two stripes
+a25s325_strT.new((11.0, 20.2, 81.2), -17.4967, icm=3.0e-03, err=4.7e-04)
+a25s325_strT.new((13.0, 20.2, 81.2), -17.4975, icm=2.5e-03, err=4.7e-04)
+a25s325_strT.new((15.2, 20.2, 81.2), -17.4972, icm=4.0e-03, err=8.0e-04)
+a25s325_strT.done=True
+datasets += pack_data('a25s325_strT', a25s325_strT)
 
-a25s325_mul = Data(0.25, 0.0325, 'str') # One stripe
-a25s325_mul.new((11.0, 20.2, 81.2), -17.4970, icm=1.4e-03, err=2.0e-04)
-a25s325_mul.new((13.0, 20.2, 81.2), -17.4971, icm=5.7e-03, err=1.1e-03)
-a25s325_mul.new((15.2, 20.2, 81.2), -17.4961, icm=6.9e-03, err=1.3e-03)
-datasets += pack_data('a25s325_mul', a25s325_mul)
+a25s325_strO = Data(0.25, 0.0325, 'str') # One stripe
+a25s325_strO.new((11.0, 20.2, 81.2), -17.4970, icm=1.4e-03, err=2.0e-04)
+a25s325_strO.new((13.0, 20.2, 81.2), -17.4971, icm=5.7e-03, err=1.1e-03)
+a25s325_strO.new((15.2, 20.2, 81.2), -17.4961, icm=6.9e-03, err=1.3e-03)
+a25s325_strO.done=True
+datasets += pack_data('a25s325_strO', a25s325_strO)
 
 a25s325_hom = Data(0.25, 0.0325, 'hom')
 a25s325_hom.new((15.2, 15.2, 81.2), -17.4968, icm=2.0e-06, err=5.0e-07)
