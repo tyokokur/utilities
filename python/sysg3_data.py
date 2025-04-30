@@ -850,6 +850,8 @@ a3s45_str = Data(0.30, 0.045, 'str')
 a3s45_str.new(( 3.8, 20.2, 86.6), -22.9765, icm=9.4e-04, err=1.2e-04)
 a3s45_str.new(( 4.2, 20.2, 86.6), -22.9794, icm=1.0e-04, err=1.1e-05)
 a3s45_str.new(( 5.0, 20.2, 86.6), -22.9822, icm=1.9e-03, err=2.3e-04)
+a3s45_str.new(( 6.2, 20.2, 90.2), -22.9819, icm=1.7e-03, err=1.6e-04)
+a3s45_str.done = True
 datasets += pack_data('a3s45_str', a3s45_str)
 
 a3s45_mul = Data(0.30, 0.045, 'str')
