@@ -883,6 +883,15 @@ a3s45_hom = Data(0.30, 0.045, 'hom')
 a3s45_hom.new((20.2, 20.2, 90.2), -22.9719, icm=9.7e-07, err=2.8e-07)
 a3s45_hom.done=True
 datasets += pack_data('a3s45_hom', a3s45_hom)
+
+''' alpha = 0.30, sigma = 0.050 '''
+a3s5_str = Data(0.30, 0.050, 'str')
+a3s5_str.new((11.0, 20.2, 96.2), -25.3638, icm=2.4e-02, err=3.0e-03)
+datasets += pack_data('a3s5_str', a3s5_str)
+
+a3s5_hom = Data(0.30, 0.050, 'hom')
+a3s5_hom.new((20.2, 20.2, 96.2), -25.3553, icm=6.8e-04, err=2.03-03)
+datasets += pack_data('a3s5_hom', a3s5_hom)
 ########################################################################
 
 ''' alpha = 0.325, sigma = 0.020 '''
