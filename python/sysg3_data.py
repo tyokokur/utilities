@@ -834,6 +834,7 @@ a3s4_mul.new((11.0, 15.2, 86.6), -20.5539, icm=7.0e-03, err=2.3e-03)
 a3s4_mul.new((12.2, 15.2, 80.2), -20.5522, icm=2.3e-02, err=5.1e-03)
 a3s4_mul.new((15.2, 15.2, 86.6), -20.5503, icm=7.0e-03, err=1.3e-03)
 a3s4_mul.multi = True
+a3s4_mul.done=True
 datasets += pack_data('a3s4_mul', a3s4_mul)
 
 a3s4_hol = Data(0.30, 0.040, 'hol')
