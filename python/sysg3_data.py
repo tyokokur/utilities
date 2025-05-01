@@ -621,7 +621,9 @@ a25s325_mic.done=True
 datasets += pack_data('a25s325_mic', a25s325_mic)
 
 a25s325_cyl = Data(0.25, 0.0325, 'cyl')
+a25s325_cyl.new(( 9.2,  9.2, 81.2), -17.4963, icm=8.3e-03, err=1.1e-03)
 a25s325_cyl.new((11.0, 11.0, 81.2), -17.4983, icm=6.9e-03, err=7.2e-04)
+a25s325_cyl.new((13.0, 13.0, 81.2), -17.4995, icm=9.9e-03, err=9.7e-04)
 datasets += pack_data('a25s325_cyl', a25s325_cyl)
 
 a25s325_strT = Data(0.25, 0.0325, 'str') # Two stripes
