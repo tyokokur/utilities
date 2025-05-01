@@ -839,6 +839,7 @@ datasets += pack_data('a3s4_cyl', a3s4_cyl)
 
 a3s4_pn  = Data(0.30, 0.040, 'str')
 a3s4_pn.new((12.2, 20.2, 86.6), -20.5581, icm=1.0e-02, err=9.0e-04)
+a3s4_pn.new((14.6, 20.2, 86.6), -20.5581, icm=1.0e-02, err=9.0e-04)
 datasets += pack_data('a3s4_pn', a3s4_pn)
 
 a3s4_str = Data(0.30, 0.040, 'str')
