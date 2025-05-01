@@ -922,6 +922,10 @@ a3s5_str = Data(0.30, 0.050, 'str')
 a3s5_str.new((11.0, 20.2, 96.2), -25.3638, icm=2.4e-02, err=3.0e-03)
 datasets += pack_data('a3s5_str', a3s5_str)
 
+a3s5_mul = Data(0.30, 0.050, 'mul')
+a3s5_mul.new(( 8.2, 20.2, 96.2), -25.3569, icm=1.1e-02, err=2.0e-03)
+datasets += pack_data('a3s5_mul', a3s5_mul)
+
 a3s5_hom = Data(0.30, 0.050, 'hom')
 a3s5_hom.new((20.2, 20.2, 96.2), -25.3553, icm=6.8e-04, err=2.0e-04)
 a3s5_hom.done=True
