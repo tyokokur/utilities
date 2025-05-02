@@ -223,6 +223,10 @@ a1s25_hol.done = True # not likely
 datasets += pack_data('a1s25_hol', a1s25_hol)
 
 ''' alpha = 0.10, sigma = 5e-03 '''
+a1s5_pn  = Data(0.10, 5e-03, 'str')
+a1s5_pn.new((19.0, 19.0, 40.2), -2.93668, icm=1.2e-02, err=1.7e-03)
+datasets += pack_data('a1s5_pn', a1s5_pn)
+
 a1s5_hol = Data(0.10, 5e-03, 'hol')
 a1s5_hol.new((8, 13.8, 35)   , -2.93661, icm=9.7e-05, err=3.3e-04)
 a1s5_hol.new((13.8, 13.8, 35), -2.93731, icm=1.8e-05, err=4.4e-04) 
