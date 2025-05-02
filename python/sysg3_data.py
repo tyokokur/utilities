@@ -400,6 +400,8 @@ a2s175_str.new((21.8, 20.2, 64.2), -9.83838, icm=4.5e-03, err=7.8e-04)
 a2s175_str.new((24.2, 20.2, 64.2), -9.83841, icm=5.6e-03, err=9.7e-04)
 a2s175_str.new((27.2, 20.2, 64.2), -9.83851, icm=4.9e-03, err=7.8e-04)
 a2s175_str.new((30.2, 20.2, 64.2), -9.83858, icm=5.1e-03, err=7.5e-04)
+a2s175_str.new((32.2, 20.2, 64.2), -9.83863, icm=3.5e-03, err=5.6e-04)
+a2s175_str.done=True #can go further
 datasets += pack_data('a2s175_str', a2s175_str)
 
 a2s175_hom = Data(0.20, 0.0175, 'hom')
