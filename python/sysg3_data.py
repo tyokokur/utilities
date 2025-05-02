@@ -850,6 +850,7 @@ a3s4_cyl.new(( 8.2,  8.2, 86.6), -20.5531, icm=5.6e-03, err=6.9e-04)
 a3s4_cyl.new((10.2, 10.2, 86.6), -20.5581, icm=1.6e-03, err=1.6e-04)
 a3s4_cyl.new((12.2, 12.2, 86.6), -20.5583, icm=3.3e-03, err=3.8e-04)
 a3s4_cyl.new((14.6, 14.6, 86.6), -20.5559, icm=5.6e-03, err=8.0e-04)
+a3s4_cyl.done=True
 datasets += pack_data('a3s4_cyl', a3s4_cyl)
 
 a3s4_pn  = Data(0.30, 0.040, 'str')
@@ -857,6 +858,7 @@ a3s4_pn.new((10.2, 20.2, 86.6), -20.5585, icm=7.6e-03, err=9.6e-04)
 a3s4_pn.new((12.2, 18.2, 86.6), -20.5584, icm=7.6e-03, err=8.6e-04)
 a3s4_pn.new((12.2, 20.2, 86.6), -20.5581, icm=1.0e-02, err=9.0e-04)
 a3s4_pn.new((14.6, 20.2, 86.6), -20.5561, icm=1.1e-02, err=1.5e-03)
+a3s4_pn.done=True #can min further
 datasets += pack_data('a3s4_pn', a3s4_pn)
 
 a3s4_str = Data(0.30, 0.040, 'str')
