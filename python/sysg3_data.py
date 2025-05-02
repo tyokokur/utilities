@@ -897,6 +897,13 @@ a3s4_hom.done = True
 datasets += pack_data('a3s4_hom', a3s4_hom)
 
 ''' alpha = 0.30, sigma = 0.045 '''
+a3s45_pn  = Data(0.30, 0.045, 'str')
+a3s45_pn.new((10.2, 18.2, 90.2), -22.9834, icm=7.3e-03, err=9.9e-04)
+a3s45_pn.new((10.2, 20.2, 90.2), -22.9833, icm=1.9e-02, err=1.2e-03)
+a3s45_pn.new((10.2, 24.2, 90.2), -22.9829, icm=2.8e-02, err=2.2e-03)
+a3s45_pn.new((12.2, 20.2, 90.2), -22.9830, icm=1.3e-02, err=7.7e-04)
+datasets += pack_data('a3s45_pn', a3s45_pn)
+
 a3s45_str = Data(0.30, 0.045, 'str')
 a3s45_str.new(( 3.8, 20.2, 86.6), -22.9765, icm=9.4e-04, err=1.2e-04)
 a3s45_str.new(( 4.2, 20.2, 86.6), -22.9794, icm=1.0e-04, err=1.1e-05)
