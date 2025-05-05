@@ -407,7 +407,12 @@ class Pha3D:
             walls.append(go.Surface(x=xmin*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
             return walls
     
-    def _reflect_box(self, 
+    def _reflect_box(self, ):
+                vol = self.PHAXYZ[0].flatten()
+        X   = self.PHAXYZ[1].flatten()
+        Y   = self.PHAXYZ[2].flatten()
+        Z   = self.PHAXYZ[3].flatten()
+        nx,ny,nz = self.nx, self.ny, self.nz
         def _conv1(i1,j1,k1): return int((i1 * ny  +j1)*nz + k1)
         def _conv2(i2,j2,k2): return int((i2* 2*ny +j2)*nz + k2)
         PH2 = np.zeros(4*nx*ny*nz)
@@ -445,3 +450,16 @@ class Pha3D:
         X = X2
         Y = Y2
         Z = Z2
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
