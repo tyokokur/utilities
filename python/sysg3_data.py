@@ -949,7 +949,7 @@ a3s45_hom.done=True
 datasets += pack_data('a3s45_hom', a3s45_hom)
 
 ''' alpha = 0.30, sigma = 0.050 '''
-a3s5_pn = Data(0.30, 0.050, 'pn')
+a3s5_pn = Data(0.30, 0.050, 'str')
 a3s5_pn.new((10.2, 18.2, 96.2), -25.3636, icm=9.2e-03, err=7.5e-04)
 a3s5_pn.new((10.2, 20.2, 96.2), -25.3645, icm=1.4e-02, err=1.1e-03)
 a3s5_pn.new((12.2, 20.2, 96.2), -25.3638, icm=2.3e-02, err=2.2e-03)
