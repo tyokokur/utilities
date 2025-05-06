@@ -967,6 +967,7 @@ a3s5_mul = Data(0.30, 0.050, 'mul')
 a3s5_mul.new(( 8.2, 20.2, 96.2), -25.3569, icm=1.1e-02, err=2.0e-03)
 a3s5_mul.new((10.2, 20.2, 96.2), -25.3566, icm=1.7e-02, err=2.3e-03)
 a3s5_mul.new((12.2, 20.2, 96.2), -25.3570, icm=1.7e-02, err=2.5e-03)
+a3s5_mul.new((14.6, 20.2, 96.2), -25.3572, icm=1.6e-02, err=2.4e-03)
 datasets += pack_data('a3s5_mul', a3s5_mul)
 
 a3s5_hom = Data(0.30, 0.050, 'hom')
