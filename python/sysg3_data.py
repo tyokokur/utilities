@@ -594,6 +594,10 @@ a25s3_cyl.new((15.2, 15.2, 72.2), -16.1887, icm=6.9e-03, err=1.5e-03)
 a25s3_cyl.done=True
 datasets += pack_data('a25s3_cyl', a25s3_cyl)
 
+a25s3_pn  = Data(0.25, 0.030, 'str')
+a25s3_pn.new((12.2, 15.2, 72.2), -16.1887, icm=5.5e-03, err=1.1e-03)
+datasets += pack_data('a25s3_pn', a25s3_pn)
+
 a25s3_str = Data(0.25, 0.030, 'str')
 a25s3_str.new((11.0, 15.2, 72.2), -16.1852, icm=3.0e-03, err=5.2e-04)
 a25s3_str.new((13.0, 15.2, 72.2), -16.1855, icm=1.6e-03, err=2.3e-04)
