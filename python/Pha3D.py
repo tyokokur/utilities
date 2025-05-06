@@ -24,7 +24,7 @@ class Pha3D:
         self._readPha(fname, fprefix=fprefix, silent=silent)
         
     def plot_proj(self, which='both', yslice=0, zslice=0, zmax=None, show_slice='both', levels=np.array([]), 
-                  reflect_box=True, show_box=True, ins_frame=True, cmap=None, fig=None, wspace=1.75,
+                  reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True, cmap=None, fig=None, wspace=1.75,
                   show_cbar=True,cbar_ticks=[], xy_xticks=[], xy_yticks=[]):
         '''
         which: {'both', 'xy', 'xz'}; yslice & zslice: float, in units of nm; zmax: float, in units of nm; show_slice: {'y', 'z', 'both'}, mark slice of projection on other heatmap; 
@@ -37,7 +37,7 @@ class Pha3D:
         if not levels.any(): levels = np.arange(0,self.PHA_max+0.001,0.001)
         if not cmap  : cmap = plt.cm.jet
         if not fig   : fig  = plt.figure(figsize=(plt.rcParams['figure.figsize'][0]*wspace, plt.rcParams['figure.figsize'][1]))
-        bools = {'reflect_box':reflect_box, 'show_box':show_box, 'ins_frame':ins_frame}
+        bools = {'reflect_box':reflect_box, 'reflect_over':reflect_over, 'show_box':show_box, 'ins_frame':ins_frame}
         kws   = {'levels':levels, 'cmap':cmap} 
 
         if zmax > self.lz-self.dz: 
@@ -116,7 +116,7 @@ class Pha3D:
             return
         
         if reflect_box: # Overwrite with full PHA
-            vol, X, Y, Z = _reflect_box()
+            vol, X, Y, Z = self._reflect_box(reflect_over)
             # def _conv1(i1,j1,k1): return int((i1 * ny  +j1)*nz + k1)
             # def _conv2(i2,j2,k2): return int((i2* 2*ny +j2)*nz + k2)
             # PH2 = np.zeros(4*nx*ny*nz)
@@ -302,60 +302,79 @@ class Pha3D:
         if not silent: print('_readPha done, max = {}'.format(self.PHA_max))
         return 
     
-    def _plotxz(self, ax, jSLICE, zmax, kws, reflect_box=True, show_box=True, ins_frame=True):
+    def _plotxz(self, ax, jSLICE, zmax, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True):
         plt.sca(ax)
+        nx = self.nx
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
+        
+        if reflect_box:  
+            nx = 2*self.nx
+            PHA, X, Y, Z = self._reflect_box(reflect_over)
+            PHA_3D, X_3D, Y_3D, Z_3D =  PHA.reshape(2*self.nx, 2*self.ny, self.nz),  \
+                                        X.reshape(2*self.nx, 2*self.ny, self.nz),  \
+                                        Y.reshape(2*self.nx, 2*self.ny, self.nz),  \
+                                        Z.reshape(2*self.nx, 2*self.ny, self.nz) 
+            
         XX, ZZ, PHA_Y = X_3D[:,jSLICE,:]+self.dx, Z_3D[:,jSLICE,:], PHA_3D[:,jSLICE,:]# '+'s for centering on Lx instead of Lx-dx
         filter_Z = ZZ < zmax+self.dz
         new_nz = filter_Z[0,:].sum()
-        XX, ZZ, PHA_Y = XX[filter_Z].reshape(self.nx, new_nz), ZZ[filter_Z].reshape(self.nx, new_nz), PHA_Y[filter_Z].reshape(self.nx, new_nz)
+        XX, ZZ, PHA_Y = XX[filter_Z].reshape(nx, new_nz), ZZ[filter_Z].reshape(nx, new_nz), PHA_Y[filter_Z].reshape(nx, new_nz)
 
         FIL = [plt.contourf(XX, ZZ, PHA_Y, **kws)]
-        if reflect_box: 
-            # plt.plot([self.lx]*2, [0,zmax], ':k')
-            FIL.append(plt.contourf(XX[::-1]+(self.nx-1)*self.dx, ZZ, PHA_Y, **kws))
+#         if reflect_box: 
+#             # plt.plot([self.lx]*2, [0,zmax], ':k')
+#             FIL.append(plt.contourf(XX[::-1]+(self.nx-1)*self.dx, ZZ, PHA_Y, **kws))
 
-        if ins_frame:
-            FRAX, FRAZ, FRAP = self._insFrame(0, self.lx, self.dx, 0, zmax, self.dz, PHA_Y, option='w')
-            FIL.append(plt.contourf(FRAX, FRAZ, FRAP, **kws))
-            if reflect_box: 
-                FRAX, FRAZ, FRAP = self._insFrame(self.lx, 2*self.lx, self.dx, 0, zmax, self.dz, PHA_Y, option='e')
-                FIL.append(plt.contourf(FRAX, FRAZ, FRAP, **kws))
+#         if ins_frame:
+#             FRAX, FRAZ, FRAP = self._insFrame(0, self.lx, self.dx, 0, zmax, self.dz, PHA_Y, option='w')
+#             FIL.append(plt.contourf(FRAX, FRAZ, FRAP, **kws))
+#             if reflect_box: 
+#                 FRAX, FRAZ, FRAP = self._insFrame(self.lx, 2*self.lx, self.dx, 0, zmax, self.dz, PHA_Y, option='e')
+#                 FIL.append(plt.contourf(FRAX, FRAZ, FRAP, **kws))
 
         plt.title(r'$y={:.2f}$'.format(jSLICE*self.dy)+r'$~\mathrm{nm}$', fontsize=22)
         plt.gca().set(xlabel='$x\ [\mathrm{nm}]$', ylabel='$z\ [\mathrm{nm}]$', aspect='equal')
-        if reflect_box: plt.gca().set(xlim=(0,2*self.lx), ylim=(0,zmax))
-        else:           plt.gca().set(xlim=(0,self.lx),   ylim=(0,zmax))
+        # if reflect_box: plt.gca().set(xlim=(0,2*self.lx), ylim=(0,zmax))
+        # else:           plt.gca().set(xlim=(0,self.lx),   ylim=(0,zmax))
         return FIL
 
-    def _plotxy(self, ax, kSLICE, kws, reflect_box=True, show_box=True, ins_frame=True, xy_xticks=[], xy_yticks=[]):
+    def _plotxy(self, ax, kSLICE, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True, xy_xticks=[], xy_yticks=[]):
         plt.sca(ax)
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
+        
+        if reflect_box:  
+            PHA, X, Y, Z = self._reflect_box(reflect_over)
+            PHA_3D, X_3D, Y_3D, Z_3D =  PHA.reshape(2*self.nx, 2*self.ny, self.nz),  \
+                                        X.reshape(2*self.nx, 2*self.ny, self.nz),  \
+                                        Y.reshape(2*self.nx, 2*self.ny, self.nz),  \
+                                        Z.reshape(2*self.nx, 2*self.ny, self.nz) 
+            
         XX, YY, PHA_Z = X_3D[:,:,kSLICE]+self.dx, Y_3D[:,:,kSLICE]+self.dy, PHA_3D[:,:,kSLICE] # '+'s for centering on Lx, Ly instead of Lx-dx, Ly-dy
 
+        
         FIL = [plt.contourf(XX, YY, PHA_Z, **kws)] # Main
-        if reflect_box: 
-            FIL.append(plt.contourf(XX, np.flip(YY,1)+(self.ny-1)*self.dy, PHA_Z, **kws)) # NW corner
-            FIL.append(plt.contourf(np.flip(XX,0)+(self.nx-1)*self.dx, YY, PHA_Z, **kws)) # SE corner
-            FIL.append(plt.contourf(np.flip(XX,0)+(self.nx-1)*self.dx, np.flip(YY,1)+(self.ny-1)*self.dy, PHA_Z, **kws)) # NE corner
+        # if reflect_box: 
+        #     FIL.append(plt.contourf(XX, np.flip(YY,1)+(self.ny-1)*self.dy, PHA_Z, **kws)) # NW corner
+        #     FIL.append(plt.contourf(np.flip(XX,0)+(self.nx-1)*self.dx, YY, PHA_Z, **kws)) # SE corner
+        #     FIL.append(plt.contourf(np.flip(XX,0)+(self.nx-1)*self.dx, np.flip(YY,1)+(self.ny-1)*self.dy, PHA_Z, **kws)) # NE corner
             # plt.plot([self.lx]*2, [0,2*self.ly], ':k') # Left-right
             # plt.plot([0, 2*self.lx], [self.ly]*2, ':k') # Top-bot
 
-        if ins_frame: 
-            FRAX, FRAY, FRAP = self._insFrame(0, self.lx, self.dx, 0, self.ly, self.dy, PHA_Z)
-            FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
-            if reflect_box:
-                FRAX, FRAY, FRAP = self._insFrame(0, self.lx, self.dx, self.ly, 2*self.ly, self.dy, PHA_Z, option='nw')
-                FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
-                FRAX, FRAY, FRAP = self._insFrame(self.lx,2*self.lx, self.dx, self.ly,2*self.ly, self.dy, PHA_Z, option='ne')
-                FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
-                FRAX, FRAY, FRAP = self._insFrame(self.lx,2*self.lx, self.dx, 0, self.ly, self.dy, PHA_Z, option='se')
-                FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
+        # if ins_frame: 
+        #     FRAX, FRAY, FRAP = self._insFrame(0, self.lx, self.dx, 0, self.ly, self.dy, PHA_Z)
+        #     FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
+        #     if reflect_box:
+        #         FRAX, FRAY, FRAP = self._insFrame(0, self.lx, self.dx, self.ly, 2*self.ly, self.dy, PHA_Z, option='nw')
+        #         FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
+        #         FRAX, FRAY, FRAP = self._insFrame(self.lx,2*self.lx, self.dx, self.ly,2*self.ly, self.dy, PHA_Z, option='ne')
+        #         FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
+        #         FRAX, FRAY, FRAP = self._insFrame(self.lx,2*self.lx, self.dx, 0, self.ly, self.dy, PHA_Z, option='se')
+        #         FIL.append(plt.contourf(FRAX, FRAY, FRAP, **kws))
 
         plt.title(r'$z={:.2f}$'.format(kSLICE*self.dz)+r'$~\mathrm{nm}$', fontsize=22)
         plt.gca().set(xlabel='$x\ [\mathrm{nm}]$', ylabel='$y\ [\mathrm{nm}]$', aspect='equal')
-        if reflect_box: plt.gca().set(xlim=(0,2*self.lx), ylim=(0,2*self.ly))
-        else:           plt.gca().set(xlim=(0,self.lx), ylim=(0,self.ly))           
+        # if reflect_box: plt.gca().set(xlim=(0,2*self.lx), ylim=(0,2*self.ly))
+        # else:           plt.gca().set(xlim=(0,self.lx), ylim=(0,self.ly))           
         if len(xy_yticks) != 0: plt.gca().set_yticks(xy_yticks)
         if len(xy_xticks) != 0: plt.gca().set_xticks(xy_xticks)
         return FIL
@@ -408,7 +427,7 @@ class Pha3D:
             walls.append(go.Surface(x=xmin*np.ones(u.shape),y=u,z=v, colorscale=lin_cscale(wall_col), showscale=False))
             return walls
     
-    def _reflect_box(self):
+    def _reflect_box(self, reflect_over):
         vol = self.PHAXYZ[0].flatten()
         X   = self.PHAXYZ[1].flatten()
         Y   = self.PHAXYZ[2].flatten()
