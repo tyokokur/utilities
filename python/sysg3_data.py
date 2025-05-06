@@ -640,8 +640,9 @@ datasets += pack_data('a25s325_cyl', a25s325_cyl)
 
 a25s325_pn  = Data(0.25, 0.0325, 'str')
 a25s325_pn.new((12.2, 15.2, 81.2), -17.4997, icm=6.6e-03, err=6.3e-04)
+a25s325_pn.new((12.2, 16.4, 81.2), -17.4998, icm=2.5e-03, err=1.8e-04)
 a25s325_pn.new((12.2, 18.2, 81.2), -17.4998, icm=6.3e-03, err=5.2e-04)
-a25s325_pn.new((14.6, 18.2, 81.2), -17.4995, icm=7.7e-03, err=1.2e-03)
+a25s325_pn.new((14.6, 18.2, 81.2), -17.4997, icm=3.8e-03, err=6.3e-04)
 datasets += pack_data('a25s325_pn', a25s325_pn)
 
 a25s325_strT = Data(0.25, 0.0325, 'str') # Two stripes
