@@ -978,10 +978,13 @@ a3s55_pn.new(( 9.2, 20.2, 100.2), -27.6986, icm=1.2e-02, err=9.4e-04)
 datasets += pack_data('a3s55_pn', a3s55_pn)
 
 a3s55_str = Data(0.30, 0.055, 'str')
-a3s55_str.new
+a3s55_str.new(( 8.2, 20.2, 100.2), -27.6969, icm=4.7e-03, err=4.9e-04)
+a3s55_str.new(( 9.2, 20.2, 100.2), -27.6986, icm=6.8e-03, err=6.5e-04)
+a3s55_str.new((10.2, 20.2, 100.2), -27.6994, icm=1.1e-02, err=1.2e-03)
 datasets += pack_data('a3s55_str', a3s55_str)
 
 a3s55_hom = Data(0.30, 0.055, 'hom')
+a3s55_hom.new((20.2, 20.2, 100.2), -27.6917, icm=1.0e-03, err=3.3e-04)
 datasets += pack_data('a3s55_hom', a3s55_hom)
 
 ########################################################################
