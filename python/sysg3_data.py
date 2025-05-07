@@ -279,6 +279,7 @@ a1s75_hol.new((30.2, 27.2, 48.2), -4.42429, icm=2.3e-02, err=1.1e-03)
 a1s75_hol.new((30.2, 32.2, 48.2), -4.42380, icm=5.1e-02, err=1.7e-03)
 a1s75_hol.new((32.2, 27.2, 48.2), -4.42442, icm=5.8e-02, err=2.1e-03)
 a1s75_hol.new((30.2, 30.2, 48.2), -4.42432, icm=3.1e-02, err=1.1e-03)
+a1s75_hol.done=True
 datasets += pack_data('a1s75_hol', a1s75_hol)
 
 a1s75_hom = Data(0.10, 7.5e-03, 'hom')
