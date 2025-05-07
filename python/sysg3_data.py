@@ -226,7 +226,7 @@ datasets += pack_data('a1s25_hol', a1s25_hol)
 a1s5_pn  = Data(0.10, 5e-03, 'mic')
 a1s5_pn.new((19.0, 19.0, 40.2), -2.93679, icm=7.7e-03, err=1.3e-03)
 a1s5_pn.new((19.0, 21.2, 40.2), -2.93703, icm=6.0e-03, err=1.0e-03)
-a1s5_pn.new((19.0, 24.2, 40.2), -2.93698, icm=1.4e-02, err=1.7e-03)
+a1s5_pn.new((19.0, 24.2, 40.2), -2.93699, icm=1.4e-02, err=1.7e-03)
 datasets += pack_data('a1s5_pn', a1s5_pn)
 
 a1s5_hol = Data(0.10, 5e-03, 'hol')
