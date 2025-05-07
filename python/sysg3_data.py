@@ -558,6 +558,7 @@ a25s27_mic.done = True
 datasets += pack_data('a25s27_mic', a25s27_mic)
 
 a25s27_cyl = Data(0.25, 0.027, 'cyl')
+a25s27_cyl.new((11.0, 11.0, 70.2), -14.6044, icm=4.5e-03, err=6.9e-04)
 a25s27_cyl.new((13.0, 13.0, 70.2), -14.6057, icm=5.2e-03, err=9.5e-04)
 a25s27_cyl.new((15.2, 15.2, 70.2), -14.6053, icm=1.1e-02, err=1.7e-03)
 a25s27_cyl.done = True
@@ -570,6 +571,9 @@ a25s27_str.new((18.2, 15.2, 64.2), -14.6017, icm=3.0e-03, err=7.0e-04)
 a25s27_str.new((11.0, 15.2, 64.2), -14.6017, icm=3.5e-03, err=5.5e-04)
 a25s27_str.done = True
 datasets += pack_data('a25s27_str', a25s27_str)
+
+a25s27_pn = Data(0.25, 0.027, 'str')
+a25s27_pn
 
 a25s27_hom = Data(0.25, 0.027, 'hom')
 a25s27_hom.new((15.2, 15.2, 81.2), -14.6015, icm=1.4e-04, err=4.0e-05)
