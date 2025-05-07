@@ -265,6 +265,7 @@ datasets += pack_data('a1s5_str', a1s5_str)
 a1s5_hom = Data(0.10, 5e-03, 'hom')
 a1s5_hom.new((10, 10, 35), -2.93780, icm=3.9e-04, err=7.6e-05)
 a1s5_hom.new((12, 12, 35), -2.93788, icm=9.4e-05, err=2.3e-05)
+a1s5_hom.new((20.2, 20.2, 40.2), -2.93848, icm=3.9e-05, err=6.1e-06)
 a1s5_hom.done = True
 datasets += pack_data('a1s5_hom', a1s5_hom)
 
