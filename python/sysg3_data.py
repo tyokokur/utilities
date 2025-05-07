@@ -573,7 +573,8 @@ a25s27_str.done = True
 datasets += pack_data('a25s27_str', a25s27_str)
 
 a25s27_pn = Data(0.25, 0.027, 'str')
-a25s27_pn
+a25s27_pn.new((11.0, 15.2, 70.2), -14.6054, icm=8.2e-03, err=1.5e-03)
+datasets += pack_data('a25s27_pn', a25s27_pn)
 
 a25s27_hom = Data(0.25, 0.027, 'hom')
 a25s27_hom.new((15.2, 15.2, 81.2), -14.6015, icm=1.4e-04, err=4.0e-05)
