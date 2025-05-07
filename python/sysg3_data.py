@@ -576,6 +576,10 @@ a25s27_pn = Data(0.25, 0.027, 'str')
 a25s27_pn.new((11.0, 15.2, 70.2), -14.6054, icm=8.2e-03, err=1.5e-03)
 datasets += pack_data('a25s27_pn', a25s27_pn)
 
+a25s27_hol = Data(0.25, 0.027, 'hol')
+a25s27_hol.new((10.2, 10.2, 70.2), -14.6030, icm=5.5e-03, err=9.7e-04)
+datasets += pack_data('a25s27_hol', a25s27_hol)
+
 a25s27_hom = Data(0.25, 0.027, 'hom')
 a25s27_hom.new((15.2, 15.2, 81.2), -14.6015, icm=1.4e-04, err=4.0e-05)
 a25s27_hom.done = True
