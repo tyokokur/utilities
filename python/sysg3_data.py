@@ -372,22 +372,23 @@ a2s15_cyl.done = True
 datasets += pack_data('a2s15_cyl', a2s15_cyl)
 
 a2s15_str = Data(0.20, 0.015, 'str')
-a2s15_str.new((10.2, 15.2, 64.2), -8.43398, icm=8.8e-03, err=1.7e-03)
-
-a2s15_str = Data(0.20, 0.015, 'str')
-a2s15_str.new((10.2, 15.2, 64.2), -8.43398, icm=8.8e-03, err=1.7e-03)
-a2s15_str.new((12.2, 15.2, 64.2), -8.43538, icm=9.2e-03, err=1.7e-03)
-a2s15_str.new((13.0, 15.2, 64.2), -8.43620, icm=5.8e-03, err=1.2e-03)
-a2s15_str.new((15.2, 15.2, 64.2), -8.43689, icm=6.8e-03, err=1.2e-03)
-a2s15_str.new((18.2, 15.2, 64.2), -8.43770, icm=4.4e-03, err=6.9e-04)
-a2s15_str.new((20.2, 15.2, 64.2), -8.43806, icm=3.7e-03, err=5.3e-04)
-a2s15_str.new((24.2, 20.2, 64.2), -8.43879, icm=4.7e-03, err=6.5e-04)
-a2s15_str.new((27.2, 20.2, 64.2), -8.43902, icm=4.3e-03, err=8.4e-04)
-a2s15_str.new((30.2, 20.2, 64.2), -8.43929, icm=4.6e-03, err=8.6e-04)
-a2s15_str.new((32.2, 20.2, 64.2), -8.43935, icm=3.6e-03, err=7.5e-04)
-a2s15_str.multi = True
-a2s15_str.done = True # Called for the sake of memory
+a2s15_str.new((32.2, 20.2, 64.2), -8.43733, icm=1.7e-02, err=5.3e-03)
 datasets += pack_data('a2s15_str', a2s15_str)
+
+a2s15_mul = Data(0.20, 0.015, 'str')
+a2s15_mul.new((10.2, 15.2, 64.2), -8.43398, icm=8.8e-03, err=1.7e-03)
+a2s15_mul.new((12.2, 15.2, 64.2), -8.43538, icm=9.2e-03, err=1.7e-03)
+a2s15_mul.new((13.0, 15.2, 64.2), -8.43620, icm=5.8e-03, err=1.2e-03)
+a2s15_mul.new((15.2, 15.2, 64.2), -8.43689, icm=6.8e-03, err=1.2e-03)
+a2s15_mul.new((18.2, 15.2, 64.2), -8.43770, icm=4.4e-03, err=6.9e-04)
+a2s15_mul.new((20.2, 15.2, 64.2), -8.43806, icm=3.7e-03, err=5.3e-04)
+a2s15_mul.new((24.2, 20.2, 64.2), -8.43879, icm=4.7e-03, err=6.5e-04)
+a2s15_mul.new((27.2, 20.2, 64.2), -8.43902, icm=4.3e-03, err=8.4e-04)
+a2s15_mul.new((30.2, 20.2, 64.2), -8.43929, icm=4.6e-03, err=8.6e-04)
+a2s15_mul.new((32.2, 20.2, 64.2), -8.43935, icm=3.6e-03, err=7.5e-04)
+a2s15_mul.multi = True
+a2s15_mul.done = True # Called for the sake of memory
+datasets += pack_data('a2s15_mul', a2s15_mul)
 
 a2s15_mic = Data(0.20, 0.015, 'mic')
 a2s15_mic.new((20.2, 20.2, 64.2), -8.43841, icm=3.5e-02, err=3.9e-03)
