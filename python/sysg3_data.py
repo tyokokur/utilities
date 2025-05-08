@@ -579,8 +579,14 @@ a25s25_mic.new((15.2, 15.2, 70.2), -13.5397, icm=1.3e-02, err=1.7e-03)
 datasets += pack_data('a25s25_mic', a25s25_mic)
 
 a25s25_cyl = Data(0.25, 0.025, 'cyl')
-a25s25_cyl.new((11.0, 11.0, 70.2), -13.5432
+a25s25_cyl.new((11.0, 11.0, 70.2), -13.5432, icm=8.1e-03, err=1.4e-03)
+a25s25_cyl.new((13.0, 13.0, 70.2), -13.5450, icm=6.7e-03, err=1.1e-03)
 datasets += pack_data('a25s25_cyl', a25s25_cyl)
+
+a25s25_pn = Data(0.25, 0.025, 'str')
+a25s25_pn.new((11.0, 15.2, 70.2), -13.5448, icm=6.4e-03, err=1.2e-03)
+a25s25_pn.new((13.0, 15.2, 70.2), -13.5451, icm=8.3e-03, err=1.9e-03)
+datasets += pack_data('a25s25_pn', a25s25_pn)
 
 ''' alpha = 0.25, sigma = 0.027 '''
 a25s27_mic = Data(0.25, 0.027, 'mic')
