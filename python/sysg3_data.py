@@ -332,7 +332,7 @@ datasets += pack_data('a15s05_hol', a15s05_hol)
 ''' alpha = 0.15, sigma = 0.010 '''
 a15s1_mic = Data(0.15, 0.010, 'mic')
 a15s1_mic.new((10.2, 10.2, 54.2), -5.78462, icm=2.5e-02, err=2.6e-03)
-a15s1_mic.new((13.2, 13.2, 54.2), -5.78550, icm=9.8e-03, err=1.1e-03)
+# a15s1_mic.new((13.2, 13.2, 54.2), -5.78550, icm=9.8e-03, err=1.1e-03) # probably hom
 datasets += pack_data('a15s1_mic', a15s1_mic)
 
 a15s1_str= Data(0.15, 0.010, 'str') #melted
