@@ -1057,6 +1057,8 @@ datasets += pack_data('a3s5_hom', a3s5_hom)
 ''' alpha = 0.30, sigma = 0.055 '''
 a3s55_pn  = Data(0.30, 0.055, 'str')
 a3s55_pn.new(( 9.2, 20.2, 100.2), -27.6986, icm=1.2e-02, err=9.4e-04)
+a3s55_pn.new((10.2, 20.2, 100.2), -27.6992, icm=8.0e-03, err=6.2e-04)
+a3s55_pn.new((11.0, 20.2, 100.2), -27.6992, icm=8.6e-02, err=9.4e-04)
 datasets += pack_data('a3s55_pn', a3s55_pn)
 
 a3s55_str = Data(0.30, 0.055, 'str')
