@@ -833,6 +833,11 @@ a3s3_cyl.new((15.2, 15.2, 70.2), -15.5907, icm=1.5e-02, err=3.7e-03)
 a3s3_cyl.done = True
 datasets += pack_data('a3s3_cyl', a3s3_cyl)
 
+a3s3_pn = Data(0.30, 0.030, 'str')
+a3s3_pn.new((12.2, 16.2, 70.2), -15.5953, icm=6.5e-03, err=1.4e-03)
+a3s3_pn.new((12.2, 18.2, 70.2), -15.5956, icm=6.7e-03, err=1.1e-03)
+datasets += pack_data('a3s3_pn', a3s3_pn)
+
 a3s3_str = Data(0.30, 0.030, 'str')
 a3s3_str.new(( 9.2, 15.2, 70.2), -15.5830, icm=1.3e-02, err=1.6e-03)
 a3s3_str.new((12.2, 15.2, 70.2), -15.5886, icm=3.3e-04, err=2.0e-03)
