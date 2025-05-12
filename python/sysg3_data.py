@@ -652,6 +652,8 @@ a25s27_cyl = Data(0.25, 0.027, 'cyl')
 a25s27_cyl.new((11.0, 11.0, 70.2), -14.6044, icm=4.5e-03, err=6.9e-04)
 a25s27_cyl.new((13.0, 13.0, 70.2), -14.6057, icm=5.2e-03, err=9.5e-04)
 a25s27_cyl.new((15.2, 15.2, 70.2), -14.6059, icm=4.6e-03, err=8.1e-04)
+a25s27_cyl.new((17.0, 17.0, 70.2), -14.6054, icm=5.9e-03, err=8.8e-04)
+a25s27_cyl.done=True
 datasets += pack_data('a25s27_cyl', a25s27_cyl)
 
 a25s27_str = Data(0.25, 0.027, 'str')
@@ -665,6 +667,7 @@ datasets += pack_data('a25s27_str', a25s27_str)
 a25s27_pn = Data(0.25, 0.027, 'str')
 a25s27_pn.new((11.0, 15.2, 70.2), -14.6054, icm=8.2e-03, err=1.5e-03)
 a25s27_pn.new((13.0, 15.2, 70.2), -14.6065, icm=3.6e-03, err=1.0e-03)
+a25s27_pn.new((15.2, 15.2, 70.2), -14.6065, icm=3.6e-03, err=1.0e-03)
 datasets += pack_data('a25s27_pn', a25s27_pn)
 
 a25s27_hol = Data(0.25, 0.027, 'hol')
