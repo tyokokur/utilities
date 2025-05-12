@@ -667,11 +667,14 @@ datasets += pack_data('a25s27_str', a25s27_str)
 a25s27_pn = Data(0.25, 0.027, 'str')
 a25s27_pn.new((11.0, 15.2, 70.2), -14.6054, icm=8.2e-03, err=1.5e-03)
 a25s27_pn.new((13.0, 15.2, 70.2), -14.6065, icm=3.6e-03, err=1.0e-03)
-a25s27_pn.new((15.2, 15.2, 70.2), -14.6065, icm=3.6e-03, err=1.0e-03)
+a25s27_pn.new((15.2, 15.2, 70.2), -14.6059, icm=3.9e-03, err=1.0e-03)
+a25s27_pn.new((17.0, 15.2, 70.2), -14.6048, icm=6.9e-03, err=1.7e-03)
+a25s27_pn.done=True
 datasets += pack_data('a25s27_pn', a25s27_pn)
 
 a25s27_hol = Data(0.25, 0.027, 'hol')
 a25s27_hol.new((10.2, 10.2, 70.2), -14.6030, icm=5.5e-03, err=9.7e-04)
+a25s27_hol.done=True # Didn't explore
 datasets += pack_data('a25s27_hol', a25s27_hol)
 
 a25s27_hom = Data(0.25, 0.027, 'hom')
