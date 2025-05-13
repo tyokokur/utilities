@@ -838,9 +838,8 @@ datasets += pack_data('a3s2_mul', a3s2_mul)
 
 ''' alpha = 0.30, sigma = 0.025 '''
 a3s25_cyl = Data(0.30, 0.025, 'cyl')
-a3s25_cyl.new((12.2, 12.2, 72.2), -13.0655, icm=9.3e-03, err=1.2e-03)
 a3s25_cyl.new((11.0, 11.0, 72.2), -13.0657, icm=9.3e-03, err=1.3e-03)
-a3s25_cyl.done = True
+a3s25_cyl.new((12.2, 12.2, 72.2), -13.0655, icm=9.3e-03, err=1.2e-03)
 datasets += pack_data('a3s25_cyl', a3s25_cyl)
 
 a3s25_pn = Data(0.30, 0.025, 'pn')
