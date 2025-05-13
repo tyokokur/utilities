@@ -563,6 +563,7 @@ datasets += pack_data('a2s27_mul', a2s27_mul)
 
 ''' alpha = 0.225, sigma = 0.025 '''
 a225s25_mic = Data(0.225, 0.025, 'mic')
+a225s25_mic.new((13.0, 13.0, 70.2), -13.7767, icm=1.1e-03, err=1.5e-04)
 a225s25_mic.new((13.0, 15.2, 70.2), -13.7768, icm=1.8e-03, err=2.2e-04)
 datasets += pack_data('a225s25_mic', a225s25_mic)
 
