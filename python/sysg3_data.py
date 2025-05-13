@@ -388,6 +388,7 @@ a2s15_str.new((21.8, 20.2, 64.2), -8.44076, icm=2.4e-03, err=3.8e-04)
 a2s15_str.new((25.2, 20.2, 64.2), -8.44081, icm=2.3e-03, err=3.4e-04)
 a2s15_str.new((27.2, 20.2, 64.2), -8.44073, icm=3.1e-03, err=4.4e-04)
 a2s15_str.new((32.2, 20.2, 64.2), -8.43733, icm=1.7e-02, err=5.3e-03)
+a2s15_str.done=True
 datasets += pack_data('a2s15_str', a2s15_str)
 
 a2s15_mul = Data(0.20, 0.015, 'str')
