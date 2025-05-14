@@ -932,7 +932,6 @@ a3s325_cyl.done = True
 datasets += pack_data('a3s325_cyl', a3s325_cyl)
 
 a3s325_pn = Data(0.30, 0.0325, 'str')
-a3s325_pn.new((12.2, 18.2, 80.2), -16.9999, icm=7.2e-03, err=9.8e-04) # n = 3
 a3s325_pn.new((12.2, 18.2, 80.2), -16.8494, icm=7.2e-03, err=9.8e-04) # n = 3
 a3s325_pn.new((12.2, 18.2, 80.2), -16.8490, icm=5.5e-03, err=8.2e-04) # n = 2
 a3s325_pn.done=True # Can min further
