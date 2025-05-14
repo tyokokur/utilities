@@ -627,6 +627,7 @@ a25s25_mic.new((15.2, 13.0, 70.2), -13.5406, icm=1.3e-02, err=1.5e-03)
 a25s25_mic.new((15.2, 15.2, 70.2), -13.5397, icm=1.3e-02, err=1.7e-03)
 a25s25_mic.new((15.2, 16.2, 70.2), -13.5406, icm=1.3e-02, err=1.3e-03)
 a25s25_mic.new((15.2, 17.6, 70.2), -13.5398, icm=9.0e-03, err=1.3e-03)
+a25s25_mic.done=True
 datasets += pack_data('a25s25_mic', a25s25_mic)
 
 a25s25_cyl = Data(0.25, 0.025, 'cyl')
