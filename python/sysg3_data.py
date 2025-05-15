@@ -326,7 +326,7 @@ a15s05_str.new((20.2, 16.2, 54.2), -2.88574, icm=1.1e-02, err=1.5e-03)
 datasets += pack_data('a15s05_str', a15s05_str)
 
 a15s05_str2 = Data(0.15, 0.005, 'str') # melted
-a15s05_str2.new((20.2, 15.2, 54.2), -2.88482, icm=2.0e-02, err=3.7e-03)
+a15s05_str2.new((20.2, 20.2, 54.2), -2.88658, icm=1.4e-03, err=2.8e-04)
 datasets += pack_data('a15s05_str2', a15s05_str2)
 
 a15s05_hol = Data(0.15, 0.005, 'hol')
