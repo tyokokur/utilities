@@ -321,7 +321,7 @@ a15s05_mic.new((15.2, 15.2, 54.2), -2.88569, icm=5.1e-03, err=7.2e-04) # hole
 datasets += pack_data('a15s05_mic', a15s05_mic)
 
 a15s05_str = Data(0.15, 0.005, 'str')
-a15s05_str.new((17.2, 16.2, 54.2), -2.88591, icm=6.9e-03, err=9.3e-04)
+a15s05_str.new((17.2, 20.2, 54.2), -2.88602, icm=3.2e-03, err=5.2e-04)
 a15s05_str.new((20.2, 16.2, 54.2), -2.88574, icm=1.1e-02, err=1.5e-03)
 datasets += pack_data('a15s05_str', a15s05_str)
 
