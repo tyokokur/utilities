@@ -815,7 +815,7 @@ datasets += pack_data('a3s5_hol', a3s5_hol)
 a3s2_cyl = Data(0.30, 0.020, 'cyl')
 a3s2_cyl.new(( 9.2,  9.2, 64.2), -10.5044, icm=1.6e-02, err=2.4e-03)
 a3s2_cyl.new((10.2, 10.2, 64.2), -10.5083, icm=3.2e-03, err=6.3e-04)
-a3s2_cyl.new((11.0, 11.0, 64.2), -10.5091, icm=5.9e-03, err=1.1e-03)
+a3s2_cyl.new((11.0, 11.0, 64.2), -10.5092, icm=3.4e-03, err=4.1e-04)
 a3s2_cyl.new((12.2, 12.2, 64.2), -10.5084, icm=1.1e-02, err=1.8e-03)
 a3s2_cyl.new((15.2, 15.2, 64.2), -10.5025, icm=4.4e-02, err=2.4e-03)
 a3s2_cyl.done = True
