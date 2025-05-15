@@ -821,6 +821,9 @@ a3s2_cyl.new((15.2, 15.2, 64.2), -10.5025, icm=4.4e-02, err=2.4e-03)
 a3s2_cyl.done = True
 datasets += pack_data('a3s2_cyl', a3s2_cyl)
 
+a3s2_pn = Data(0.30, 0.020, 'str')
+a3s2_pn.new((10.2, 
+
 a3s2_mic = Data(0.30, 0.020, 'mic')
 a3s2_mic.new((15.2, 17.6, 64.2), -10.4873, icm=3.6e-02, err=7.4e-03)
 a3s2_mic.new((16.2, 17.6, 64.2), -10.4922, icm=3.4e-02, err=6.8e-03)
