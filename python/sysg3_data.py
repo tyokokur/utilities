@@ -822,7 +822,11 @@ a3s2_cyl.done = True
 datasets += pack_data('a3s2_cyl', a3s2_cyl)
 
 a3s2_pn = Data(0.30, 0.020, 'str')
-a3s2_pn.new((10.2, 
+a3s2_pn.new((10.2, 18.2, 72.2), -10.5098, icm=1.3e-02, err=3.1e-03)
+a3s2_pn.new((11.0, 18.2, 72.2), -10.5084, icm=1.7e-02, err=3.3e-03)
+a3s2_pn.new((12.2, 18.2, 72.2), -10.5076, icm=1.6e-02, err=3.2e-03)
+a3s2_pn.new((11.0, 16.2, 72.2), -10.5081, icm=1.7e-02, err=3.5e-03)
+datasets += pack_data('a3s2_pn', a3s2_pn)
 
 a3s2_mic = Data(0.30, 0.020, 'mic')
 a3s2_mic.new((15.2, 17.6, 64.2), -10.4873, icm=3.6e-02, err=7.4e-03)
