@@ -171,9 +171,10 @@ datasets += pack_data('a05s6_str', a05s6_str)
 
 a05s6_hol = Data(0.05, 6e-03, 'hol')
 a05s6_hol.new((18.2, 18.2, 36.2), -3.57716, icm=1.7e-02, err=1.1e-03)
+a05s6_hol.new((19.2, 25.2, 36.2), -3.57733, icm=7.0e-03, err=7.3e-04)
 a05s6_hol.new((20.2, 20.2, 36.2), -3.57724, icm=4.1e-03, err=3.8e-04)
-a05s6_hol.new((21.8, 21.8, 36.2), -3.57720, icm=1.1e-02, err=8.4e-04)
 a05s6_hol.new((20.2, 24.2, 36.2), -3.57732, icm=8.6e-03, err=7.9e-04)
+a05s6_hol.new((21.8, 21.8, 36.2), -3.57720, icm=1.1e-02, err=8.4e-04)
 a05s6_hol.new((20.2, 27.2, 36.2), -3.57732, icm=1.1e-02, err=6.5e-04)
 datasets += pack_data('a05s6_hol', a05s6_hol)
 
