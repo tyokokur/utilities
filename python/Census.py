@@ -17,15 +17,15 @@ class Census:
         
         # Update 
         self.data_df  = df
-        self.q_list   = df.columns.to_list()
+        self.qlist   = df.columns.to_list()
         
         # Complete
         firstcol= self.orig_datarange[0]+datarange[0]
         lastcol = df.shape[1]+self.orig_datarange[0]+datarange[0]-1
         print('Initialization completed.')
         print('Data recorded')
-        print('\tfrom column {}: \n\t\t"{}"'.format(num_to_exel_col(firstcol), self.q_list[0]))
-        print('\tto column {}: \n\t\t"{}"'.format(num_to_exel_col(lastcol), self.q_list[-1]))
+        print('\tfrom column {}: \n\t\t"{}"'.format(num_to_exel_col(firstcol), self.qlist[0]))
+        print('\tto column {}: \n\t\t"{}"'.format(num_to_exel_col(lastcol), self.qlist[-1]))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
