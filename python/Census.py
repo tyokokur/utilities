@@ -17,9 +17,11 @@ class Census:
         df = df[df['Response Type']!='Survey Preview'].reset_index(drop=True)
 
         # Discard unnecessary data
-        df = df.iloc[:,17:]
+        df = df.iloc[:, datarange[0]:datarange[1]]
 
-        # Print data summary
-        print('Data read into df1.\n{} responses.\n{} questions asked.'.format(*df1.shape))
+        # Complete
+        print('Initialization completed.')
+        print('{} responses.\n{} questions asked.'.format(*df.shape))
+        self.data_df = df
         
     
