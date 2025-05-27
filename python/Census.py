@@ -5,7 +5,7 @@ class Census:
     """
     docstring for Census class
     """
-    def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, orig_df=pd.DataFrame([0,0]):
+    def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, orig_df=pd.DataFrame({'empty':[0]})):
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
         else:
