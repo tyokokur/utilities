@@ -73,12 +73,12 @@ def num_to_exel_col(n):
     d, m = divmod(n,26) # 26 is the number of ASCII letters
     return '' if n < 0 else num_to_exel_col(d-1)+chr(m+65)
 
-def alias_labels(labs=[''], als={'empty':''}):
-    new = np.empty(len(labs), dtype=object)
+def alias_labels(df, als):
+    new = np.empty(df.shape[0], dtype=object)
     for i in range(len(new)):
-        try: new[i] = als[labs[i]]
-        except KeyError: new[i] = labs[i]
-    return new
+        try: new[i] = als[df.iloc[i,0]]
+        except KeyError: new[i] = df.iloc[i,0]
+    return pd.concat([df,new], axis=1)
         
         
         
