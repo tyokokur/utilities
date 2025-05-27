@@ -28,6 +28,13 @@ class Census:
         print('\tfrom column {}: \n\t\t"{}"'.format(num_to_exel_col(firstcol), self.qlist[0]))
         print('\tto column {}: \n\t\t"{}"'.format(num_to_exel_col(lastcol), self.qlist[-1]))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
+        return
+    
+    def count_single_choice(self, colname):
+        dpt_data = df_bg[clabs[2]]
+        dpt_list = dpt_data[dpt_data.notna()].unique()
+        dpt_list.sort()
+        counts = [dpt_data[dpt_data==dpt_list[i]].count() for i in range(len(dpt_list))]
         
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
         return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
