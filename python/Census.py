@@ -38,7 +38,7 @@ class Census:
     def process_other(self, ind):
         print_fil = lambda x: print('\t'+str([i for i in x[x.notna()]]))
         
-        other = self.data_df.pop(qlist[ind])
+        other = self.data_df.pop(self.qlist[ind])
         print('Popped Q{} (column {}):'.format(ind, num_to_exel_col(self.orig_datarange[0]+ind)))
               
         if other.count() > 0: 
