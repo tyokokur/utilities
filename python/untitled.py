@@ -5,5 +5,7 @@ class Census:
     """
     docstring for Census class
     """
-    def __init__(self): 
-        self.questions = 
+    def __init__(self, filename): 
+        
+        
+    
