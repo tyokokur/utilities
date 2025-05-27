@@ -41,7 +41,7 @@ class Census:
         return df
     
     def count_multi_choice(self, colname, sort=True):
-        data  = self.data_df[colname]
+        data = self.data_df[colname].str.split(',', expand=True)
         labels = pd.unique(data[data.notna()].values.flatten())
         labels = labels[pd.notnull(labels)]
         if sort: labels.sort()
