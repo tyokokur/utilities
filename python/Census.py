@@ -33,6 +33,9 @@ class Census:
         
     def show_qlist(self):
         print(*['\t{}. {}\n'.format(ind+1, i) for ind, i in enumerate(self.qlist)])
+        return
+    
+    def process_text
     
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
