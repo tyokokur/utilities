@@ -36,7 +36,7 @@ class Census:
         return
     
     def process_other(self, ind):
-        print_fil = lambda x: print('\t'+str([i for i in x[x.notna()]]))
+        print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
         print('Popping Q{} (column {}): \n\t{}'.format(ind+1, num_to_exel_col(self.orig_datarange[0]+ind), self.qlist[ind]))
         other = self.data_df.pop(self.qlist[ind])
@@ -44,7 +44,7 @@ class Census:
         if other.count() > 0: 
             print_fil(other)
         else: 
-            print('\tNone')
+            print('\tResponses: None')
     
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
