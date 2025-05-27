@@ -13,7 +13,7 @@ class Census:
             datarange = (0, 0)
         else:
             df = orig_df.iloc[:, datarange[0]:datarange[1]]
-            self.orig_datarange = orig_datarange
+            self.orig_datarange = orig_datarange+datarange[0]
         
         # Update 
         self.data_df = df
