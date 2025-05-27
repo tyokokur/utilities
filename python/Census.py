@@ -18,16 +18,22 @@ class Census:
 
         # Discard unnecessary data
         df = df.iloc[:, datarange[0]:datarange[1]]
+        
+        # Record
+        self.data_df = df
+        self.q_list  = df.columns.to_lis()
+        
 
         # Complete
         if datarange[1] == None: 
             lastcol = df.shape[1]+datarange[0]-1
         else: 
             lastcol = datarange[1]
+        
         print('Initialization completed.')
-        print('\tData recorded from column {} to {}'.format(num_to_exel_col(datarange[0]), num_to_exel_col(lastcol)))
+        print('\tData recorded from column {}: \n\t\t{}'.format(num_to_exel_col(datarange[0]), ))
+        print('\tto {}'.format(num_to_exel_col(lastcol)))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
-        self.data_df = df
         
         
 def num_to_exel_col(n):
