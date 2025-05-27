@@ -5,12 +5,15 @@ class Census:
     """
     docstring for Census class
     """
-    def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, orig_df=pd.DataFrame({'empty':[0]})):
+    def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
+                 orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
-            orig_d
+            self.orig_datarange = datarange
+            datarange = (0, 0)
         else:
             df = orig_df.iloc[:, datarange[0]:datarange[1]]
+            self.orig_datarange = orig_datarange
         
         # Update 
         self.data_df  = df
@@ -18,9 +21,9 @@ class Census:
         
         # Complete
         if datarange[1] == None: 
-            lastcol = df.shape[1]+datarange[0]-1
+            lastcol = df.shape[1]+self.orig_datarange[0]+datarange[0]-1
         else: 
-            lastcol = datarange[1]
+            lastcol = self.orig_datarange[1]+datarange[1]
         
         print('Initialization completed.')
         print('Data recorded')
@@ -29,7 +32,7 @@ class Census:
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
-        return Census(from_file=False, datarange=datarange, orig_df=orig_df)
+        return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
         
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
