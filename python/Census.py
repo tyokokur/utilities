@@ -31,7 +31,7 @@ class Census:
             lastcol = datarange[1]
         
         print('Initialization completed.')
-        print('\tData recorded from column {}: \n\t\t{}'.format(num_to_exel_col(datarange[0]), self.q_list[0]))
+        print('Data recorded from column {}: \n\t\t{}'.format(num_to_exel_col(datarange[0]), self.q_list[0]))
         print('\tto column {}: \n\t\t{}'.format(num_to_exel_col(lastcol), self.q_list[-1]))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
