@@ -44,6 +44,7 @@ class Census:
         data  = self.data_df[colname]
         labels = pd.unique(data[data.notna()].values.flatten())
         labels = labels[pd.notnull(labels)]
+        if sort: labels.sort()
         flat = data.values.flatten()
         counts = [flat[flat == i].size for i in labels]
         df = pd.DataFrame([labels, counts]).T
