@@ -16,10 +16,10 @@ class Census:
             self.orig_datarange = orig_datarange
         
         # Update 
-        self.data_df  = df
+        self.data_df = df
         self.qlist   = df.columns.to_list()
         
-        # Complete
+        # Report
         firstcol= self.orig_datarange[0]+datarange[0]
         lastcol = df.shape[1]+self.orig_datarange[0]+datarange[0]-1
         print('Initialization completed.')
@@ -35,7 +35,8 @@ class Census:
         print(*['\t{}. {}\n'.format(ind+1, i) for ind, i in enumerate(self.qlist)])
         return
     
-    def process_text
+    def process_other(self, ind):
+        
     
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
