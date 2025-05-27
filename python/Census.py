@@ -36,7 +36,7 @@ class Census:
         if sort: labels.sort()
         counts = [data[data==labels[i]].count() for i in range(len(labels))]
         df = pd.DataFrame([labels, counts]).T
-        df.columns = ['Labels', 'Counts']
+        df.columns = ['labels', 'counts']
         return df
         
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
@@ -80,7 +80,7 @@ def alias_labels(df, als):
     for i in range(len(new)):
         try: new[i] = als[df.iloc[i,0]]
         except KeyError: new[i] = df.iloc[i,0]
-    return pd.concat([df,pd.Series(new, name='Alias')], axis=1)
+    return pd.concat([df,pd.Series(new, name='alias')], axis=1)
         
         
         
