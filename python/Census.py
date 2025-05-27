@@ -8,12 +8,13 @@ class Census:
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, orig_df=pd.DataFrame({'empty':[0]})):
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
+            orig_d
         else:
             df = orig_df.iloc[:, datarange[0]:datarange[1]]
         
         # Update 
-        self.data_df = df
-        self.q_list  = df.columns.to_list()
+        self.data_df  = df
+        self.q_list   = df.columns.to_list()
         
         # Complete
         if datarange[1] == None: 
