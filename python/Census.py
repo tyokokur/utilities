@@ -40,6 +40,7 @@ class Census:
         
         print('Popping Q{} (column {}): \n\t{}'.format(ind+1, num_to_exel_col(self.orig_datarange[0]+ind), self.qlist[ind]))
         other = self.data_df.pop(self.qlist[ind])
+        self.qlist.pop(ind)
               
         if other.count() > 0: 
             print_fil(other)
