@@ -73,10 +73,11 @@ def num_to_exel_col(n):
     d, m = divmod(n,26) # 26 is the number of ASCII letters
     return '' if n < 0 else num_to_exel_col(d-1)+chr(m+65)
 
-def alias_labels(labels=[''], ali):
-    for i in range(len(labs)):
-        try: labels[i] = dpt_names[dpt_list[i]]
-        except KeyError: labels[i] = dpt_list[i]
+def alias_labels(labs=[''], als={'empty':''}):
+    new = np.empty(len(labs), dtype=object)
+    for i in range(len(new)):
+        try: new[i] = als[labs[i]]
+        except KeyError: new[i] = labs[i]
         
         
         
