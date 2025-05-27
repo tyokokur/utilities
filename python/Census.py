@@ -21,11 +21,11 @@ class Census:
 
         # Complete
         if datarange[1] == None: 
-            lastcol = df.shape[1]+datarange[0]
+            lastcol = df.shape[1]+datarange[0]-1
         else: 
             lastcol = datarange[1]
         print('Initialization completed.')
-        print('\tData recorded from column {} to {}'.format(chr(num_to_exel_col(datarange[0])), chr(num_to_exel_col(lastcol))))
+        print('\tData recorded from column {} to {}'.format(num_to_exel_col(datarange[0]), num_to_exel_col(lastcol)))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         self.data_df = df
         
