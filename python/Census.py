@@ -5,10 +5,11 @@ class Census:
     """
     docstring for Census class
     """
-    def __init__(self, filepath, header=1, datarange=(17,None)): 
-        from pathlib import Path
-        p = Path(filepath)
-        df = pd.read_csv(p, header=header)
+    def __init__(self, filepath, header=1, datarange=(17,None), from_file=True):
+        if from_file:
+            df = _init_from_file(self, filepath=filepath, header=header, datarange=datarange)
+        else: 
+            
         
         # Discard IP addresses
         df = df.drop([0])
@@ -37,7 +38,10 @@ class Census:
         
     def section(self, datarange):
         
-    de
+    def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
+        from pathlib import Path
+        p = Path(filepath)
+        return pd.read_csv(p, header=header)
         
         
 def num_to_exel_col(n):
