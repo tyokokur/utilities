@@ -37,10 +37,12 @@ class Census:
     
     def process_other(self, ind):
         print_fil = lambda x: print('\t'+str([i for i in x[x.notna()]]))
-        div_other = self.data_df.pop(qlist[ind])
-        print('Popped Q{} (column {}):'.format(ind, num_to_exel_col(ind))
-        if div_other.count() > 0: 
-            print_fil(div_other)
+        
+        other = self.data_df.pop(qlist[ind])
+        print('Popped Q{} (column {}):'.format(ind, num_to_exel_col(self.orig_datarange[0]+ind)))
+              
+        if other.count() > 0: 
+            print_fil(other)
         else: 
             print('\tNone')
     
