@@ -9,7 +9,7 @@ class Census:
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
         else:
-            df = orig_df.iloc[datarange[0]:datarange[1]]
+            df = orig_df.iloc[:, datarange[0]:datarange[1]]
         
         # Update 
         self.data_df = df
