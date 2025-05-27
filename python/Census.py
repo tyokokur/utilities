@@ -27,8 +27,8 @@ class Census:
         print('\tto column {}: \n\t\t"{}"'.format(num_to_exel_col(lastcol), self.q_list[-1]))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
-    def section(self, datarange):
-        return Census(from_file=False, datarange=datarange)
+    def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
+        return Census(from_file=False, datarange=datarange, orig_df=orig_df)
         
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
