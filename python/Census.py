@@ -8,14 +8,6 @@ class Census:
     def __init__(self, filepath, header=1, datarange=(17,None), from_file=True):
         if from_file:
             df = _init_from_file(self, filepath=filepath, header=header, datarange=datarange)
-        else: 
-            
-        
-        # Discard IP addresses
-        df = df.drop([0])
-
-        # No previews
-        df = df[df['Response Type']!='Survey Preview'].reset_index(drop=True)
 
         # Discard unnecessary data
         df = df.iloc[:, datarange[0]:datarange[1]]
@@ -37,11 +29,15 @@ class Census:
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
     def section(self, datarange):
+        print('no')
         
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
         p = Path(filepath)
-        return pd.read_csv(p, header=header)
+        df = pd.read_csv(p, header=header)
+        df = df.drop([0]) # Discard IP addresses
+        df = df[df['Response Type']!='Survey Preview'].reset_index(drop=True) # No previews
+        return df
         
         
 def num_to_exel_col(n):
