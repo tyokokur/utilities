@@ -82,7 +82,9 @@ def alias_labels(df, als):
         except KeyError: new[i] = df.iloc[i,0]
     return pd.concat([df,pd.Series(new, name='alias')], axis=1)
         
-def move_to_bot(df, 
+def move_to_bot(df, cond):
+    idx = df.index[cond]
+    return pd.concat([df.drop(idx), df.loc[idx]], ignore_index=True)
         
         
         
