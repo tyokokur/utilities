@@ -20,8 +20,12 @@ class Census:
         df = df.iloc[:, datarange[0]:datarange[1]]
 
         # Complete
+        if datarange[1] == None: 
+            lastcol = df.shape[1]+datarange[0]
+        else: 
+            lastcol = datarange[1]
         print('Initialization completed.')
-        print('\tData recorded from column {} to {}'.format(datarange[0]+2, )
+        print('\tData recorded from column {} to {}'.format(chr(datarange[0]+65), chr(lastcol+65)))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         self.data_df = df
         
