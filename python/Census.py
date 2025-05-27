@@ -13,7 +13,7 @@ class Census:
             datarange = (0, 0)
         else:
             df = orig_df.iloc[:, datarange[0]:datarange[1]]
-            self.orig_datarange = (orig_datarange[0], orig_datarange[1])
+            self.orig_datarange = orig_datarange
         
         # Update 
         self.data_df = df
@@ -50,7 +50,7 @@ class Census:
         ind = self.data_df.columns.get_loc(colname)
         print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
-        print('Popping Q{} (column {}): \n\t{}'.format(ind+self.num_popped+1, num_to_exel_col(self.orig_datarange[0]+ind+self.num_popped), self.qlist[ind]))
+        print('Popping Q{} (column {}): \n\t{}'.format(ind+self.num_popped+1, num_to_exel_col(datarange[0]+self.orig_datarange[0]+ind+self.num_popped), self.qlist[ind]))
         self.num_popped += 1
         
         other = self.data_df.pop(self.qlist[ind])
