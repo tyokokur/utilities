@@ -8,6 +8,8 @@ class Census:
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True):
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
+        else:
+            
 
         # Discard unnecessary data
         df = df.iloc[:, datarange[0]:datarange[1]]
