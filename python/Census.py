@@ -42,7 +42,13 @@ class Census:
     
     def count_multi_choice(self, colname, sort=True):
         data  = self.data_df[colname]
-        labels = data
+        labels = pd.unique(data[data.notna()].values.flatten())
+        labels = labels[pd.notnull(labels)]
+        flat = data.values.flatten()
+        counts = [flat[flat == i].size for i in labels]
+        df = pd.DataFrame([labels, counts]).T
+        df.columns = ['labels', 'counts']
+        return df
         
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
         return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
