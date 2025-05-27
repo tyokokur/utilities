@@ -35,7 +35,8 @@ class Census:
         print(*['\t{}. {}\n'.format(ind+1, i) for ind, i in enumerate(self.qlist)])
         return
     
-    def process_other(self, ind):
+    def process_other(self, colname):
+        ind = self.data_df.columns
         print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
         print('Popping Q{} (column {}): \n\t{}'.format(ind+1, num_to_exel_col(self.orig_datarange[0]+ind), self.qlist[ind]))
