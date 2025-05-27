@@ -78,6 +78,7 @@ def alias_labels(labs=[''], als={'empty':''}):
     for i in range(len(new)):
         try: new[i] = als[labs[i]]
         except KeyError: new[i] = labs[i]
+    return new
         
         
         
