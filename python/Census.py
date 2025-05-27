@@ -25,8 +25,19 @@ class Census:
         else: 
             lastcol = datarange[1]
         print('Initialization completed.')
-        print('\tData recorded from column {} to {}'.format(chr(datarange[0]+65), chr(lastcol+65)))
+        print('\tData recorded from column {} to {}'.format(chr(num_to_exel_col(datarange[0])), chr(num_to_exel_col(lastcol))))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         self.data_df = df
+        
+        
+def num_to_exel_col(n):
+    # Source: https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
+    start_index = 1   #  it can start either at 0 or at 1
+    letter = ''
+    while column_int > 25 + start_index:   
+        letter += chr(65 + int((column_int-start_index)/26) - 1)
+        column_int = column_int - (int((column_int-start_index)/26))*26
+    letter += chr(65 - start_index + (int(column_int)))
+    return letter
         
     
