@@ -20,11 +20,7 @@ class Census:
         self.q_list   = df.columns.to_list()
         
         # Complete
-        if datarange == (0, 0): 
-            lastcol = df.shape[1]+self.orig_datarange[0]+datarange[0]-1
-        else: 
-            lastcol = self.orig_datarange[1]+datarange[1]
-        
+        lastcol = df.shape[1]+self.orig_datarange[0]+datarange[0]-1
         print('Initialization completed.')
         print('Data recorded')
         print('\tfrom column {}: \n\t\t"{}"'.format(num_to_exel_col(datarange[0]), self.q_list[0]))
