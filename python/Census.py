@@ -23,7 +23,6 @@ class Census:
         self.data_df = df
         self.q_list  = df.columns.to_list()
         
-
         # Complete
         if datarange[1] == None: 
             lastcol = df.shape[1]+datarange[0]-1
@@ -36,7 +35,9 @@ class Census:
         print('\tto column {}: \n\t\t"{}"'.format(num_to_exel_col(lastcol), self.q_list[-1]))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
-    def split(self, datarange):
+    def section(self, datarange):
+        
+    de
         
         
 def num_to_exel_col(n):
