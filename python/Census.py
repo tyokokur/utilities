@@ -36,6 +36,8 @@ class Census:
         print('\tto column {}: \n\t\t"{}"'.format(num_to_exel_col(lastcol), self.q_list[-1]))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
+    def split(self, datarange):
+        
         
 def num_to_exel_col(n):
     # Source: https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
