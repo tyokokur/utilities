@@ -18,6 +18,7 @@ class Census:
         # Update 
         self.data_df = df
         self.qlist   = df.columns.to_list()
+        self.num_popped = 0
         
         # Report
         firstcol= self.orig_datarange[0]+datarange[0]
@@ -39,7 +40,9 @@ class Census:
         ind = self.data_df.columns.get_loc(colname)
         print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
-        print('Popping Q{} (column {}): \n\t{}'.format(ind+1, num_to_exel_col(self.orig_datarange[0]+ind), self.qlist[ind]))
+        print('Popping Q{} (column {}): \n\t{}'.format(ind+1, num_to_exel_col(self.orig_datarange[0]+ind+self.num_popped), self.qlist[ind]))
+        self.num_popped += 1
+        
         other = self.data_df.pop(self.qlist[ind])
         self.qlist.pop(ind)
               
