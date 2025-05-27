@@ -35,7 +35,7 @@ class Census:
         labels= data[data.notna()].unique()
         if sort: labels.sort()
         counts = [data[data==labels[i]].count() for i in range(len(labels))]
-        return pd.DataFrame([labels, counts], columns=['Labels', 'Counts'])
+        return pd.DataFrame([labels, counts]).T
         
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
         return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
