@@ -36,7 +36,7 @@ class Census:
         print(*['\t{}. {}\n'.format(ind+1, i) for ind, i in enumerate(self.qlist)])
         return
     
-    def process_other(self, colname):
+    def pop_other(self, colname):
         ind = self.data_df.columns.get_loc(colname)
         print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
