@@ -32,12 +32,7 @@ class Census:
         
 def num_to_exel_col(n):
     # Source: https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
-    start_index = 1   #  it can start either at 0 or at 1
-    letter = ''
-    while column_int > 25 + start_index:   
-        letter += chr(65 + int((column_int-start_index)/26) - 1)
-        column_int = column_int - (int((column_int-start_index)/26))*26
-    letter += chr(65 - start_index + (int(column_int)))
-    return letter
-        
+    d, m = divmod(n,26) # 26 is the number of ASCII letters
+    return '' if n < 0 else num_to_exel_col(d-1)+chr(m+65)
+
     
