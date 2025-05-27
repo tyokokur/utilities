@@ -5,16 +5,13 @@ class Census:
     """
     docstring for Census class
     """
-    def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True):
+    def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, orig_df=pd.DataFrame([0,0]):
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
         else:
-            
-
-        # Discard unnecessary data
-        df = df.iloc[:, datarange[0]:datarange[1]]
+            df = orig_df.iloc[datarange[0]:datarange[1]]
         
-        # Record
+        # Update 
         self.data_df = df
         self.q_list  = df.columns.to_list()
         
@@ -39,6 +36,7 @@ class Census:
         df = pd.read_csv(p, header=header)
         df = df.drop([0]) # Discard IP addresses
         df = df[df['Response Type']!='Survey Preview'].reset_index(drop=True) # No previews
+        df = df.iloc[:, datarange[0]:datarange[1]] # Discard unnecessary data
         return df
         
         
