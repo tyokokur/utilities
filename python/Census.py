@@ -36,7 +36,7 @@ class Census:
         return
     
     def process_other(self, colname):
-        ind = self.data_df.columns
+        ind = self.data_df.columns.get_loc(colname)
         print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
         print('Popping Q{} (column {}): \n\t{}'.format(ind+1, num_to_exel_col(self.orig_datarange[0]+ind), self.qlist[ind]))
