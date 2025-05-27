@@ -29,7 +29,7 @@ class Census:
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         
     def section(self, datarange):
-        print('no')
+        return Census(from_file=False, datarange=datarange)
         
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
