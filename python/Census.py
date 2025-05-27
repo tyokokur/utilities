@@ -21,6 +21,7 @@ class Census:
 
         # Complete
         print('Initialization completed.')
+        print('\tData recorded from column {} to {}'.format(datarange[0]+2, )
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         self.data_df = df
         
