@@ -36,7 +36,13 @@ class Census:
         return
     
     def process_other(self, ind):
-        
+        print_fil = lambda x: print('\t'+str([i for i in x[x.notna()]]))
+        div_other = self.data_df.pop(qlist[ind])
+        print('Popped Q{} (column {}):'.format(ind, num_to_exel_col(ind))
+        if div_other.count() > 0: 
+            print_fil(div_other)
+        else: 
+            print('\tNone')
     
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
