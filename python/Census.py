@@ -78,7 +78,7 @@ def alias_labels(df, als):
     for i in range(len(new)):
         try: new[i] = als[df.iloc[i,0]]
         except KeyError: new[i] = df.iloc[i,0]
-    return pd.concat([df,new], axis=1)
+    return pd.concat([df,pd.Series(new)], axis=1)
         
         
         
