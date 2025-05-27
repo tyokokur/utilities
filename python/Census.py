@@ -31,6 +31,9 @@ class Census:
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
         return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
         
+    def show_qlist(self):
+        print(*['\t{}. {}\n'.format(ind+1, i) for ind, i in enumerate(self.qlist)])
+    
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
         p = Path(filepath)
@@ -39,7 +42,6 @@ class Census:
         df = df[df['Response Type']!='Survey Preview'].reset_index(drop=True) # No previews
         df = df.iloc[:, datarange[0]:datarange[1]] # Discard unnecessary data
         return df
-        
         
 def num_to_exel_col(n):
     # Source: https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
