@@ -120,8 +120,20 @@ a0s20_hom.new((20.2, 20.2, 40.2), -12.0817, icm=1.9e-06, err=1.2e-06)
 datasets += pack_data('a0s20_hom', a0s20_hom)
 
 a0s30_hom = Data(0.00, 3e-02, 'hom')
-a0s30_hom.new((20.2, 20.2, 50.2), -18.0671, icm=1.9e-06, err=1.2e-06)
+a0s30_hom.new((20.2, 20.2, 50.2), -18.0671, icm=3.2e-06, err=1.1e-06)
 datasets += pack_data('a0s30_hom', a0s30_hom)
+
+a0s40_hom = Data(0.00, 4e-02, 'hom')
+a0s40_hom.new((20.2, 20.2, 58.2), -23.9433, icm=6.0e-06, err=2.7e-06)
+datasets += pack_data('a0s40_hom', a0s40_hom)
+
+a0s50_hom = Data(0.00, 5e-02, 'hom')
+a0s50_hom.new((20.2, 20.2, 70.2), -29.6789, icm=3.5e-06, err=2.2e-06)
+datasets += pack_data('a0s50_hom', a0s50_hom)
+
+a0s60_hom = Data(0.00, 6e-02, 'hom')
+a0s60_hom.new((20.2, 20.2, 75.2), -35.2462, icm=5.8e-06, err=3.6e-06)
+datasets += pack_data('a0s60_hom', a0s60_hom)
 ########################################################################
 
 ''' alpha = 0.05, sigma = 3e-03 '''
