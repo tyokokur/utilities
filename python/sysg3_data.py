@@ -326,8 +326,8 @@ datasets += pack_data('a15s05_mic', a15s05_mic)
 a15s05_str = Data(0.15, 0.005, 'str')
 # a15s05_str (15.2, 20.2, 54.2), Terran
 a15s05_str.new((17.2, 20.2, 54.2), -2.88602, icm=3.2e-03, err=5.2e-04)
-# a15s05_str (
-a15s05_str.new((20.2, 16.2, 54.2), -2.88574, icm=1.1e-02, err=1.5e-03)
+# a15s05_str (18.2, 20.2, 54.2)
+a15s05_str.new((20.2, 16.2, 54.2), -2.88574, icm=1.1e-02, err=1.5e-03) # (20.2, 20.2)
 datasets += pack_data('a15s05_str', a15s05_str)
 
 a15s05_str2 = Data(0.15, 0.005, 'str') # melted
