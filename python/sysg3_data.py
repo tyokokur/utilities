@@ -401,6 +401,11 @@ a2s10_mic.new((16.2, 22.2, 36.2), -5.63101, icm=5.9e-02, err=4.8e-03) # (16.2, 2
 a2s10_mic.new((16.2, 24.2, 36.2), -5.63104, icm=2.1e-02, err=2.9e-03) 
 datasets += pack_data('a2s10_mic', a2s10_mic)
 
+a2s10_str = Data(0.20, 0.010, 'str')
+a2s10_str.new((12.2, 16.2, 54.2), -5.63277, icm=1.1e-02, err=1.6e-03)
+a2s10_str.new((17.2, 16.2, 54.2), -5.63277, icm=1.1e-02, err=1.6e-03)
+datasets += pack_data('a2s10_str', a2s10_str)
+
 ''' alpha = 0.20, sigma = 0.015 '''
 a2s15_mic = Data(0.20, 0.015, 'mic')
 a2s15_mic.new((16.2, 14.6, 64.2), -8.43935, icm=1.5e-02, err=2.2e-03)
