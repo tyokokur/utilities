@@ -110,6 +110,11 @@ a0s7_hol.new((24.2, 24.2, 15.2), -4.20090, icm=1.9e-02, err=3.2e-03)
 a0s7_hol.done = True
 datasets += pack_data('a0s7_hol', a0s7_hol)
 
+''' alpha = 0.00, hom '''
+a0s10_hom = Data(0.00, 1e-02, 'hom')
+a0s10_hom.new((20.2 -6.02604, icm=4.6e-06, err=3.8e-06)
+datasets += pack_data('a0s10_hom', a0s7_hom)
+
 ########################################################################
 
 ''' alpha = 0.05, sigma = 3e-03 '''
