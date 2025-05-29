@@ -222,6 +222,7 @@ a1s25_str.new((12.2, 20.2, 36.2), -1.45849, icm=9.4e-04, err=1.0e-04)
 a1s25_str.new((14.2, 20.2, 36.2), -1.45841, icm=3.0e-03, err=4.1e-04)
 a1s25_str.new((17.2, 16.2, 36.2), -1.45789, icm=8.2e-04, err=8.7e-05)
 a1s25_str.new((20.2, 16.2, 36.2), -1.45715, icm=1.2e-03, err=2.1e-04)
+a1s25_str.done=True
 datasets += pack_data('a1s25_str', a1s25_str)
 
 a1s25_hol = Data(0.10, 2.5e-03, 'hol')
@@ -389,6 +390,11 @@ a2s05_hol.new((10.2, 10.2, 54.2), -2.82020, icm=2.0e-02, err=1.9e-03)
 a2s05_hol.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
 a2s05_hol.done = True
 datasets += pack_data('a2s05_hol', a2s05_hol)
+
+''' alpha = 0.20, sigma = 0.010 '''
+a2s10_mic = Data(0.20, 0.010, 'mic')
+a2s10_mic.new(())
+datasets += pack_data('a2s10_mic', a2s10_mic)
 
 ''' alpha = 0.20, sigma = 0.015 '''
 a2s15_mic = Data(0.20, 0.015, 'mic')
