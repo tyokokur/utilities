@@ -335,9 +335,10 @@ a15s05_str2.new((20.2, 20.2, 54.2), -2.88663, icm=1.7e-03, err=2.3e-04) # could 
 datasets += pack_data('a15s05_str2', a15s05_str2)
 
 a15s05_hol = Data(0.15, 0.005, 'hol')
-# a15s05_hol (25.2, 29.2, 54.2)
+# a15s05_hol (25.2, 29.2, 54.2), Terran
 a15s05_hol.new((27.2, 29.2, 54.2), -2.88653, icm=1.4e-02, err=1.7e-03)
-# a15s05_hol (25.2, 29.2, 54.2)
+# a15s05_hol (28.2, 29.2, 54.2), Terran
+# a15s05_hol (27.2, 32.2, 54.2), Terran
 datasets += pack_data('a15s05_hol', a15s05_hol)
 
 ''' alpha = 0.15, sigma = 0.010 '''
