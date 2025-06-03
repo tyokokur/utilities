@@ -247,10 +247,15 @@ a05s04_hom.new((20.2, 20.2, 999), -23.7897, icm=4.7e-02, err=1.5e-02) ####
 a05s04_hom.done=True
 datasets += pack_data('a05s04_hom', a05s04_hom)
 
-a05s04_hom = Data(0.05, 5e-02, 'hom')
-a05s04_hom.new((20.2, 20.2, 999), -23.7897, icm=4.7e-02, err=1.5e-02) ####
-a05s04_hom.done=True
+a05s05_hom = Data(0.05, 5e-02, 'hom')
+a05s05_hom.new((20.2, 20.2, 999), -29.4825, icm=7.0e-03, err=2.5e-03) 
+a05s05_hom.done=True
 datasets += pack_data('a05s05_hom', a05s05_hom)
+
+a05s06_hom = Data(0.05, 6e-02, 'hom')
+a05s06_hom.new((20.2, 20.2, 999), -35.0364, icm=2.3e-02, err=1.5e-02) #### 
+a05s06_hom.done=True
+datasets += pack_data('a05s06_hom', a05s06_hom)
 ########################################################################
 
 ''' alpha = 0.10, sigma = 2.5e-03 '''
