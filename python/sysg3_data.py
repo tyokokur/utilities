@@ -244,6 +244,7 @@ a1s25_mic.new((16.2, 22.2, 36.2), -1.45885, icm=3.6e-03, err=4.6e-04)
 a1s25_mic.new((18.2, 25.2, 36.2), -1.45857, icm=5.1e-03, err=5.7e-04)
 a1s25_mic.new((18.2, 27.2, 36.2), -1.45769, icm=2.1e-03, err=2.5e-04)
 a1s25_mic.new((22.2, 25.2, 36.2), -1.45723, icm=3.2e-03, err=4.0e-03)
+a1s25_mic.done=True
 datasets += pack_data('a1s25_mic', a1s25_mic)
 
 a1s25_str = Data(0.10, 2.5e-03, 'str')
