@@ -231,6 +231,12 @@ a05s7_hom.new((20.2, 20.2, 36.2), -4.18226, icm=5.6e-06, err=3.0e-06)
 a05s7_hom.done = True
 datasets += pack_data('a05s7_hom', a05s7_hom)
 
+''' alpha = 0.05, hom '''
+a05s01_hom = Data(0.05, 1e-02, 'hom')
+a05s01_hom.new((20.2, 20.2, ), -5.99450, icm=6.0e-06, err=2.7e-06)
+a05s01_hom.done=True
+datasets += pack_data('a0s40_hom', a0s40_hom)
+
 ########################################################################
 
 ''' alpha = 0.10, sigma = 2.5e-03 '''
