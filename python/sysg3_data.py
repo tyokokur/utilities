@@ -454,7 +454,7 @@ a2s15_mic.new((18.2, 22.4, 64.2), -8.44011, icm=8.4e-03, err=1.5e-03)
 a2s15_mic.new((20.2, 18.2, 64.2), -8.43971, icm=3.3e-04, err=9.3e-04)
 a2s15_mic.new((20.2, 20.2, 64.2), -8.43841, icm=3.5e-02, err=3.9e-03)
 a2s15_mic.new((24.2, 24.2, 64.2), -8.43855, icm=1.7e-02, err=3.1e-03)
-a2s15_mic.done = False
+a2s15_mic.done = True
 a2s15_mic.new((18.2, 16.2, 64.2), -8.43952, icm=2.4e-04, err=8.4e-04)
 a2s15_mic.new((14.6, 16.2, 64.2), -8.43935, icm=1.5e-02, err=2.2e-03)
 datasets += pack_data('a2s15_mic', a2s15_mic)
