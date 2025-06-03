@@ -439,6 +439,7 @@ a2s10_str.new((14.2, 20.2, 54.2), -5.63368, icm=6.8e-02, err=2.7e-03)
 a2s10_str.new((16.2, 20.2, 36.2), -5.63275, icm=1.6e-02, err=2.3e-03)
 a2s10_str.new((18.2, 20.2, 36.2), -5.63252, icm=2.1e-02, err=2.4e-03)
 a2s10_str.new((17.2, 16.2, 54.2), -5.63277, icm=1.1e-02, err=1.6e-03)
+a2s10_str.done=True
 datasets += pack_data('a2s10_str', a2s10_str)
 
 ''' alpha = 0.20, sigma = 0.015 '''
