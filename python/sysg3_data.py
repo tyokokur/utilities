@@ -972,7 +972,7 @@ a3s2_cyl.new((15.2, 15.2, 64.2), -10.5025, icm=4.4e-02, err=2.4e-03)
 a3s2_cyl.done = True
 datasets += pack_data('a3s2_cyl', a3s2_cyl)
 
-a3s2_pn = Data(0.30, 0.020, 'str')
+a3s2_pn = Data(0.30, 0.020, 'cyl-str')
 a3s2_pn.new((10.2, 18.2, 72.2), -10.5098, icm=1.3e-02, err=3.1e-03)
 a3s2_pn.new((11.0, 18.2, 72.2), -10.5084, icm=1.7e-02, err=3.3e-03)
 a3s2_pn.new((12.2, 18.2, 72.2), -10.5076, icm=1.6e-02, err=3.2e-03)
@@ -1024,7 +1024,7 @@ a3s25_cyl.new((12.2, 12.2, 72.2), -13.0655, icm=9.3e-03, err=1.2e-03)
 a3s25_cyl.done=True
 datasets += pack_data('a3s25_cyl', a3s25_cyl)
 
-a3s25_pn = Data(0.30, 0.025, 'str')
+a3s25_pn = Data(0.30, 0.025, 'cyl-str')
 a3s25_pn.new((10.2, 18.2, 72.2), -13.0668, icm=9.7e-03, err=1.5e-03)
 a3s25_pn.new((11.0, 18.2, 72.2), -13.0672, icm=5.1e-03, err=4.6e-03)
 a3s25_pn.new((12.2, 18.2, 72.2), -13.0658, icm=1.7e-02, err=1.8e-03)
@@ -1070,7 +1070,7 @@ a3s3_cyl.new((15.2, 15.2, 70.2), -15.5907, icm=1.5e-02, err=3.7e-03)
 a3s3_cyl.done = True
 datasets += pack_data('a3s3_cyl', a3s3_cyl)
 
-a3s3_pn = Data(0.30, 0.030, 'str')
+a3s3_pn = Data(0.30, 0.030, 'cyl-str')
 a3s3_pn.new((12.2, 16.2, 70.2), -15.5953, icm=6.5e-03, err=1.4e-03)
 a3s3_pn.new((12.2, 18.2, 70.2), -15.5956, icm=6.7e-03, err=1.1e-03)
 a3s3_pn.done = True # Can min further
@@ -1112,7 +1112,7 @@ a3s325_cyl.new((15.2, 15.2, 70.2), -16.8372, icm=3.0e-02, err=5.5e-03)
 a3s325_cyl.done = True
 datasets += pack_data('a3s325_cyl', a3s325_cyl)
 
-a3s325_pn = Data(0.30, 0.0325, 'str')
+a3s325_pn = Data(0.30, 0.0325, 'cyl-str')
 a3s325_pn.new((12.2, 18.2, 80.2), -16.8494, icm=7.2e-03, err=9.8e-04) # n = 3
 # a3s325_pn.new((12.2, 18.2, 80.2), -16.8490, icm=5.5e-03, err=8.2e-04) # n = 2
 a3s325_pn.done=True # Can min further
@@ -1147,7 +1147,7 @@ a3s35_cyl.new((15.2, 15.2, 75.2), -18.0907, icm=9.8e-03, err=2.0e-03)
 a3s35_cyl.done = True
 datasets += pack_data('a3s35_cyl', a3s35_cyl)
 
-a3s35_pn  = Data(0.30, 0.035, 'str')
+a3s35_pn  = Data(0.30, 0.035, 'cyl-str')
 a3s35_pn.new((12.2, 20.2, 75.2), -18.0938, icm=1.0e-02, err=1.6e-03)
 a3s35_pn.new((14.6, 20.2, 75.2), -18.0920, icm=1.1e-02, err=1.6e-03)
 a3s35_pn.new((13.0, 20.2, 75.2), -18.0939, icm=7.0e-03, err=8.7e-04)
@@ -1183,7 +1183,7 @@ a3s4_cyl.new((14.6, 14.6, 86.6), -20.5559, icm=5.6e-03, err=8.0e-04)
 a3s4_cyl.done=True
 datasets += pack_data('a3s4_cyl', a3s4_cyl)
 
-a3s4_pn  = Data(0.30, 0.040, 'str')
+a3s4_pn  = Data(0.30, 0.040, 'cyl-str')
 a3s4_pn.new((10.2, 20.2, 86.6), -20.5585, icm=7.6e-03, err=9.6e-04)
 a3s4_pn.new((12.2, 18.2, 86.6), -20.5584, icm=7.6e-03, err=8.6e-04)
 a3s4_pn.new((12.2, 20.2, 86.6), -20.5581, icm=1.0e-02, err=9.0e-04)
@@ -1229,7 +1229,7 @@ a3s4_hom.done = True
 datasets += pack_data('a3s4_hom', a3s4_hom)
 
 ''' alpha = 0.30, sigma = 0.045 '''
-a3s45_pn  = Data(0.30, 0.045, 'str')
+a3s45_pn  = Data(0.30, 0.045, 'cyl-str')
 a3s45_pn.new((10.2, 18.2, 90.2), -22.9834, icm=7.3e-03, err=9.9e-04)
 a3s45_pn.new((10.2, 20.2, 90.2), -22.9833, icm=1.9e-02, err=1.2e-03)
 a3s45_pn.new((10.2, 24.2, 90.2), -22.9829, icm=2.8e-02, err=2.2e-03)
@@ -1269,7 +1269,7 @@ a3s45_hom.done=True
 datasets += pack_data('a3s45_hom', a3s45_hom)
 
 ''' alpha = 0.30, sigma = 0.050 '''
-a3s5_pn = Data(0.30, 0.050, 'str')
+a3s5_pn = Data(0.30, 0.050, 'cyl-str')
 a3s5_pn.new((10.2, 18.2, 96.2), -25.3636, icm=9.2e-03, err=7.5e-04)
 a3s5_pn.new((10.2, 20.2, 96.2), -25.3646, icm=8.9e-03, err=3.9e-04)
 a3s5_pn.new((10.2, 21.6, 96.2), -25.3646, icm=6.3e-03, err=1.3e-03)
@@ -1304,7 +1304,7 @@ a3s5_hom.done=True
 datasets += pack_data('a3s5_hom', a3s5_hom)
 
 ''' alpha = 0.30, sigma = 0.055 '''
-a3s55_pn  = Data(0.30, 0.055, 'str')
+a3s55_pn  = Data(0.30, 0.055, 'cyl-str')
 a3s55_pn.new(( 9.2, 20.2, 100.2), -27.6986, icm=1.2e-02, err=9.4e-04)
 a3s55_pn.new((10.2, 20.2, 100.2), -27.6992, icm=8.0e-03, err=6.2e-04)
 a3s55_pn.new((11.0, 20.2, 100.2), -27.6992, icm=8.6e-03, err=7.3e-04)
