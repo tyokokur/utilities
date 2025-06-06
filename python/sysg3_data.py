@@ -233,12 +233,12 @@ datasets += pack_data('a05s7_hom', a05s7_hom)
 
 ''' alpha = 0.05, hom '''
 a05s01_hom = Data(0.05, 1e-02, 'hom')
-a05s01_hom.new((20.2, 20.2, 999), -5.99450, icm=6.0e-06, err=3.7e-06)
+a05s01_hom.new((20.2, 20.2, 45.2), -5.99450, icm=6.0e-06, err=3.7e-06)
 a05s01_hom.done=True
 datasets += pack_data('a05s01_hom', a05s01_hom)
 
 a05s02_hom = Data(0.05, 2e-02, 'hom')
-a05s02_hom.new((20.2, 20.2, 999), -12.0109, icm=5.6e-06, err=3.9e-06)
+a05s02_hom.new((20.2, 20.2, 54.2), -12.0109, icm=5.6e-06, err=3.9e-06)
 a05s02_hom.done=True
 datasets += pack_data('a05s02_hom', a05s02_hom)
 
