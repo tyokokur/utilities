@@ -1274,7 +1274,7 @@ a3s5_pn.new((10.2, 18.2, 96.2), -25.3636, icm=9.2e-03, err=7.5e-04)
 a3s5_pn.new((10.2, 20.2, 96.2), -25.3646, icm=8.9e-03, err=3.9e-04)
 a3s5_pn.new((10.2, 21.6, 96.2), -25.3646, icm=6.3e-03, err=1.3e-03)
 a3s5_pn.new((11.0, 18.2, 96.2), -25.3646, icm=8.9e-03, err=4.6e-04)
-# a3s5_pn.new((11.0, 20.2, 96.2), -25.3647, icm=4.7e-03, err=3.0e-04)
+# a3s5_pn.new((11.0, 20.2, 96.2), -25.3647, icm=4.7e-03, err=3.0e-04) # show str as minF
 a3s5_pn.new((11.0, 21.6, 96.2), -25.3646, icm=4.6e-03, err=2.8e-04)
 a3s5_pn.new((12.2, 20.2, 96.2), -25.3638, icm=2.3e-02, err=2.2e-03)
 a3s5_pn.done=True
@@ -1296,6 +1296,7 @@ a3s5_mul.new((16.2, 20.2, 96.2), -25.3589, icm=2.0e-02, err=3.0e-03)
 a3s5_mul.new((18.2, 20.2, 96.2), -25.3606, icm=1.4e-02, err=3.1e-03)
 a3s5_mul.new((20.2, 20.2, 96.2), -25.3619, icm=1.2e-02, err=2.6e-03)
 a3s5_mul.multi=True
+a3s5_mul.done=True
 datasets += pack_data('a3s5_mul', a3s5_mul)
 
 a3s5_hom = Data(0.30, 0.050, 'hom')
@@ -1308,6 +1309,7 @@ a3s55_pn  = Data(0.30, 0.055, 'cyl-str')
 a3s55_pn.new(( 9.2, 20.2, 100.2), -27.6986, icm=1.2e-02, err=9.4e-04)
 a3s55_pn.new((10.2, 20.2, 100.2), -27.6992, icm=8.0e-03, err=6.2e-04)
 a3s55_pn.new((11.0, 20.2, 100.2), -27.6992, icm=8.6e-03, err=7.3e-04)
+a3s55_pn.done=True
 datasets += pack_data('a3s55_pn', a3s55_pn)
 
 a3s55_str = Data(0.30, 0.055, 'str')
@@ -1315,10 +1317,12 @@ a3s55_str.new(( 8.2, 20.2, 100.2), -27.6969, icm=4.7e-03, err=4.9e-04)
 a3s55_str.new(( 9.2, 20.2, 100.2), -27.6986, icm=6.8e-03, err=6.5e-04)
 a3s55_str.new((10.2, 20.2, 100.2), -27.6993, icm=2.1e-03, err=2.1e-04)
 a3s55_str.new((11.0, 20.2, 100.2), -27.6993, icm=3.3e-03, err=4.4e-04)
+a3s55_str.done=True
 datasets += pack_data('a3s55_str', a3s55_str)
 
 a3s55_hom = Data(0.30, 0.055, 'hom')
 a3s55_hom.new((20.2, 20.2, 100.2), -27.6917, icm=1.0e-03, err=3.3e-04)
+a3s55_hom.done=True
 datasets += pack_data('a3s55_hom', a3s55_hom)
 
 ########################################################################
