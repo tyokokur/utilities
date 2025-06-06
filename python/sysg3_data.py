@@ -394,15 +394,15 @@ a15s05_mic.new((17.2, 17.2, 54.2), -2.88599, icm=6.7e-03, err=5.5e-04) # hole
 datasets += pack_data('a15s05_mic', a15s05_mic)
 
 a15s05_str = Data(0.15, 0.005, 'str')
-# a15s05_str (15.2, 20.2, 54.2), Terran
+a15s05_str.new((15.2, 20.2, 54.2), -2.88596, icm=2.6e-03, err=5.5e-04)
 a15s05_str.new((17.2, 20.2, 54.2), -2.88602, icm=3.2e-03, err=5.2e-04)
-a15s05_str.new((20.2, 16.2, 54.2), -2.88574, icm=1.1e-02, err=1.5e-03) # (20.2, 20.2), Terran
+a15s05_str.new((20.2, 20.2, 54.2), -2.88601, icm=7.8e-03, err=1.1e-03) 
 datasets += pack_data('a15s05_str', a15s05_str)
 
-a15s05_str2 = Data(0.15, 0.005, 'str') # melted
-a15s05_str2.new((16.2, 20.2, 54.2), -2.88658, icm=1.4e-03, err=2.8e-04) # could be homo
-a15s05_str2.new((20.2, 20.2, 54.2), -2.88663, icm=1.7e-03, err=2.3e-04) # could be homo
-datasets += pack_data('a15s05_str2', a15s05_str2)
+# a15s05_str2 = Data(0.15, 0.005, 'str') # melted
+# a15s05_str2.new((16.2, 20.2, 54.2), -2.88658, icm=1.4e-03, err=2.8e-04) # could be homo
+# a15s05_str2.new((20.2, 20.2, 54.2), -2.88663, icm=1.7e-03, err=2.3e-04) # could be homo
+# datasets += pack_data('a15s05_str2', a15s05_str2)
 
 a15s05_hol = Data(0.15, 0.005, 'hol')
 a15s05_hol.new((25.2, 29.2, 54.2), -2.88651, icm=7.6e-03, err=8.5e-04)
