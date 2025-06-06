@@ -405,10 +405,10 @@ a15s05_str2.new((20.2, 20.2, 54.2), -2.88663, icm=1.7e-03, err=2.3e-04) # could 
 datasets += pack_data('a15s05_str2', a15s05_str2)
 
 a15s05_hol = Data(0.15, 0.005, 'hol')
-# a15s05_hol (25.2, 29.2, 54.2), Terran
+a15s05_hol.new((25.2, 29.2, 54.2), -2.88651, icm=7.6e-03, err=8.5e-04)
 a15s05_hol.new((27.2, 29.2, 54.2), -2.88653, icm=1.4e-02, err=1.7e-03)
-# a15s05_hol (28.2, 29.2, 54.2), Terran
-# a15s05_hol (27.2, 32.2, 54.2), Terran
+a15s05_hol.new((28.2, 29.2, 54.2), -2.88654, icm=8.0e-03, err=1.1e-03)
+a15s05_hol.new((27.2, 32.2, 54.2), -2.88654, icm=8.5e-03, err=1.0e-03)
 datasets += pack_data('a15s05_hol', a15s05_hol)
 
 ''' alpha = 0.15, sigma = 0.010 '''
@@ -442,9 +442,9 @@ a15s020_hom.done = True
 datasets += pack_data('a15s020_hom', a15s020_hom)
 
 a15s030_hom = Data(0.15, 0.030, 'hom')
-a15s030_hom.new((20.2, 20.2, 60.2), -11.5557, icm=2.7e-03, err=2.9e-04)
+a15s030_hom.new((20.2, 20.2, 60.2), -17.2503, icm=1.3e-04, err=2.2e-04)
 a15s030_hom.done = True
-datasets += pack_data('a15s030_hom', a15s020_hom)
+datasets += pack_data('a15s030_hom', a15s030_hom)
 
 ########################################################################
 
