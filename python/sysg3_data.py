@@ -435,9 +435,16 @@ a15s1_hom.new((22.2, 16.2, 54.2), -5.78573, icm=4.7e-03, err=7.6e-04)
 a15s1_hom.done = True
 datasets += pack_data('a15s1_hom', a15s1_hom)
 
-''' alpha = 0.15, sigma = 0.020 '''
+''' alpha = 0.15, hom '''
 a15s020_hom = Data(0.15, 0.020, 'hom')
-a15s020_hom.new((20.2, 20.2, 35.2), -11.5557, icm=5.6e-03, err=9.1e-04), # (20.2, 20.2, 60.2), Terran
+a15s020_hom.new((20.2, 20.2, 60.2), -11.5557, icm=2.7e-03, err=2.9e-04)
+a15s020_hom.done = True
+datasets += pack_data('a15s020_hom', a15s020_hom)
+
+a15s030_hom = Data(0.15, 0.030, 'hom')
+a15s030_hom.new((20.2, 20.2, 60.2), -11.5557, icm=2.7e-03, err=2.9e-04)
+a15s030_hom.done = True
+datasets += pack_data('a15s030_hom', a15s020_hom)
 
 ########################################################################
 
