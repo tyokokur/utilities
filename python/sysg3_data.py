@@ -682,22 +682,22 @@ a2s27_mul.done = True
 datasets += pack_data('a2s27_mul', a2s27_mul)
 
 a2s30_hom = Data(0.20, 3e-02, 'hom')
-a2s30_hom.new((20.2, 20.2, 72.2), -16.7495, icm=3.2e-06, err=1.1e-06)
+a2s30_hom.new((20.2, 20.2, 72.2), -16.7495, icm=3.4e-06, err=1.4e-06)
 a2s30_hom.done=True
 datasets += pack_data('a0s30_hom', a0s30_hom)
 
 a2s40_hom = Data(0.20, 4e-02, 'hom')
-a2s40_hom.new((20.2, 20.2, 58.2), -23.9433, icm=6.0e-06, err=2.7e-06)
+a2s40_hom.new((20.2, 20.2, 80.2), -22.1486, icm=7.7e-06, err=2.5e-06)
 a2s40_hom.done=True
 datasets += pack_data('a0s40_hom', a0s40_hom)
 
 a2s50_hom = Data(0.20, 5e-02, 'hom')
-a2s50_hom.new((20.2, 20.2, 70.2), -29.6789, icm=3.5e-06, err=2.2e-06)
+a2s50_hom.new((20.2, 20.2, 82.2), -27.3955, icm=1.1e-03, err=3.5e-04)
 a2s50_hom.done=True
 datasets += pack_data('a0s50_hom', a0s50_hom)
 
 a2s60_hom = Data(0.20, 6e-02, 'hom')
-a2s60_hom.new((20.2, 20.2, 75.2), -35.2462, icm=5.8e-06, err=3.6e-06)
+a2s60_hom.new((20.2, 20.2, 90.2), -32.4634, icm=2.3e-05, err=8.6e-06)
 a2s60_hom.done=True
 datasets += pack_data('a0s60_hom', a0s60_hom)
 
