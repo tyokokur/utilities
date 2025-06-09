@@ -754,6 +754,19 @@ datasets += pack_data('a225s3_hom', a225s3_hom)
 
 ########################################################################
 
+''' alpha = 0.25, sigma = 0.010 '''
+a25s10_mic = Data(0.25, 0.010, 'mic')
+a25s10_mic.new((13.0, 15.2, 54.2), -5.47761, icm=2.1e-02, err=3.5e-03)
+datasets += pack_data('a25s10_mic', a25s10_mic)
+
+a25s10_cyl = Data(0.25, 0.010, 'cyl')
+a25s10_cyl.new((11.0, 11.0, 54.2), -5.47911, icm=1.9e-02, err=2.5e-03)
+datasets += pack_data('a25s10_cyl', a25s10_cyl)
+
+a25s10_str = Data(0.25, 0.010, 'str')
+a25s10_str.new((11.0, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
+datasets += pack_data('a25s10_str', a25s10_str)
+
 ''' alpha = 0.25, sigma = 0.015 '''
 a25s15_mic = Data(0.25, 0.015, 'mic')
 a25s15_mic.new((13.0, 15.2, 54.2), -8.18170, icm=1.8e-02, err=2.9e-03)
