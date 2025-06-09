@@ -1005,7 +1005,7 @@ datasets += pack_data('a25s05_hom', a25s05_hom)
 a25s06_hom = Data(0.25, 0.06, 'hom')
 a25s06_hom.new((20.2, 20.2, 96.2), -31.2736, icm=5.3e-05, err=1.6e-05)
 a25s06_hom.done = True
-datasets += pack_data('a25s05_hom', a25s05_hom)
+datasets += pack_data('a25s06_hom', a25s06_hom)
 
 ########################################################################
 
