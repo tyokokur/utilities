@@ -794,8 +794,14 @@ a25s10_str.new((11.0, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
 datasets += pack_data('a25s10_str', a25s10_str)
 
 ''' alpha = 0.25, sigma = 0.015 '''
+a25s15_mul = Data(0.25, 0.015, 'mic')
+a25s15_mul.new((13.0, 15.2, 54.2), -8.18170, icm=1.8e-02, err=2.9e-03)
+a25s15_mul.new((15.2, 16.2, 54.2), -8.18187, icm=1.9e-02, err=3.2e-03)
+a25s15_mul.multi = True
+datasets += pack_data('a25s15_mul', a25s15_mul)
+
 a25s15_mic = Data(0.25, 0.015, 'mic')
-a25s15_mic.new((13.0, 15.2, 54.2), -8.18170, icm=1.8e-02, err=2.9e-03)
+a25s15_mic.new((16.2, 18.2, 54.2), -8.17745, icm=3.6e-02, err=2.9e-03)
 a25s15_mic.new((15.2, 16.2, 54.2), -8.18187, icm=1.9e-02, err=3.2e-03)
 datasets += pack_data('a25s15_mic', a25s15_mic)
 
