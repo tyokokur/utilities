@@ -387,14 +387,14 @@ datasets += pack_data('a1s2_hom', a1s2_hom)
 
 ''' alpha = 0.15, sigma = 0.005 '''
 a15s05_mic = Data(0.15, 0.005, 'mic')
-a15s05_mic.new((10.2, 10.2, 54.2), -2.88236, icm=2.9e-02, err=3.3e-03)
-a15s05_mic.new((21.2, 10.2, 54.2), -2.88236, icm=2.9e-02, err=3.3e-03)
+# a15s05_mic.new((10.2, 10.2, 54.2), -2.88236, icm=2.9e-02, err=3.3e-03)
+a15s05_mic.new((21.2, 21.2, 54.2), -2.88508, icm=9.3e-03, err=1.3e-03)
+a15s05_mic.new((21.2, 24.2, 54.2), -2.88505, icm=1.3e-03, err=2.0e-03)
 # a15s05_mic.new((13.2, 13.2, 54.2), -2.88507, icm=1.3e-02, err=1.1e-03) # hole
 # a15s05_mic.new((14.2, 14.2, 54.2), -2.88543, icm=7.7e-03, err=8.1e-04) # hole
 # a15s05_mic.new((15.2, 15.2, 54.2), -2.88569, icm=5.1e-03, err=7.2e-04) # hole
 # a15s05_mic.new((16.2, 16.2, 54.2), -2.88586, icm=5.5e-03, err=6.0e-04) # hole
 # a15s05_mic.new((17.2, 17.2, 54.2), -2.88599, icm=6.7e-03, err=5.5e-04) # hole
-# Probably a15s05_hol
 datasets += pack_data('a15s05_mic', a15s05_mic)
 
 a15s05_str = Data(0.15, 0.005, 'str')
