@@ -788,9 +788,9 @@ datasets += pack_data('a225s3_hom', a225s3_hom)
 ########################################################################
 
 ''' alpha = 0.25, sigma = 0.010 '''
-a25s10_hol = Data(0.25, 0.010, 'hol')
-a25s10_hol.new((13.0, 15.2, 54.2), -5.47761, icm=2.1e-02, err=3.5e-03)
-datasets += pack_data('a25s10_hol', a25s10_hol)
+# a25s10_hol = Data(0.25, 0.010, 'hol')
+# a25s10_hol.new((13.0, 15.2, 54.2), -5.47761, icm=2.1e-02, err=3.5e-03)
+# datasets += pack_data('a25s10_hol', a25s10_hol)
 
 a25s10_mic = Data(0.25, 0.010, 'mic')
 # a25s10_mic.new((13.0, 15.2, 54.2), -5.47761, icm=2.1e-02, err=3.5e-03)
@@ -804,7 +804,9 @@ datasets += pack_data('a25s10_cyl', a25s10_cyl)
 
 a25s10_str = Data(0.25, 0.010, 'str')
 a25s10_str.new((11.0, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
-a25s10_str.new((12.2, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
+a25s10_str.new((12.2, 20.2, 54.2), -5.48457, icm=2.2e-03, err=6.5e-04)
+a25s10_str.new((13.0, 20.2, 54.2), -5.48447, icm=3.4e-03, err=1.1e-03)
+a25s10_str.done=True
 datasets += pack_data('a25s10_str', a25s10_str)
 
 ''' alpha = 0.25, sigma = 0.015 '''
