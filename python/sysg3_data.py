@@ -301,12 +301,13 @@ a1s5_pn.new((19.0, 21.2, 40.2), -2.93703, icm=6.0e-03, err=1.0e-03)
 a1s5_pn.new((19.0, 24.2, 40.2), -2.93699, icm=3.1e-04, err=8.8e-04)
 a1s5_pn.new((19.0, 27.2, 40.2), -2.93694, icm=1.4e-02, err=1.7e-03)
 a1s5_pn.new((21.2, 21.2, 40.2), -2.93724, icm=8.9e-03, err=1.1e-03)
-a1s5_pn.new((21.2, 24.2, 40.2), -2.93739, icm=7.5e-03, err=1.1e-03)
-a1s5_pn.new((24.2, 24.2, 40.2), -2.93742, icm=1.8e-02, err=2.4e-03)
-a1s5_pn.new((27.2, 24.2, 40.2), -2.93705, icm=1.5e-02, err=2.7e-03)
-a1s5_pn.done = False
-a1s5_pn.new((24.2, 27.2, 40.2), -2.93705, icm=1.5e-02, err=2.7e-03)
-a1s5_pn.new((24.2, 21.2, 40.2), -2.93739, icm=7.5e-03, err=1.1e-03)
+a1s5_pn.new((21.2, 24.2, 40.2), -2.93742, icm=5.7e-03, err=8.8e-04)
+a1s5_pn.new((24.2, 24.2, 40.2), -2.93747, icm=9.5e-03, err=1.4e-03)
+a1s5_pn.new((27.2, 24.2, 40.2), -2.93714, icm=1.2e-02, err=2.4e-03)
+a1s5_pn.new((27.2, 27.2, 40.2), -2.93735, icm=1.3e-02, err=2.3e-03)
+a1s5_pn.done = True
+a1s5_pn.new((24.2, 27.2, 40.2), -2.93714, icm=1.2e-02, err=2.4e-03)
+a1s5_pn.new((24.2, 21.2, 40.2), -2.93742, icm=5.7e-03, err=8.8e-04)
 a1s5_pn.new((27.2, 19.0, 40.2), -2.93694, icm=1.4e-02, err=1.7e-03)
 a1s5_pn.new((24.2, 19.0, 40.2), -2.93699, icm=3.1e-04, err=8.8e-04)
 a1s5_pn.new((21.2, 19.0, 40.2), -2.93703, icm=6.0e-03, err=1.0e-03)
@@ -391,22 +392,33 @@ datasets += pack_data('a1s2_hom', a1s2_hom)
 
 ########################################################################
 
+''' alpha = 0.15, sigma = 0.0025 '''
+a25s25_mic = Data(0.15, 0.0025, 'mic')
+a25s25_mic.new((10.2, 10.2, 54.2), -1.43329, icm=3.0e-02, err=3.2e-03)
+a25s25_mic.new((20.2, 20.2, 54.2), -1.43587, icm=2.1e-02, err=1.5e-03)
+a25s25_mic.new((25.2, 25.2, 54.2), -1.43543, icm=3.2e-02, err=2.1e-03)
+datasets += pack_data('a25s25_mic', a25s25_mic)
+
 ''' alpha = 0.15, sigma = 0.005 '''
 a15s05_mic = Data(0.15, 0.005, 'mic')
 # a15s05_mic.new((10.2, 10.2, 54.2), -2.88236, icm=2.9e-02, err=3.3e-03)
 a15s05_mic.new((21.2, 21.2, 54.2), -2.88508, icm=9.3e-03, err=1.3e-03)
 a15s05_mic.new((21.2, 24.2, 54.2), -2.88505, icm=1.3e-03, err=2.0e-03)
+# a15s05_mic.new((18.2, 18.2, 54.2), -2.88600, icm=5.7e-03, err=8.7e-04) # hole
+# a15s05_mic.new((15.2, 15.2, 54.2), -2.88643, icm=4.3e-03, err=6.2e-04) # hom
 # a15s05_mic.new((13.2, 13.2, 54.2), -2.88507, icm=1.3e-02, err=1.1e-03) # hole
 # a15s05_mic.new((14.2, 14.2, 54.2), -2.88543, icm=7.7e-03, err=8.1e-04) # hole
 # a15s05_mic.new((15.2, 15.2, 54.2), -2.88569, icm=5.1e-03, err=7.2e-04) # hole
 # a15s05_mic.new((16.2, 16.2, 54.2), -2.88586, icm=5.5e-03, err=6.0e-04) # hole
 # a15s05_mic.new((17.2, 17.2, 54.2), -2.88599, icm=6.7e-03, err=5.5e-04) # hole
+a15s05_mic.done=True
 datasets += pack_data('a15s05_mic', a15s05_mic)
 
 a15s05_str = Data(0.15, 0.005, 'str')
 a15s05_str.new((15.2, 20.2, 54.2), -2.88596, icm=2.6e-03, err=5.5e-04)
 a15s05_str.new((17.2, 20.2, 54.2), -2.88602, icm=3.2e-03, err=5.2e-04)
 a15s05_str.new((20.2, 20.2, 54.2), -2.88601, icm=7.8e-03, err=1.1e-03) 
+a15s05_str.done=True # Could double check
 datasets += pack_data('a15s05_str', a15s05_str)
 
 # a15s05_str2 = Data(0.15, 0.005, 'str') # melted
@@ -460,14 +472,19 @@ datasets += pack_data('a15s030_hom', a15s030_hom)
 
 ''' alpha = 0.20, sigma = 0.005 '''
 a2s05_hol = Data(0.20, 0.005, 'mic')
-a2s05_hol.new((16.2, 16.2, 48.2), -2.89601, icm=6.1e-02, err=5.0e-03)
+a2s05_hol.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
+a2s05_hol.new((10.2, 10.2, 54.2), -2.82020, icm=2.0e-02, err=1.9e-03)
+a2s05_hol.new((12.2, 12.2, 48.2), -2.81948, icm=3.0e-02, err=4.3e-03)
+a2s05_hol.new((16.2, 16.2, 48.2), -2.81601, icm=6.1e-02, err=5.0e-03)
 a2s05_hol.new((20.2, 20.2, 54.2), -2.81578, icm=3.9e-02, err=5.4e-03)
 a2s05_hol.new((24.2, 24.2, 54.2), -2.81520, icm=6.1e-02, err=7.0e-03)
-a2s05_hol.new((12.2, 12.2, 48.2), -2.81948, icm=3.0e-02, err=4.3e-03)
-a2s05_hol.new((10.2, 10.2, 54.2), -2.82020, icm=2.0e-02, err=1.9e-03)
-a2s05_hol.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
-a2s05_hol.done = True
+a2s05_hol.done = False
 datasets += pack_data('a2s05_hol', a2s05_hol)
+
+a2s05_str = Data(0.20, 0.005, 'str')
+a2s05_str.new((15.2, 20.2, 54.2), -2.82154, icm=2.7e-03, err=3.2e-04)
+a2s05_str.new((20.2, 20.2, 54.2), -2.82085, icm=2.1e-02, err=3.7e-03)
+datasets += pack_data('a2s05_str', a2s05_str)
 
 ''' alpha = 0.20, sigma = 0.010 '''
 a2s10_mic = Data(0.20, 0.010, 'mic')
@@ -787,19 +804,25 @@ datasets += pack_data('a225s3_hom', a225s3_hom)
 
 ########################################################################
 
+''' alpha = 0.25, sigma = 0.0025 '''
+a25s25e3_cyl = Data(0.25, 0.0025, 'cyl')
+a25s25e3_cyl.new((16.2, 18.2, 54.2), -1.38133, icm=3.0e-02, err=1.8e-03)
+datasets += pack_data('a25s25e3_cyl', a25s25e3_cyl)
+
 ''' alpha = 0.25, sigma = 0.010 '''
 # a25s10_hol = Data(0.25, 0.010, 'hol')
 # a25s10_hol.new((13.0, 15.2, 54.2), -5.47761, icm=2.1e-02, err=3.5e-03)
 # datasets += pack_data('a25s10_hol', a25s10_hol)
 
 a25s10_mic = Data(0.25, 0.010, 'mic')
-# a25s10_mic.new((13.0, 15.2, 54.2), -5.47761, icm=2.1e-02, err=3.5e-03)
+a25s10_mic.new((13.0, 13.0, 54.2), -5.47583, icm=3.3e-02, err=3.9e-03)
 datasets += pack_data('a25s10_mic', a25s10_mic)
 
 a25s10_cyl = Data(0.25, 0.010, 'cyl')
 a25s10_cyl.new((11.0, 11.0, 54.2), -5.47911, icm=1.9e-02, err=2.5e-03)
 a25s10_cyl.new((12.2, 12.2, 54.2), -5.48225, icm=9.0e-03, err=1.5e-03)
 a25s10_cyl.new((13.0, 13.0, 54.2), -5.48250, icm=1.3e-02, err=2.4e-03)
+a25s10_cyl.new((15.2, 15.2, 54.2), -5.48250, icm=7.4e-03, err=1.5e-03)
 datasets += pack_data('a25s10_cyl', a25s10_cyl)
 
 a25s10_str = Data(0.25, 0.010, 'str')
@@ -814,23 +837,36 @@ a25s15_mul = Data(0.25, 0.015, 'mic')
 a25s15_mul.new((13.0, 15.2, 54.2), -8.18170, icm=1.8e-02, err=2.9e-03)
 a25s15_mul.new((15.2, 16.2, 54.2), -8.18187, icm=1.9e-02, err=3.2e-03)
 a25s15_mul.multi = True
+a25s15_mul.done=True # Not likely
 datasets += pack_data('a25s15_mul', a25s15_mul)
 
 a25s15_mic = Data(0.25, 0.015, 'mic')
+a25s15_mic.new((13.0, 13.0, 54.2), -8.17747, icm=1.1e-02, err=1.7e-03)
 a25s15_mic.new((16.2, 16.2, 54.2), -8.17785, icm=4.2e-02, err=5.7e-03)
 a25s15_mic.new((16.2, 18.2, 54.2), -8.17745, icm=3.6e-02, err=3.8e-03)
+a25s15_mic.new((18.2, 18.2, 54.2), -8.17810, icm=1.3e-02, err=2.2e-03)
+a25s15_mic.done=True # Not likely
 datasets += pack_data('a25s15_mic', a25s15_mic)
 
 a25s15_cyl = Data(0.25, 0.015, 'cyl')
 a25s15_cyl.new((11.0, 11.0, 54.2), -8.18284, icm=1.6e-02, err=2.8e-03)
 a25s15_cyl.new((13.0, 13.0, 54.2), -8.18465, icm=1.9e-02, err=3.3e-03)
 a25s15_cyl.new((15.2, 15.2, 54.2), -8.18512, icm=1.4e-02, err=3.0e-03)
+a25s15_cyl.new((16.4, 16.4, 54.2), -8.18516, icm=1.1e-02, err=1.9e-03)
+a25s15_cyl.new((18.2, 18.2, 54.2), -8.18298, icm=1.2e-02, err=2.3e-03)
+a25s15_cyl.done=True
 datasets += pack_data('a25s15_cyl', a25s15_cyl)
+
+a25s15_pn = Data(0.25, 0.015, 'cyl-str')
+a25s15_pn.new((10.2, 18.2, 64.2), -8.18600, icm=1.5e-02, err=1.6e-03)
+datasets += pack_data('a25s15_pn', a25s15_pn)
 
 a25s15_str = Data(0.25, 0.015, 'str')
 a25s15_str.new((11.0, 20.2, 54.2), -8.18709, icm=1.4e-02, err=3.9e-03)
-a25s15_str.new((12.2, 20.2, 54.2), -8.18755, icm=1.7e-02, err=4.2e-03)
+a25s15_str.new((12.2, 20.2, 54.2), -8.18861, icm=5.8e-03, err=1.3e-03)
+a25s15_str.new((14.2, 20.2, 54.2), -8.18804, icm=6.9e-03, err=1.5e-03)
 a25s15_str.new((15.2, 20.2, 54.2), -8.18626, icm=7.3e-03, err=2.6e-03)
+a25s15_str.done=True
 datasets += pack_data('a25s15_str', a25s15_str)
 
 ''' alpha = 0.25, sigma = 0.020 '''
@@ -849,12 +885,17 @@ a25s20_cyl.new((13.0, 13.0, 64.2), -10.8748, icm=1.4e-02, err=2.7e-03)
 a25s20_cyl.done=True # Not likely
 datasets += pack_data('a25s20_cyl', a25s20_cyl)
 
-a25s20_pn = Data(0.25, 0.020, 'str')
-a25s20_pn.new((11.0, 20.2, 64.2), -10.8757, icm=1.1e-02, err=2.3e-03)
-a25s20_pn.new((12.2, 20.2, 64.2), -10.8766, icm=9.7e-03, err=2.1e-03)
-a25s20_pn.new((13.0, 20.2, 64.2), -10.8764, icm=1.6e-02, err=3.5e-03)
-a25s20_pn.done=True
+a25s20_pn = Data(0.25, 0.020, 'cyl-str')
+a25s20_pn.new((10.2, 18.2, 64.2), -10.8750, icm=3.1e-02, err=2.2e-03)
+a25s20_pn.new((12.2, 18.2, 64.2), -10.8767, icm=3.3e-02, err=2.5e-03)
 datasets += pack_data('a25s20_pn', a25s20_pn)
+
+a25s20_str = Data(0.25, 0.020, 'str')
+a25s20_str.new((11.0, 20.2, 64.2), -10.8757, icm=1.1e-02, err=2.3e-03)
+a25s20_str.new((12.2, 20.2, 64.2), -10.8766, icm=9.7e-03, err=2.1e-03)
+a25s20_str.new((13.0, 20.2, 64.2), -10.8764, icm=1.6e-02, err=3.5e-03)
+a25s20_str.done=True
+datasets += pack_data('a25s20_str', a25s20_str)
 
 ''' alpha = 0.25, sigma = 0.025 '''
 a25s25_mic = Data(0.25, 0.025, 'mic')
