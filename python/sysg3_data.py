@@ -439,9 +439,10 @@ datasets += pack_data('a15s05_hol', a15s05_hol)
 ''' alpha = 0.15, sigma = 0.010 '''
 a15s1_mic = Data(0.15, 0.010, 'mic')
 a15s1_mic.new((10.2, 10.2, 54.2), -5.78462, icm=2.5e-02, err=2.6e-03)
-a15s1_mic.new((12.2, 12.2, 54.2), -5.78556, icm=5.2e-03, err=6.4e-04) # Need to do much bigger boxes
+a15s1_mic.new((12.2, 12.2, 54.2), -5.78556, icm=5.2e-03, err=6.4e-04)
+a15s1_mic.new((21.2, 21.2, 54.2), -5.78561, icm=1.9e-02, err=1.7e-03)
+a15s1_mic.new((24.2, 24.2, 54.2), -5.78537, icm=2.1e-02, err=2.4e-04)
 # a15s1_mic.new((13.2, 13.2, 54.2), -5.78550, icm=9.8e-03, err=1.1e-03) # probably hom
-a15s1_mic.done=True
 datasets += pack_data('a15s1_mic', a15s1_mic)
 
 a15s1_str= Data(0.15, 0.010, 'str') #melted
