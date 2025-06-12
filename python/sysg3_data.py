@@ -483,6 +483,7 @@ datasets += pack_data('a2s05_hol', a2s05_hol)
 
 a2s05_str = Data(0.20, 0.005, 'str')
 a2s05_str.new((15.2, 20.2, 54.2), -2.82154, icm=2.7e-03, err=3.2e-04)
+a2s05_str.new((17.2, 20.2, 54.2), -2.82146, icm=6.0e-03, err=1.1e-03)
 a2s05_str.new((20.2, 20.2, 54.2), -2.82085, icm=2.1e-02, err=3.7e-03)
 datasets += pack_data('a2s05_str', a2s05_str)
 
