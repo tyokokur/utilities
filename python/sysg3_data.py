@@ -434,6 +434,7 @@ a15s05_hol.new((25.2, 29.2, 54.2), -2.88651, icm=7.6e-03, err=8.5e-04)
 a15s05_hol.new((27.2, 29.2, 54.2), -2.88653, icm=1.4e-02, err=1.7e-03)
 a15s05_hol.new((28.2, 29.2, 54.2), -2.88654, icm=8.0e-03, err=1.1e-03)
 a15s05_hol.new((27.2, 32.2, 54.2), -2.88654, icm=8.5e-03, err=1.0e-03)
+a15s05_hol.done=True # Can min further
 datasets += pack_data('a15s05_hol', a15s05_hol)
 
 ''' alpha = 0.15, sigma = 0.010 '''
