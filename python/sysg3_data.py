@@ -184,6 +184,7 @@ datasets += pack_data('a05s5_str', a05s5_str)
 
 a05s5_fus = Data(0.05, 5e-03, 'fus-str')
 a05s5_fus.new((12.2, 20.2, 36.2), -2.97319, icm=7.0e-03, err=1.8e-03)
+a05s5_fus.new((14.6, 20.2, 36.2), -2.97285, icm=1.5e-02, err=3.4e-03)
 datasets += pack_data('a05s5_fus', a05s5_fus)
 
 a05s5_hol = Data(0.05, 5e-03, 'hol')
