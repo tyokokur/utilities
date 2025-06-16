@@ -944,6 +944,7 @@ a25s25_cyl.done=True
 datasets += pack_data('a25s25_cyl', a25s25_cyl)
 
 a25s25_pn = Data(0.25, 0.025, 'cyl-str')
+a25s25_pn.new((11.0, 20.2, 70.2), -13.5456, icm=5.5e-03, err=5.6e-04)
 a25s25_pn.new((12.2, 20.2, 70.2), -13.5462, icm=1.1e-02, err=2.1e-03)
 a25s25_pn.new((13.0, 20.2, 70.2), -13.5454, icm=1.9e-02, err=3.2e-03)
 a25s25_pn.new((14.6, 20.2, 70.2), -13.5450, icm=2.2e-02, err=3.4e-03)
