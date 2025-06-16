@@ -349,6 +349,10 @@ a1s5_str.new((20.2, 20.2, 40.2), -2.93849, icm=8.5e-05, err=4.1e-04)
 a1s5_str.done = True
 datasets += pack_data('a1s5_str', a1s5_str)
 
+a1s5_fus = Data(0.10, 5e-03, 'fus-str')
+# not stable
+a1s5_fus.done = True
+
 a1s5_hom = Data(0.10, 5e-03, 'hom')
 a1s5_hom.new((10, 10, 35), -2.93780, icm=3.9e-04, err=7.6e-05)
 a1s5_hom.new((12, 12, 35), -2.93788, icm=9.4e-05, err=2.3e-05)
