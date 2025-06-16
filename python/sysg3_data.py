@@ -532,7 +532,7 @@ a2s10_mic.new((16.2, 21.2, 54.2), -5.63006, icm=2.7e-02, err=4.5e-03)
 a2s10_mic.new((16.2, 24.2, 36.2), -5.63104, icm=2.1e-02, err=2.9e-03) 
 datasets += pack_data('a2s10_mic', a2s10_mic)
 
-a2s10_str = Data(0.20, 0.010, 'str')
+a2s10_str = Data(0.20, 0.010, 'fus')
 a2s10_str.new((10.2, 20.2, 54.2), -5.63497, icm=7.8e-04, err=9.3e-05)
 a2s10_str.new((12.2, 20.2, 54.2), -5.63514, icm=1.7e-03, err=3.1e-04)
 a2s10_str.new((14.2, 20.2, 54.2), -5.63368, icm=6.8e-02, err=2.7e-03)
@@ -568,7 +568,7 @@ a2s15_cyl.new(( 7.4,  7.4, 64.2), -8.43919, icm=1.1e-02, err=1.6e-03)
 a2s15_cyl.done = True
 datasets += pack_data('a2s15_cyl', a2s15_cyl)
 
-a2s15_str = Data(0.20, 0.015, 'str')
+a2s15_str = Data(0.20, 0.015, 'fus')
 a2s15_str.new((21.8, 20.2, 64.2), -8.44076, icm=2.4e-03, err=3.8e-04)
 a2s15_str.new((25.2, 20.2, 64.2), -8.44081, icm=2.3e-03, err=3.4e-04)
 a2s15_str.new((27.2, 20.2, 64.2), -8.44073, icm=3.1e-03, err=4.4e-04)
@@ -576,7 +576,7 @@ a2s15_str.new((32.2, 20.2, 64.2), -8.43733, icm=1.7e-02, err=5.3e-03)
 a2s15_str.done=True
 datasets += pack_data('a2s15_str', a2s15_str)
 
-a2s15_mul = Data(0.20, 0.015, 'str')
+a2s15_mul = Data(0.20, 0.015, 'fus')
 a2s15_mul.new((10.2, 15.2, 64.2), -8.43398, icm=8.8e-03, err=1.7e-03)
 a2s15_mul.new((12.2, 15.2, 64.2), -8.43538, icm=9.2e-03, err=1.7e-03)
 a2s15_mul.new((13.0, 15.2, 64.2), -8.43620, icm=5.8e-03, err=1.2e-03)
@@ -599,7 +599,7 @@ a2s175_mic.new((20.2, 20.2, 64.2), -9.83739, icm=1.1e-03, err=9.6e-04)
 a2s175_mic.done=True
 datasets += pack_data('a2s175_mic', a2s175_mic)
 
-a2s175_str = Data(0.20, 0.0175, 'str')
+a2s175_str = Data(0.20, 0.0175, 'fus')
 a2s175_str.new((21.8, 20.2, 64.2), -9.83838, icm=4.5e-03, err=7.8e-04)
 a2s175_str.new((24.2, 20.2, 64.2), -9.83841, icm=5.6e-03, err=9.7e-04)
 a2s175_str.new((27.2, 20.2, 64.2), -9.83851, icm=4.9e-03, err=7.8e-04)
