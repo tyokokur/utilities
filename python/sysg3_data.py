@@ -634,7 +634,7 @@ datasets += pack_data('a2s2_mic', a2s2_mic)
 # a2s2_cyl.new(( 8.2,  7.4, 64.2), -11.2311, icm=1.6e-02, err=2.7e-03)
 # datasets += pack_data('a2s2_cyl', a2s2_cyl)
 
-a2s2_str = Data(0.20, 0.020, 'str')
+a2s2_str = Data(0.20, 0.020, 'fus')
 a2s2_str.new((18.2, 20.2, 64.2), -11.2313, icm=7.0e-03, err=1.6e-03)
 a2s2_str.new((20.2, 20.2, 64.2), -11.2314, icm=6.5e-03, err=1.4e-03)
 a2s2_str.new((24.2, 20.2, 64.2), -11.2317, icm=7.2e-03, err=1.5e-03)
