@@ -390,7 +390,7 @@ a1s75_hom.done = True
 datasets += pack_data('a1s75_hom', a1s75_hom)
 
 ''' alpha = 0.10, sigma = 1e-02 '''
-a1s1_str = Data(0.10, 1e-02, 'str')
+a1s1_str = Data(0.10, 1e-02, 'fus')
 a1s1_str.new((16.2, 10.2, 36.2), -5.90844, icm=1.5e-02, err=3.0e-03)
 a1s1_str.new((20.2, 14.2, 36.2), -5.90885, icm=1.7e-02, err=2.3e-03)
 a1s1_str.new((22.2, 20.2, 36.2), -5.90897, icm=1.7e-02, err=2.1e-03)
