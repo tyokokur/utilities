@@ -1188,6 +1188,14 @@ a25s325_hom.new((15.2, 15.2, 81.2), -17.4968, icm=2.0e-06, err=5.0e-07)
 a25s325_hom.done = True
 datasets += pack_data('a25s325_hom', a25s325_hom)
 
+''' alpha = 0.25, sigma = 0.035 '''
+a25s35_pn = Data(0.25, 0.035, 'cyl-str')
+a25s35_pn.new((12.2, 18.2, 81.2), -18.18025, icm=5.8e-03, err=9.2e-04)
+datasets += pack_data('a25s35_pn', a25s35_pn)
+
+a25s35_str = Data(0.25, 0.035, 'raised')
+a25s35_str.new((
+
 ''' alpha = 0.25, hom '''
 a25s05_hom = Data(0.25, 0.05, 'hom')
 a25s05_hom.new((20.2, 20.2, 84.2), -26.4185, icm=7.9e-06, err=2.7e-06)
