@@ -564,6 +564,7 @@ a2s05_str.done=True
 datasets += pack_data('a2s05_str', a2s05_str)
 
 a2s05_hol = Data(0.20, 0.005, 'hol')
+a2s05_hol.new((27.2, 32.2, 40.2), -2.82212, icm=1.1e-02, err=1.4e-03)
 datasets += pack_data('a2s05_hol', a2s05_hol)
 
 a2s05_fus = Data(0.20, 0.005, 'fus')
