@@ -1106,6 +1106,7 @@ a25s3_pn.new((12.2, 20.2, 72.2), -16.1895, icm=5.9e-03, err=4.6e-04)
 a25s3_pn.new((13.0, 20.2, 72.2), -16.1896, icm=7.0e-03, err=6.7e-04)
 a25s3_pn.new((12.2, 21.8, 72.2), -16.1895, icm=3.6e-03, err=2.6e-04)
 a25s3_pn.new((13.0, 21.8, 72.2), -16.1896, icm=4.4e-03, err=3.2e-04)
+a25s3_pn.done=True # Can min further, so likely minF
 datasets += pack_data('a25s3_pn', a25s3_pn)
 
 a25s3_str  = Data(0.25, 0.030, 'raised')
