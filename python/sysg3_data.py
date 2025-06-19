@@ -19,7 +19,8 @@ pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, 
 ########################################################################
 
 ''' alpha = 0.00, sigma = 3e-03 '''
-a0s3_mic = Data(0.00, 3e-03, 'mic')
+# a0s3_mic = Data(0.00, 3e-03, 'mic')
+a0s3_mic = Data(0.00, 2.5e-03, 'mic')
 a0s3_mic.new((16, 27.6, 15)  , -1.77937, icm=1.9e-04, err=8.3e-04)
 a0s3_mic.new((20, 27.6, 15)  , -1.77956, icm=2.6e-03, err=5.9e-04) 
 a0s3_mic.new((20, 32, 15)    , -1.77930, icm=7.4e-03, err=1.7e-03) 
@@ -143,7 +144,8 @@ datasets += pack_data('a0s60_hom', a0s60_hom)
 ########################################################################
 
 ''' alpha = 0.05, sigma = 3e-03 '''
-a05s3_mic = Data(0.05, 3e-03, 'mic')
+# a05s3_mic = Data(0.05, 3e-03, 'mic')
+a05s3_mic = Data(0.05, 2.5e-03, 'mic')
 a05s3_mic.new((18.2, 25.2, 36.2), -1.77283, icm=6.1e-04, err=1.1e-04)
 a05s3_mic.new((16.2, 27.2, 36.2), -1.77262, icm=7.2e-03, err=1.0e-03)
 a05s3_mic.new((20.2, 36.2, 36.2), -1.77111, icm=4.6e-02, err=3.5e-03)
