@@ -1107,7 +1107,7 @@ a25s3_str  = Data(0.25, 0.030, 'raised')
 # a25s3_str.new((12.2, 15.2, 72.2), -16.1887, icm=5.5e-03, err=1.1e-03) # Could be cyl-str
 # a25s3_str.new((13.0, 15.2, 72.2), -16.1892, icm=1.8e-03, err=3.8e-04) # Could be cyl-str
 # a25s3_str.new((12.2, 16.2, 72.2), -16.1892, icm=1.6e-03, err=2.0e-04) # Could be cyl-str
-a25s3_str.new((13.0, 20.2, 72.2), -16.1894, icm=5.0e-03, err=9.7e-04)
+a25s3_str.new((13.0, 20.2, 72.2), -16.1896, icm=5.0e-03, err=9.7e-04)
 a25s3_str.done=False
 datasets += pack_data('a25s3_str', a25s3_str)
 
