@@ -567,7 +567,7 @@ a2s05_str.done=True
 datasets += pack_data('a2s05_str', a2s05_str)
 
 a2s05_hol = Data(0.20, 0.005, 'hol')
-a2s05_hol.new((27.2, 32.2, 40.2), -2.82212, icm=1.1e-02, err=1.4e-03)
+a2s05_hol.new((27.2, 32.2, 40.2), -2.82217, icm=6.4e-03, err=7.4e-04)
 datasets += pack_data('a2s05_hol', a2s05_hol)
 
 a2s05_fus = Data(0.20, 0.005, 'fus')
@@ -575,6 +575,7 @@ a2s05_fus.new((10.2, 20.2, 40.2), -2.82173, icm=1.9e-03, err=2.6e-04)
 a2s05_fus.new((12.2, 20.2, 40.2), -2.82183, icm=2.6e-03, err=3.9e-04)
 a2s05_fus.new((14.6, 20.2, 40.2), -2.82196, icm=1.4e-03, err=2.4e-04)
 a2s05_fus.new((16.2, 20.2, 40.2), -2.82202, icm=1.4e-03, err=2.6e-04)
+a2s05_fus.new((18.2, 20.2, 40.2), -2.82208, icm=1.0e-03, err=1.6e-04)
 a2s05_fus.done=True # can min further
 datasets += pack_data('a2s05_fus', a2s05_fus)
 
