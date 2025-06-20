@@ -1371,7 +1371,6 @@ datasets += pack_data('a3s3_mul', a3s3_mul)
 a3s3_hom = Data(0.30, 0.030, 'hom')
 #Unstable
 a3s3_hom.done = True
-datasets += pack_data('a3s3_hom', a3s3_hom)
 
 ''' alpha = 0.30, sigma = 0.0325'''
 a3s325_cyl = Data(0.30, 0.0325, 'cyl')
