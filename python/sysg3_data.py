@@ -1483,7 +1483,7 @@ a3s4_mul.multi = True
 a3s4_mul.done=True
 datasets += pack_data('a3s4_mul', a3s4_mul)
 
-a3s4_hol = Data(0.30, 0.040, 'hol')
+a3s4_hol = Data(0.30, 0.040, 'mic-2')
 a3s4_hol.new((10.2, 10.2, 80.2), -20.5368, icm=1e-02, err=2e-03)
 a3s4_hol.new((12.2, 12.2, 80.2), -20.5377, icm=2e-02, err=3e-03)
 a3s4_hol.new((15.2, 15.2, 80.2), -20.5390, icm=2e-02, err=3e-03)
@@ -1516,7 +1516,7 @@ a3s45_str.new(( 6.2, 20.2, 90.2), -22.9819, icm=1.7e-03, err=1.6e-04)
 a3s45_str.done = True
 datasets += pack_data('a3s45_str', a3s45_str)
 
-a3s45_mul = Data(0.30, 0.045, 'str')
+a3s45_mul = Data(0.30, 0.045, 'str-2')
 a3s45_mul.new(( 8.2, 20.2, 86.6), -22.9780, icm=2.0e-03, err=4.9e-04)
 a3s45_mul.new(( 9.2, 20.2, 86.6), -22.9788, icm=7.3e-03, err=1.1e-03)
 a3s45_mul.new((10.2, 20.2, 86.6), -22.9784, icm=2.2e-04, err=1.1e-03)
@@ -1525,7 +1525,7 @@ a3s45_mul.multi=True
 a3s45_mul.done=True
 datasets += pack_data('a3s45_mul', a3s45_mul)
 
-a3s45_hol = Data(0.30, 0.045, 'hol')
+a3s45_hol = Data(0.30, 0.045, 'mic-2')
 a3s45_hol.new((15.2, 15.2, 86.6), -22.9649, icm=5.3e-02, err=4.3e-03)
 a3s45_hol.new((15.2, 18.2, 86.6), -22.9668, icm=4.5e-02, err=3.8e-03)
 a3s45_hol.new((18.2, 18.2, 90.2), -22.9692, icm=2.4e-02, err=2.7e-03)
@@ -1558,7 +1558,7 @@ a3s5_str.new((13.0, 20.2, 96.2), -25.3635, icm=1.0e-02, err=1.3e-03)
 a3s5_str.done = True
 datasets += pack_data('a3s5_str', a3s5_str)
 
-a3s5_mul = Data(0.30, 0.050, 'mul')
+a3s5_mul = Data(0.30, 0.050, 'str-2')
 # a3s5_mul.new(( 8.2, 20.2, 96.2), -25.3569, icm=1.1e-02, err=2.0e-03)
 a3s5_mul.new((10.2, 20.2, 96.2), -25.3566, icm=1.7e-02, err=2.3e-03)
 a3s5_mul.new((12.2, 20.2, 96.2), -25.3570, icm=1.7e-02, err=2.5e-03)
