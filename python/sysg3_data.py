@@ -1212,7 +1212,7 @@ datasets += pack_data('a25s325_hom', a25s325_hom)
 
 ''' alpha = 0.25, sigma = 0.035 '''
 a25s35_pn = Data(0.25, 0.035, 'cyl-str')
-a25s35_pn.new((12.2, 18.2, 81.2), -18.18025, icm=5.8e-03, err=9.2e-04)
+a25s35_pn.new((12.2, 18.2, 81.2), -18.8025, icm=5.8e-03, err=9.2e-04)
 datasets += pack_data('a25s35_pn', a25s35_pn)
 
 a25s35_str = Data(0.25, 0.035, 'raised')
