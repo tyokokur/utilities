@@ -1395,11 +1395,11 @@ a3s325_str.new((18.2, 15.2, 70.2), -16.8409, icm=1.5e-02, err=4.0e-03)
 a3s325_str.done = True
 datasets += pack_data('a3s325_str', a3s325_str)
 
-a3s325_vor = Data(0.30, 0.0325, 'hom-2')
-a3s325_vor.new((10.2, 10.2, 70.2), -16.8312, icm=8e-03, err=1e-03)
-a3s325_vor.multi = True
-a3s325_vor.done = True # Probably
-datasets += pack_data('a3s325_vor', a3s325_vor)
+# a3s325_vor = Data(0.30, 0.0325, 'hom-2')
+# a3s325_vor.new((10.2, 10.2, 70.2), -16.8312, icm=8e-03, err=1e-03)
+# a3s325_vor.multi = True
+# a3s325_vor.done = True # Probably
+# datasets += pack_data('a3s325_vor', a3s325_vor)
 
 a3s325_mul = Data(0.30, 0.0325, 'hom-2')
 a3s325_mul.new((15.2, 15.2, 70.2), -16.8268, icm=4.5e-03, err=1.6e-03)
