@@ -404,7 +404,6 @@ datasets += pack_data('a1s1_str', a1s1_str)
 a1s1_hol = Data(0.10, 1e-02, 'hol')
 # Unstable
 a1s1_hol.done = True 
-datasets += pack_data('a1s1_hol', a1s1_hol)
 
 a1s1_hom = Data(0.10, 1e-02, 'hom')
 a1s1_hom.new((20.2, 20.2, 36.2), -5.90938, icm=4.9e-06, err=2.9e-06)
