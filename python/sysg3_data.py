@@ -307,10 +307,12 @@ datasets += pack_data('a1s25_hol', a1s25_hol)
 ''' alpha = 0.10, sigma = 3.75e-03 '''
 a1s375_mic  = Data(0.10, 3.75e-03, 'mic')
 a1s375_mic.new((14.2, 20.2, 32.2), -2.19710, icm=2.7e-03, err=5.1e-04)
+a1s375_mic.new((18.2, 18.2, 32.2), -2.19730, icm=6.3e-03, err=9.8e-04)
 a1s375_mic.new((21.2, 21.2, 32.2), -2.19744, icm=2.0e-03, err=3.5e-04)
 datasets += pack_data('a1s375_mic', a1s375_mic)
 
 a1s375_str = Data(0.10, 3.75e-03, 'str')
+a1s375_str.new((14.6, 20.2, 32.2), -3219761, icm=3.3e-03, err=6.4e-04)
 a1s375_str.new((16.8, 20.2, 32.2), -2.19761, icm=3.3e-03, err=6.4e-04)
 a1s375_str.new((19.4, 20.2, 32.2), -2.19742, icm=1.2e-03, err=1.9e-04)
 datasets += pack_data('a1s375_str', a1s375_str)
