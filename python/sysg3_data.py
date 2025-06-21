@@ -312,13 +312,15 @@ a1s375_mic.new((21.2, 21.2, 32.2), -2.19744, icm=2.0e-03, err=3.5e-04)
 datasets += pack_data('a1s375_mic', a1s375_mic)
 
 a1s375_str = Data(0.10, 3.75e-03, 'str')
-a1s375_str.new((14.6, 20.2, 32.2), -3219761, icm=3.3e-03, err=6.4e-04)
+a1s375_str.new((14.6, 20.2, 32.2), -2.19763, icm=4.8e-03, err=8.0e-04)
 a1s375_str.new((16.8, 20.2, 32.2), -2.19761, icm=3.3e-03, err=6.4e-04)
 a1s375_str.new((19.4, 20.2, 32.2), -2.19742, icm=1.2e-03, err=1.9e-04)
 datasets += pack_data('a1s375_str', a1s375_str)
 
 a1s375_hol = Data(0.10, 3.75e-03, 'hol')
+a1s375_hol.new((24.2, 27.2, 32.2), -2.19634, icm=1.2e-02, err=8.0e-04)
 a1s375_hol.new((27.2, 32.2, 32.2), -2.19618, icm=2.0e-02, err=1.6e-03)
+a1s375_hol.done=True # Can min further, likely not minF
 datasets += pack_data('a1s375_hol', a1s375_hol)
 
 ''' alpha = 0.10, sigma = 5e-03 '''
