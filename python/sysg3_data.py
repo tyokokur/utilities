@@ -1254,6 +1254,13 @@ a25s4_hom.new((15.2, 15.2, 81.2), -21.3796, icm=3.8e-04, err=1.2e-04)
 a25s4_hom.done=True
 datasets += pack_data('a25s4_hom', a25s4_hom)
 
+''' alpha = 0.25, sigma = 0.045 '''
+a25s45_str = Data(0.25, 0.045, 'raised')
+a25s45_str.new((14.6, 15.2, 81.2), -23.9208, icm=5.3e-03, err=9.0e-04)
+datasets += pack_
+
+a25s45_hom = Data(0.25, 0.045, 'raised')
+
 ''' alpha = 0.25, hom '''
 a25s05_hom = Data(0.25, 0.05, 'hom')
 a25s05_hom.new((20.2, 20.2, 84.2), -26.4185, icm=7.9e-06, err=2.7e-06)
