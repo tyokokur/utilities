@@ -307,14 +307,17 @@ datasets += pack_data('a1s25_hol', a1s25_hol)
 ''' alpha = 0.10, sigma = 3.75e-03 '''
 a1s375_mic  = Data(0.10, 3.75e-03, 'mic')
 a1s375_mic.new((14.2, 20.2, 32.2), -2.19710, icm=2.7e-03, err=5.1e-04)
+a1s375_mic.new((16.2, 16.2, 32.2), -2.19705, icm=1.2e-02, err=1.7e-03)
 a1s375_mic.new((18.2, 18.2, 32.2), -2.19730, icm=6.3e-03, err=9.8e-04)
 a1s375_mic.new((21.2, 21.2, 32.2), -2.19744, icm=2.0e-03, err=3.5e-04)
 datasets += pack_data('a1s375_mic', a1s375_mic)
 
 a1s375_str = Data(0.10, 3.75e-03, 'str')
+a1s375_str.new((12.2, 20.2, 32.2), -2.19730, icm=5.0e-03, err=8.3e-04)
 a1s375_str.new((14.6, 20.2, 32.2), -2.19763, icm=4.8e-03, err=8.0e-04)
 a1s375_str.new((16.8, 20.2, 32.2), -2.19761, icm=3.3e-03, err=6.4e-04)
 a1s375_str.new((19.4, 20.2, 32.2), -2.19742, icm=1.2e-03, err=1.9e-04)
+a1s375_str.done=True
 datasets += pack_data('a1s375_str', a1s375_str)
 
 a1s375_hol = Data(0.10, 3.75e-03, 'hol')
@@ -929,15 +932,20 @@ datasets += pack_data('a25s25e3_cyl', a25s25e3_cyl)
 
 a25s10_mic = Data(0.25, 0.010, 'mic')
 a25s10_mic.new((13.0, 13.0, 54.2), -5.47583, icm=3.3e-02, err=3.9e-03)
+a25s10_mic.multi=True
 datasets += pack_data('a25s10_mic', a25s10_mic)
 
 a25s10_cyl = Data(0.25, 0.010, 'cyl')
 a25s10_cyl.new((11.0, 11.0, 54.2), -5.47911, icm=1.9e-02, err=2.5e-03)
 a25s10_cyl.new((12.2, 12.2, 54.2), -5.48225, icm=9.0e-03, err=1.5e-03)
-a25s10_cyl.new((13.0, 13.0, 54.2), -5.28308, icm=4.5e-03, err=7.8e-04)
+a25s10_cyl.new((13.0, 13.0, 54.2), -5.48308, icm=4.5e-03, err=7.8e-04)
 a25s10_cyl.new((15.2, 15.2, 54.2), -5.48250, icm=7.4e-03, err=1.5e-03)
 a25s10_cyl.new((16.4, 16.4, 54.2), -5.48172, icm=5.4e-03, err=1.0e-03)
 datasets += pack_data('a25s10_cyl', a25s10_cyl)
+
+a25s10_pn = Data(0.25, 0.010, 'cyl-str')
+a25s10_pn.new((999,999,999), -5.5) # TEMP
+datasets += pack_data('a25s10_pn', a25s10_pn)
 
 a25s10_str = Data(0.25, 0.010, 'raised')
 a25s10_str.new((11.0, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
@@ -1217,6 +1225,8 @@ datasets += pack_data('a25s325_hom', a25s325_hom)
 ''' alpha = 0.25, sigma = 0.035 '''
 a25s35_pn = Data(0.25, 0.035, 'cyl-str')
 a25s35_pn.new((12.2, 18.2, 81.2), -18.8025, icm=5.8e-03, err=9.2e-04)
+a25s35_pn.new((13.0, 18.2, 81.2), -18.8025, icm=2.6e-03, err=3.9e-04)
+a25s35_pn.done=True # Can min further
 datasets += pack_data('a25s35_pn', a25s35_pn)
 
 a25s35_str = Data(0.25, 0.035, 'raised')
