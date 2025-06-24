@@ -615,7 +615,10 @@ a2s10_mic.new((12.2, 12.2, 54.2), -5.63046, icm=9.7e-03, err=1.0e-03)
 a2s10_mic.new((14.2, 22.2, 54.2), -5.63179, icm=2.5e-02, err=2.5e-03)
 a2s10_mic.new((16.2, 21.2, 54.2), -5.63006, icm=2.7e-02, err=4.5e-03)
 a2s10_mic.new((16.2, 24.2, 36.2), -5.63104, icm=2.1e-02, err=2.9e-03) 
+a2s10_mic.done=True # can min further, minF unlikely
 datasets += pack_data('a2s10_mic', a2s10_mic)
+
+a2s10_hol = Data(0.20, 0.020, 'hol') #very likley unstable
 
 a2s10_str = Data(0.20, 0.010, 'fus')
 a2s10_str.new((10.2, 20.2, 54.2), -5.63497, icm=7.8e-04, err=9.3e-05)
