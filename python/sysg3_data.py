@@ -945,9 +945,10 @@ a25s10_cyl.new((15.2, 15.2, 54.2), -5.48250, icm=7.4e-03, err=1.5e-03)
 a25s10_cyl.new((16.4, 16.4, 54.2), -5.48172, icm=5.4e-03, err=1.0e-03)
 datasets += pack_data('a25s10_cyl', a25s10_cyl)
 
-a25s10_pn = Data(0.25, 0.010, 'cyl-str')
-a25s10_pn.new((999,999,999), -5.5) # TEMP
-datasets += pack_data('a25s10_pn', a25s10_pn)
+a25s10_cp = Data(0.25, 0.010, 'cyl-pn')
+a25s10_cp.new((16.4, 13.0, 54.2), -5.48427, icm=1.9e-02, err=1.3e-03)
+a25s10_cp.new((16.4, 13.0, 54.2), -5.48427, icm=1.9e-02, err=1.3e-03)
+datasets += pack_data('a25s10_cp', a25s10_cp)
 
 a25s10_str = Data(0.25, 0.010, 'raised')
 a25s10_str.new((11.0, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
