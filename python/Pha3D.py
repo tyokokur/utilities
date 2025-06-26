@@ -48,7 +48,6 @@ class Pha3D:
         
         # Initialize figure
         if which=='both': 
-            jSLICE, kSLICE = int(yslice / self.dy), int(zslice / self.dz)
             ax1 = fig.add_subplot(121)
             ax2 = fig.add_subplot(122)
             tjy.ticks([ax1, ax2])
@@ -57,7 +56,6 @@ class Pha3D:
             ax2 = fig.add_subplot(111)
             tjy.ticks()
         elif which=='xz': 
-            jSLICE = int(yslice / self.dy)
             ax1 = fig.add_subplot(111)
             tjy.ticks()
         else:
@@ -65,7 +63,7 @@ class Pha3D:
             return
  
         if self.nx > 1 and self.ny > 1:
-            if which=='xz' or which=='both': FIL = self._plotxz(ax1, jSLICE, zmax, kws, **bools)
+            if which=='xz' or which=='both': FIL = self._plotxz(ax1, ySLICE, zmax, kws, **bools)
             if which=='xy' or which=='both': FIL = self._plotxy(ax2, kSLICE, kws, **bools, xy_yticks=xy_yticks, xy_xticks=xy_xticks)
         else:
             print("\n\nERROR: Nx or Ny equal to one: Nx = {:d}, Ny = {:d}\n\n".format(self.nx, self.ny))
@@ -302,7 +300,7 @@ class Pha3D:
         if not silent: print('_readPha done, max = {}'.format(self.PHA_max))
         return 
     
-    def _plotxz(self, ax, jSLICE, zmax, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True):
+    def _plotxz(self, ax, ySLICE, zmax, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True):
         plt.sca(ax)
         nx = self.nx
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
