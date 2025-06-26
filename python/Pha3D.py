@@ -25,7 +25,7 @@ class Pha3D:
         
     def plot_proj(self, which='both', yslice=0, zslice=0, zmax=None, show_slice='both', levels=np.array([]), 
                   reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True, cmap=None, fig=None, wspace=1.75,
-                  show_cbar=True,cbar_ticks=[], xy_xticks=[], xy_yticks=[]):
+                  show_cbar=True, vmin=None, vmax=None, cbar_ticks=[], xy_xticks=[], xy_yticks=[]):
         '''
         which: {'both', 'xy', 'xz'}; yslice & zslice: float, in units of nm; zmax: float, in units of nm; show_slice: {'y', 'z', 'both'}, mark slice of projection on other heatmap; 
         reflect_box: bool, for visualizing half-space (around Lx, Ly) results;  ins_frame: bool, for extending periodic data for clean visualizing; 
@@ -38,7 +38,7 @@ class Pha3D:
         if not cmap  : cmap = plt.cm.jet
         if not fig   : fig  = plt.figure(figsize=(plt.rcParams['figure.figsize'][0]*wspace, plt.rcParams['figure.figsize'][1]))
         bools = {'reflect_box':reflect_box, 'reflect_over':reflect_over, 'show_box':show_box, 'ins_frame':ins_frame}
-        kws   = {'levels':levels, 'cmap':cmap} 
+        kws   = {'levels':levels, 'cmap':cmap, 'vmin':vmin, 'vmax':vmax} 
 
         if zmax > self.lz-self.dz: 
             print('\n\nERROR: zmax TOO LARGE: {:.2f} > {:.2f}\n\n'.format(zmax, self.lz-self.dz))
