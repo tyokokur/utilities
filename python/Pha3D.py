@@ -114,53 +114,16 @@ class Pha3D:
         
         if reflect_box: # Overwrite with full PHA
             vol, X, Y, Z = self._reflect_box(reflect_over)
-            # def _conv1(i1,j1,k1): return int((i1 * ny  +j1)*nz + k1)
-            # def _conv2(i2,j2,k2): return int((i2* 2*ny +j2)*nz + k2)
-            # PH2 = np.zeros(4*nx*ny*nz)
-            # X2 = np.zeros(4*nx*ny*nz)
-            # Y2 = np.zeros(4*nx*ny*nz)
-            # Z2 = np.zeros(4*nx*ny*nz)
-            # for i in range(nx): 
-            #     for j in range(ny):
-            #         for k in range(nz):
-            #             if 'e' in reflect_over: 
-            #                 I1 = 2*nx-1 - i
-            #                 I2 = i
-            #             else: 
-            #                 I1 = nx-1 - i
-            #                 I2 = i + nx-1
-            #             if 'n' in reflect_over: 
-            #                 J1 = 2*ny-1 - j
-            #                 J2 = j
-            #             else: 
-            #                 J1 = ny-1 - j
-            #                 J2 = j + ny-1
-            #             PH2[_conv2(I1,J1,k)] = vol[_conv1(i,j,k)]
-            #             PH2[_conv2(I2,J2,k)] = vol[_conv1(i,j,k)]
-            #             PH2[_conv2(I1,J2,k)] = vol[_conv1(i,j,k)]
-            #             PH2[_conv2(I2,J1,k)] = vol[_conv1(i,j,k)]
-            # for i in range(2*nx):
-            #     for j in range(2*ny):
-            #         for k in range(nz):
-            #             if 'e' in reflect_over: X2[_conv2(i,j,k)] = i*self.dx
-            #             else:                   X2[_conv2(i,j,k)] = i*self.dx - self.lx
-            #             if 'n' in reflect_over: Y2[_conv2(i,j,k)] = j*self.dy
-            #             else:                   Y2[_conv2(i,j,k)] = j*self.dy - self.ly
-            #             Z2[_conv2(i,j,k)] = k*self.dz
-            # vol = PH2
-            # X = X2
-            # Y = Y2
-            # Z = Z2
         
-            if extend_box: 
-                if extend_dim == "x" or extend_dim == "both" or extend_dim == "xy":
-                    copy1 = vol[:nx]
-                    copy2 = vol[nx:]
-                    PH3 = np.concatenate((copy2, vol, copy1))
-                    X3, Y3, Z3 = np.meshgrid(np.arange(X[0]-self.lx+self.dx, X[nx*ny*nz]+self.lx-self.dx, self.dx),
-                                             np.arange(Y[0], Y[nx*ny*nz], self.dy), np.arange(Z[0], Z[nx*ny*nz], self.dz))
-                    X, Y, Z = X3.flatten(), Y3.flatten(), Z3.flatten()
-                    vol = PH3
+            # if extend_box: 
+            #     if extend_dim == "x" or extend_dim == "both" or extend_dim == "xy":
+            #         copy1 = vol[:nx]
+            #         copy2 = vol[nx:]
+            #         PH3 = np.concatenate((copy2, vol, copy1))
+            #         X3, Y3, Z3 = np.meshgrid(np.arange(X[0]-self.lx+self.dx, X[nx*ny*nz]+self.lx-self.dx, self.dx),
+            #                                  np.arange(Y[0], Y[nx*ny*nz], self.dy), np.arange(Z[0], Z[nx*ny*nz], self.dz))
+            #         X, Y, Z = X3.flatten(), Y3.flatten(), Z3.flatten()
+            #         vol = PH3
                                      
             
         if zmax < self.lz-self.dz:
