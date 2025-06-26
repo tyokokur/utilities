@@ -308,15 +308,14 @@ class Pha3D:
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
         
         if reflect_box:  
-            nx = 2*self.nx
+            # nx = 2*self.nx
             PHA, X, Y, Z = self._reflect_box(reflect_over)
             PHA_3D, X_3D, Y_3D, Z_3D =  PHA.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         X.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         Y.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         Z.reshape(2*self.nx, 2*self.ny, self.nz) 
             
-        # XX, ZZ, PHA_Y = X_3D[:,jSLICE,:]+self.dx, Z_3D[:,jSLICE,:], PHA_3D[:,jSLICE,:]# '+'s for centering on Lx instead of Lx-dx
-        XX, ZZ, PHA_Y = X_3D[jSLICE,:,:]+self.dx, Z_3D[jSLICE,:,:], PHA_3D[jSLICE,:,:]# '+'s for centering on Lx instead of Lx-dx
+        XX, ZZ, PHA_Y = X_3D[:,jSLICE,:]+self.dx, Z_3D[:,jSLICE,:], PHA_3D[:,jSLICE,:]# '+'s for centering on Lx instead of Lx-dx
         filter_Z = ZZ < zmax+self.dz
         new_nz = filter_Z[0,:].sum()
         XX, ZZ, PHA_Y = XX[filter_Z].reshape(nx, new_nz), ZZ[filter_Z].reshape(nx, new_nz), PHA_Y[filter_Z].reshape(nx, new_nz)
