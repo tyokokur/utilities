@@ -62,8 +62,8 @@ class Pha3D:
             return
  
         if self.nx > 1 and self.ny > 1:
-            if which=='xz' or which=='both': FIL = self._plotxz(ax1, ySLICE, zmax, kws, **bools)
-            if which=='xy' or which=='both': FIL = self._plotxy(ax2, zSLICE, kws, **bools, xy_yticks=xy_yticks, xy_xticks=xy_xticks)
+            if which=='xz' or which=='both': FIL = self._plotxz(ax1, yslice, zmax, kws, **bools)
+            if which=='xy' or which=='both': FIL = self._plotxy(ax2, zslice, kws, **bools, xy_yticks=xy_yticks, xy_xticks=xy_xticks)
         else:
             print("\n\nERROR: Nx or Ny equal to one: Nx = {:d}, Ny = {:d}\n\n".format(self.nx, self.ny))
             return
@@ -299,7 +299,7 @@ class Pha3D:
         if not silent: print('_readPha done, max = {}'.format(self.PHA_max))
         return 
     
-    def _plotxz(self, ax, ySLICE, zmax, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True):
+    def _plotxz(self, ax, yslice, zmax, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True):
         plt.sca(ax)
         nx = self.nx
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
@@ -336,7 +336,7 @@ class Pha3D:
         # else:           plt.gca().set(xlim=(0,self.lx),   ylim=(0,zmax))
         return FIL
 
-    def _plotxy(self, ax, zSLICE, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True, xy_xticks=[], xy_yticks=[]):
+    def _plotxy(self, ax, zslice, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True, xy_xticks=[], xy_yticks=[]):
         plt.sca(ax)
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
         
