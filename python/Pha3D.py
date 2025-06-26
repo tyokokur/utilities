@@ -52,7 +52,6 @@ class Pha3D:
             ax2 = fig.add_subplot(122)
             tjy.ticks([ax1, ax2])
         elif which=='xy': 
-            kSLICE = int(zslice / self.dz)
             ax2 = fig.add_subplot(111)
             tjy.ticks()
         elif which=='xz': 
@@ -64,7 +63,7 @@ class Pha3D:
  
         if self.nx > 1 and self.ny > 1:
             if which=='xz' or which=='both': FIL = self._plotxz(ax1, ySLICE, zmax, kws, **bools)
-            if which=='xy' or which=='both': FIL = self._plotxy(ax2, kSLICE, kws, **bools, xy_yticks=xy_yticks, xy_xticks=xy_xticks)
+            if which=='xy' or which=='both': FIL = self._plotxy(ax2, zSLICE, kws, **bools, xy_yticks=xy_yticks, xy_xticks=xy_xticks)
         else:
             print("\n\nERROR: Nx or Ny equal to one: Nx = {:d}, Ny = {:d}\n\n".format(self.nx, self.ny))
             return
@@ -313,6 +312,7 @@ class Pha3D:
                                         Y.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         Z.reshape(2*self.nx, 2*self.ny, self.nz) 
             
+        jSLICE = int(yslice / self.dy)
         XX, ZZ, PHA_Y = X_3D[:,jSLICE,:]+self.dx, Z_3D[:,jSLICE,:], PHA_3D[:,jSLICE,:]# '+'s for centering on Lx instead of Lx-dx
         filter_Z = ZZ < zmax+self.dz
         new_nz = filter_Z[0,:].sum()
@@ -336,7 +336,7 @@ class Pha3D:
         # else:           plt.gca().set(xlim=(0,self.lx),   ylim=(0,zmax))
         return FIL
 
-    def _plotxy(self, ax, kSLICE, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True, xy_xticks=[], xy_yticks=[]):
+    def _plotxy(self, ax, zSLICE, kws, reflect_box=True, reflect_over='sw', show_box=True, ins_frame=True, xy_xticks=[], xy_yticks=[]):
         plt.sca(ax)
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
         
@@ -346,7 +346,7 @@ class Pha3D:
                                         X.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         Y.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         Z.reshape(2*self.nx, 2*self.ny, self.nz) 
-            
+        kSLICE = int(zslice / self.dz)
         XX, YY, PHA_Z = X_3D[:,:,kSLICE]+self.dx, Y_3D[:,:,kSLICE]+self.dy, PHA_3D[:,:,kSLICE] # '+'s for centering on Lx, Ly instead of Lx-dx, Ly-dy
 
         
