@@ -332,7 +332,7 @@ class Pha3D:
 #                 FRAX, FRAZ, FRAP = self._insFrame(self.lx, 2*self.lx, self.dx, 0, zmax, self.dz, PHA_Y, option='e')
 #                 FIL.append(plt.contourf(FRAX, FRAZ, FRAP, **kws))
 
-        plt.title(r'$y={:.2f}$'.format(jSLICE*self.dy)+r'$~\mathrm{nm}$', fontsize=22)
+        plt.title(r'$y={:.2f}$'.format(Y_3D[0,jSLICE,0])+r'$~\mathrm{nm}$', fontsize=22)
         plt.gca().set(xlabel='$x\ [\mathrm{nm}]$', ylabel='$z\ [\mathrm{nm}]$', aspect='equal')
         # if reflect_box: plt.gca().set(xlim=(0,2*self.lx), ylim=(0,zmax))
         # else:           plt.gca().set(xlim=(0,self.lx),   ylim=(0,zmax))
