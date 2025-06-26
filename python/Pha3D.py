@@ -315,7 +315,8 @@ class Pha3D:
                                         Y.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         Z.reshape(2*self.nx, 2*self.ny, self.nz) 
             
-        XX, ZZ, PHA_Y = X_3D[:,jSLICE,:]+self.dx, Z_3D[:,jSLICE,:], PHA_3D[:,jSLICE,:]# '+'s for centering on Lx instead of Lx-dx
+        # XX, ZZ, PHA_Y = X_3D[:,jSLICE,:]+self.dx, Z_3D[:,jSLICE,:], PHA_3D[:,jSLICE,:]# '+'s for centering on Lx instead of Lx-dx
+        XX, ZZ, PHA_Y = X_3D[jSLICE,:,:]+self.dx, Z_3D[jSLICE,:,:], PHA_3D[jSLICE,:,:]# '+'s for centering on Lx instead of Lx-dx
         filter_Z = ZZ < zmax+self.dz
         new_nz = filter_Z[0,:].sum()
         XX, ZZ, PHA_Y = XX[filter_Z].reshape(nx, new_nz), ZZ[filter_Z].reshape(nx, new_nz), PHA_Y[filter_Z].reshape(nx, new_nz)
