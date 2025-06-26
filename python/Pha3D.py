@@ -308,7 +308,7 @@ class Pha3D:
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
         
         if reflect_box:  
-            # nx = 2*self.nx
+            nx = 2*self.nx
             PHA, X, Y, Z = self._reflect_box(reflect_over)
             PHA_3D, X_3D, Y_3D, Z_3D =  PHA.reshape(2*self.nx, 2*self.ny, self.nz),  \
                                         X.reshape(2*self.nx, 2*self.ny, self.nz),  \
