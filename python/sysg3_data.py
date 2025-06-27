@@ -389,6 +389,11 @@ a1s5_hom.new((20.2, 20.2, 40.2), -2.93848, icm=3.9e-05, err=6.1e-06)
 a1s5_hom.done = True
 datasets += pack_data('a1s5_hom', a1s5_hom)
 
+''' alpha = 0.10, sigma = 6.75e-03 '''
+
+a1s675_hom = Data(0.10, 6.75e-03, 'hom')
+a1s675_hom.new((
+
 ''' alpha = 0.10, sigma = 7.5e-03 '''
 a1s75_hol = Data(0.10, 7.5e-03, 'hol')
 a1s75_hol.new((24.2, 24.2, 48.2), -4.42384, icm=4.5e-02, err=2.0e-03)
