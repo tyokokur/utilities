@@ -1159,6 +1159,9 @@ a25s20_cyl.new((13.0, 13.0, 64.2), -10.8748, icm=1.4e-02, err=2.7e-03)
 a25s20_cyl.done=True # Not likely
 datasets += pack_data('a25s20_cyl', a25s20_cyl)
 
+a25s20_cp = Data(0.25, 0.020, 'cyl-pn')
+a25s20_cp.new((24.
+
 a25s20_pn = Data(0.25, 0.020, 'cyl-str')
 a25s20_pn.new((10.2, 18.2, 64.2), -10.8750, icm=3.1e-02, err=2.2e-03)
 a25s20_pn.new((12.2, 16.2, 64.2), -10.8771, icm=1.3e-02, err=9.5e-04)
