@@ -380,6 +380,7 @@ a1s25_str.done=True
 datasets += pack_data('a1s25_str', a1s25_str)
 
 a1s25_hol = Data(0.10, 2.5e-03, 'hol')
+a1s25_hol.new((24.2, 27.2, 36.2), -1.45546, icm=3.1e-02, err=2.7e-03)
 a1s25_hol.new((27.2, 27.2, 36.2), -1.45357, icm=5.2e-02, err=5.4e-03)
 a1s25_hol.new((27.2, 29.2, 36.2), -1.45337, icm=5.7e-02, err=5.4e-03)
 a1s25_hol.new((29.2, 29.2, 36.2), -1.45274, icm=6.3e-02, err=5.6e-03)
