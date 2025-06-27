@@ -1,4 +1,4 @@
-import pandas as pd, numpy as np
+import pandas as pd, numpy as np, tjy_udf as tjy
 from Data import Data
 
 ''' chi = 1.25, N = 200, b = 1.0, v = 4.19, T = 293 '''
