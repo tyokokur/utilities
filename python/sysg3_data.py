@@ -16,9 +16,24 @@ class All:
 datasets = []
 pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, data.multi, name, len(data.data), data)]
 
-def plotF(const, const_val, morphs, ref_morph='cyl',
+morph_ms = {
+    'mic': {'marker':'^', 'c':'xkcd:red'  , 'ms':10}, 
+    'str': {'marker':'s', 'c':'xkcd:orange', 'ms':8 }, 
+    'fus': {'marker':'p', 'c':'xkcd:green', 'ms':10}, 
+    'hol': {'marker':'H', 'c':'xkcd:blue' , 'ms':10}, 
+    'cyl': {'marker':'d', 'c':'xkcd:purple', 'ms':10},
+    'cyl-pn': {'marker':'*', 'c':'xkcd:black', 'ms':12},
+    'cyl-str': {'marker':'*', 'c':'xkcd:pink', 'ms':12},
+    'raised': {'marker':'P', 'c':'xkcd:clay', 'ms':10},
+    'hom': {'marker':'X', 'c':'0.4' , 'ms':8},
+    
+    'mic-2': {'marker':'^', 'c':'xkcd:red','mfc':'w',  'ms':10}, 
+    'str-2': {'marker':'P', 'c':'xkcd:clay','mfc':'w', 'ms':10},
+    'hom-2': {'marker':'X', 'c':'0.4','mfc':'w', 'ms':8},
+}
+
+def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
           morph_xxs={}, morph_filter = {}, s_dict = {'cyl': 1e-04}, k_dict = {'cyl': 2}, show_raw=False):
-    global morph_ms
     from scipy.interpolate import UnivariateSpline
     import matplotlib.pyplot as plt
     if const == 'alpha': var = 'sigma'
