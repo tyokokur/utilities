@@ -498,9 +498,10 @@ a1s75_hol.done=True
 datasets += pack_data('a1s75_hol', a1s75_hol)
 
 a1s75_fus = Data(0.10, 7.5e-03, 'fus')
+a1s75_fus.new((18.2, 20.2, 48.2), -4.42464, icm=9.7e-04, err=2.0e-04)
 a1s75_fus.new((21.2, 20.2, 48.2), -4.42465, icm=2.0e-03, err=3.5e-04)
 a1s75_fus.new((24.2, 18.2, 48.2), -4.42461, icm=5.0e-03, err=6.4e-04)
-a1s75_fus.done=True # Can def min further, very likely minF
+a1s75_fus.done=True
 datasets += pack_data('a1s75_fus', a1s75_fus)
 
 a1s75_hom = Data(0.10, 7.5e-03, 'hom')
