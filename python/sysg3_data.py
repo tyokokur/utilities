@@ -1160,7 +1160,10 @@ a25s20_cyl.done=True # Not likely
 datasets += pack_data('a25s20_cyl', a25s20_cyl)
 
 a25s20_cp = Data(0.25, 0.020, 'cyl-pn')
-a25s20_cp.new((24.
+a25s20_cp.new((24.2, 13.0, 64.2), -10.8769, icm=2.0e-02, err=2.7e-03)
+a25s20_cp.new((24.2, 15.2, 64.2), -10.8755, icm=2.0e-02, err=3.0e-03)
+a25s20_cp.new((27.2, 13.0, 64.2), -10.8766, icm=2.3e-02, err=3.2e-03)
+datasets += pack_data('a25s20_cp', a25s20_cp)
 
 a25s20_pn = Data(0.25, 0.020, 'cyl-str')
 a25s20_pn.new((10.2, 18.2, 64.2), -10.8750, icm=3.1e-02, err=2.2e-03)
