@@ -16,6 +16,72 @@ class All:
 datasets = []
 pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, data.multi, name, len(data.data), data)]
 
+def plotF(const, const_val, morphs, ref_morph='cyl',
+          morph_xxs={}, morph_filter = {}, s_dict = {'cyl': 1e-04}, k_dict = {'cyl': 2}, show_raw=False):
+    from scipy.interpolate import UnivariateSpline
+    if const == 'alpha': var = 'sigma'
+    elif const=='sigma': var = 'alpha'
+
+    D = All.all[All.all.loc[:,const] == const_val]
+
+    d = D[D.loc[:,'morph']==ref_morph].reset_index()
+    y = [i.minF()/i.sigma for i in d.data]
+    x = d.loc[:,var]
+    
+    try: s = s_dict[ref_morph]
+    except KeyError: s = 1e-04
+    try: k = k_dict[ref_morph]
+    except KeyError: k = 3
+    try: ref = UnivariateSpline(x, y, s=s, k=k)
+    except KeyError: ref = UnivariateSpline(x, y, s=s, k=k)
+
+    maskit = lambda list_a, fil: [i for (i, v) in zip(list_a, fil) if v]
+    
+    fig = plt.subplots()
+    for m in morphs: 
+        d = D[D.loc[:,'morph']==m].reset_index()
+        # d = d[d.loc[:,'multi']==False].reset_index()
+        y = pd.Series([i.minF()/i.sigma for i in d.data])
+        x = d.loc[:,var]
+
+        try: mf = morph_filter[m]
+        except KeyError: mf = (0,1)
+        min_mask = x >= mf[0]
+        x = x[min_mask]
+        y = y[min_mask]
+        max_mask = x <= mf[1]
+        x = x[max_mask]
+        y = y[max_mask]
+
+        if show_raw: plt.plot(x, y-ref(x), **morph_ms[m], lw=0, zorder=2)
+
+        if m!=ref_morph: 
+            try: s = s_dict[m]
+            except KeyError: s = 1e-04
+            try: k = k_dict[m]
+            except KeyError: k = 3
+            try:
+                xxs = np.arange(morph_xxs[m][0]-1e-04, morph_xxs[m][1]+1e-04, 1e-04)
+            except KeyError:
+                xxs = np.arange(min(x)-1e-04, max(x)+1e-04, 1e-04)
+                
+            fit = UnivariateSpline(x, y-ref(x), s=s, k=k)
+            plt.plot(xxs, fit(xxs), morph_ms[m]['c'], zorder=3, label=m)
+        else:
+            plt.plot(x, y-ref(x), morph_ms[m]['c'], lw=2, zorder=2, label=m)
+
+    if const == 'alpha': 
+        xl = r'$\sigma$'
+    elif const=='sigma': 
+        xl = r'$\alpha$'
+        
+    plt.xlabel(xl)
+    plt.ylabel(r'$f_{ex}$ '+'$[{:s}]$'.format(ref_morph))
+    plt.legend(loc=(1.05,0.3))
+    tjy.ticks()
+    
+    return fig
+
 ########################################################################
 
 ''' alpha = 0.00, sigma = 3e-03 '''
