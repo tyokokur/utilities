@@ -1046,11 +1046,11 @@ datasets += pack_data('a25s25e3_cyl', a25s25e3_cyl)
 
 ''' alpha = 0.25, sigma = 0.005 '''
 a25s05_cyl = Data(0.25, 0.005, 'cyl')
-a25s05_cyl.new((15.2, 13.0, 54.2), -2.75772, icm=2.3e-03, err=3.4e-03)
+a25s05_cyl.new((15.2, 13.0, 54.2), -2.75772, icm=2.3e-02, err=3.4e-03)
 datasets += pack_data('a25s05_cyl', a25s05_cyl)
 
-a25s05_cp = Data(0.25, 0.005, 'cp')
-a25s05_cp.new((15.2, 13.0, 54.2), -2.75772, icm=2.3e-03, err=3.4e-03)
+a25s05_cp = Data(0.25, 0.005, 'cyl-pn')
+a25s05_cp.new((16.4, 12.2, 54.2), -2.75886, icm=1.1e-02, err=1.2e-03)
 datasets += pack_data('a25s05_cp', a25s05_cp)
 
 ''' alpha = 0.25, sigma = 0.010 '''
