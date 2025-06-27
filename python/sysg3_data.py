@@ -18,6 +18,7 @@ pack_data = lambda name, data: [(data.alpha, data.sigma, data.morph, data.done, 
 
 def plotF(const, const_val, morphs, ref_morph='cyl',
           morph_xxs={}, morph_filter = {}, s_dict = {'cyl': 1e-04}, k_dict = {'cyl': 2}, show_raw=False):
+    global morph_ms
     from scipy.interpolate import UnivariateSpline
     import matplotlib.pyplot as plt
     if const == 'alpha': var = 'sigma'
