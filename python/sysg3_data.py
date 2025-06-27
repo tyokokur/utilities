@@ -1077,14 +1077,15 @@ a25s10_cp.new((16.4, 11.0, 54.2), -5.48283, icm=2.3e-02, err=2.8e-03)
 a25s10_cp.new((16.4, 12.2, 54.2), -5.48444, icm=1.0e-02, err=9.8e-04)
 a25s10_cp.new((16.4, 13.0, 54.2), -5.48427, icm=1.9e-02, err=1.3e-03)
 a25s10_cp.new((16.4, 15.2, 54.2), -5.48299, icm=1.0e-02, err=1.1e-03)
+a25s10_cp.done=True
 datasets += pack_data('a25s10_cp', a25s10_cp)
 
-a25s10_str = Data(0.25, 0.010, 'raised')
-a25s10_str.new((11.0, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
-a25s10_str.new((12.2, 20.2, 54.2), -5.48457, icm=2.2e-03, err=6.5e-04)
-a25s10_str.new((13.0, 20.2, 54.2), -5.48447, icm=3.4e-03, err=1.1e-03)
-a25s10_str.done=True
-datasets += pack_data('a25s10_str', a25s10_str)
+# a25s10_str = Data(0.25, 0.010, 'raised')
+# a25s10_str.new((11.0, 20.2, 54.2), -5.48327, icm=1.2e-02, err=1.7e-03)
+# a25s10_str.new((12.2, 20.2, 54.2), -5.48457, icm=2.2e-03, err=6.5e-04)
+# a25s10_str.new((13.0, 20.2, 54.2), -5.48447, icm=3.4e-03, err=1.1e-03)
+# a25s10_str.done=True
+# datasets += pack_data('a25s10_str', a25s10_str)
 
 ''' alpha = 0.25, sigma = 0.015 '''
 a25s15_mul = Data(0.25, 0.015, 'mic')
