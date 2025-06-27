@@ -1054,13 +1054,10 @@ a25s05_cp.new((16.4, 12.2, 54.2), -2.75886, icm=1.1e-02, err=1.2e-03)
 datasets += pack_data('a25s05_cp', a25s05_cp)
 
 ''' alpha = 0.25, sigma = 0.010 '''
-# a25s10_hol = Data(0.25, 0.010, 'hol')
-# a25s10_hol.new((13.0, 15.2, 54.2), -5.47761, icm=2.1e-02, err=3.5e-03)
-# datasets += pack_data('a25s10_hol', a25s10_hol)
-
 a25s10_mic = Data(0.25, 0.010, 'mic')
 a25s10_mic.new((13.0, 13.0, 54.2), -5.47583, icm=3.3e-02, err=3.9e-03)
 a25s10_mic.multi=True
+a25s10_mic.done=True # very unlikely
 datasets += pack_data('a25s10_mic', a25s10_mic)
 
 a25s10_cyl = Data(0.25, 0.010, 'cyl')
@@ -1069,6 +1066,7 @@ a25s10_cyl.new((12.2, 12.2, 54.2), -5.48225, icm=9.0e-03, err=1.5e-03)
 a25s10_cyl.new((13.0, 13.0, 54.2), -5.48308, icm=4.5e-03, err=7.8e-04)
 a25s10_cyl.new((15.2, 15.2, 54.2), -5.48250, icm=7.4e-03, err=1.5e-03)
 a25s10_cyl.new((16.4, 16.4, 54.2), -5.48172, icm=5.4e-03, err=1.0e-03)
+a25s10_cyl.done=True
 datasets += pack_data('a25s10_cyl', a25s10_cyl)
 
 a25s10_cp = Data(0.25, 0.010, 'cyl-pn')
