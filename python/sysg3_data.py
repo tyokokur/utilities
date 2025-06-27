@@ -529,6 +529,12 @@ a1s1_hom.new((20.2, 20.2, 36.2), -5.90938, icm=4.9e-06, err=2.9e-06)
 a1s1_hom.done = True
 datasets += pack_data('a1s1_hom', a1s1_hom)
 
+''' alpha = 0.10, sigma = 1.25e-02 '''
+a1s125_hom = Data(0.10, 0.0125, 'hom')
+a1s125_hom.new((20.2, 20.2, 48.2), -7.39229, icm=2.0e-06, err=9.6e-07)
+a1s125_hom.done=True
+datasets += pack_data('a1s125_hom', a1s125_hom)
+
 ''' alpha = 0.10, hom '''
 a1s2_hom = Data(0.10, 2e-02, 'hom')
 a1s2_hom.new((20.2, 20.2, 9999), -9999)
