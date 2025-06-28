@@ -1051,7 +1051,7 @@ datasets += pack_data('a25s25e3_cyl', a25s25e3_cyl)
 
 ''' alpha = 0.25, sigma = 0.005 '''
 a25s05_cyl = Data(0.25, 0.005, 'cyl')
-a25s05_cyl.new((15.2, 13.0, 54.2), -2.75772, icm=2.3e-02, err=3.4e-03)
+a25s05_cyl.new((15.2, 13.0, 54.2), -2.75803, icm=8.2e-03, err=1.0e-03)
 datasets += pack_data('a25s05_cyl', a25s05_cyl)
 
 a25s05_cp = Data(0.25, 0.005, 'cyl-pn')
