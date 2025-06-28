@@ -1447,12 +1447,18 @@ a25s45_mul.new((15.2, 15.2, 81.2), -23.9000, icm=8.2e-02, err=3.2e-03)
 a25s45_mul.done=True
 datasets += pack_data('a25s45_mul', a25s45_mul)
 
-''' alpha = 0.25, hom '''
+''' alpha = 0.25, sigma = 0.050 '''
+a25s05_str = Data(0.25, 0.05, 'raised')
+a25s05_str.new((14.6, 15.2, 90.2), -26.4185, icm=4.1e-03, err=5.2e-04)
+a25s05_str.done = True
+datasets += pack_data('a25s05_hom', a25s05_hom)
+
 a25s05_hom = Data(0.25, 0.05, 'hom')
 a25s05_hom.new((20.2, 20.2, 84.2), -26.4185, icm=7.9e-06, err=2.7e-06)
 a25s05_hom.done = True
 datasets += pack_data('a25s05_hom', a25s05_hom)
 
+''' alpha = 0.25, hom '''
 a25s06_hom = Data(0.25, 0.06, 'hom')
 a25s06_hom.new((20.2, 20.2, 96.2), -31.2736, icm=5.3e-05, err=1.6e-05)
 a25s06_hom.done = True
