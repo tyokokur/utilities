@@ -485,10 +485,9 @@ a1s675_hol.new((27.2, 32.2, 36.2), -3.68109, icm=1.8e-02, err=8.8e-04)
 a1s675_hol.new((30.2, 32.2, 36.2), -3.68117, icm=1.8e-02, err=9.7e-04)
 datasets += pack_data('a1s675_hol', a1s675_hol)
 
-a1s675_hol = Data(0.10, 6.25e-03, 'hol')
-a1s675_hol.new((27.2, 32.2, 36.2), -3.68109, icm=1.8e-02, err=8.8e-04)
-a1s675_hol.new((30.2, 32.2, 36.2), -3.68117, icm=1.8e-02, err=9.7e-04)
-datasets += pack_data('a1s675_hol', a1s675_hol)
+a1s675_fus = Data(0.10, 6.25e-03, 'fus')
+a1s675_fus.new((18.2, 20.2, 40.2), -3.68133, icm=1.4e-02, err=1.9e-03)
+datasets += pack_data('a1s675_fus', a1s675_fus)
 
 a1s675_hom = Data(0.10, 6.25e-03, 'hom')
 a1s675_hom.new((20.2, 20.2, 40.2), -3.68177, icm=2.0e-05, err=2.2e-06)
