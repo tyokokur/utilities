@@ -1737,6 +1737,12 @@ a3s35_str.new((18.2, 15.2, 75.2), -18.0859, icm=1.7e-02, err=3.6e-03)
 a3s35_str.done = True
 datasets += pack_data('a3s35_str', a3s35_str)
 
+a3s35_mic = Data(0.30, 0.035, 'mic-2')
+a3s35_mic.new((18.2, 18.2, 75.2), -18.0782, icm=3.6e-02, err=4.4e-03)
+a3s35_mic.multi = True
+# a3s35_mic.done = True # Probably
+datasets += pack_data('a3s35_mic', a3s35_mic)
+
 a3s35_vor = Data(0.30, 0.035, 'hom-2')
 a3s35_vor.new((15.2, 15.2, 75.2), -18.0779, icm=4.0e-02, err=4.0e-03)
 a3s35_vor.multi = True
