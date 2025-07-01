@@ -468,6 +468,7 @@ a1s5_fus.new((16.2, 20.2, 40.2), -2.93843, icm=2.2e-03, err=3.8e-04)
 a1s5_fus.new((18.2, 20.2, 40.2), -2.93841, icm=7.6e-05, err=4.2e-04)
 a1s5_fus.new((20.2, 20.2, 40.2), -2.93847, icm=1.7e-03, err=3.6e-04)
 a1s5_fus.new((22.6, 20.2, 40.2), -2.93849, icm=7.1e-04, err=1.3e-04)
+a1s5_fus.done = True # can min slightly further
 datasets += pack_data('a1s5_fus', a1s5_fus)
 
 a1s5_hom = Data(0.10, 5e-03, 'hom')
@@ -490,6 +491,7 @@ a1s675_hol = Data(0.10, 6.25e-03, 'hol')
 a1s675_hol.new((27.2, 32.2, 36.2), -3.68109, icm=1.8e-02, err=8.8e-04)
 a1s675_hol.new((30.2, 32.2, 36.2), -3.68117, icm=1.8e-02, err=9.7e-04)
 a1s675_hol.new((30.2, 35.2, 36.2), -3.68121, icm=2.0e-02, err=8.8e-04)
+a1s675_hol.done=True # can min further
 datasets += pack_data('a1s675_hol', a1s675_hol)
 
 a1s675_fus = Data(0.10, 6.25e-03, 'fus')
