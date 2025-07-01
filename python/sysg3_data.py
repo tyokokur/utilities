@@ -1743,11 +1743,11 @@ a3s35_mic.multi = True
 # a3s35_mic.done = True # Probably
 datasets += pack_data('a3s35_mic', a3s35_mic)
 
-a3s35_vor = Data(0.30, 0.035, 'hom-2')
-a3s35_vor.new((15.2, 15.2, 75.2), -18.0779, icm=4.0e-02, err=4.0e-03)
-a3s35_vor.multi = True
-a3s35_vor.done = True # Probably
-datasets += pack_data('a3s35_vor', a3s35_vor)
+# a3s35_vor = Data(0.30, 0.035, 'hom-2')
+# a3s35_vor.new((15.2, 15.2, 75.2), -18.0779, icm=4.0e-02, err=4.0e-03)
+# a3s35_vor.multi = True
+# a3s35_vor.done = True # Probably
+# datasets += pack_data('a3s35_vor', a3s35_vor)
 
 a3s35_hom = Data(0.30, 0.035, 'hom')
 a3s35_hom.new((10.2, 10.2, 75.2), -18.0782, icm=7.4e-02, err=2.1e-05)
