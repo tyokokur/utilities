@@ -465,8 +465,9 @@ datasets += pack_data('a1s5_str', a1s5_str)
 
 a1s5_fus = Data(0.10, 5e-03, 'fus')
 a1s5_fus.new((16.2, 20.2, 40.2), -2.93843, icm=2.2e-03, err=3.8e-04)
-a1s5_fus.new((18.2, 20.2, 40.2), -2.93840, icm=3.9e-03, err=6.2e-04)
+a1s5_fus.new((18.2, 20.2, 40.2), -2.93841, icm=7.6e-05, err=4.2e-04)
 a1s5_fus.new((20.2, 20.2, 40.2), -2.93847, icm=1.7e-03, err=3.6e-04)
+a1s5_fus.new((22.6, 20.2, 40.2), -2.93849, icm=7.1e-04, err=1.3e-04)
 datasets += pack_data('a1s5_fus', a1s5_fus)
 
 a1s5_hom = Data(0.10, 5e-03, 'hom')
@@ -496,6 +497,7 @@ a1s675_fus.new((18.2, 20.2, 40.2), -3.68157, icm=7.1e-03, err=1.4e-03)
 a1s675_fus.new((21.2, 20.2, 40.2), -3.68176, icm=1.9e-03, err=3.9e-04)
 a1s675_fus.new((22.6, 20.2, 40.2), -3.68176, icm=4.7e-05, err=2.2e-04)
 a1s675_fus.new((24.2, 20.2, 40.2), -3.68166, icm=4.1e-03, err=7.6e-04)
+a1s675_fus.done=True
 datasets += pack_data('a1s675_fus', a1s675_fus)
 
 a1s675_hom = Data(0.10, 6.25e-03, 'hom')
