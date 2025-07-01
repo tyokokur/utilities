@@ -530,7 +530,7 @@ a1s75_fus.done=True
 datasets += pack_data('a1s75_fus', a1s75_fus)
 
 a1s75_hom = Data(0.10, 7.5e-03, 'hom')
-a1s75_hom.new((20.2, 20.2, 48.2), -4.42466, icm=3.2e-07, err=1.2e-07) # Actual F
+a1s75_hom.new((20.2, 20.2, 48.2), -4.42466, icm=3.2e-07, err=1.2e-07)
 a1s75_hom.done = True
 datasets += pack_data('a1s75_hom', a1s75_hom)
 
