@@ -1546,6 +1546,7 @@ a3s2_cp.new((24.2, 13.0, 72.2), -10.5054, icm=4.0e-02, err=3.0e-03)
 a3s2_cp.new((24.2, 15.2, 72.2), -10.5032, icm=2.7e-02, err=2.2e-03)
 a3s2_cp.new((27.2, 11.0, 72.2), -10.5108, icm=1.6e-02, err=2.2e-03)
 a3s2_cp.new((27.2, 13.0, 72.2), -10.5079, icm=2.0e-02, err=1.7e-03)
+a3s2_cp.done=True
 datasets += pack_data('a3s2_cp', a3s2_cp)
 
 a3s2_pn = Data(0.30, 0.020, 'cyl-str')
