@@ -1659,7 +1659,6 @@ datasets += pack_data('a3s3_cyl', a3s3_cyl)
 a3s3_pn = Data(0.30, 0.030, 'cyl-str')
 a3s3_pn.new((12.2, 16.2, 70.2), -15.5953, icm=6.5e-03, err=1.4e-03)
 a3s3_pn.new((12.2, 18.2, 70.2), -15.5956, icm=6.7e-03, err=1.1e-03)
-a3s3_pn.done = True # Can min further
 datasets += pack_data('a3s3_pn', a3s3_pn)
 
 a3s3_cp = Data(0.30, 0.030, 'cyl-pn')
