@@ -1662,6 +1662,10 @@ a3s3_pn.new((12.2, 18.2, 70.2), -15.5956, icm=6.7e-03, err=1.1e-03)
 a3s3_pn.done = True # Can min further
 datasets += pack_data('a3s3_pn', a3s3_pn)
 
+a3s3_cp = Data(0.30, 0.030, 'cyl-pn')
+a3s3_cp.new((30.2, 12.2, 70.2), -15.5965, icm=2.0e-02, err=2.8e-03)
+datasets += pack_data('a3s3_cp', a3s3_cp)
+
 a3s3_str = Data(0.30, 0.030, 'raised')
 a3s3_str.new(( 9.2, 15.2, 70.2), -15.5830, icm=1.3e-02, err=1.6e-03)
 a3s3_str.new((12.2, 15.2, 70.2), -15.5886, icm=3.3e-04, err=2.0e-03)
