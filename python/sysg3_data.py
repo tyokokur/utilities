@@ -1923,6 +1923,17 @@ a3s55_hom.new((20.2, 20.2, 100.2), -27.6917, icm=1.0e-03, err=3.3e-04)
 a3s55_hom.done=True
 datasets += pack_data('a3s55_hom', a3s55_hom)
 
+''' alpha = 0.30, sigma = 0.060 '''
+a3s6_str = Data(0.3, 0.060, 'raised')
+a3s6_str.new((11.0, 12.2, 100.2), -29.9840, icm=1.2e-02, err=1.6e-03)
+a3s6_str.done = True
+datasets += pack_data('a3s6_str', a3s6_str)
+
+a3s6_hom = Data(0.3, 0.060, 'hom')
+a3s6_hom.new((15.2, 15.2, 100.2), -29.9775, icm=2.7e-06, err=7.3e-07)
+a3s6_hom.done = True
+datasets += pack_data('a3s6_hom', a3s6_hom)
+
 ########################################################################
 
 ''' alpha = 0.325, sigma = 0.020 '''
