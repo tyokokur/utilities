@@ -89,7 +89,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
             fit = UnivariateSpline(x, y-ref(x), s=s, k=k)
             
             try: 
-                r = morph_xxs[m]
+                r = list(morph_xxs[m])
             except KeyError: 
                 r = [min(x), max(x)]
             
