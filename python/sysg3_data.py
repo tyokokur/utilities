@@ -64,7 +64,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
         try: mf = morph_filter[m]
         except KeyError: mf = (0,1)
         try: metas = meta_xxs[m]
-        except KeyError: metas = ((0, 1))
+        except KeyError: metas = [[0, 1]]
         
         
         min_mask = x >= mf[0]
