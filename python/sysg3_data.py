@@ -94,6 +94,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
                 r = (min(x), max(x))
             
             for i in metas: 
+                print(i)
                 if i[0] > r[0]: r[1] = i[0]
                 if i[1] < r[1]: r[0] = i[1]
                 mx = np.arange(i-1e-04, i+1e-04, 1e-04)
