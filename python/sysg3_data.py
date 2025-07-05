@@ -51,7 +51,6 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
     except KeyError: k = 3
     try: ref = UnivariateSpline(x, y, s=s, k=k)
     except KeyError: ref = UnivariateSpline(x, y, s=s, k=k)
-    try: 
 
     maskit = lambda list_a, fil: [i for (i, v) in zip(list_a, fil) if v]
     
@@ -64,6 +63,10 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
 
         try: mf = morph_filter[m]
         except KeyError: mf = (0,1)
+        try: metas = meta_xxs[m]
+        except KeyError: metas = ((0, 1))
+        
+        
         min_mask = x >= mf[0]
         x = x[min_mask]
         y = y[min_mask]
