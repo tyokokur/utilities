@@ -75,36 +75,33 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
         y = y[max_mask]
 
         if show_raw: plt.plot(x, y-ref(x), **morph_ms[m], lw=0, zorder=2)
+        
+        try: 
+            r = list(morph_xxs[m])
+        except KeyError: 
+            r = [min(x), max(x)]
+
+        for i in metas: 
+            print(i)
+            if i[0] > r[0]: r[1] = i[0]
+            if i[1] < r[1]: r[0] = i[1]
+
+            mx = np.arange(i[0]-1e-04, i[1]+1e-04, 1e-04)
+            plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
+
+        xxs = np.arange(r[0]-1e-04, r[1]-1e-04, 1e-04)
 
         if m!=ref_morph: 
             try: s = s_dict[m]
             except KeyError: s = 1e-04
             try: k = k_dict[m]
             except KeyError: k = 3
-            # try:
-            #     xxs = np.arange(morph_xxs[m][0]-1e-04, morph_xxs[m][1]+1e-04, 1e-04)
-            # except KeyError:
-            #     xxs = np.arange(min(x)-1e-04, max(x)+1e-04, 1e-04)
                 
             fit = UnivariateSpline(x, y-ref(x), s=s, k=k)
-            
-            try: 
-                r = list(morph_xxs[m])
-            except KeyError: 
-                r = [min(x), max(x)]
-            
-            for i in metas: 
-                print(i)
-                if i[0] > r[0]: r[1] = i[0]
-                if i[1] < r[1]: r[0] = i[1]
-                
-                mx = np.arange(i[0]-1e-04, i[1]+1e-04, 1e-04)
-                plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
-                
-            xxs = np.arange(r[0]-1e-04, r[1]-1e-04, 1e-04)
             plt.plot(xxs, fit(xxs), morph_ms[m]['c'], zorder=3, label=m)
+            
         else:
-            plt.plot(x, y-ref(x), morph_ms[m]['c'], lw=2, zorder=2, label=m)
+            plt.plot(xxs, y-ref(xxs), morph_ms[m]['c'], lw=2, zorder=2, label=m)
 
     if const == 'alpha': 
         xl = r'$\sigma$'
