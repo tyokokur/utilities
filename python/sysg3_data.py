@@ -33,7 +33,7 @@ morph_ms = {
 }
 
 def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
-          morph_xxs={}, morph_filter = {}, s_dict = {'cyl': 1e-04}, k_dict = {'cyl': 2}, show_raw=False):
+          morph_xxs={}, meta_xxs={}, morph_filter = {}, s_dict = {'cyl': 1e-04}, k_dict = {'cyl': 2}, show_raw=False):
     from scipy.interpolate import UnivariateSpline
     import matplotlib.pyplot as plt
     if const == 'alpha': var = 'sigma'
@@ -51,6 +51,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
     except KeyError: k = 3
     try: ref = UnivariateSpline(x, y, s=s, k=k)
     except KeyError: ref = UnivariateSpline(x, y, s=s, k=k)
+    try: 
 
     maskit = lambda list_a, fil: [i for (i, v) in zip(list_a, fil) if v]
     
