@@ -99,6 +99,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
                 mx = np.arange(i-1e-04, i+1e-04, 1e-04)
                 plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
                 
+            xxs = np.arange(r[0]-1e-04, r[1]-1e-04, 1e-04)
             plt.plot(xxs, fit(xxs), morph_ms[m]['c'], zorder=3, label=m)
         else:
             plt.plot(x, y-ref(x), morph_ms[m]['c'], lw=2, zorder=2, label=m)
