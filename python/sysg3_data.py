@@ -89,7 +89,6 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
             fit = UnivariateSpline(x, y-ref(x), s=s, k=k)
             
         for i in metas: 
-            print(i)
             if i[0] > r[0]: r[1] = i[0]
             if i[1] < r[1]: r[0] = i[1]
 
