@@ -101,7 +101,8 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
             plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
             
         else:
-            plt.plot(xxs, y-ref(xxs), morph_ms[m]['c'], lw=2, zorder=2, label=m)
+            plt.plot(xxs, np.zeros(len(xxs)), morph_ms[m]['c'], lw=2, zorder=2, label=m)
+            # plt.plot(x, y-ref(x), morph_ms[m]['c'], lw=2, zorder=2, label=m)
             plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
 
     if const == 'alpha': 
