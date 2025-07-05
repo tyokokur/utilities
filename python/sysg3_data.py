@@ -98,7 +98,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
                 if i[0] > r[0]: r[1] = i[0]
                 if i[1] < r[1]: r[0] = i[1]
                 
-                if r[1] < i[1]: i[1] = r[1]
+        
                 mx = np.arange(i[0]-1e-04, i[1]+1e-04, 1e-04)
                 plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
                 
