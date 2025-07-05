@@ -88,9 +88,16 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
                 
             fit = UnivariateSpline(x, y-ref(x), s=s, k=k)
             
+            try: 
+                r = morph_xxs[m]
+            e
+            
             for i in metas: 
                 if i[0] > morph_xxs[m][0]: morph_xxs[1] = i[0]
-                if i[1]
+                if i[1] < morph_xxs[m][1]: morph_xxs[0] = i[1]
+                mx = np.arange(*i, 1e-04)
+                plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
+                
             plt.plot(xxs, fit(xxs), morph_ms[m]['c'], zorder=3, label=m)
         else:
             plt.plot(x, y-ref(x), morph_ms[m]['c'], lw=2, zorder=2, label=m)
