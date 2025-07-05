@@ -81,16 +81,17 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
             except KeyError: s = 1e-04
             try: k = k_dict[m]
             except KeyError: k = 3
-            try:
-                xxs = np.arange(morph_xxs[m][0]-1e-04, morph_xxs[m][1]+1e-04, 1e-04)
-            except KeyError:
-                xxs = np.arange(min(x)-1e-04, max(x)+1e-04, 1e-04)
+            # try:
+            #     xxs = np.arange(morph_xxs[m][0]-1e-04, morph_xxs[m][1]+1e-04, 1e-04)
+            # except KeyError:
+            #     xxs = np.arange(min(x)-1e-04, max(x)+1e-04, 1e-04)
                 
             fit = UnivariateSpline(x, y-ref(x), s=s, k=k)
             
             try: 
-                r = morph_xxs[m]
-            e
+                r = (morph_xxs[m][0], morph_xxs[m][1])
+            except KeyError: 
+                r = (min(x), max(x))
             
             for i in metas: 
                 if i[0] > morph_xxs[m][0]: morph_xxs[1] = i[0]
