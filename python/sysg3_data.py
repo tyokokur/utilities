@@ -91,7 +91,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
             try: 
                 r = morph_xxs[m]
             except KeyError: 
-                r = (min(x), max(x))
+                r = [min(x), max(x)]
             
             for i in metas: 
                 print(i)
