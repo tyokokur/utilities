@@ -83,7 +83,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
 
         if m!=ref_morph: 
             try: s = s_dict[m]
-            except KeyError: s = 1e-04
+            except KeyError: s = 1e-05
             try: k = k_dict[m]
             except KeyError: k = 3
             fit = UnivariateSpline(x, y-ref(x), s=s, k=k)
@@ -92,11 +92,11 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
             if i[0] > r[0]: r[1] = i[0]
             if i[1] < r[1]: r[0] = i[1]
 
-            mx = np.arange(i[0]-1e-04, i[1]+1e-04, 1e-04)
+            mx = np.arange(i[0]-1e-05, i[1]+1e-05, 1e-05)
             if m!=ref_morph: plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
             else: plt.plot(mx, np.zeros(len(mx)), morph_ms[m]['c'], ls = ':')
 
-        xxs = np.arange(r[0]-1e-04, r[1]-1e-04, 1e-04)
+        xxs = np.arange(r[0]-1e-05, r[1]-1e-05, 1e-05)
             
         if m!=ref_morph: plt.plot(xxs, fit(xxs), morph_ms[m]['c'], zorder=3, label=m)
         else: plt.plot(xxs, np.zeros(len(xxs)), morph_ms[m]['c'], lw=2, zorder=2, label=m)
