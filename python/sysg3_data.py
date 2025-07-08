@@ -384,7 +384,8 @@ a1s25_mic = Data(0.10, 2.5e-03, 'mic')
 # a1s25_mic.new((18.2, 27.2, 36.2), -1.45769, icm=2.1e-03, err=2.5e-04)
 # a1s25_mic.new((22.2, 25.2, 36.2), -1.45723, icm=3.2e-03, err=4.0e-03)
 a1s25_mic.new((21.2, 18.2, 40.2), -1.45863)
-a1s25_mic.done=True
+a1s25_mic.new((30.2, 25.8, 40.2), -1.45883)
+# a1s25_mic.done=True
 datasets += pack_data('a1s25_mic', a1s25_mic)
 
 a1s25_str = Data(0.10, 2.5e-03, 'str')
@@ -1087,7 +1088,7 @@ datasets += pack_data('a225s3_hom', a225s3_hom)
 
 ''' alpha = 0.25, sigma = 0.0025 '''
 a25s25e3_cyl = Data(0.25, 0.0025, 'cyl')
-a25s25e3_cyl.new((21.25, 18.25, 48.2), -1.15863, icm=1.4e-02, err=1.3e-03)
+a25s25e3_cyl.new((21.2, 18.2, 48.2), -1.38178)
 datasets += pack_data('a25s25e3_cyl', a25s25e3_cyl)
 
 ''' alpha = 0.25, sigma = 0.005 '''
@@ -1524,6 +1525,7 @@ datasets += pack_data('a25s06_hom', a25s06_hom)
 ''' alpha = 0.30, sigma = 0.0025 '''
 a3s0025_cyl = Data(0.30, 0.0025, 'cyl')
 a3s0025_cyl.new((32.2, 32.2, 45.2), -1.35308, icm=3.8e-02, err=5.4e-03)
+a3s0025_cyl.new((21.2, 18.2, 54.2), -1.35320, icm=4.8e-02, err=2.0e-03)
 datasets += pack_data('a3s0025_cyl', a3s0025_cyl)
 
 ''' alpha = 0.30, sigma = 0.005 '''
@@ -1673,15 +1675,18 @@ a3s3_cyl.done = True
 datasets += pack_data('a3s3_cyl', a3s3_cyl)
 
 a3s3_pn = Data(0.30, 0.030, 'cyl-str')
+a3s3_pn.new((11.0, 20.2, 70.2), -15.5971, icm=5.0e-03, err=7.6e-04)
 a3s3_pn.new((12.2, 16.2, 70.2), -15.5953, icm=6.5e-03, err=1.4e-03)
 a3s3_pn.new((12.2, 18.2, 70.2), -15.5956, icm=6.7e-03, err=1.1e-03)
 a3s3_pn.new((12.2, 20.2, 70.2), -15.5962, icm=5.9e-03, err=6.8e-04)
 a3s3_pn.new((13.0, 18.2, 70.2), -15.5952, icm=6.1e-03, err=7.7e-04)
 a3s3_pn.new((13.0, 20.2, 70.2), -15.5950, icm=5.8e-03, err=9.2e-04)
+a3s3_pn.done=True
 datasets += pack_data('a3s3_pn', a3s3_pn)
 
 a3s3_cp = Data(0.30, 0.030, 'cyl-pn')
-a3s3_cp.new((30.2, 12.2, 70.2), -15.5965, icm=2.0e-02, err=2.8e-03)
+a3s3_cp.new((30.2, 12.2, 70.2), -15.5967, icm=1.0e-02, err=1.0e-03)
+a3s3_cp.done=True
 datasets += pack_data('a3s3_cp', a3s3_cp)
 
 a3s3_str = Data(0.30, 0.030, 'raised')
