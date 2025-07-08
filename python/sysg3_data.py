@@ -732,6 +732,10 @@ a2s025_str.new((15.2, 20.2, 48.2), -1.41032, icm=7.9e-04, err=1.1e-04)
 a2s025_str.new((17.0, 20.2, 48.2), -1.41007, icm=6.5e-03, err=7.4e-04)
 datasets += pack_data('a2s025_str', a2s025_str)
 
+a2s025_cyl = Data(0.20, 0.0025, 'cyl')
+a2s025_cyl.new((21.2, 18.2, 48.2), -1.40985, icm=6.0e-02, err=3.4e-03)
+datasets += pack_data('a2s025_cyl', a2s025_cyl)
+
 ''' alpha = 0.20, sigma = 0.005 '''
 a2s05_hol = Data(0.20, 0.005, 'mic')
 a2s05_hol.new(( 8.2,  8.2, 54.2), -2.81967, icm=1.4e-02, err=2.5e-03)
