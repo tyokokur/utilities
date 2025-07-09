@@ -763,7 +763,8 @@ a2s375_str.new((15.2, 20.2, 48.2), -2.11697, icm=1.2e-03, err=1.8e-04)
 datasets += pack_data('a2s375_str', a2s375_str)
 
 a2s375_hol = Data(0.20, 0.00375, 'hol')
-a2s375_hol.new((27.2, 32.2, 40.2), 
+a2s375_hol.new((27.2, 32.2, 40.2), -2.11699, icm=4.4e-03, err=7.1e-04)
+datasets += pack_data('a2s375_hol', a2s375_hol)
 
 ''' alpha = 0.20, sigma = 0.005 '''
 a2s05_hol = Data(0.20, 0.005, 'mic')
