@@ -621,7 +621,13 @@ a15s375_mic = Data(0.15, 0.00375, 'mic')
 a15s375_mic.new((21.2, 21.2, 40.2), -2.16108, icm=4.8e-03, err=6.8e-04)
 datasets += pack_data('a15s375_mic', a15s375_mic)
 
+a15s375_str = Data(0.15, 0.00375, 'str')
+a15s375_str.new((17.2, 20.2, 40.2), -2.16126, icm=1.5e-03, err=1.9e-04)
+datasets += pack_data('a15s375_str', a15s375_str)
 
+a15s375_hol = Data(0.15, 0.00375, 'hol')
+a15s375_hol.new((28.2, 29.2, 40.2), -2.16065, icm=1.2e-02, err=9.4e-03)
+datasets += pack_data('a15s375_hol', a15s375_hol)
 
 ''' alpha = 0.15, sigma = 0.005 '''
 a15s05_mic = Data(0.15, 0.005, 'mic')
