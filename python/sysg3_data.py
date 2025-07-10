@@ -74,7 +74,7 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
         x = x[max_mask]
         y = y[max_mask]
 
-        if show_raw: plt.plot(x, y-ref(x), **morph_ms[m], lw=0, zorder=2)
+        if show_raw: plt.plot(x, y-ref(x), **morph_ms[m], lw=0, zorder=5)
         
         try: 
             r = list(morph_xxs[m])
