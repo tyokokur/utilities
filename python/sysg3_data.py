@@ -1129,6 +1129,7 @@ datasets += pack_data('a225s3_hom', a225s3_hom)
 ''' alpha = 0.25, sigma = 0.0025 '''
 a25s25e3_cyl = Data(0.25, 0.0025, 'cyl')
 a25s25e3_cyl.new((21.2, 18.2, 48.2), -1.38217)
+a25s25e3_cyl.new((22.6, 19.8, 48.2), -1.38217)
 datasets += pack_data('a25s25e3_cyl', a25s25e3_cyl)
 
 a25s25e3_mic = Data(0.25, 0.0025, 'mic')
