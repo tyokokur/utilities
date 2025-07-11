@@ -1134,7 +1134,8 @@ a25s25e3_cyl.new((24.2, 21.2, 48.2), -1.38254, icm=1.8e-02, err=1.3e-03)
 datasets += pack_data('a25s25e3_cyl', a25s25e3_cyl)
 
 a25s25e3_mic = Data(0.25, 0.0025, 'mic')
-a25s25e3_mic.new((21.2, 18.2, 48.2), -1.38213)
+a25s25e3_mic.new((21.2, 18.2, 48.2), -1.38213, icm=9.0e-03, err=6.1e-04)
+a25s25e3_mic.new((22.6, 19.8, 48.2), -1.38218, icm=1.2e-02, err=8.0e-04)
 datasets += pack_data('a25s25e3_mic', a25s25e3_mic)
 
 ''' alpha = 0.25, sigma = 0.005 '''
