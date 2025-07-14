@@ -33,7 +33,8 @@ morph_ms = {
 }
 
 def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
-          morph_xxs={}, meta_xxs={}, morph_filter = {}, s_dict = {'cyl': 1e-04}, k_dict = {'cyl': 2}, show_raw=False):
+          morph_xxs={}, meta_xxs={}, morph_filter = {}, s_dict = {'cyl': 1e-04}, k_dict = {'cyl': 2}, show_raw=False, 
+          ls_meta=':'):
     from scipy.interpolate import UnivariateSpline
     import matplotlib.pyplot as plt
     if const == 'alpha': var = 'sigma'
@@ -93,8 +94,8 @@ def plotF(const, const_val, morphs, ref_morph='cyl', morph_ms=morph_ms,
             if i[1] < r[1]: r[0] = i[1]
 
             mx = np.arange(i[0]-1e-05, i[1]+1e-05, 1e-05)
-            if m!=ref_morph: plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ':')
-            else: plt.plot(mx, np.zeros(len(mx)), morph_ms[m]['c'], ls = ':')
+            if m!=ref_morph: plt.plot(mx, fit(mx), morph_ms[m]['c'], ls = ls_meta)
+            else: plt.plot(mx, np.zeros(len(mx)), morph_ms[m]['c'],  ls = ls_meta)
 
         xxs = np.arange(r[0]-1e-05, r[1]-1e-05, 1e-05)
             
