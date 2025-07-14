@@ -1141,10 +1141,12 @@ datasets += pack_data('a25s25e3_mic', a25s25e3_mic)
 ''' alpha = 0.25, sigma = 0.003 '''
 a25s3e3_cyl = Data(0.25, 0.003, 'cyl')
 a25s3e3_cyl.new((16.2, 12.2, 48.2), -1.66055, icm=1.3e-02, err=7.1e-04)
+a25s3e3_cyl.done=True # go further if have compute
 datasets += pack_data('a25s3e3_cyl', a25s3e3_cyl)
 
 a25s3e3_cp = Data(0.25, 0.003, 'cyl-pn')
 a25s3e3_cp.new((16.2, 12.2, 48.2), -1.66046, icm=1.1e-02, err=6.5e-04)
+a25s3e3_cp.done=True # go further if have compute
 datasets += pack_data('a25s3e3_cp', a25s3e3_cp)
 
 ''' alpha = 0.25, sigma = 0.005 '''
