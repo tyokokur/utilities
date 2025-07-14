@@ -1606,6 +1606,10 @@ a3s0025_cyl.new((32.2, 32.2, 45.2), -1.35308, icm=3.8e-02, err=5.4e-03)
 a3s0025_cyl.new((21.2, 18.2, 54.2), -1.35320, icm=4.8e-02, err=2.0e-03)
 datasets += pack_data('a3s0025_cyl', a3s0025_cyl)
 
+a3s0025_mic = Data(0.30, 0.0025, 'mic')
+a3s0025_mic.new((22.6, 19.8, 54.2), -1.35157, icm=4.8e-02, err=2.5e-03)
+datasets += pack_data('a3s0025_mic', a3s0025_mic)
+
 ''' alpha = 0.30, sigma = 0.005 '''
 a3s5_hol = Data(0.30, 0.005, 'cyl')
 a3s5_hol.new((10.2, 10.2, 64.2), -2.68125, icm=4.7e-02, err=5.2e-03)
