@@ -1171,11 +1171,12 @@ a25s05_cyl = Data(0.25, 0.005, 'cyl')
 # a25s05_cyl.new((16.2, 14.6, 54.2), -2.75758, icm=4.7e-03, err=5.2e-04)
 a25s05_cyl.new((18.2, 12.2, 54.2), -2.75904, icm=2.5e-03, err=2.7e-04)
 a25s05_cyl.new((16.2, 12.2, 54.2), -2.75937, icm=3.8e-03, err=3.7e-04)
-a25s05_cyl.done=False
+a25s05_cyl.done=True
 datasets += pack_data('a25s05_cyl', a25s05_cyl)
 
 a25s05_cp = Data(0.25, 0.005, 'cyl-pn')
 a25s05_cp.new((16.2, 12.2, 54.2), -2.75961, icm=3.0e-03, err=2.9e-04)
+a25s05_cp.done=True
 datasets += pack_data('a25s05_cp', a25s05_cp)
 
 # a25s05_cp = Data(0.25, 0.005, 'cyl-pn')
