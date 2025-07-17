@@ -1647,11 +1647,16 @@ a3s15_cyl = Data(0.30, 0.015, 'cyl')
 a3s15_cyl.new(( 9.2,  9.2, 70.2), -7.92849, icm=5.3e-03, err=1.0e-03)
 a3s15_cyl.new((10.2, 10.2, 70.2), -7.93089, icm=1.7e-02, err=2.3e-03)
 a3s15_cyl.new((11.0, 11.0, 70.2), -7.93256, icm=3.8e-03, err=7.3e-04)
+a3s15_cyl.new((12.2, 12.2, 70.2), -7.93235, icm=4.8e-03, err=1.0e-03)
+a3s15_cyl.done=True
 datasets += pack_data('a3s15_cyl', a3s15_cyl)
 
 a3s15_cp = Data(0.30, 0.015, 'cyl-pn')
+a3s15_cp.new((21.2, 11.0, 64.2), -7.93490, icm=2.7e-02, err=2.1e-03)
+a3s15_cp.new((24.2,  9.2, 64.2), -7.93234, icm=1.2e-02, err=2.5e-03)
 a3s15_cp.new((24.2, 11.0, 64.2), -7.93154, icm=1.8e-02, err=3.5e-03)
 a3s15_cp.new((24.2, 13.0, 64.2), -7.92817, icm=2.0e-02, err=3.5e-03)
+a3s15_cp.done=True
 datasets += pack_data('a3s15_cp', a3s15_cp)
 
 ''' alpha = 0.30, sigma = 0.020 '''
