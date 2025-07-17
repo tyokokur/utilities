@@ -762,6 +762,7 @@ datasets += pack_data('a2s025_mic', a2s025_mic)
 # datasets += pack_data('a2s025_mic', a2s025_mic)
 
 a2s025_str = Data(0.20, 0.0025, 'str')
+a2s025_str.new(( 8.2, 20.2, 48.2), -1.41154, icm=4.3e-04, err=6.2e-05)
 a2s025_str.new(( 9.2, 20.2, 48.2), -1.41127, icm=1.6e-03, err=2.3e-04)
 a2s025_str.new((11.0, 20.2, 48.2), -1.41084, icm=2.9e-03, err=3.9e-04)
 a2s025_str.new((13.0, 20.2, 48.2), -1.41058, icm=2.4e-03, err=3.2e-04)
