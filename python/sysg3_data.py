@@ -607,18 +607,14 @@ datasets += pack_data('a1s6_hom', a1s6_hom)
 
 ''' alpha = 0.15, sigma = 0.0025 '''
 a15s25_mic = Data(0.15, 0.0025, 'mic')
-# a15s25_mic.new((10.2, 10.2, 54.2), -1.43329, icm=3.0e-02, err=3.2e-03)
-# a15s25_mic.new((18.2, 16.4, 36.2), -1.43605, icm=8.3e-03, err=7.5e-04)
-# a15s25_mic.new((20.2, 20.2, 54.2), -1.43587, icm=2.1e-02, err=1.5e-03)
-# a15s25_mic.new((20.2, 25.2, 36.2), -1.43599, icm=7.7e-03, err=5.3e-04)
-# a15s25_mic.new((25.2, 25.2, 54.2), -1.43543, icm=3.2e-02, err=2.1e-03)
 a15s25_mic.new((21.2, 18.2, 48.2), -1.43718, icm=4.7e-03, err=6.5e-04)
 a15s25_mic.new((20.2, 18.2, 48.2), -1.43718, icm=2.8e-03, err=3.9e-04)
+a15s25_mic.done=True
 datasets += pack_data('a15s25_mic', a15s25_mic)
 
 a15s25_str=Data(0.15, 0.0025, 'str')
-a15s25_str.new(( 9.2, 20.2, 36.2), -1.43724, icm=3.3e-04, err=4.6e-05)
-a15s25_str.new((11.0, 20.2, 36.2), -1.43723, icm=2.0e-03, err=2.6e-04)
+# a15s25_str.new(( 9.2, 20.2, 36.2), -1.43724, icm=3.3e-04, err=4.6e-05)
+# a15s25_str.new((11.0, 20.2, 36.2), -1.43723, icm=2.0e-03, err=2.6e-04)
 a15s25_str.new((13.0, 20.2, 36.2), -1.43688, icm=6.3e-03, err=9.7e-04)
 a15s25_str.new((15.2, 20.2, 36.2), -1.43642, icm=5.4e-03, err=6.3e-04)
 a15s25_str.new((17.2, 20.2, 36.2), -1.43607, icm=3.5e-03, err=4.7e-04)
@@ -652,16 +648,8 @@ datasets += pack_data('a15s375_hol', a15s375_hol)
 
 ''' alpha = 0.15, sigma = 0.005 '''
 a15s05_mic = Data(0.15, 0.005, 'mic')
-# a15s05_mic.new((10.2, 10.2, 54.2), -2.88236, icm=2.9e-02, err=3.3e-03)
 a15s05_mic.new((21.2, 21.2, 54.2), -2.88511, icm=8.6e-03, err=1.1e-03)
 a15s05_mic.new((21.2, 24.2, 54.2), -2.88512, icm=1.1e-03, err=1.5e-03)
-# a15s05_mic.new((18.2, 18.2, 54.2), -2.88600, icm=5.7e-03, err=8.7e-04) # hole
-# a15s05_mic.new((15.2, 15.2, 54.2), -2.88643, icm=4.3e-03, err=6.2e-04) # hom
-# a15s05_mic.new((13.2, 13.2, 54.2), -2.88507, icm=1.3e-02, err=1.1e-03) # hole
-# a15s05_mic.new((14.2, 14.2, 54.2), -2.88543, icm=7.7e-03, err=8.1e-04) # hole
-# a15s05_mic.new((15.2, 15.2, 54.2), -2.88569, icm=5.1e-03, err=7.2e-04) # hole
-# a15s05_mic.new((16.2, 16.2, 54.2), -2.88586, icm=5.5e-03, err=6.0e-04) # hole
-# a15s05_mic.new((17.2, 17.2, 54.2), -2.88599, icm=6.7e-03, err=5.5e-04) # hole
 a15s05_mic.done=True
 datasets += pack_data('a15s05_mic', a15s05_mic)
 
@@ -691,17 +679,13 @@ a15s1_mic.new((10.2, 10.2, 54.2), -5.78462, icm=2.5e-02, err=2.6e-03)
 a15s1_mic.new((12.2, 12.2, 54.2), -5.78556, icm=5.2e-03, err=6.4e-04)
 a15s1_mic.new((21.2, 21.2, 54.2), -5.78561, icm=1.9e-02, err=1.7e-03)
 a15s1_mic.new((24.2, 24.2, 54.2), -5.78537, icm=2.1e-02, err=2.4e-04)
-# a15s1_mic.new((13.2, 13.2, 54.2), -5.78550, icm=9.8e-03, err=1.1e-03) # probably hom
 a15s1_mic.done=True
 datasets += pack_data('a15s1_mic', a15s1_mic)
 
-a15s1_str= Data(0.15, 0.010, 'fus') #melted
-# a15s1_str.new((16.2, 20.2, 54.2), -5.78588, icm=3.7e-03, err=5.6e-04) # single, starting to flatten
-a15s1_str.new((17.2, 20.2, 54.2), -5.78577, icm=8.3e-03, err=1.0e-03) # single
-a15s1_str.new((18.2, 20.2, 54.2), -5.78588, icm=4.7e-03, err=6.6e-04) # single
-a15s1_str.new((20.2, 16.2, 54.2), -5.78568, icm=7.7e-03, err=1.0e-03) # single
-# a15s1_str.new((20.2, 15.2, 54.2), -5.78487, icm=2.0e-02, err=2.6e-03) # double 
-# a15s1_str.new((22.2, 15.2, 54.2), -5.78551, icm=1.4e-02, err=1.3e-03) # double
+a15s1_str= Data(0.15, 0.010, 'fus') 
+a15s1_str.new((17.2, 20.2, 54.2), -5.78577, icm=8.3e-03, err=1.0e-03) 
+a15s1_str.new((18.2, 20.2, 54.2), -5.78588, icm=4.7e-03, err=6.6e-04) 
+a15s1_str.new((20.2, 16.2, 54.2), -5.78568, icm=7.7e-03, err=1.0e-03) 
 a15s1_str.done=True
 datasets += pack_data('a15s1_str', a15s1_str)
 
@@ -762,7 +746,7 @@ datasets += pack_data('a2s025_mic', a2s025_mic)
 # datasets += pack_data('a2s025_mic', a2s025_mic)
 
 a2s025_str = Data(0.20, 0.0025, 'str')
-a2s025_str.new(( 8.2, 20.2, 48.2), -1.41154, icm=4.3e-04, err=6.2e-05)
+# a2s025_str.new(( 8.2, 20.2, 48.2), -1.41154, icm=4.3e-04, err=6.2e-05)
 a2s025_str.new(( 9.2, 20.2, 48.2), -1.41127, icm=1.6e-03, err=2.3e-04)
 a2s025_str.new((11.0, 20.2, 48.2), -1.41084, icm=2.9e-03, err=3.9e-04)
 a2s025_str.new((13.0, 20.2, 48.2), -1.41058, icm=2.4e-03, err=3.2e-04)
