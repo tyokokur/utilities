@@ -740,6 +740,11 @@ a15s6_hom.done=True
 datasets += pack_data('a15s6_hom', a15s6_hom)
 ########################################################################
 
+''' alpha = 0.20, sigma = 0.002 '''
+a2s02_mic = Data(0.20, 0.002, 'mic')
+a2s02_mic.new((1,1,1), -0.5)
+datasets += pack_data('a2s02_mic', a2s02_mic)
+
 ''' alpha = 0.20, sigma = 0.0025 '''
 a2s025_mic = Data(0.20, 0.0025, 'mic')
 a2s025_mic.new((21.2, 18.2, 48.2), -1.41134, icm=7.6e-03, err=8.8e-04)
