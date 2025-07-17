@@ -608,6 +608,7 @@ datasets += pack_data('a1s6_hom', a1s6_hom)
 ''' alpha = 0.15, sigma = 0.002 '''
 a15s20_mic = Data(0.15, 0.002, 'mic')
 a15s20_mic.new((1,1,1), -0.5)
+a15s20_mic.done=True
 datasets+=pack_data('a15s20_mic', a15s20_mic)
 
 ''' alpha = 0.15, sigma = 0.0025 '''
@@ -618,8 +619,8 @@ a15s25_mic.done=True
 datasets += pack_data('a15s25_mic', a15s25_mic)
 
 a15s25_str=Data(0.15, 0.0025, 'str')
-# a15s25_str.new(( 9.2, 20.2, 36.2), -1.43724, icm=3.3e-04, err=4.6e-05)
-# a15s25_str.new((11.0, 20.2, 36.2), -1.43723, icm=2.0e-03, err=2.6e-04)
+a15s25_str.new(( 9.2, 20.2, 36.2), -1.43724, icm=3.3e-04, err=4.6e-05)
+a15s25_str.new((11.0, 20.2, 36.2), -1.43723, icm=2.0e-03, err=2.6e-04)
 a15s25_str.new((13.0, 20.2, 36.2), -1.43688, icm=6.3e-03, err=9.7e-04)
 a15s25_str.new((15.2, 20.2, 36.2), -1.43642, icm=5.4e-03, err=6.3e-04)
 a15s25_str.new((17.2, 20.2, 36.2), -1.43607, icm=3.5e-03, err=4.7e-04)
@@ -743,6 +744,7 @@ datasets += pack_data('a15s6_hom', a15s6_hom)
 ''' alpha = 0.20, sigma = 0.002 '''
 a2s02_mic = Data(0.20, 0.002, 'mic')
 a2s02_mic.new((1,1,1), -0.5)
+a2s02_mic.done=True
 datasets += pack_data('a2s02_mic', a2s02_mic)
 
 ''' alpha = 0.20, sigma = 0.0025 '''
@@ -750,13 +752,9 @@ a2s025_mic = Data(0.20, 0.0025, 'mic')
 a2s025_mic.new((21.2, 18.2, 48.2), -1.41134, icm=7.6e-03, err=8.8e-04)
 a2s025_mic.done=True
 datasets += pack_data('a2s025_mic', a2s025_mic)
-# a2s025_mic = Data(0.20, 0.0025, 'mic')
-# a2s025_mic.new((18.2, 16.4, 48.2), -1.41041, icm=5.2e-03, err=5.7e-04)
-# a2s025_mic.new((20.2, 20.2, 48.2), -1.41042, icm=3.3e-03, err=3.2e-04)
-# datasets += pack_data('a2s025_mic', a2s025_mic)
 
 a2s025_str = Data(0.20, 0.0025, 'str')
-# a2s025_str.new(( 8.2, 20.2, 48.2), -1.41154, icm=4.3e-04, err=6.2e-05)
+a2s025_str.new(( 8.2, 20.2, 48.2), -1.41154, icm=4.3e-04, err=6.2e-05)
 a2s025_str.new(( 9.2, 20.2, 48.2), -1.41127, icm=1.6e-03, err=2.3e-04)
 a2s025_str.new((11.0, 20.2, 48.2), -1.41084, icm=2.9e-03, err=3.9e-04)
 a2s025_str.new((13.0, 20.2, 48.2), -1.41058, icm=2.4e-03, err=3.2e-04)
