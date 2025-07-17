@@ -1639,6 +1639,7 @@ a3s1_cp = Data(0.30, 0.010, 'cyl-pn')
 a3s1_cp.new((21.2,  9.2, 54.2), -5.33225, icm=1.8e-02, err=1.2e-03)
 a3s1_cp.new((24.2,  9.2, 54.2), -5.33217, icm=1.4e-02, err=1.1e-03)
 a3s1_cp.new((24.2, 11.0, 54.2), -5.31982, icm=2.9e-02, err=2.5e-03)
+a3s1_cp.done=True
 datasets += pack_data('a3s1_cp', a3s1_cp)
 
 ''' alpha = 0.30, sigma = 0.015 '''
