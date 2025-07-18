@@ -701,6 +701,12 @@ a15s1_hom.new((22.2, 16.2, 54.2), -5.78573, icm=4.7e-03, err=7.6e-04)
 a15s1_hom.done = True
 datasets += pack_data('a15s1_hom', a15s1_hom)
 
+''' alpha = 0.15, sigma = 0.0125 '''
+a15s125_fus = Data(0.15, 0.0125, 'fus')
+a15s125_fus.new((1,1,1), -0.5)
+a15s125_fus.done=True
+datasets += pack_data('a15s125_fus', a15s125_fus)
+
 ''' alpha = 0.15, sigma = 0.015 '''
 a15s15_fus = Data(0.15, 0.015, 'fus')
 a15s15_fus.new((22.6, 20.2, 64.2), -8.67750, icm=3.4e-03, err=5.5e-04)
@@ -713,6 +719,10 @@ a15s15_hom = Data(0.15, 0.015, 'hom')
 a15s15_hom.new((20.2, 20.2, 64.2), -8.67750, icm=5.0e-03, err=6.7e-04)
 a15s15_hom.done=True
 datasets += pack_data('a15s15_hom', a15s15_hom)
+
+''' alpha = 0.15, sigma = 0.0175 '''
+a15s175_hom = Data(0.15, 0.0175, 'hom')
+a15s175
 
 ''' alpha = 0.15, hom '''
 a15s020_hom = Data(0.15, 0.020, 'hom')
@@ -2088,13 +2098,4 @@ a325s2_str.new((15.2, 15.2, 70.2), -10.2983, icm=7.8e-02, err=9.2e-03)
 a325s2_str.new((18.2, 15.2, 70.2), -10.2994, icm=2.9e-02, err=6.8e-03)
 datasets += pack_data('a325s2_str', a325s2_str)
 
-########################################################################
-
-''' alpha = 0.35, sigma = 0.020 '''
-# a35s2_str
-
-
-
-All = All(datasets)
-
-
+###################################################################
