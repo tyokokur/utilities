@@ -837,6 +837,8 @@ a2s05_fus.new((18.2, 20.2, 40.2), -2.82208, icm=1.0e-03, err=1.6e-04)
 a2s05_fus.done=True # can min further, minF unlikely
 datasets += pack_data('a2s05_fus', a2s05_fus)
 
+''' alpha = 0.20, sigma = 0.
+
 ''' alpha = 0.20, sigma = 0.010 '''
 a2s10_mic = Data(0.20, 0.010, 'mic')
 a2s10_mic.new(( 8.2,  8.2, 54.2), -5.63396, icm=1.2e-02, err=1.4e-03)
