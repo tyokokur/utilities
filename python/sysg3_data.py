@@ -679,6 +679,17 @@ a15s05_hol.new((27.2, 32.2, 54.2), -2.88654, icm=8.5e-03, err=1.0e-03)
 a15s05_hol.done=True # Can min further
 datasets += pack_data('a15s05_hol', a15s05_hol)
 
+''' alpha = 0.15, sigma = 0.0075 '''
+a15s75_hol = Data(0.15, 0.0075, 'hol')
+a15s75_hol.new((28.2, 29.2, 54.2), -4.33682, icm=5.1e-02, err=2.4e-03)
+a15s75_hol.done=True
+datasets+=pack_data('a15s75_hol',a15s75_hol)
+
+a15s75_fus = Data(0.15, 0.0075, 'fus')
+a15s75_fus.new((18.2, 20.2, 54.2), -4.33706, icm=2.7e-03, err=3.7e-04)
+a15s75_fus.done=True
+datasets+=pack_data('a15s75_fus',a15s75_fus)
+
 ''' alpha = 0.15, sigma = 0.010 '''
 a15s1_mic = Data(0.15, 0.010, 'mic')
 a15s1_mic.new((10.2, 10.2, 54.2), -5.78462, icm=2.5e-02, err=2.6e-03)
