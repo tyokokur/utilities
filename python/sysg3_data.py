@@ -1666,6 +1666,10 @@ a3s5_hol.new((16.2, 18.2, 54.2), -2.69014, icm=8.4e-04, err=2.1e-03)
 a3s5_hol.new((18.2, 18.2, 54.2), -2.68968, icm=4.0e-02, err=3.3e-03)
 datasets += pack_data('a3s5_hol', a3s5_hol)
 
+a3s5_cp = Data(0.30, 0.005, 'cyl-pn')
+a3s5_cp.new((21.2, 9.2, 60.2), -2.69415, icm=3.3e-02, err=3.4e-03)
+a3s5_cp.ewn((
+
 ''' alpha = 0.30, sigma = 0.010 '''
 a3s1_cyl = Data(0.30, 0.010, 'cyl')
 a3s1_cyl.new(( 9.2,  9.2, 64.2), -5.32837, icm=1.3e-02, err=1.3e-03)
