@@ -837,7 +837,16 @@ a2s05_fus.new((18.2, 20.2, 40.2), -2.82208, icm=1.0e-03, err=1.6e-04)
 a2s05_fus.done=True # can min further, minF unlikely
 datasets += pack_data('a2s05_fus', a2s05_fus)
 
-''' alpha = 0.20, sigma = 0.
+''' alpha = 0.20, sigma = 0.0075 '''
+a2s75_hol = Data(0.20, 0.0075, 'hol')
+a2s75_hol.new((27.2, 32.2, 40.2), -4.22966, icm=4.2e-02, err=2.4e-03)
+a2s75_hol.done=True
+datasets+=pack_data('a2s75_hol', a2s75_hol)
+
+a2s75_fus = Data(0.20, 0.0075, 'fus')
+a2s75_fus.new((18.2, 20.2, 40.2), -4.22945, icm=3.2e-04, err=7.5e-05)
+a2s75_fus.done=True
+datasets+=pack_data('a2s75_fus', a2s75_fus)
 
 ''' alpha = 0.20, sigma = 0.010 '''
 a2s10_mic = Data(0.20, 0.010, 'mic')
