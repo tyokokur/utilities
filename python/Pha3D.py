@@ -9,7 +9,7 @@ class Pha3D:
         self.plot_3d() for plotting 3D isosurface density distributions
         self.mask_wa() for artificially adding oscillations to fields for seeding lateral inhomogeneities
     """
-    def __init__(self, fname, dims, discs=(0.20,0.20,0.20), fprefix=None, blocks=[1], silent=True):
+    def __init__(self, fname, dims, discs=(0.20,0.20,0.20), fprefix=None, blocks=[1], silent=True, **kwargs):
         """
         fname: filename containing density distribution; dims: (Lx, Ly, Lz) in nm units; discs: (dx, dy, dz) in nm units;
         blocks: [# of blocks in polymer]; silent: bool, for printing end of init (after _readPha)
@@ -200,7 +200,7 @@ class Pha3D:
     def get_vol(self, zmax=None, isomin=None, n_coarse=1, 
                  reflect_box=True, reflect_over="ne", extend_box=False, extend_dim="x",
                  cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
-                 show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
+                 show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[], **kwargs):
         '''
         test
         '''
