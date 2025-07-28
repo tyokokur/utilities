@@ -105,7 +105,7 @@ class Process3D:
         fig.update_traces(showscale=False)
 
         if write_html:
-            fname = fp+'pha_vol.html'
+            fname = fprefix+'pha_vol.html'
             f = open(fname, "w")
             f.close()
             with open(fname, 'a') as f:
