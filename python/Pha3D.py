@@ -196,6 +196,86 @@ class Pha3D:
                 print('Opening...')
             
         return fig
+
+    def get_vol(self, zmax=None, isomin=None, n_coarse=1, 
+                 reflect_box=True, reflect_over="ne", extend_box=False, extend_dim="x",
+                 cmap=None, write_html=True, open_html=True, fname=None, fprefix=None,
+                 show_cbar=True, cbar_ticks=[], xticks=[], yticks=[], zticks=[]):
+        '''
+        test
+        '''
+        if not zmax  : zmax  = self.lz-self.dz
+        if not isomin: isomin= 1e-01
+        if not cmap  : cmap  = plt.cm.jet
+        if not fprefix: fprefix='E:/Downloads'
+        if not fname : fname = fprefix+'pha_vol.html'
+        vol = self.PHAXYZ[0].flatten()
+        X   = self.PHAXYZ[1].flatten()
+        Y   = self.PHAXYZ[2].flatten()
+        Z   = self.PHAXYZ[3].flatten()
+        nx, ny, nz = self.nx, self.ny, self.nz
+        
+        if zmax > self.lz-self.dz: 
+            print('\n\nERROR: zmax TOO LARGE: {:.2f} > {:.2f}\n\n'.format(zmax, self.lz-self.dz))
+            return
+        if type(n_coarse) is not int: 
+            print('\n\nERROR: n_coarse must be of int type')
+            return
+        
+        if reflect_box: # Overwrite with full PHA
+            vol, X, Y, Z = self._reflect_box(reflect_over)
+        
+            # if extend_box: 
+            #     if extend_dim == "x" or extend_dim == "both" or extend_dim == "xy":
+            #         copy1 = vol[:nx]
+            #         copy2 = vol[nx:]
+            #         PH3 = np.concatenate((copy2, vol, copy1))
+            #         X3, Y3, Z3 = np.meshgrid(np.arange(X[0]-self.lx+self.dx, X[nx*ny*nz]+self.lx-self.dx, self.dx),
+            #                                  np.arange(Y[0], Y[nx*ny*nz], self.dy), np.arange(Z[0], Z[nx*ny*nz], self.dz))
+            #         X, Y, Z = X3.flatten(), Y3.flatten(), Z3.flatten()
+            #         vol = PH3
+                                     
+            
+        if zmax < self.lz-self.dz:
+            z_filter = Z <= zmax
+            vol = vol[z_filter]
+            X = X[z_filter]
+            Y = Y[z_filter]
+            Z = Z[z_filter]
+
+        if n_coarse >= 1:
+            X, Y, Z = X.round(2), Y.round(2), Z.round(2)
+            xmin, xmax = min(X), max(X)
+            ymin, ymax = min(Y), max(Y)
+                
+            dxn, dyn, dzn = round(self.dx*n_coarse,2), round(self.dy*n_coarse,2), round(self.dz*n_coarse,2)
+            fil = np.isin(X, np.arange(xmin, xmax+dxn, dxn).round(2))
+            fil*= np.isin(Y, np.arange(ymin, ymax+dyn, dyn).round(2))
+            fil*= np.isin(Z, np.arange(0.0, zmax+dzn, dzn).round(2))
+            
+            vol = vol[fil]
+            X   = X[fil]
+            Y   = Y[fil]
+            Z   = Z[fil]
+            
+        lin_cscale = lambda c: [[0, c], [0.5, c], [1.0, c]]
+        polymer = go.Isosurface(
+            x=X.flatten(),
+            y=Y.flatten(),
+            z=Z.flatten(),
+            value=vol.flatten(),
+            isomin=isomin,
+            isomax=self.PHA_max+0.001,
+            colorscale=lin_cscale('rgba{}'.format(plt.cm.jet(0.95,bytes=True))),
+            lighting=dict(ambient=0.75,specular=2.0),
+            # lighting=dict(ambient=0.60, diffuse=0.4, specular=1.5, roughness=0.7, fresnel=0.8),
+            # lightposition=dict(x=40, y=10, z=20),
+            surface_count=2, # number of isosurfaces, 2 by default: only min and max
+            # colorbar_nticks=2, # colorbar ticks correspond to isosurface values
+            caps=dict(x_show=True, y_show=True)
+        )
+
+        return [polymer, *self._ins_walls((min(X)-0.01, max(X)+0.01), (min(Y)-0.01, max(Y)+0.01), zmax+0.01)] # padding added for weird lighting affects in kaleido
     
     def mask_wa(self, fname_in, fname_out, amps=(0.5,0.5,0.7), pers=(2*np.pi/1, 2*np.pi/1, 2*np.pi/1), shifts=(0,0,0), ph_inplace=True):
         '''
