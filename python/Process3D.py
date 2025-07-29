@@ -51,7 +51,7 @@ class Process3D:
             scene.update( 
                 xaxis = dict(nticks=xn, range=xrange, title='',
                              ticks='outside',tickangle=0,tickwidth=1,ticklen=5,
-                             ticktext= ['', '',''], tickvals= xticks, 
+                             ticktext= ['']*xn, tickvals= xticks, 
                              spikethickness=0,
                              zeroline=False, showgrid=False, backgroundcolor='white',
                              )
@@ -66,7 +66,7 @@ class Process3D:
             scene.update( 
                 yaxis = dict(nticks=yn, range=yrange, title='',
                              ticks='outside',tickangle=0,tickwidth=1,ticklen=5,
-                             ticktext= ['', '',''], tickvals= yticks, 
+                             ticktext= ['']*yn, tickvals= yticks, 
                              spikethickness=0,
                              zeroline=False, showgrid=False, backgroundcolor='white',
                              )
@@ -80,7 +80,7 @@ class Process3D:
             scene.update(
                 zaxis = dict(nticks=zn, range=zrange, title='',
                              ticks='outside',tickangle=0,tickwidth=1,ticklen=5,
-                             ticktext= ['', '', ''], tickvals= zticks, 
+                             ticktext= ['']*zticks, tickvals= zticks, 
                              spikethickness=0,
                              zeroline=False, showgrid=False,backgroundcolor='white',
                              ) 
