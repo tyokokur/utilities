@@ -80,7 +80,7 @@ class Process3D:
             scene.update(
                 zaxis = dict(nticks=zn, range=zrange, title='',
                              ticks='outside',tickangle=0,tickwidth=1,ticklen=5,
-                             ticktext= ['']*zticks, tickvals= zticks, 
+                             ticktext= ['']*zn, tickvals= zticks, 
                              spikethickness=0,
                              zeroline=False, showgrid=False,backgroundcolor='white',
                              ) 
