@@ -64,9 +64,9 @@ class Process3D:
             
         if yn > 0:
             scene.update( 
-                yaxis = dict(nticks=xn, range=xrange, title='',
+                yaxis = dict(nticks=yn, range=yrange, title='',
                              ticks='outside',tickangle=0,tickwidth=1,ticklen=5,
-                             ticktext= ['', '',''], tickvals= xticks, 
+                             ticktext= ['', '',''], tickvals= yticks, 
                              spikethickness=0,
                              zeroline=False, showgrid=False, backgroundcolor='white',
                              )
@@ -78,9 +78,9 @@ class Process3D:
 
         if zn > 0:
             scene.update(
-                zaxis = dict(nticks=zn, range=[0,25.2], title='',
+                zaxis = dict(nticks=zn, range=zrange, title='',
                              ticks='outside',tickangle=0,tickwidth=1,ticklen=5,
-                             ticktext= ['', '', ''], tickvals= [0, 10, 20],
+                             ticktext= ['', '', ''], zticks, 
                              spikethickness=0,
                              zeroline=False, showgrid=False,backgroundcolor='white',
                              ) 
