@@ -39,6 +39,8 @@ class Process3D:
                write_html=True, fprefix = None,
                width = None
                ):
+        if not width: width = 1200
+        
         xn, yn, zn = len(xticks), len(yticks), len(zticks)
 
         try: camera = self.camera
@@ -98,8 +100,8 @@ class Process3D:
             hovermode=False,
             scene = scene,
             scene_camera=self.camera,
-            width=1200,
-            height=800,
+            width=width,
+            height=width/1.5,
             margin=dict(l=20, r=20, t=20, b=20)
         )
         fig = go.Figure(self.data, layout)
