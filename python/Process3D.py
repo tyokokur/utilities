@@ -45,7 +45,7 @@ class Process3D:
             print('Camera not set, doing default')
             self.Set_camera()
 
-        scene = dict()
+        scene = dict(aspectmode='data')
 
         if xn > 0:
             scene.update( 
