@@ -366,7 +366,7 @@ class Pha3D:
         ## new 
 
         xx = plt.contourf(XX, XX, PHA_Y, **kws)
-        xx.set_edgecolor("face")
+        xx.set({'edgecolor':"face"})
         FIL = [xx]
         ## old: FIL = [plt.contourf(XX, ZZ, PHA_Y, **kws)]
         ## resume 
