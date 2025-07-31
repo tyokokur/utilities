@@ -363,7 +363,14 @@ class Pha3D:
         new_nz = filter_Z[0,:].sum()
         XX, ZZ, PHA_Y = XX[filter_Z].reshape(nx, new_nz), ZZ[filter_Z].reshape(nx, new_nz), PHA_Y[filter_Z].reshape(nx, new_nz)
 
-        FIL = [plt.contourf(XX, ZZ, PHA_Y, **kws)]
+        ## new 
+
+        xx = plt.contourf(XX, XX, PHA_Y, **kws)
+        xx.set_edgecolor("face")
+        FIL = [xx]
+        ## old: FIL = [plt.contourf(XX, ZZ, PHA_Y, **kws)]
+        ## resume 
+        
 #         if reflect_box: 
 #             # plt.plot([self.lx]*2, [0,zmax], ':k')
 #             FIL.append(plt.contourf(XX[::-1]+(self.nx-1)*self.dx, ZZ, PHA_Y, **kws))
