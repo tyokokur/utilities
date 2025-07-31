@@ -366,8 +366,8 @@ class Pha3D:
         ## new 
 
         xx = plt.contourf(XX, ZZ, PHA_Y, **kws)
-        # for collection in xx.collections:
-        #     collection.set_edgecolor('face')
+        for collection in xx.collections:
+            collection.set_edgecolor('face')
         FIL = [xx]
         
         # old: 
