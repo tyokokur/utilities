@@ -36,7 +36,8 @@ class Process3D:
                xrange=[-5, 5], xticks=[], 
                yrange=[-5, 5], yticks=[],
                zrange=[0, 15], zticks=[],
-               write_html=True, fprefix = None
+               write_html=True, fprefix = None,
+               width = None
                ):
         xn, yn, zn = len(xticks), len(yticks), len(zticks)
 
