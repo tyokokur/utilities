@@ -363,16 +363,10 @@ class Pha3D:
         new_nz = filter_Z[0,:].sum()
         XX, ZZ, PHA_Y = XX[filter_Z].reshape(nx, new_nz), ZZ[filter_Z].reshape(nx, new_nz), PHA_Y[filter_Z].reshape(nx, new_nz)
 
-        ## new 
-
         xx = plt.contourf(XX, ZZ, PHA_Y, **kws)
         for collection in xx.collections:
-            collection.set_edgecolor('face')
+            collection.set_edgecolor('face')  # needed to export to pdf 
         FIL = [xx]
-        
-        # old: 
-        # FIL = [plt.contourf(XX, ZZ, PHA_Y, **kws)]
-        ## resume 
         
 #         if reflect_box: 
 #             # plt.plot([self.lx]*2, [0,zmax], ':k')
