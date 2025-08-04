@@ -34,7 +34,7 @@ class Pha3D:
         PHA_3D, X_3D, Y_3D, Z_3D = self.PHAXYZ[0], self.PHAXYZ[1], self.PHAXYZ[2], self.PHAXYZ[3]
         from mpl_toolkits import axes_grid1
         if not zmax  : zmax = self.lz-self.dz
-        if not levels.any(): levels = np.arange(0,self.PHA_max+0.001,0.001)
+        if not levels.any(): levels = np.arange(0,self.PHA_max+0.01, 0.01)
         if not cmap  : cmap = plt.cm.jet
         if not fig   : fig  = plt.figure(figsize=(plt.rcParams['figure.figsize'][0]*wspace, plt.rcParams['figure.figsize'][1]))
         bools = {'reflect_box':reflect_box, 'reflect_over':reflect_over, 'show_box':show_box, 'ins_frame':ins_frame}
