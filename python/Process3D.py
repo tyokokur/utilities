@@ -44,8 +44,8 @@ class Process3D:
                ):
         if not width: width = 1200
         if not xrange: xrange = [-self.dims[0]-0.01, self.dims[0]+0.01]
-        if not yrange: yrange = [0, 2*self.dims[1]+0.01]
-        if not zrange: zrange = [0, self.dims[2]+0.01]
+        if not yrange: yrange = [-0.01, 2*self.dims[1]+0.01]
+        if not zrange: zrange = [0, self.dims[2]+0.2]
         
         xn, yn, zn = len(xticks), len(yticks), len(zticks)
 
