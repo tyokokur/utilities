@@ -137,7 +137,7 @@ class Local:
     def __init__(self):
         self.files = []
     
-    def load(self, fname, dims, params=(0,0), figs=(), quiet=True):
+    def load(self, fname, dims, params=(0,0), figs=(), fprefix=None, quiet=True):
         self.files.append(self.file(fname, dims, params=params, figs=figs, quiet=quiet))
         
     def search(self, search_kws, quiet=True):
