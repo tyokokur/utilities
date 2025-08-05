@@ -128,3 +128,49 @@ class Process3D:
             print('Opening...')
         
         return fig
+
+class Local:
+    def __init__(self):
+        self.files = []
+    
+    def load(self, fname, dims, params=(0,0), figs=(), quiet=True):
+        self.files.append(self.file(fname, dims, params=params, figs=figs, quiet=True))
+        
+    def search(self, search_kws, quiet=True):
+        ret = []
+        kfigs = search_kws.pop('figs', None)
+        for i in self.files:
+            if all( [getattr(i, k)==search_kws[k] for k in search_kws.keys()] ):
+                if kfigs: 
+                    if kfigs in getattr(i, 'figs'):
+                        ret.append(i)
+                else: 
+                    ret.append(i)
+        if not quiet: 
+            print("Search results: ", [i.fname for i in ret])
+        return ret
+    
+    class file:
+        def __init__(self, fname, dims, params=(0,0), figs=(), quiet=True):
+            if type(fname)==str : 
+                self.fname = fname
+            else: 
+                raise TypeError("fname should be filename as string")
+            if type(dims)==tuple and len(dims)==3 :  
+                self.dims = dims
+            else: 
+                raise TypeError("dims should be tuple of len 3")
+            if type(params)==tuple and len(params)==2 : 
+                self.params= params
+                self.alpha = params[0]
+                self.sigma = params[1]
+            else: 
+                raise TypeError("params should be tupe of len 2")
+            if all(isinstance(n, int) for n in figs) : 
+                self.figs = figs
+            else: 
+                raise TypeError("figs should be tuple/list of ints")
+            if type(quiet)==bool: 
+                if not quiet : print("{} loaded.".format(fname))
+            else: 
+                raise TypeError("quiet should be bool")
