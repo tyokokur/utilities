@@ -35,13 +35,16 @@ class Process3D:
         print('Camera set to self.camera')
 
     def Figure(self, 
-               xrange=[-self.dims[0]-0.01, self.dims+0.01], xticks=[], 
-               yrange=[-5, 5], yticks=[],
-               zrange=[0, 15], zticks=[],
+               xrange=[], xticks=[], 
+               yrange=[], yticks=[],
+               zrange=[], zticks=[],
                write_html=True, fprefix = None,
                width = None
                ):
         if not width: width = 1200
+        if not xrange: xrange = [-self.dims[0]-0.01, self.dims[0]+0.01]
+        if not yrange: yrange = [0, 2*self.dims[1]+0.01]
+        if not zrange: zrange = [0, self.dims[2]+0.01]
         
         xn, yn, zn = len(xticks), len(yticks), len(zticks)
 
