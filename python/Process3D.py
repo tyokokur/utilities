@@ -8,6 +8,7 @@ class Process3D:
     def __init__(self, **kwargs):
         pha3d = Pha3D(**kwargs)
         self.data = pha3d.get_vol(**kwargs)
+        self.dims = kwargs['dims']
         print('Data processed into self.data')
             
     def Set_camera(self, opt='d', d = 3.0, a = 25, zcenter = 0.0, eye_kws=None):
