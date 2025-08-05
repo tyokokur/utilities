@@ -10,7 +10,7 @@ class Process3D:
         self.data = pha3d.get_vol(**kwargs)
         print('Data processed into self.data')
             
-    def Set_camera(self, opt='d', d = 3.0, a = 25, zcenter = 0.0):
+    def Set_camera(self, opt='d', d = 3.0, a = 25, zcenter = 0.0, eye_kws=None):
         '''
         'd'efault, 'x'z, 'y'z
         Distance from center
@@ -22,6 +22,8 @@ class Process3D:
             case 'd': eye=dict(x=d/np.sqrt(3), y=-d/np.sqrt(3), z=d/np.sqrt(3)) #default
             case 'x': eye=dict(x=0, y=-d*np.cos(np.pi/180*a), z=d*np.sin(np.pi/180*a)) # xz at given angle
             case 'y': eye=dict(x=d*np.cos(np.pi/180*a), y=0, z=d*np.sin(np.pi/180*a)) # yz at given angle
+            case 'custom': 
+                eye = eye_kws
             case  _ : eye=dict(x=-d/np.sqrt(3), y=-d/np.sqrt(3), z=d/np.sqrt(3)) #default
             # eye=dict(x=d, y=0.0, z=0.0) # yz
             # eye=dict(x=0.0, y=-d, z=0.0) # xz
