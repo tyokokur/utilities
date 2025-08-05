@@ -1,4 +1,5 @@
-import numpy as np, pandas as pd, matplotlib.pyplot as plt, matplotlib as mpl, plotly.graph_objects as go
+import numpy as np, pandas as pd, matplotlib.pyplot as plt, matplotlib as mpl, plotly.graph_objects as go 
+import os.path
 from Pha3D import Pha3D
 
 class Process3D:
@@ -28,8 +29,6 @@ class Process3D:
             case 'custom': 
                 eye = eye_kws
             case  _ : eye=dict(x=-d/np.sqrt(3), y=-d/np.sqrt(3), z=d/np.sqrt(3)) #default
-            # eye=dict(x=d, y=0.0, z=0.0) # yz
-            # eye=dict(x=0.0, y=-d, z=0.0) # xz
         
         self.camera = dict(
             up=dict(x=0, y=0, z=1), center=dict(x=0, y=0, z= zcenter),
@@ -161,6 +160,9 @@ class Local:
                 self.fname = fname
             else: 
                 raise TypeError("fname should be filename as string")
+            if not os.path.isfile(self.fname): 
+                raise TypeError("{} does not exist!".format(self.fname))
+                return
             if type(dims)==tuple and len(dims)==3 :  
                 self.dims = dims
             else: 
