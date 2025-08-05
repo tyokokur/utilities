@@ -138,7 +138,7 @@ class Local:
         self.files = []
     
     def load(self, fname, dims, params=(0,0), figs=(), fprefix=None, quiet=True):
-        self.files.append(self.file(fname, dims, params=params, figs=figs, quiet=quiet))
+        self.files.append(self.file(fname, dims, params=params, figs=figs,fprefix=fprefix,quiet=quiet))
         
     def search(self, search_kws, quiet=True):
         ret = []
@@ -160,7 +160,7 @@ class Local:
                 self.fname = fname
             else: 
                 raise TypeError("fname should be filename as string")
-            if not os.path.isfile(self.fname): 
+            if not os.path.isfile(fprefix+self.fname): 
                 raise TypeError("{} does not exist!".format(self.fname))
             if type(dims)==tuple and len(dims)==3 :  
                 self.dims = dims
