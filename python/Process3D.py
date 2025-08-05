@@ -162,7 +162,6 @@ class Local:
                 raise TypeError("fname should be filename as string")
             if not os.path.isfile(self.fname): 
                 raise TypeError("{} does not exist!".format(self.fname))
-                return
             if type(dims)==tuple and len(dims)==3 :  
                 self.dims = dims
             else: 
