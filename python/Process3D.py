@@ -134,7 +134,7 @@ class Local:
         self.files = []
     
     def load(self, fname, dims, params=(0,0), figs=(), quiet=True):
-        self.files.append(self.file(fname, dims, params=params, figs=figs, quiet=True))
+        self.files.append(self.file(fname, dims, params=params, figs=figs, quiet=quiet))
         
     def search(self, search_kws, quiet=True):
         ret = []
