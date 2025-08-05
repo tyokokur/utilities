@@ -176,6 +176,6 @@ class Local:
             else: 
                 raise TypeError("figs should be tuple/list of ints")
             if type(quiet)==bool: 
-                if not quiet : print("{} loaded.".format(fname))
+                if not quiet : print("{} recorded.".format(fname))
             else: 
                 raise TypeError("quiet should be bool")
