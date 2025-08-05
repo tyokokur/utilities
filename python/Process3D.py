@@ -155,7 +155,7 @@ class Local:
         return ret
     
     class file:
-        def __init__(self, fname, dims, params=(0,0), figs=(), quiet=True):
+        def __init__(self, fname, dims, params=(0,0), figs=(), fprefix=None, quiet=True):
             if type(fname)==str : 
                 self.fname = fname
             else: 
