@@ -9,6 +9,7 @@ class Process3D:
         pha3d = Pha3D(**kwargs)
         self.data = pha3d.get_vol(**kwargs)
         self.dims = kwargs['dims']
+        self.zmax = kwargs['zmax']
         print('Data processed into self.data')
             
     def Set_camera(self, opt='d', d = 3.0, a = 25, zcenter = 0.0, eye_kws=None):
@@ -45,7 +46,7 @@ class Process3D:
         if not width: width = 1200
         if not xrange: xrange = [-self.dims[0]-0.01, self.dims[0]+0.01]
         if not yrange: yrange = [-0.01, 2*self.dims[1]+0.01]
-        if not zrange: zrange = [0, self.dims[2]+0.2]
+        if not zrange: zrange = [0, self.zmax+0.2]
         
         xn, yn, zn = len(xticks), len(yticks), len(zticks)
 
