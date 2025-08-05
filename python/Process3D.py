@@ -35,7 +35,7 @@ class Process3D:
         print('Camera set to self.camera')
 
     def Figure(self, 
-               xrange=[-5, 5], xticks=[], 
+               xrange=[-self.dims[0]-0.01, self.dims+0.01], xticks=[], 
                yrange=[-5, 5], yticks=[],
                zrange=[0, 15], zticks=[],
                write_html=True, fprefix = None,
