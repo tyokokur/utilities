@@ -28,7 +28,7 @@ class Process3D:
                     raise ValueError("Need to provide old = {x,y,z} of reference")
                 from math import sqrt, atan, acos, cos, sin
                 dd = sqrt(old['x']**2 + old['y']**2 + old['z']**2)
-                print("Old distance: {}".format(dd))
+                print("Old distance was {:.3f}".format(dd))
                 th, ph = atan(old['y']/old['x']), acos(old['z']/dd)
                 
                 x = d * cos(th)*sin(ph)
