@@ -27,10 +27,13 @@ class Process3D:
                 if not old: 
                     raise ValueError("Need to provide old = {x,y,z} of reference")
                 from math import sin, cos
-                th, ph = atan(old[/x)
+                dd = sqrt(old['x']**2 + old['y']**2 + old['z']**2)
+                th, ph = atan(old['y']/old['x']), acos(old['z']/dd)
+                
                 x = d * cos(th)*sin(ph)
                 y = d * sin(th)*sin(ph)
                 z = d * cos(ph)
+                
                 eye=dict(x=x, y=y, z=z)
             case 'x': eye=dict(x=0, y=-d*np.cos(np.pi/180*a), z=d*np.sin(np.pi/180*a)) # xz at given angle
             case 'y': eye=dict(x=d*np.cos(np.pi/180*a), y=0, z=d*np.sin(np.pi/180*a)) # yz at given angle
