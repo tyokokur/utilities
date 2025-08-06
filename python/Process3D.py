@@ -23,7 +23,10 @@ class Process3D:
         '''
         
         match opt:
-            case 'd': eye=dict(x=d/np.sqrt(3), y=-d/np.sqrt(3), z=d/np.sqrt(3)) #default
+            case 'd': # distance-based
+                from math import sin, cos
+                
+                eye=dict(x=x, y=y, z=z)
             case 'x': eye=dict(x=0, y=-d*np.cos(np.pi/180*a), z=d*np.sin(np.pi/180*a)) # xz at given angle
             case 'y': eye=dict(x=d*np.cos(np.pi/180*a), y=0, z=d*np.sin(np.pi/180*a)) # yz at given angle
             case 'custom': 
