@@ -14,9 +14,9 @@ class Process3D:
         self.reflect=kwargs['reflect_over']
         print('Data processed into self.data')
             
-    def Set_camera(self, opt='d', d = 3.0, a = 25, zcenter = 0.0, eye_kws=None):
+    def Set_camera(self, opt='d', d = 3.0, a = 25, zcenter = 0.0, old=None, eye_kws=None):
         '''
-        'd'efault, 'x'z, 'y'z
+        'd'istance, 'x'z, 'y'z, 'custom'
         Distance from center
         Angle, if applicable
         Camera focal point
@@ -25,7 +25,10 @@ class Process3D:
         match opt:
             case 'd': # distance-based
                 from math import sin, cos
-                
+                th, ph 
+                x = dd * cos(th)*sin(ph)
+                y = dd * sin(th)*sin(ph)
+                z = dd * cos(ph)
                 eye=dict(x=x, y=y, z=z)
             case 'x': eye=dict(x=0, y=-d*np.cos(np.pi/180*a), z=d*np.sin(np.pi/180*a)) # xz at given angle
             case 'y': eye=dict(x=d*np.cos(np.pi/180*a), y=0, z=d*np.sin(np.pi/180*a)) # yz at given angle
