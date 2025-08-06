@@ -24,11 +24,13 @@ class Process3D:
         
         match opt:
             case 'd': # distance-based
+                if not old: 
+                    raise ValueError("Need to provide old = {x,y,z} of reference")
                 from math import sin, cos
-                th, ph 
-                x = dd * cos(th)*sin(ph)
-                y = dd * sin(th)*sin(ph)
-                z = dd * cos(ph)
+                th, ph = atan(old[/x)
+                x = d * cos(th)*sin(ph)
+                y = d * sin(th)*sin(ph)
+                z = d * cos(ph)
                 eye=dict(x=x, y=y, z=z)
             case 'x': eye=dict(x=0, y=-d*np.cos(np.pi/180*a), z=d*np.sin(np.pi/180*a)) # xz at given angle
             case 'y': eye=dict(x=d*np.cos(np.pi/180*a), y=0, z=d*np.sin(np.pi/180*a)) # yz at given angle
