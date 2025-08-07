@@ -35,6 +35,7 @@ class Process3D:
                 y = d * sin(th)*sin(ph)
                 z = d * cos(ph)
                 
+                print("New: ({:.3f}, {:.3f}, {:.3f})".format(x, y, z))
                 eye=dict(x=x, y=y, z=z)
             case 'x': eye=dict(x=0, y=-d*np.cos(np.pi/180*a), z=d*np.sin(np.pi/180*a)) # xz at given angle
             case 'y': eye=dict(x=d*np.cos(np.pi/180*a), y=0, z=d*np.sin(np.pi/180*a)) # yz at given angle
